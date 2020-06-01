@@ -1,8 +1,9 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
 import AnimatedModelViewer from './AnimatedModelViewer';
 import StationaryModelViewer from './StationaryModelViewer';
-import theme from '../../utilities/theme';
 import SwitchSelector from 'react-switch-selector';
+import theme from '../../utilities/theme';
 
 const ModelViewerController = ({ model, lightMode, setLightMode }) => {
   const [showAnimated, setShowAnimated] = useState(false);
@@ -129,11 +130,16 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
             justify-content: space-around;
           }
           .controls {
-            height: 150px;
+            height: 100px;
             flex-direction: column;
             justify-content: flex-end;
             bottom: 0px;
-            top: calc(100% - 150px);
+            top: calc(100%);
+            margin-bottom: 100px;
+          }
+          .viewer-container {
+
+            margin-bottom: 100px;
           }
         }
       `}</style>

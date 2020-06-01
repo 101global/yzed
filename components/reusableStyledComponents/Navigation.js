@@ -1,7 +1,7 @@
+import { Element, Events, Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import React, { useContext, useEffect, useState } from 'react';
 
 import theme from '../../utilities/theme';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 const Navigation = ({ collapsed }) => {
   return (
@@ -33,7 +33,7 @@ const Navigation = ({ collapsed }) => {
             duration={250}
             className='nav-scroll-link'
             activeClass='active'>
-            <a>ABOUT US</a>
+            ABOUT US
           </Link>
         </nav>
       </div>

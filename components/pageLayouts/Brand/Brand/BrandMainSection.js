@@ -42,7 +42,7 @@ const BrandMainSection = ({ model }) => {
             <div className='about'>
               {model.descriptions &&
                 model.descriptions.length &&
-                model.descriptions.map((description) => <p>{description}</p>)}
+                model.descriptions.map((description) => <p key={description}>{description}</p>)}
             </div>
           </div>
           <div className='mobile-carousel'>
