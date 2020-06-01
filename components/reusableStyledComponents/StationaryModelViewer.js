@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 
@@ -28,7 +28,7 @@ const StationaryModelViewer = ({ model }) => {
           camera-controls
           ar
           exposure={0.5}
-          poster={'loading-image.png'}
+          poster={'YZED_loadingkopie.png'}
           interaction-policy='allow-when-focused'></model-viewer>
       </div>
       <style jsx global>{`

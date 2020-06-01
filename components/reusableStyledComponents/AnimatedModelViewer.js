@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 
@@ -25,7 +25,7 @@ const AnimatedModelViewer = ({ model }) => {
           preload
           auto-rotate
           camera-controls
-          poster={'loading-image.png'}
+          poster={'YZED_loadingkopie.png'}
           exposure={0.5}
           interaction-policy='allow-when-focused'
           autoplay></model-viewer>
