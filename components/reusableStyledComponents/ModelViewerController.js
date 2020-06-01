@@ -134,11 +134,10 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
             flex-direction: column;
             justify-content: flex-end;
             bottom: 0px;
-            top: calc(100%);
+            top: calc(100% + 20px);
             margin-bottom: 100px;
           }
           .viewer-container {
-
             margin-bottom: 100px;
           }
         }
