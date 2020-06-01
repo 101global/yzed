@@ -94,8 +94,8 @@ const BrandHeader = () => {
           <div className='message'>
             <h2>We believe democratic fashion catalyzes self-discovery.</h2>
             <p>
-              YZED is the view of four professionals from different backgrounds based in Seoul,
-              South Korea represented by innovation hub 101Global.
+              YZED is a 3D & AR creative effort idealized by an international team of professionals
+              represented by “101Global”, which is a Seoul-based innovation hub.
             </p>
           </div>
           <div className='spacer' />
