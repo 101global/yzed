@@ -32,7 +32,7 @@ const BrandMainSection = ({ model, lightMode, setLightMode }) => {
 
   return (
     <>
-      <div className={lightMode ? 'light main-container' : 'main-container'}>
+      <div className='main-container'>
         <ModelViewerController model={model} lightMode={lightMode} setLightMode={setLightMode} />
         <div className='brand'>
           <div className='brand-title'>
@@ -53,15 +53,10 @@ const BrandMainSection = ({ model, lightMode, setLightMode }) => {
         .main-container {
           min-height: 80vh;
           margin: 0 auto;
-          background-color: ${theme.colors.black};
+          background-color: ${lightMode ? theme.colors.white : theme.colors.black};
           padding: 0 10%;
-          color: ${theme.colors.white};
+          color: ${lightMode ? theme.colors.black : theme.colors.white};
           padding-bottom: 80px;
-          transition: all 0.3s ease;
-        }
-        .light.main-container {
-          background-color: ${theme.colors.white};
-          color: ${theme.colors.black};
           transition: all 0.3s ease;
         }
         .brand-title {
@@ -84,11 +79,9 @@ const BrandMainSection = ({ model, lightMode, setLightMode }) => {
         }
         .dash {
           width: 80px;
-          border-bottom: 1px solid ${theme.colors.white};
+          border-bottom: 1px solid ${lightMode ? theme.colors.black : theme.colors.white};
           margin: 0 30px;
-        }
-        .light .dash {
-          border-color: ${theme.colors.black};
+          transition: all 0.3s ease;
         }
          {
           /* Tablet Landscape */
