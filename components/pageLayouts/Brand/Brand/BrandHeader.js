@@ -109,33 +109,19 @@ const BrandHeader = () => {
           padding: 0 10%;
           align-items: center;
           max-width: 100%;
-          height: 350px;
+          height: ${collapsed ? '200px' : '350px'};
           transition: all 0.5s ease;
-        }
-        .collapsed {
-          background-color: ${theme.colors.black};
-          color: ${theme.colors.white};
-          transition: all 0.5s ease;
-          height: 200px;
-        }
-        .collapsed .message {
-          transition: all 1s ease;
-          color: ${theme.colors.black};
-          opacity: 0;
-          height: 0px;
+          background-color: ${collapsed ? theme.colors.black : theme.colors.white};
+          color: ${collapsed ? theme.colors.black : theme.colors.white};
         }
         .message {
-          opacity: 1;
-          color: ${theme.colors.black};
-          transition: all 1s ease;
-          height: 130px;
+          opacity: ${collapsed ? 0 : 1};
+          color: ${collapsed ? theme.colors.white : theme.colors.black};
+          transition: ${collapsed ? 'all 0.1s ease' : 'all 0.5s ease'};
+          height: ${collapsed ? '0px' : '130px'};
         }
         .spacer {
-          height: 69px;
-          transition: all 1s ease;
-        }
-        .collapsed .spacer {
-          height: 0px;
+          height: ${collapsed ? '0px' : '69px'};
           transition: all 1s ease;
         }
         .logo {
@@ -147,25 +133,17 @@ const BrandHeader = () => {
           flex-direction: column;
           justify-content: space-between;
         }
-        .expanded .filled-svg,
-        .expanded .outline-svg {
-          height: 60px;
-          transition: all 1s ease;
-        }
-        .collapsed .filled-svg,
-        .collapsed .outline-svg {
-          height: 40px;
-          fill: ${theme.colors.white};
+        .filled-svg,
+        .outline-svg {
+          height: ${collapsed ? '40px' : '60px'};
+          fill: ${collapsed ? theme.colors.white : theme.colors.black};
           transition: all 1s ease;
         }
         .filled-svg {
           z-index: 100;
         }
-        .filled-logo {
-          fill: ${theme.colors.black};
-        }
         .outline-svg {
-          margin: -15px 0 0 60px;
+          margin: ${collapsed ? '-10px 0 0 40px' : '-15px 0 0 60px'};
           z-index: 1;
         }
         /* Medium (md) */
@@ -236,12 +214,8 @@ const BrandHeader = () => {
         {`
           @media screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 900px) {
             .expanded .navigation-container {
-              margin-top: 50px;
+              margin-top: ${collapsed ? '30px' : '50px'};
               animation: all 1s;
-            }
-            .collapsed .navigation-container {
-              animation: all 1s;
-              margin-top: 30px;
             }
         `}
       </style>

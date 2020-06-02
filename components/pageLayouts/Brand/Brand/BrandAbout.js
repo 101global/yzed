@@ -135,8 +135,8 @@ const BrandAbout = ({ lightMode }) => {
         }
         @media (max-width: 768px) {
           .about-container {
-            width: 90%;
-            padding: 30px 0;
+            width: 100%;
+            padding: 30px 5%;
           }
           .contact {
             width: 100%;
@@ -162,7 +162,7 @@ const BrandAbout = ({ lightMode }) => {
         }
         @media screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 900px) {
           .about-container {
-            width: 90%;
+            width: 100%;
             flex-direction: column;
             padding: 30px 0;
           }
@@ -172,9 +172,11 @@ const BrandAbout = ({ lightMode }) => {
         }
         @media (max-width: 640px) {
           .about-container {
-            width: 90%;
+            width: 100%;
             flex-direction: column;
-            padding: 30px 0;
+            padding: 30px 5%;
+
+            margin-right: 0;
           }
           .contact {
             max-width: 100%;
@@ -183,6 +185,9 @@ const BrandAbout = ({ lightMode }) => {
           .about {
             padding: 30px 0;
             width: 100%;
+          }
+          .contact h2 {
+            text-align: center;
           }
           a.black-link {
             width: 100%;
