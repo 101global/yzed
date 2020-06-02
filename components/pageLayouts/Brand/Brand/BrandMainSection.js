@@ -64,7 +64,6 @@ const BrandMainSection = ({ model, lightMode, setLightMode }) => {
           flex-direction: row;
           align-items: center;
           font-size: 1.5rem;
-          font-family: ${theme.fonts.main};
         }
         .brand-title h1 {
           font-weight: 500;
