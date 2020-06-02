@@ -6,7 +6,7 @@ import { Element } from 'react-scroll';
 import { useState } from 'react';
 
 const BrandPageLayout = ({ model }) => {
-  const [lightMode, setLightMode] = useState(true);
+  const [lightMode, setLightMode] = useState(false);
   return (
     <div>
       <Element name='introduction'>
