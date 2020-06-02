@@ -23,7 +23,7 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
   };
   return (
     <>
-      <div className={lightMode ? 'control-container light' : 'control-container'}>
+      <div className='control-container'>
         <div className='controls'>
           <div className='toggle-animated-buttons'>
             <SwitchSelector
@@ -80,10 +80,8 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
           top: 40px;
           width: 100%;
           z-index: 1000;
-        }
-        .light {
-          background: ${theme.colors.white};
-          color: ${theme.colors.black};
+          background: transparent;
+          color: ${lightMode ? theme.colors.black : theme.colors.white};
         }
         .toggle-button-container {
           display: flex;

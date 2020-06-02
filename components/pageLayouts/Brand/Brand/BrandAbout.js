@@ -5,7 +5,7 @@ import theme from '../../../../utilities/theme';
 const BrandAbout = ({ lightMode }) => {
   return (
     <>
-      <div className={lightMode ? 'light about-container' : 'about-container'}>
+      <div className='about-container'>
         <div className='mobile-message'>
           <h2>We believe democratic fashion catalyzes self-discovery.</h2>
           <p>
@@ -58,10 +58,8 @@ const BrandAbout = ({ lightMode }) => {
           justify-content: space-between;
           width: 100%;
           padding: 80px 10%;
-        }
-        .light {
-          background-color: ${theme.colors.black};
-          color: ${theme.colors.white};
+          background-color: ${lightMode ? theme.colors.black : theme.colors.white};
+          color: ${lightMode ? theme.colors.white : theme.colors.black};
         }
         .about {
           width: 49%;
@@ -85,33 +83,15 @@ const BrandAbout = ({ lightMode }) => {
         p {
           font-weight: 100;
         }
-        .light a.black-link {
-          color: ${theme.colors.black};
-          background-color: ${theme.colors.white};
-          transition: all 0.3s ease;
-          border-color: ${theme.colors.white};
-        }
-        .light a.black-link:hover {
-          background-color: ${theme.colors.black};
-          transition: all 0.3s ease;
-          color: ${theme.colors.white};
-          border-color: ${theme.colors.white};
-        }
-        .light a.blank-link {
-          color: ${theme.colors.white};
-        }
-        .light a.blank-link:after {
-          border-bottom: 1px solid ${theme.colors.white};
-        }
         a.black-link {
-          background-color: ${theme.colors.black};
-          color: ${theme.colors.white};
+          background-color: ${lightMode ? theme.colors.white : theme.colors.black};
+          color: ${lightMode ? theme.colors.black : theme.colors.white};
           text-decoration: none;
           padding: 10px 20px;
           border-radius: 20px;
           width: 80%;
           margin: 0 auto;
-          border: 1px solid ${theme.colors.black};
+          border: 1px solid ${lightMode ? theme.colors.white : theme.colors.black};
           transition: all 0.3s ease;
           max-width: 400px;
         }
@@ -120,12 +100,13 @@ const BrandAbout = ({ lightMode }) => {
           font-weight: 500;
         }
         a.black-link:hover {
-          background-color: ${theme.colors.white};
-          color: ${theme.colors.black};
+          background-color: ${lightMode ? theme.colors.black : theme.colors.white};
+          color: ${lightMode ? theme.colors.white : theme.colors.black};
           transition: all 0.3s ease;
+          border-color: ${lightMode ? theme.colors.white : theme.colors.black};
         }
         a.blank-link {
-          color: ${theme.colors.black};
+          color: ${lightMode ? theme.colors.white : theme.colors.black};
           padding: 5px 0;
           position: relative;
           text-decoration: none;
@@ -134,7 +115,7 @@ const BrandAbout = ({ lightMode }) => {
         a.blank-link:after {
           content: '';
           width: 100%;
-          border-bottom: 1px solid ${theme.colors.black};
+          border-bottom: 1px solid ${lightMode ? theme.colors.white : theme.colors.black};
           position: absolute;
           left: 0;
           bottom: 0;
