@@ -43,7 +43,7 @@ const BrandAbout = ({ lightMode }) => {
           <p className='or'>or</p>
           <a
             className='blank-link'
-            href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/MANIFESTO_PDF.pdf'
+            href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
             target='_blank'
             rel='noopener noreferrer'>
             DOWNLOAD MANIFESTO
