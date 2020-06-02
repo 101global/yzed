@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import theme from '../../../../utilities/theme';
 
-const BrandFooter = () => {
+const BrandFooter = ({ lightMode }) => {
   return (
     <>
-      <div className='footer-container'>
+      <div className={lightMode ? 'light footer-container' : 'footer-container'}>
         <p>
           <strong>YZED</strong> is part of{' '}
           <a href='https://www.101.global/?lang=en' target='_blank' rel='noopener noreferrer'>
@@ -21,6 +21,9 @@ const BrandFooter = () => {
         .footer-container {
           background-color: ${theme.colors.black};
         }
+        .light {
+          background-color: ${theme.colors.white};
+        }
         p {
           padding: 10px 10%;
           color: ${theme.colors.white};
@@ -33,6 +36,11 @@ const BrandFooter = () => {
           color: ${theme.colors.white};
           font-weight: 500;
           text-decoration: none;
+        }
+        .light p,
+        .light strong,
+        .light a {
+          color: ${theme.colors.black};
         }
         @media (max-width: 640px) {
           p {

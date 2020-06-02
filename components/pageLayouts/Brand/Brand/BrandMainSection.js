@@ -7,8 +7,7 @@ import theme from '../../../../utilities/theme';
 
 const photos = ['testimg_1-min.jpg', 'testimg_2-min.jpg', 'testimg_3-min.jpg'];
 
-const BrandMainSection = ({ model }) => {
-  const [lightMode, setLightMode] = useState(false);
+const BrandMainSection = ({ model, lightMode, setLightMode }) => {
   const imageBaseUrl = 'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/';
   const photos = [
     {

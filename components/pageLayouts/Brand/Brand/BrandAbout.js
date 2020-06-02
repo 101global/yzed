@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import theme from '../../../../utilities/theme';
 
-const BrandAbout = () => {
+const BrandAbout = ({ lightMode }) => {
   return (
     <>
-      <div className='about-container'>
+      <div className={lightMode ? 'light about-container' : 'about-container'}>
         <div className='mobile-message'>
           <h2>We believe democratic fashion catalyzes self-discovery.</h2>
           <p>
@@ -35,7 +35,6 @@ const BrandAbout = () => {
         </div>
         <div className='contact'>
           <h2>Would you like to be a catalyst of democratic fashion?</h2>
-
           <a
             className='black-link'
             href='mailto:yzed@101.global?subject=Interested in Learning More'>
@@ -53,21 +52,27 @@ const BrandAbout = () => {
       </div>
       <style jsx>{`
         .about-container {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
+          display: flex;
+          flex-direction: row;
           align-items: center;
-          justify-content: center;
-          width: 80%;
-          margin: 0 auto;
-          padding: 100px 0;
+          justify-content: space-between;
+          width: 100%;
+          padding: 80px 10%;
+        }
+        .light {
+          background-color: ${theme.colors.black};
+          color: ${theme.colors.white};
+        }
+        .about {
+          width: 49%;
         }
         .about h2 {
           font-weight: 500;
         }
         .contact {
-          width: 60%;
-          margin: 0 auto;
           text-align: center;
+          display: inline-block;
+          max-width: 49%;
         }
         .contact h2 {
           text-align: center;
@@ -80,7 +85,24 @@ const BrandAbout = () => {
         p {
           font-weight: 100;
         }
-
+        .light a.black-link {
+          color: ${theme.colors.black};
+          background-color: ${theme.colors.white};
+          transition: all 0.3s ease;
+          border-color: ${theme.colors.white};
+        }
+        .light a.black-link:hover {
+          background-color: ${theme.colors.black};
+          transition: all 0.3s ease;
+          color: ${theme.colors.white};
+          border-color: ${theme.colors.white};
+        }
+        .light a.blank-link {
+          color: ${theme.colors.white};
+        }
+        .light a.blank-link:after {
+          border-bottom: 1px solid ${theme.colors.white};
+        }
         a.black-link {
           background-color: ${theme.colors.black};
           color: ${theme.colors.white};
@@ -91,6 +113,7 @@ const BrandAbout = () => {
           margin: 0 auto;
           border: 1px solid ${theme.colors.black};
           transition: all 0.3s ease;
+          max-width: 400px;
         }
         a {
           letter-spacing: 0.2em;
@@ -111,7 +134,7 @@ const BrandAbout = () => {
         a.blank-link:after {
           content: '';
           width: 100%;
-          border-bottom: 1px solid black;
+          border-bottom: 1px solid ${theme.colors.black};
           position: absolute;
           left: 0;
           bottom: 0;
@@ -159,7 +182,7 @@ const BrandAbout = () => {
         @media screen and (orientation: landscape) and (min-device-width: 375px) and (max-device-width: 900px) {
           .about-container {
             width: 90%;
-            grid-template-columns: 1fr;
+            flex-direction: column;
             padding: 30px 0;
           }
         }
@@ -169,15 +192,16 @@ const BrandAbout = () => {
         @media (max-width: 640px) {
           .about-container {
             width: 90%;
-            grid-template-columns: 1fr;
+            flex-direction: column;
             padding: 30px 0;
           }
           .contact {
-            width: 100%;
+            max-width: 100%;
             padding-bottom: 30px;
           }
           .about {
             padding: 30px 0;
+            width: 100%;
           }
           a.black-link {
             width: 100%;

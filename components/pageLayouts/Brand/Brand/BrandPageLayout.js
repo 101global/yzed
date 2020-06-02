@@ -1,23 +1,25 @@
+import BrandAbout from './BrandAbout';
 import BrandFooter from './BrandFooter';
 import BrandHeader from './BrandHeader';
 import BrandMainSection from './BrandMainSection';
-import BrandAbout from './BrandAbout';
 import { Element } from 'react-scroll';
+import { useState } from 'react';
 
 const BrandPageLayout = ({ model }) => {
+  const [lightMode, setLightMode] = useState(true);
   return (
     <div>
       <Element name='introduction'>
         <BrandHeader />
       </Element>
       <Element name='model'>
-        <BrandMainSection model={model} />
+        <BrandMainSection model={model} lightMode={lightMode} setLightMode={setLightMode} />
       </Element>
       <Element name='about'>
-        <BrandAbout />
+        <BrandAbout lightMode={lightMode} />
       </Element>
       <Element>
-        <BrandFooter />
+        <BrandFooter lightMode={lightMode} />
       </Element>
     </div>
   );
