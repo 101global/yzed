@@ -5,12 +5,12 @@ import 'react-morphing-modal/dist/ReactMorphingModal.css';
 // import App from 'next/app';
 import FirebaseProvider from '../utilities/context/firebase';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <meta name='robots' content='index,follow' />
         <meta property='og:image' content='apple-touch-icon.png' />
         <meta property='twitter:image' content='apple-touch-icon.png'></meta>
         <link rel='icon' type='image/x-icon' href='favicon.ico' />
@@ -34,6 +34,7 @@ function MyApp({ Component, pageProps }) {
           rel='stylesheet'
           prefetch='true'
         />
+        <NextSeo title='YZED.me' description='Check out unique 3D and AR fashion.' />
         <link rel='manifest' href='manifest.json' />
       </Head>
       {/* Wrap this with Firebase Provider later if needed */}
