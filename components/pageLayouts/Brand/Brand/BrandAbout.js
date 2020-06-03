@@ -16,21 +16,20 @@ const BrandAbout = ({ lightMode }) => {
         <div className='about'>
           <h2>About Us</h2>
           <p>
-            In 2019, we started from creating 3D models of real garments and placing them in
-            Augmented Reality. We realized that Augmented Reality technology makes it possible for
-            users to place virtual clothing anywhere at any time, thus increasing customer
-            engagement.
+            In 2019, inspired by the desire to make fashion more accessible for the people, we
+            started creating 3D models of real garments and placing them in Augmented Reality. We
+            realized that AR technology makes it possible for users to view detailed clothing pieces
+            anywhere, at any given time.
           </p>
           <p>
-            YZED can assist in translating your garments into 3D, placing them in AR environment and
-            building the web architecture around it. We are a team of highly-skilled professionals,
-            specializing in 3D design, graphic design, UI & UX, programming and business
-            consultancy. We are comfortable working with tools such as Spark AR, Cinema4D, Clo3D,
-            Adobe CC, React and more.
+            YZED professionals can assist in translating your garments into 3D, placing them in AR
+            environment, and building the web architecture around it. Our experience allows us to
+            create exquisite content in industry-standard tools such as Spark AR, Cinema4D, Clo3D,
+            Adobe CC, React.js, and more.
           </p>
           <p>The current page you are in is an example of our beta version to be released soon.</p>
           <p>
-            <i>YZED team</i>
+            <i>YZED Team</i>
           </p>
         </div>
         <div className='contact'>

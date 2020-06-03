@@ -11,6 +11,7 @@
     "@phuocng/react-pdf-viewer": "1.6.0",
     "firebase": "^7.14.2",
     "next": "9.3.6",
+    "next-pwa": "^2.5.0",
     "node-fetch": "^2.6.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
