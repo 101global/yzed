@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const ProgressiveImage = ({ preview, image }) => {
+  console.log(preview);
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
 

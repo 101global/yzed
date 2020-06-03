@@ -5,14 +5,13 @@ const ProgressiveClickImage = ({ preview, image, callBack, alt }) => {
   const [loading, setLoading] = useState(true);
 
   const fetchImage = (src) => {
-    setCurrentImage(preview);
     const loadingImage = new Image();
     loadingImage.src = src;
     loadingImage.onload = () => {
       setTimeout(() => {
         setCurrentImage(loadingImage.src);
         setLoading(false);
-      }, 200);
+      }, 20000);
     };
   };
 
@@ -23,7 +22,12 @@ const ProgressiveClickImage = ({ preview, image, callBack, alt }) => {
   return (
     <img
       alt={alt}
-      style={{ filter: `${loading ? 'blur(10px)' : ''}`, transition: '1s filter linear' }}
+      style={{
+        filter: `${loading ? 'blur(10px)' : ''}`,
+        transition: '1s filter linear',
+        minHeight: '190px',
+        background: '#B2CCA2',
+      }}
       src={currentImage}
       onClick={() => callBack()}
     />

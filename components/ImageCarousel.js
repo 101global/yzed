@@ -52,6 +52,7 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
           object-fit: contain;
           border: 1px solid white;
           width: 100%;
+          min-height: 150px;
         }
       `}</style>
     </>
@@ -113,12 +114,13 @@ const ImageCarousel = ({ photos, lightMode }) => {
         .photo-wrapper {
           width: 98%;
           margin: 0 auto;
+          overflow: hidden;
         }
         .modal-image-container img {
           width: 100%;
         }
-        .light.photo-wrapper img {
-          border-color: ${theme.colors.black};
+        .photo-wrapper img {
+          border-color: ${lightMode ? theme.colors.black : theme.colors.white};
         }
       `}</style>
     </>
