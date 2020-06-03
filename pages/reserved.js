@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import BrandPageLayout from '../components/pageLayouts/Brand/Brand/BrandPageLayout';
-
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
@@ -33,7 +32,7 @@ const Resolved = ({ product }) => {
   }, [currentMarker]);
 
   return (
-    <Layout title='YZED.me' loading={!mainProduct || loading}>
+    <Layout title='YZED x Reserved Eco Aware' loading={!mainProduct || loading}>
       <BrandPageLayout model={mainProduct} />
     </Layout>
   );
