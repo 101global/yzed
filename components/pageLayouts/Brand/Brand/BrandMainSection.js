@@ -12,20 +12,20 @@ const BrandMainSection = ({ model, lightMode, setLightMode }) => {
   const photos = [
     {
       id: `${model.name} Detail View 1`,
-      mini: `${imageBaseUrl}${model.imageSlug}_image_1_mini.jpg`,
-      thumb: `${imageBaseUrl}${model.imageSlug}_image_1_thumb.jpg`,
+      mini: `${imageBaseUrl}${model.imageSlug}_image_1_mini-compressor.jpg`,
+      thumb: `${imageBaseUrl}${model.imageSlug}_image_1_thumb-compressor.jpg`,
       max: `${imageBaseUrl}${model.imageSlug}_image_1_max-compressor.jpg`,
     },
     {
       id: `${model.name} Detail View 2`,
-      mini: `${imageBaseUrl}${model.imageSlug}_image_2_mini.jpg`,
-      thumb: `${imageBaseUrl}${model.imageSlug}_image_2_thumb.jpg`,
+      mini: `${imageBaseUrl}${model.imageSlug}_image_2_mini-compressor.jpg`,
+      thumb: `${imageBaseUrl}${model.imageSlug}_image_2_thumb-compressor.jpg`,
       max: `${imageBaseUrl}${model.imageSlug}_image_2_max-compressor.jpg`,
     },
     {
       id: `${model.name} Detail View 3`,
-      mini: `${imageBaseUrl}${model.imageSlug}_image_3_mini.jpg`,
-      thumb: `${imageBaseUrl}${model.imageSlug}_image_3_thumb.jpg`,
+      mini: `${imageBaseUrl}${model.imageSlug}_image_3_mini-compressor.jpg`,
+      thumb: `${imageBaseUrl}${model.imageSlug}_image_3_thumb-compressor.jpg`,
       max: `${imageBaseUrl}${model.imageSlug}_image_3_max-compressor.jpg`,
     },
   ];

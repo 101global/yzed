@@ -104,7 +104,8 @@ const ImageCarousel = ({ photos, lightMode }) => {
           margin: 5px;
         }
         .modal-image-container {
-          height: 100%;
+          width: 100%;
+          height: auto;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -114,6 +115,9 @@ const ImageCarousel = ({ photos, lightMode }) => {
         .photo-wrapper {
           width: 98%;
           margin: 0 auto;
+          overflow: hidden;
+        }
+        .modal-image-container {
           overflow: hidden;
         }
         .modal-image-container img {

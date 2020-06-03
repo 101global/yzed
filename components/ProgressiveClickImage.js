@@ -11,7 +11,7 @@ const ProgressiveClickImage = ({ preview, image, callBack, alt }) => {
       setTimeout(() => {
         setCurrentImage(loadingImage.src);
         setLoading(false);
-      }, 20000);
+      }, 200);
     };
   };
 
@@ -25,8 +25,11 @@ const ProgressiveClickImage = ({ preview, image, callBack, alt }) => {
       style={{
         filter: `${loading ? 'blur(10px)' : ''}`,
         transition: '1s filter linear',
-        minHeight: '190px',
         background: '#B2CCA2',
+        height: '775px',
+        width: '1515px',
+        maxWidth: '100%',
+        height: 'auto',
       }}
       src={currentImage}
       onClick={() => callBack()}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 const ProgressiveImage = ({ preview, image }) => {
-  console.log(preview);
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
 
@@ -23,7 +22,15 @@ const ProgressiveImage = ({ preview, image }) => {
 
   return (
     <img
-      style={{ filter: `${loading ? 'blur(30px)' : ''}`, transition: '1s filter linear' }}
+      style={{
+        filter: `${loading ? 'blur(30px)' : ''}`,
+        transition: '1s filter linear',
+        background: '#B2CCA2',
+        height: '775px',
+        width: '1515px',
+        maxWidth: '100%',
+        height: 'auto',
+      }}
       src={currentImage}
       alt={currentImage}
     />
