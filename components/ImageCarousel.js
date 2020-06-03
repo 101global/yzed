@@ -52,7 +52,6 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
           object-fit: contain;
           border: 1px solid white;
           width: 100%;
-          min-height: 150px;
         }
       `}</style>
     </>
@@ -105,7 +104,6 @@ const ImageCarousel = ({ photos, lightMode }) => {
         }
         .modal-image-container {
           height: 100%;
-
           display: flex;
           overflow: hidden;
           justify-content: center;
