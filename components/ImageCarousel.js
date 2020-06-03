@@ -121,6 +121,7 @@ const ImageCarousel = ({ photos, lightMode }) => {
 
         .modal-image-container img {
           width: 100%;
+          height: auto;
         }
         .photo-wrapper img {
           border-color: ${lightMode ? theme.colors.black : theme.colors.white};
