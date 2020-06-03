@@ -3,6 +3,7 @@ import BrandFooter from './BrandFooter';
 import BrandHeader from './BrandHeader';
 import BrandMainSection from './BrandMainSection';
 import { Element } from 'react-scroll';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { useState } from 'react';
 
 const BrandPageLayout = ({ model }) => {
@@ -10,16 +11,24 @@ const BrandPageLayout = ({ model }) => {
   return (
     <div>
       <Element name='introduction'>
-        <BrandHeader />
+        <LazyLoadComponent>
+          <BrandHeader />
+        </LazyLoadComponent>
       </Element>
       <Element name='model'>
-        <BrandMainSection model={model} lightMode={lightMode} setLightMode={setLightMode} />
+        <LazyLoadComponent>
+          <BrandMainSection model={model} lightMode={lightMode} setLightMode={setLightMode} />
+        </LazyLoadComponent>
       </Element>
       <Element name='about'>
-        <BrandAbout lightMode={lightMode} />
+        <LazyLoadComponent>
+          <BrandAbout lightMode={lightMode} />
+        </LazyLoadComponent>
       </Element>
       <Element>
-        <BrandFooter lightMode={lightMode} />
+        <LazyLoadComponent>
+          <BrandFooter lightMode={lightMode} />
+        </LazyLoadComponent>
       </Element>
     </div>
   );
