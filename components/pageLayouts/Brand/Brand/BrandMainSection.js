@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import ImageCarousel from '../../../ImageCarousel';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import ModelViewerController from '../../../reusableStyledComponents/ModelViewerController';
+import ModelViewerController from '../../../reusableStyledComponents/ModelViewers/ModelViewerController';
 import PropTypes from 'prop-types';
 import theme from '../../../../utilities/theme';
 
@@ -125,4 +125,3 @@ BrandMainSection.propTypes = {
   lightMode: PropTypes.bool.isRequired,
   setLightMode: PropTypes.func.isRequired,
 };
-

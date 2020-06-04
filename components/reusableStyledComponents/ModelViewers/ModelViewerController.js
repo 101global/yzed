@@ -4,7 +4,7 @@ import AnimatedModelViewer from './AnimatedModelViewer';
 import PropTypes from 'prop-types';
 import StationaryModelViewer from './StationaryModelViewer';
 import SwitchSelector from 'react-switch-selector';
-import theme from '../../utilities/theme';
+import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, lightMode, setLightMode }) => {
   const [showAnimated, setShowAnimated] = useState(false);
