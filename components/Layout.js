@@ -75,7 +75,7 @@ function Layout({ children, title, loading }) {
 export default Layout;
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
   loading: PropTypes.bool,
 };
