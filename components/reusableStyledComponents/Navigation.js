@@ -1,6 +1,7 @@
 import { Element, Events, Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import React, { useContext, useEffect, useState } from 'react';
 
+import { PropTypes } from 'prop-types';
 import theme from '../../utilities/theme';
 
 const Navigation = ({ collapsed }) => {
@@ -78,3 +79,7 @@ const Navigation = ({ collapsed }) => {
 };
 
 export default Navigation;
+
+Navigation.propTypes = {
+  isCollapsed: PropTypes.bool,
+};

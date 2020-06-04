@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 
 const AnimatedModelViewer = ({ model }) => {
   const modelRef = useRef(null);
@@ -45,3 +46,7 @@ const AnimatedModelViewer = ({ model }) => {
 };
 
 export default AnimatedModelViewer;
+
+AnimatedModelViewer.propTypes = {
+  model: PropTypes.object.isRequired,
+};

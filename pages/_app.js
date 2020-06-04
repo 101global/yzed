@@ -38,6 +38,18 @@ function MyApp({ Component, pageProps }) {
       </Head>
       {/* Wrap this with Firebase Provider later if needed */}
       <Component {...pageProps} />
+      <noscript>
+        <iframe
+          src='noscript.html'
+          frameBorder='0'
+          style={{ height: '100%', width: '100%' }}></iframe>
+        <noframes>
+          You maybe have disabled JavaScript and Frames, please enable JavaScript or frames in You
+          browser. More info: <br />
+          <a href='http://tutorial.com/how-to-enable-js'>How to enable JavaScript</a> <br />
+          <a href='http://tutorial.com/how-to-enable-frames'>How to enable frames</a>
+        </noframes>
+      </noscript>
     </>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 
 const StationaryModelViewer = ({ model }) => {
   const modelRef = useRef(null);
@@ -47,3 +48,7 @@ const StationaryModelViewer = ({ model }) => {
 };
 
 export default StationaryModelViewer;
+
+StationaryModelViewer.propTypes = {
+  model: PropTypes.object.isRequired,
+};

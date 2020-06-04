@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import AnimatedModelViewer from './AnimatedModelViewer';
+import PropTypes from 'prop-types';
 import StationaryModelViewer from './StationaryModelViewer';
 import SwitchSelector from 'react-switch-selector';
 import theme from '../../utilities/theme';
@@ -151,3 +152,9 @@ const ModelViewerController = ({ model, lightMode, setLightMode }) => {
 };
 
 export default ModelViewerController;
+
+ModelViewerController.propTypes = {
+  model: PropTypes.object.isRequired,
+  lightMode: PropTypes.bool.isRequired,
+  setLightMode: PropTypes.func.isRequired,
+};

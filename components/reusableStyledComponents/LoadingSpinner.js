@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import theme from '../../utilities/theme';
 
@@ -68,3 +69,7 @@ const LoadingSpinner = ({ color }) => {
 };
 
 export default LoadingSpinner;
+
+LoadingSpinner.propTypes = {
+  color: PropTypes.string.isRequired,
+};
