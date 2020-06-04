@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import ImageCarousel from '../../../ImageCarousel';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ModelViewerController from '../../../reusableStyledComponents/ModelViewerController';
+import PropTypes from 'prop-types';
 import theme from '../../../../utilities/theme';
 
 const photos = ['testimg_1-min.jpg', 'testimg_2-min.jpg', 'testimg_3-min.jpg'];
@@ -118,3 +119,10 @@ const BrandMainSection = ({ model, lightMode, setLightMode }) => {
 };
 
 export default BrandMainSection;
+
+BrandMainSection.propTypes = {
+  model: PropTypes.object.isRequired,
+  lightMode: PropTypes.bool.isRequired,
+  setLightMode: PropTypes.func.isRequired,
+};
+

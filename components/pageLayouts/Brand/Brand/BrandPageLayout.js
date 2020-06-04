@@ -4,6 +4,7 @@ import BrandHeader from './BrandHeader';
 import BrandMainSection from './BrandMainSection';
 import { Element } from 'react-scroll';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 const BrandPageLayout = ({ model }) => {
@@ -35,3 +36,7 @@ const BrandPageLayout = ({ model }) => {
 };
 
 export default BrandPageLayout;
+
+BrandPageLayout.propTypes = {
+  model: PropTypes.object.isRequired,
+};

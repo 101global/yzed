@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import PropTypes from 'prop-types';
 import theme from '../../../../utilities/theme';
 
 const BrandFooter = ({ lightMode }) => {
@@ -47,3 +48,7 @@ const BrandFooter = ({ lightMode }) => {
 };
 
 export default BrandFooter;
+
+BrandFooter.propTypes = {
+  lightMode: PropTypes.bool,
+};

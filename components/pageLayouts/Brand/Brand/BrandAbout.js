@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import PropTypes from 'prop-types';
 import theme from '../../../../utilities/theme';
 
 const BrandAbout = ({ lightMode }) => {
@@ -203,3 +204,7 @@ const BrandAbout = ({ lightMode }) => {
 };
 
 export default BrandAbout;
+
+BrandAbout.propTypes = {
+  lightMode: PropTypes.bool,
+};
