@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import LoadingSpinner from './reusableStyledComponents/LoadingSpinner';
+import PropTypes from 'prop-types';
 import theme from '../utilities/theme';
 
 function Layout({ children, title, loading }) {
@@ -72,3 +73,9 @@ function Layout({ children, title, loading }) {
 }
 
 export default Layout;
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  loading: PropTypes.bool,
+};

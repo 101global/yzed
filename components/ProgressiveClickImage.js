@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import PropTypes from 'prop-types';
+
 const ProgressiveClickImage = ({ preview, image, callBack, alt }) => {
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
@@ -38,3 +40,9 @@ const ProgressiveClickImage = ({ preview, image, callBack, alt }) => {
 };
 
 export default ProgressiveClickImage;
+ProgressiveClickImage.propTypes = {
+  preview: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  callBack: PropTypes.func.isRequired,
+  alt: PropTypes.string.isRequired,
+};

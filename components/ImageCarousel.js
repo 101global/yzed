@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import ProgressiveClickImage from './ProgressiveClickImage';
 import ProgressiveImage from './ProgressiveImage';
+import PropTypes from 'prop-types';
 import theme from '../utilities/theme';
 
 const responsive = {
@@ -31,7 +32,7 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
   const btnRef = useRef(null);
 
   const handleClick = () => {
-    setCurrentImage({ mini: photo.mini, max: photo.max });
+    setCurrentImage({ mini: photo.mini, max: photo.max, alt: photo.id });
     openModal(btnRef);
   };
   return (
@@ -58,8 +59,14 @@ const Image = ({ openModal, photo, setCurrentImage }) => {
   );
 };
 
+Image.propTypes = {
+  openModal: PropTypes.func.isRequired,
+  photo: PropTypes.object.isRequired,
+  setCurrentImage: PropTypes.func.isRequired,
+};
+
 const ImageCarousel = ({ photos, lightMode }) => {
-  const [currentImage, setCurrentImage] = useState({ mini: '', max: '' });
+  const [currentImage, setCurrentImage] = useState(null);
 
   const { modalProps, open } = useModal({ background: '#0d0d0df9' });
 
@@ -90,7 +97,13 @@ const ImageCarousel = ({ photos, lightMode }) => {
       </Carousel>
       <Modal {...modalProps}>
         <div className='modal-image-container'>
-          <ProgressiveImage preview={currentImage.mini} image={currentImage.max} />
+          {currentImage && (
+            <ProgressiveImage
+              preview={currentImage.mini}
+              image={currentImage.max}
+              alt={currentImage.id}
+            />
+          )}
         </div>
       </Modal>
       <style jsx>{`
@@ -130,3 +143,8 @@ const ImageCarousel = ({ photos, lightMode }) => {
 };
 
 export default ImageCarousel;
+
+ImageCarousel.propTypes = {
+  photo: PropTypes.object.isRequired,
+  lightMode: PropTypes.bool,
+};
