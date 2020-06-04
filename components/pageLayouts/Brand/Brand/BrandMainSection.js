@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import ImageCarousel from '../../../ImageCarousel';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import ModelViewerController from '../../../reusableStyledComponents/ModelViewers/ModelViewerController';
+import ModelViewerController from '../../../reusableStyledComponents/modelViewers/ModelViewerController';
 import PropTypes from 'prop-types';
 import theme from '../../../../utilities/theme';
 
