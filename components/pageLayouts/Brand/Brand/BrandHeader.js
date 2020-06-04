@@ -125,7 +125,7 @@ const BrandHeader = () => {
           transition: all 1s ease;
         }
         .logo {
-          width: 50%;
+          width: 400px;
         }
         .right-content {
           height: 100%;
