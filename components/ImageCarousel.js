@@ -145,6 +145,6 @@ const ImageCarousel = ({ photos, lightMode }) => {
 export default ImageCarousel;
 
 ImageCarousel.propTypes = {
-  photo: PropTypes.object.isRequired,
+  photos: PropTypes.array.isRequired,
   lightMode: PropTypes.bool,
 };
