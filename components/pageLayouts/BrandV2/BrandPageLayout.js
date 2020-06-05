@@ -1,10 +1,15 @@
 import { Controller, Scene } from 'react-scrollmagic';
 import { Element, Events, Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Timeline, Tween } from 'react-gsap';
+
+import BrandAbout from '../Brand/BrandAbout';
 
 const Sticky2 = () => {
   const [dark, setDark] = useState(false);
+
+  useEffect(() => {}, []);
+
   return (
     <div className='layout-container'>
       <nav>
@@ -15,7 +20,7 @@ const Sticky2 = () => {
           duration={250}
           className='nav-scroll-link'
           activeClass='active'>
-          1
+          <p onClick={() => setDark(false)}>1</p>
         </Link>
         <Link
           to='2'
@@ -24,7 +29,7 @@ const Sticky2 = () => {
           duration={250}
           className='nav-scroll-link'
           activeClass='active'>
-          2
+          <p onClick={() => setDark(true)}>2</p>
         </Link>
         <Link
           to='3'
@@ -33,7 +38,7 @@ const Sticky2 = () => {
           duration={250}
           className='nav-scroll-link'
           activeClass='active'>
-          3
+          <p onClick={() => setDark(false)}>3</p>
         </Link>
         <Link
           to='4'
@@ -42,7 +47,7 @@ const Sticky2 = () => {
           duration={250}
           className='nav-scroll-link'
           activeClass='active'>
-          4
+          <p onClick={() => setDark(true)}>4</p>
         </Link>
         <Link
           to='5'
@@ -51,7 +56,7 @@ const Sticky2 = () => {
           duration={250}
           className='nav-scroll-link'
           activeClass='active'>
-          5
+          <p onClick={() => setDark(false)}>5</p>
         </Link>
       </nav>
       <div>
@@ -63,12 +68,11 @@ const Sticky2 = () => {
           </Element>
         </div>
         <Controller>
-          <Scene triggerHook='onLeave' duration={1000} pin>
+          <Scene classToggle={'darkMode2'} triggerHook='onLeave' duration={1000} pin>
             {(progress, event) => {
-              setDark(false);
               return (
                 <div className='sticky'>
-                  <Element name='2'>
+                  <Element name='2' className='darkMode'>
                     <div className='section-container'>
                       <h1>2</h1>
                     </div>
@@ -77,12 +81,8 @@ const Sticky2 = () => {
               );
             }}
           </Scene>
-        </Controller>
-        <Controller>
           <Scene triggerHook='onLeave' duration={1000} pin>
             {(progress, event) => {
-              console.log(event);
-              setDark(true);
               return (
                 <div className='section'>
                   <Element name='3'>
@@ -94,18 +94,18 @@ const Sticky2 = () => {
               );
             }}
           </Scene>
-        </Controller>
-        <Controller>
-          <Scene triggerHook='onLeave' duration={1000} pin>
-            {(progress) => (
-              <div className='sticky'>
-                <Element name='4'>
-                  <div className='section-container'>
-                    <h1>4</h1>
-                  </div>
-                </Element>
-              </div>
-            )}
+          <Scene classToggle={'darkMode4'} triggerHook='onLeave' duration={1000} pin>
+            {(progress, event) => {
+              return (
+                <div className='sticky'>
+                  <Element name='4' className='darkMode'>
+                    <div className='section-container'>
+                      <h1>4</h1>
+                    </div>
+                  </Element>
+                </div>
+              );
+            }}
           </Scene>
         </Controller>
         <div className='section'>
@@ -156,6 +156,7 @@ const Sticky2 = () => {
           display: flex;
           justify-content: center;
           align-items: center;
+          overflow: hidden;
         }
       `}</style>
       <style jsx global>{`
