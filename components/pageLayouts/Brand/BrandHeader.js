@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import Navigation from '../../../reusableStyledComponents/Navigation';
-import theme from '../../../../utilities/theme';
+import Navigation from '../../reusableStyledComponents/Navigation';
+import theme from '../../../utilities/theme';
 
 const BrandHeader = () => {
   const [collapsed, setCollapsed] = useState(false);

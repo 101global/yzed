@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import ImageCarousel from '../../../ImageCarousel';
+import ImageCarousel from '../../ImageCarousel';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import ModelViewerController from '../../../reusableStyledComponents/modelViewers/ModelViewerController';
+import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
 import PropTypes from 'prop-types';
-import theme from '../../../../utilities/theme';
+import theme from '../../../utilities/theme';
 
 const photos = ['testimg_1-min.jpg', 'testimg_2-min.jpg', 'testimg_3-min.jpg'];
 

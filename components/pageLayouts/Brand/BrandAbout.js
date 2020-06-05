@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
-import theme from '../../../../utilities/theme';
+import theme from '../../../utilities/theme';
 
 const BrandAbout = ({ lightMode }) => {
   return (

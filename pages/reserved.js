@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import BrandPageLayout from '../components/pageLayouts/Brand/Brand/BrandPageLayout';
+import BrandPageLayout from '../components/pageLayouts/Brand/BrandPageLayout';
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
-const Resolved = ({ product }) => {
+const Reserved = ({ product }) => {
   const [loading, setLoading] = useState(false);
   const [displayDate, setDisplayDate] = useState('');
 
@@ -51,4 +51,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Resolved;
+export default Reserved;

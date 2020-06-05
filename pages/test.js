@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import BrandPageLayout from '../components/pageLayouts/Brand/BrandPageLayout';
+import BrandPageLayout from '../components/pageLayouts/BrandV2/BrandPageLayout';
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
-const Home = ({ product }) => {
+const Reserved = ({ product }) => {
   const [loading, setLoading] = useState(false);
   const [displayDate, setDisplayDate] = useState('');
 
@@ -31,11 +31,7 @@ const Home = ({ product }) => {
     setLoading(false);
   }, [currentMarker]);
 
-  return (
-    <Layout title='YZED.me' loading={!mainProduct || loading}>
-      <BrandPageLayout model={mainProduct} />
-    </Layout>
-  );
+  return <BrandPageLayout model={mainProduct} />;
 };
 
 export async function getStaticProps() {
@@ -51,4 +47,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Home;
+export default Reserved;
