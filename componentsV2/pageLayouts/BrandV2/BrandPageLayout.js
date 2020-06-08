@@ -7,18 +7,17 @@ const Sticky2 = () => {
   const [dark, setDark] = useState(true);
   // Set Scroll Listener on Active LInk Class.
   useEffect(() => {
-    const darkItemPresent = document.getElementsByClassName('activeDarkMode');
-    const lightItemPresent = document.getElementsByClassName('activeLightMode');
-    const container = document.querySelector('.layout-container');
-
     window.addEventListener('scroll', () => {
-      if (darkItemPresent.length > 0) {
-        console.log(false);
-        setDark(false);
-      }
-      if (lightItemPresent.length > 0) {
-        console.log(true);
+      console.log(window.scrollY / window.innerHeight);
+      console.log(window.scrollY);
+      if (
+        window.scrollY / window.innerHeight < 0.5 ||
+        window.scrollY / window.innerHeight > 2.8 ||
+        window.scrollY < 100
+      ) {
         setDark(true);
+      } else {
+        setDark(false);
       }
     });
   }, []);
@@ -33,14 +32,7 @@ const Sticky2 = () => {
           duration={250}
           className='nav-scroll-link'
           activeClass='activeLightMode'>
-          <p
-            onClick={() => {
-              setTimeout(() => {
-                setDark(false);
-              }, 1000);
-            }}>
-            1
-          </p>
+          <p>1</p>
         </Link>
         <Link
           to='2'
@@ -49,14 +41,7 @@ const Sticky2 = () => {
           duration={250}
           className='nav-scroll-link'
           activeClass='activeDarkMode'>
-          <p
-            onClick={() => {
-              setTimeout(() => {
-                setDark(false);
-              }, 1000);
-            }}>
-            2
-          </p>
+          <p>2</p>
         </Link>
         <Link
           to='3'
@@ -65,14 +50,7 @@ const Sticky2 = () => {
           duration={250}
           className='nav-scroll-link'
           activeClass='activeLightMode'>
-          <p
-            onClick={() => {
-              setTimeout(() => {
-                setDark(true);
-              }, 1000);
-            }}>
-            3
-          </p>
+          <p>3</p>
         </Link>
       </nav>
       <div>
@@ -83,6 +61,20 @@ const Sticky2 = () => {
             </div>
           </Element>
         </div>
+        {/* <div className='sticky'>
+          <Element name='2'>
+            <div className='section-container'>
+              <h1>2</h1>
+            </div>
+          </Element>
+        </div>
+        <div className='section'>
+          <Element name='3'>
+            <div className='section-container'>
+              <h1>3</h1>
+            </div>
+          </Element>
+        </div> */}
         <Controller>
           <Scene classToggle={'darkMode2'} triggerHook='onLeave' duration={1000} pin>
             {(progress, event) => {
@@ -118,12 +110,11 @@ const Sticky2 = () => {
         }
         .section,
         .sticky {
-          height: 100vh;
+          height: 101vh;
           color: white;
           font-size: 5rem;
         }
         .section {
-          height: 105vh;
           margin: 0;
           background: linear-gradient(160deg, #050505 0%, black 100%);
         }
@@ -131,7 +122,6 @@ const Sticky2 = () => {
           background: linear-gradient(160deg, #e4f5fc 0%, white 100%);
           width: 100%;
           color: black;
-          height: 99vh;
         }
         nav {
           position: fixed;
