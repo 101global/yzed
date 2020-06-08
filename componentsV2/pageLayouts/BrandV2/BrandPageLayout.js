@@ -1,121 +1,178 @@
-import React, { useState } from 'react';
+import { Controller, Scene } from 'react-scrollmagic';
+import { Element, Events, Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import { Timeline, Tween } from 'react-gsap';
+import { useEffect, useRef, useState } from 'react';
 
-import BrandModelTop from './BrandModelTop';
-import Head from 'next/head';
-import ModelViewerController from '../../../componentsV2/reusableStyledComponents/modelViewers/ModelViewerController';
-import { Pager } from 'react-bootstrap';
-import ReactPageScroller from 'react-page-scroller';
-import YZEDLogoSVG from '../../reusableStyledComponents/YZEDLogoSVG';
-import theme from '../../../utilities/theme';
+const Sticky2 = () => {
+  const [dark, setDark] = useState(true);
+  // Set Scroll Listener on Active LInk Class.
+  useEffect(() => {
+    const darkItemPresent = document.getElementsByClassName('activeDarkMode');
+    const lightItemPresent = document.getElementsByClassName('activeLightMode');
+    const container = document.querySelector('.layout-container');
 
-const FullPage = ({ model }) => {
-  console.log('MODEL', model);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [darkPage, setDarkPage] = useState(true);
-  const [lightModeModelView, setLightModeModelView] = useState(false);
-
-  const handlePageChange = (number) => {
-    if (number % 2 === 0) {
-      setDarkPage(false);
-    } else {
-      setDarkPage(true);
-    }
-    setCurrentPage(number); // set currentPage number, to reset it from the previous selected.
-    setTimeout(() => {}, 300);
-  };
-
-  const getPagesNumbers = () => {
-    const pages = ['3D Model', 'About / Contact', 'The Process'];
-    const pageNumbers = [];
-
-    for (let i = 0; i < pages.length; i++) {
-      pageNumbers.push(
-        <Pager.Item
-          key={i}
-          eventKey={i}
-          onSelect={() => handlePageChange(i)}
-          className={currentPage === i ? 'active item' : 'item'}>
-          <span>{`0${i + 1}.`}</span> {pages[i]}
-        </Pager.Item>
-      );
-    }
-
-    return [...pageNumbers];
-  };
-
-  const pagesNumbers = getPagesNumbers();
+    window.addEventListener('scroll', () => {
+      if (darkItemPresent.length > 0) {
+        console.log(false);
+        setDark(false);
+      }
+      if (lightItemPresent.length > 0) {
+        console.log(true);
+        setDark(true);
+      }
+    });
+  }, []);
 
   return (
-    <>
-      <Head>
-        <script
-          type='module'
-          src='https://unpkg.com/@google/model-viewer/dist/model-viewer.js'></script>
-        <script
-          noModule
-          src='https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js'></script>
-      </Head>
-      <ReactPageScroller pageOnChange={handlePageChange} customPageNumber={currentPage}>
-        <div
-          className='component first-component'
-          style={{ background: lightModeModelView ? theme.colors.white : theme.colors.black }}>
-          <BrandModelTop
-            model={model}
-            lightModeModelView={lightModeModelView}
-            setLightModeModelView={setLightModeModelView}
-          />
+    <div className='layout-container'>
+      <nav>
+        <Link
+          to='1'
+          spy={true}
+          smooth={true}
+          duration={250}
+          className='nav-scroll-link'
+          activeClass='activeLightMode'>
+          <p
+            onClick={() => {
+              setTimeout(() => {
+                setDark(false);
+              }, 1000);
+            }}>
+            1
+          </p>
+        </Link>
+        <Link
+          to='2'
+          spy={true}
+          smooth={true}
+          duration={250}
+          className='nav-scroll-link'
+          activeClass='activeDarkMode'>
+          <p
+            onClick={() => {
+              setTimeout(() => {
+                setDark(false);
+              }, 1000);
+            }}>
+            2
+          </p>
+        </Link>
+        <Link
+          to='3'
+          spy={true}
+          smooth={true}
+          duration={250}
+          className='nav-scroll-link'
+          activeClass='activeLightMode'>
+          <p
+            onClick={() => {
+              setTimeout(() => {
+                setDark(true);
+              }, 1000);
+            }}>
+            3
+          </p>
+        </Link>
+      </nav>
+      <div>
+        <div className='section'>
+          <Element name='1'>
+            <div className='section-container'>
+              <h1>1</h1>
+            </div>
+          </Element>
         </div>
-        <div className='component second-component' style={{ background: theme.colors.white }}>
-          <h2>About</h2>
-        </div>
-        <div className='component third-component' style={{ background: theme.colors.black }}>
-          <h2>Contact</h2>
-        </div>
-      </ReactPageScroller>
-      <Pager className='pagination-container' bsSize='large'>
-        <YZEDLogoSVG fill={!darkPage ? theme.colors.white : theme.colors.black} />
-        {pagesNumbers}
-      </Pager>
-      <style jsx global>{`
-        .component {
+        <Controller>
+          <Scene classToggle={'darkMode2'} triggerHook='onLeave' duration={1000} pin>
+            {(progress, event) => {
+              return (
+                <div className='sticky'>
+                  <Element name='2' className='darkMode'>
+                    <div className='section-container'>
+                      <h1>2</h1>
+                    </div>
+                  </Element>
+                </div>
+              );
+            }}
+          </Scene>
+          <Scene triggerHook='onLeave' duration={1000} pin>
+            {(progress, event) => {
+              return (
+                <div className='section'>
+                  <Element name='3'>
+                    <div className='section-container'>
+                      <h1>3</h1>
+                    </div>
+                  </Element>
+                </div>
+              );
+            }}
+          </Scene>
+        </Controller>
+      </div>
+      <style jsx>{`
+        .layout-container {
+          margin: 0;
+        }
+        .section,
+        .sticky {
+          height: 100vh;
+          color: white;
+          font-size: 5rem;
+        }
+        .section {
+          height: 105vh;
+          margin: 0;
+          background: linear-gradient(160deg, #050505 0%, black 100%);
+        }
+        .sticky {
+          background: linear-gradient(160deg, #e4f5fc 0%, white 100%);
+          width: 100%;
+          color: black;
+          height: 99vh;
+        }
+        nav {
+          position: fixed;
+          top: 0;
+          height: 100px;
+          width: 100%;
+          background-color: ${dark ? 'black' : 'white'};
+          transition: all 0.5s;
+          z-index: 100;
+          color: white;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+        }
+        .section-container {
+          height: 100vh;
+          width: 100vw;
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 100%;
-        }
-        .pagination-container li {
-          margin-bottom: 30px;
-        }
-        .pagination-container li a {
-          color: ${darkPage ? theme.colors.black : theme.colors.white};
-          transition: all 0.3s;
-          text-decoration: none;
-          font-weight: 100;
-          font-size: 1.2rem;
-          letter-spacing: 0.12em;
-        }
-        .pagination-container li.active a,
-        .pagination-container li a span {
-          font-weight: 700;
-        }
-        .pagination-container {
-          padding: 30px 0;
-          position: fixed;
-
-          z-index: 100;
-          background-color: transparent;
-          top: 50%;
-          left: 12%;
-          transform: translateY(-50%);
-          list-style-type: none;
-        }
-        svg {
-          height: 60px;
-          margin-bottom: 30px;
+          overflow: hidden;
         }
       `}</style>
-    </>
+      <style jsx global>{`
+        body,
+        h1 {
+          margin: 0;
+        }
+        a.nav-scroll-link {
+          font-size: 2rem;
+          color: ${dark ? 'white' : 'black'};
+          transition: all 0.5s;
+        }
+        a.nav-scroll-link.activeLightMode,
+        a.nav-scroll-link.activeDarkMode {
+          color: red;
+        }
+      `}</style>
+    </div>
   );
 };
 
-export default FullPage;
+export default Sticky2;
