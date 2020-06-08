@@ -1,107 +1,66 @@
-import { FullPage, Slide } from 'react-full-page';
+import React, { useState } from 'react';
 
-import PropTypes from 'prop-types';
-import React from 'react';
+import BrandModelTop from './';
+import { Pager } from 'react-bootstrap';
+import ReactPageScroller from 'react-page-scroller';
 
-class CustomControls extends React.Component {
-  static propTypes = {
-    className: PropTypes.string,
-    getCurrentSlideIndex: PropTypes.func.isRequired,
-    onNext: PropTypes.func.isRequired,
-    onPrev: PropTypes.func.isRequired,
-    scrollToSlide: PropTypes.func.isRequired,
-    slidesCount: PropTypes.number.isRequired,
-    style: PropTypes.object,
+const FullPage = () => {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageChange = (number) => {
+    setCurrentPage(number); // set currentPage number, to reset it from the previous selected.
   };
 
-  static defaultProps = {
-    className: 'full-page-controls',
-    style: {
-      left: '50%',
-      paddingTop: '10px',
-      position: 'fixed',
-      transform: 'translateX(-50%)',
-    },
-  };
+  const getPagesNumbers = () => {
+    const pages = ['Model', 'About', 'Contact'];
+    const pageNumbers = [];
 
-  renderSlidesNumbers(currentSlideIndex) {
-    const slides = ['Model', 'About', 'Process', 'Our Story'];
-    const { slidesCount, scrollToSlide } = this.props;
-    const slidesNumbers = [];
-    for (let i = 0; i < slides.length; i++) {
-      console.log(i);
-      const buttonProps = {
-        // disabled: currentSlideIndex === i,
-        key: i,
-        onClick: () => scrollToSlide(i),
-        className: currentSlideIndex === i ? 'active button' : 'button',
-      };
-      slidesNumbers.push(
-        <button type='button' {...buttonProps}>
-          {slides[i]}
-        </button>
+    for (let i = 0; i < pages.length; i++) {
+      pageNumbers.push(
+        <Pager.Item
+          key={i}
+          eventKey={i}
+          onSelect={() => handlePageChange(i)}
+          className={currentPage === i ? 'active item' : 'item'}>
+          {pages[i]}
+        </Pager.Item>
       );
     }
-    return slidesNumbers;
-  }
 
-  render() {
-    const { getCurrentSlideIndex, slidesCount, style, className } = this.props;
-    const currentSlideIndex = getCurrentSlideIndex();
-
-    return (
-      <>
-        <div className={className} style={style}>
-          {this.renderSlidesNumbers(currentSlideIndex)}
-        </div>
-        <style jsx global>
-          {`
-            .active {
-              color: red;
-            }
-          `}
-        </style>
-      </>
-    );
-  }
-}
-
-export default function FullPageExampleCustomControls() {
-  const baseStyle = {
-    alignItems: 'center',
-    display: 'flex',
-    justifyContent: 'center',
+    return [...pageNumbers];
   };
+
+  const pagesNumbers = getPagesNumbers();
+
   return (
-    <FullPage controls={CustomControls} duration={1500}>
-      <Slide
-        style={{
-          ...baseStyle,
-          background: '#2ECC40',
-        }}>
-        <h1>Custom Controls</h1>
-      </Slide>
-      <Slide
-        style={{
-          ...baseStyle,
-          background: '#0074D9',
-        }}>
-        <h1>2</h1>
-      </Slide>
-      <Slide
-        style={{
-          ...baseStyle,
-          background: '#00c4ff',
-        }}>
-        <h1>3</h1>
-      </Slide>
-      <Slide
-        style={{
-          ...baseStyle,
-          background: '#d52685',
-        }}>
-        <h1>4</h1>
-      </Slide>
-    </FullPage>
+    <>
+      <ReactPageScroller pageOnChange={handlePageChange} customPageNumber={currentPage}>
+        <div className='component first-component' style={{ background: 'green' }}>
+          <BrandModelTop />
+        </div>
+        <div className='component second-component' style={{ background: 'yellow' }}>
+          <h2>About</h2>
+        </div>
+        <div className='component third-component' style={{ background: 'red' }}>
+          <h2>Contact</h2>
+        </div>
+      </ReactPageScroller>
+      <Pager className='pagination-additional-class' bsSize='large'>
+        {pagesNumbers}
+      </Pager>
+      <style jsx global>{`
+        .component {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        }
+        li.active a {
+          color: red;
+        }
+      `}</style>
+    </>
   );
-}
+};
+
+export default FullPage;

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import BrandPageLayout from '../components/pageLayouts/BrandV2/BrandPageLayout';
-import Layout from '../components/Layout';
+import BrandPageLayout from '../componentsV2/pageLayouts/BrandV2/BrandPageLayout';
+import Layout from '../componentsV2/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
@@ -15,7 +15,6 @@ const Reserved = ({ product }) => {
 
   useEffect(() => {
     setLoading(true);
-
     const model = {
       brandName: product.fields.brandName.stringValue,
       glbFile: product.fields.glbFile.stringValue,
@@ -31,7 +30,11 @@ const Reserved = ({ product }) => {
     setLoading(false);
   }, [currentMarker]);
 
-  return <BrandPageLayout model={mainProduct} />;
+  return (
+    <Layout>
+      <BrandPageLayout model={mainProduct} />
+    </Layout>
+  );
 };
 
 export async function getStaticProps() {
