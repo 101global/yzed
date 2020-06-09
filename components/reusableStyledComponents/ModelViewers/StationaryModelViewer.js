@@ -35,6 +35,8 @@ const StationaryModelViewer = ({ model }) => {
       <style jsx global>{`
         .model-viewer-container {
           padding: 20px 0;
+          min-height: 700px;
+          width: 100%;
         }
         model-viewer {
           width: 100%;

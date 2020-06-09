@@ -34,13 +34,11 @@ const StationaryModelViewer = ({ model }) => {
       </div>
       <style jsx global>{`
         .model-viewer-container {
-          padding: 20px 0;
           height: 100%;
           width: 100%;
         }
         model-viewer {
           margin: 0 auto;
-          padding: 20px;
           height: 100%;
           width: 100%;
           --poster-color: transparent;

@@ -6,7 +6,7 @@ import StationaryModelViewer from './StationaryModelViewer';
 import SwitchSelector from 'react-switch-selector';
 import theme from '../../../utilities/theme';
 
-const ModelViewerController = ({ model, lightModeModelView, setLightModeModelView }) => {
+const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   const [showAnimated, setShowAnimated] = useState(false);
   const options = [
     {
@@ -22,6 +22,7 @@ const ModelViewerController = ({ model, lightModeModelView, setLightModeModelVie
   const onChange = (newValue) => {
     setShowAnimated(newValue);
   };
+
   return (
     <>
       <div className='control-container'>
@@ -42,20 +43,16 @@ const ModelViewerController = ({ model, lightModeModelView, setLightModeModelVie
             <div className='dark-light-buttons'>
               <div className='toggle-button-container'>
                 <button
-                  className={
-                    !lightModeModelView ? 'toggle-light-button filled' : 'toggle-light-button'
-                  }
-                  onClick={() => setLightModeModelView(false)}
+                  className={topModelDark ? 'toggle-light-button filled' : 'toggle-light-button'}
+                  onClick={() => setTopModelDark(true)}
                   aria-label='Toggle Dark'
                 />
                 <p>Dark</p>
               </div>
               <div className='toggle-button-container'>
                 <button
-                  className={
-                    lightModeModelView ? 'toggle-light-button filled' : 'toggle-light-button'
-                  }
-                  onClick={() => setLightModeModelView(true)}
+                  className={!topModelDark ? 'toggle-light-button filled' : 'toggle-light-button'}
+                  onClick={() => setTopModelDark(false)}
                   aria-label='Toggle Light'
                 />
                 <p>Light</p>
@@ -82,12 +79,11 @@ const ModelViewerController = ({ model, lightModeModelView, setLightModeModelVie
           align-items: center;
         }
         .control-container {
-          height: 90%;
+          height: 90vh;
           width: 100%;
           display: flex;
         }
-        .controls-section {
-        }
+
         .controls {
           display: inline-block;
           flex-direction: column;
@@ -98,7 +94,7 @@ const ModelViewerController = ({ model, lightModeModelView, setLightModeModelVie
           right: 10vw;
           z-index: 1000;
           background: transparent;
-          color: ${lightModeModelView ? theme.colors.black : theme.colors.white};
+          color: ${!topModelDark ? theme.colors.black : theme.colors.white};
         }
         .toggle-button-container {
           display: flex;
@@ -124,6 +120,7 @@ const ModelViewerController = ({ model, lightModeModelView, setLightModeModelVie
         p {
           font-weight: 100;
           margin: 0;
+          font-size: 1.2rem;
         }
         .toggle-light-button {
           border-radius: 15px;
@@ -155,6 +152,7 @@ const ModelViewerController = ({ model, lightModeModelView, setLightModeModelVie
           }
           .viewer-container {
             margin-bottom: 100px;
+            height: 100%;
           }
         }
       `}</style>
