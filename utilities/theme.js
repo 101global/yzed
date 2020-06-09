@@ -8,10 +8,21 @@ const theme = {
   },
   fonts: { main: "'Work Sans', sans-serif;" },
   fontSizes: {
-    paragraphDesktop: '1rem',
-    paragraphMobile: '0.9rem',
-    h2Desktop: '1.5rem',
-    h2Mobile: '1.2rem',
+    pSizeDesktop: '1.2rem',
+    pLetterSpacingDesktop: '0.02em',
+    pLineHeightDesktop: '1.4rem',
+    pSizeMobile: '0.9rem',
+    pLetterSpacingMobile: '0.01em',
+    h2SizeDesktop: '1.6rem',
+    h2SizeMobile: '1.4rem',
+  },
+  fontWeights: {
+    thin: '100',
+    light: '300',
+    regular: '400',
+    medium: '500',
+    semiBold: '600',
+    bold: '700',
   },
   boxShadows: {
     topAndBottom: '0 -6px 6px -6px #b9b9b9, 0 6px 6px -6px #b9b9b9;',
@@ -19,11 +30,9 @@ const theme = {
     top: '0 -6px 6px -6px #b9b9b9;',
     allAround: '0 0 10px 0 #b9b9b9;',
   },
-  widths: {
-    deskTopWidth: '80%',
-    deskTopPadding: '0 10%',
-    mobileWidth: '90%',
-    mobilePadding: '0 5%',
+  boxSizes: {
+    mainContentWidthDesktop: '55%',
+    mainContentMarginLeftDesktop: '25%',
   },
 };
 

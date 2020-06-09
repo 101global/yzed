@@ -7,97 +7,81 @@ const BrandAbout = ({ lightMode }) => {
   return (
     <>
       <div className='about-container'>
-        <div className='mobile-message'>
-          <h2>We believe democratic fashion catalyzes self-discovery.</h2>
-          <p>
-            YZED is the view of four professionals from different backgrounds based in Seoul, South
-            Korea represented by innovation hub 101Global.
-          </p>
-        </div>
         <div className='about'>
           <h2>About Us</h2>
           <p>
-            In 2019, inspired by the desire to make fashion more accessible for the people, we
-            started creating 3D models of real garments and placing them in Augmented Reality. We
-            realized that AR technology makes it possible for users to view detailed clothing pieces
-            anywhere, at any given time.
+            Welcome to YZED,
+            <br /> We believe Democratic Fashion catalyzes self-discovery.
           </p>
           <p>
-            YZED professionals can assist in translating your garments into 3D, placing them in AR
-            environment, and building the web architecture around it. Our experience allows us to
-            create exquisite content in industry-standard tools such as Spark AR, Cinema4D, Clo3D,
-            Adobe CC, React.js, and more.
+            Democratic Fashion is a practice that minimizes the gap between a designers’ work and
+            the mass market, while considering fair economic and social trade off. This manifesto
+            was written in detail listing 5 main practices regarding Democratic Fashion, please
+            check it out{' '}
+            <a
+              href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
+              target='_blank'
+              rel='noopener noreferrer'>
+              here
+            </a>
+            .
           </p>
-          <p>The current page you are in is an example of our beta version to be released soon.</p>
           <p>
-            <i>YZED Team</i>
+            An international team united by the desire to make fashion more accessible for people.
+            We understand that the change of status quo is catalyzed by digital garments in 3D & AR.
+            A digital community where your self-discovery leads our decisions.
           </p>
         </div>
-        <div className='contact'>
-          <h2>Would you like to be a catalyst of democratic fashion?</h2>
-          <a
-            className='black-link'
-            href='mailto:yzed@101.global?subject=Interested in Learning More'>
-            SEND US AN EMAIL
-          </a>
-          <p className='or'>or</p>
-          <a
-            className='blank-link'
-            href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
-            target='_blank'
-            rel='noopener noreferrer'>
-            DOWNLOAD MANIFESTO
-          </a>
-        </div>
+        <a
+          className='black-link'
+          href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
+          target='_blank'
+          rel='noopener noreferrer'>
+          READ MORE
+        </a>
       </div>
       <style jsx>{`
         .about-container {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          width: 100%;
-          padding: 80px 10%;
+          width: ${theme.boxSizes.mainContentWidthDesktop};
           background-color: ${lightMode ? theme.colors.black : theme.colors.white};
           color: ${lightMode ? theme.colors.white : theme.colors.black};
+          margin-left: ${theme.boxSizes.mainContentMarginLeftDesktop};
         }
         .about {
-          width: 49%;
+          width: 85%;
         }
         .about h2 {
-          font-weight: 500;
+          font-weight: ${theme.fontWeights.medium};
+          font-size: ${theme.fontSizes.h2SizeDesktop};
         }
-        .contact {
-          text-align: center;
-          display: inline-block;
-          max-width: 49%;
-        }
-        .contact h2 {
-          text-align: center;
-          font-weight: 500;
-        }
-        .contact a {
-          text-align: center;
-          display: inline-block;
-        }
+
         p {
-          font-weight: 100;
+          font-weight: ${theme.fontWeights.thin};
+          font-size: ${theme.fontSizes.pSizeDesktop};
+          line-height: ${theme.fontSizes.pLineHeightDesktop};
+          letter-spacing: ${theme.fontSizes.pLetterSpacingDesktop};
+        }
+        .about p a {
+          color: ${theme.colors.black};
+          letter-spacing: 0em;
+          text-decoration: none;
         }
         a.black-link {
+          display: block;
           background-color: ${lightMode ? theme.colors.white : theme.colors.black};
           color: ${lightMode ? theme.colors.black : theme.colors.white};
           text-decoration: none;
-          padding: 10px 20px;
-          border-radius: 20px;
-          width: 80%;
-          margin: 0 auto;
+          padding: 10px 0;
+          border-radius: 25px;
           border: 1px solid ${lightMode ? theme.colors.white : theme.colors.black};
-          transition: all 0.3s ease;
-          max-width: 400px;
+          transition: all 0.4s ease;
+          width: 350px !important;
+          font-size: ${theme.fontSizes.pSizeDesktop};
+          text-align: center;
         }
         a {
           letter-spacing: 0.2em;
-          font-weight: 500;
+          font-weight: ${theme.fontWeights.medium};
         }
         a.black-link:hover {
           background-color: ${lightMode ? theme.colors.black : theme.colors.white};
@@ -105,31 +89,7 @@ const BrandAbout = ({ lightMode }) => {
           transition: all 0.3s ease;
           border-color: ${lightMode ? theme.colors.white : theme.colors.black};
         }
-        a.blank-link {
-          color: ${lightMode ? theme.colors.white : theme.colors.black};
-          padding: 5px 0;
-          position: relative;
-          text-decoration: none;
-          text-indent: 0.1em;
-        }
-        a.blank-link:after {
-          content: '';
-          width: 100%;
-          border-bottom: 1px solid ${lightMode ? theme.colors.white : theme.colors.black};
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          transition: all 1s;
-        }
-        a.blank-link:hover:after {
-          width: 0%;
-          transition: all 1s;
-        }
-        .or {
-          color: ${theme.colors.mediumGrey};
-          font-size: 0.8rem;
-          text-align: center;
-        }
+
          {
           /* Tablet Portrait */
         }
@@ -191,11 +151,6 @@ const BrandAbout = ({ lightMode }) => {
           }
           a.black-link {
             width: 100%;
-          }
-        }
-        @media (min-width: 641px) {
-          .mobile-message {
-            display: none;
           }
         }
       `}</style>

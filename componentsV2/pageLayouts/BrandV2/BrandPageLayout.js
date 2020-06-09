@@ -6,6 +6,7 @@ import Layout from '../../Layout';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
 import YZEDLogoSVG from '../../reusableStyledComponents/YZEDLogoSVG';
 import theme from '../../../utilities/theme';
+import BrandAbout from './BrandAbout';
 
 const Sticky2 = ({ model }) => {
   const [dark, setDark] = useState(true);
@@ -56,7 +57,7 @@ const Sticky2 = ({ model }) => {
               className='nav-scroll-link'
               activeClass='active'
               onSetActive={() => setDark(false)}>
-              <span>02.</span> About / Contact
+              <span>02.</span> About
             </Link>
             <Link
               to='3'
@@ -107,7 +108,7 @@ const Sticky2 = ({ model }) => {
 
           <Element name='2'>
             <div className='section-container light-section'>
-              <h1>2</h1>
+              <BrandAbout />
             </div>
           </Element>
 
@@ -128,9 +129,6 @@ const Sticky2 = ({ model }) => {
           </Element>
         </div>
         <style jsx>{`
-          .layout-container {
-            margin: 0;
-          }
           .dark-section,
           .light-section {
             height: 100vh;
@@ -138,7 +136,6 @@ const Sticky2 = ({ model }) => {
             font-size: 5rem;
           }
           .dark-section {
-            margin: 0;
             background: ${theme.colors.black};
           }
           .light-section {
@@ -188,7 +185,7 @@ const Sticky2 = ({ model }) => {
             transition: all 0.2s;
             display: block;
             font-weight: 100;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.02em;
             cursor: pointer;
           }
           a.nav-scroll-link:nth-child(2),
@@ -200,7 +197,7 @@ const Sticky2 = ({ model }) => {
           }
           a.nav-scroll-link.active,
           a.nav-scroll-link span {
-            font-weight: 600;
+            font-weight: 700;
           }
           a.nav-scroll-link span {
             margin-right: 10px;

@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }) {
         <meta property='twitter:title' content='YZED: A unique AR experience' />
         <meta property='twitter:description' content='YZED: Check out unique 3D and AR fashion.' />
         <link
-          href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700,900&display=swap'
+          href='https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,500,600,700&display=swap'
           rel='stylesheet'
           prefetch='true'
         />
