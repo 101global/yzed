@@ -28,12 +28,13 @@ const Sticky2 = ({ model }) => {
           <YZEDLogoSVG fill={!dark ? theme.colors.black : theme.colors.white} />
           <div className='link-container'>
             <Link
-              to='1'
+              to='model'
               spy={true}
               smooth={true}
               duration={500}
               className='nav-scroll-link'
               activeClass='active'
+              offset={-600}
               onSetActive={() => {
                 if (topModelDark) {
                   setDark(true);
@@ -48,6 +49,7 @@ const Sticky2 = ({ model }) => {
               spy={true}
               smooth={true}
               duration={500}
+              offset={-600}
               className='nav-scroll-link'
               activeClass='active'
               onSetActive={() => setDark(false)}>
@@ -58,6 +60,7 @@ const Sticky2 = ({ model }) => {
               spy={true}
               smooth={true}
               duration={500}
+              offset={-600}
               className='nav-scroll-link'
               activeClass='active'
               onSetActive={() => setDark(true)}>
@@ -66,35 +69,31 @@ const Sticky2 = ({ model }) => {
           </div>
         </nav>
         <div>
-          <div className='dark-section'>
-            <Element name='1'>
-              <div
-                className='section-container'
-                style={{
-                  backgroundColor: topModelDark ? theme.colors.black : theme.colors.white,
-                }}>
-                <ModelViewerController
-                  model={model}
-                  topModelDark={topModelDark}
-                  setTopModelDark={toggleLightMode}
-                />
-              </div>
-            </Element>
-          </div>
-          <div className='light-section'>
-            <Element name='2'>
-              <div className='section-container'>
-                <h1>2</h1>
-              </div>
-            </Element>
-          </div>
-          <div className='dark-section'>
-            <Element name='3'>
-              <div className='section-container'>
-                <h1>3</h1>
-              </div>
-            </Element>
-          </div>
+          <Element name='model'>
+            <div
+              className='section-container dark-section'
+              style={{
+                backgroundColor: topModelDark ? theme.colors.black : theme.colors.white,
+              }}>
+              <ModelViewerController
+                model={model}
+                topModelDark={topModelDark}
+                setTopModelDark={toggleLightMode}
+              />
+            </div>
+          </Element>
+
+          <Element name='2'>
+            <div className='section-container light-section'>
+              <h1>2</h1>
+            </div>
+          </Element>
+
+          <Element name='3'>
+            <div className='section-container dark-section'>
+              <h1>3</h1>
+            </div>
+          </Element>
         </div>
         <style jsx>{`
           .layout-container {
