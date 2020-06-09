@@ -1,6 +1,5 @@
-import { Controller, Scene } from 'react-scrollmagic';
 import { Element, Events, Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
-import { Timeline, Tween } from 'react-gsap';
+
 import { useEffect, useRef, useState } from 'react';
 
 import Layout from '../../Layout';
@@ -12,8 +11,8 @@ const Sticky2 = ({ model }) => {
   const [dark, setDark] = useState(true);
   const [topModelDark, setTopModelDark] = useState(true);
 
-  const toggleLightMode = () => {
-    if (topModelDark) {
+  const toggleLightMode = (status) => {
+    if (topModelDark && !status) {
       setDark(false);
       setTopModelDark(false);
     } else {
@@ -21,31 +20,6 @@ const Sticky2 = ({ model }) => {
       setTopModelDark(true);
     }
   };
-
-  // Set Scroll Listener on Active LInk Class.
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      // console.log(currentState);
-      // if (
-      //   currentState.some((state) => state === 'DARKTOP') &&
-      //   window.scrollY / window.innerHeight < 0.7
-      // ) {
-      //   setScrollState(['DARKTOP']);
-      // }
-      // if (!topModelDark && window.scrollY / window.innerHeight < 1.7) {
-      //   setDark(false);
-      //   setTopModelDark(false);
-      // }
-      // console.log(window.scrollY / window.innerHeight);
-      // if (!topModelDark && !dark && window.scrollY / window.innerHeight < 1.5) {
-      //   setDark(false);
-      // } else if (window.scrollY / window.innerHeight > 1.7) {
-      //   setDark(true);
-      // } else {
-      //   setDark(false);
-      // }
-    });
-  }, []);
 
   return (
     <Layout>
