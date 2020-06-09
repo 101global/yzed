@@ -10,6 +10,7 @@ import theme from '../../../utilities/theme';
 const Sticky2 = ({ model }) => {
   const [dark, setDark] = useState(true);
   const [topModelDark, setTopModelDark] = useState(true);
+  const [windowHeight, setWindowHeight] = useState(0);
 
   const toggleLightMode = (status) => {
     if (topModelDark && !status) {
@@ -20,6 +21,10 @@ const Sticky2 = ({ model }) => {
       setTopModelDark(true);
     }
   };
+
+  useEffect(() => {
+    setWindowHeight(window.innerHeight);
+  }, []);
 
   return (
     <Layout>
@@ -34,7 +39,6 @@ const Sticky2 = ({ model }) => {
               duration={500}
               className='nav-scroll-link'
               activeClass='active'
-              offset={-600}
               onSetActive={() => {
                 if (topModelDark) {
                   setDark(true);
@@ -49,7 +53,6 @@ const Sticky2 = ({ model }) => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={-600}
               className='nav-scroll-link'
               activeClass='active'
               onSetActive={() => setDark(false)}>
@@ -60,11 +63,30 @@ const Sticky2 = ({ model }) => {
               spy={true}
               smooth={true}
               duration={500}
-              offset={-600}
               className='nav-scroll-link'
               activeClass='active'
               onSetActive={() => setDark(true)}>
               <span>03.</span> The Process
+            </Link>
+            <Link
+              to='4'
+              spy={true}
+              smooth={true}
+              duration={500}
+              className='nav-scroll-link'
+              activeClass='active'
+              onSetActive={() => setDark(false)}>
+              <span>04.</span> More About
+            </Link>
+            <Link
+              to='5'
+              spy={true}
+              smooth={true}
+              duration={500}
+              className='nav-scroll-link'
+              activeClass='active'
+              onSetActive={() => setDark(true)}>
+              <span>05.</span> More About Info
             </Link>
           </div>
         </nav>
@@ -92,6 +114,16 @@ const Sticky2 = ({ model }) => {
           <Element name='3'>
             <div className='section-container dark-section'>
               <h1>3</h1>
+            </div>
+          </Element>
+          <Element name='4'>
+            <div className='section-container light-section'>
+              <h1>4</h1>
+            </div>
+          </Element>
+          <Element name='5'>
+            <div className='section-container dark-section'>
+              <h1>5</h1>
             </div>
           </Element>
         </div>
@@ -126,7 +158,7 @@ const Sticky2 = ({ model }) => {
             z-index: 100;
             color: white;
             display: flex;
-            min-height: 20vh;
+
             align-items: start;
             justify-content: space-between;
             left: 10%;
@@ -159,10 +191,13 @@ const Sticky2 = ({ model }) => {
             letter-spacing: 0.12em;
             cursor: pointer;
           }
-          a.nav-scroll-link:nth-child(2) {
+          a.nav-scroll-link:nth-child(2),
+          a.nav-scroll-link:nth-child(3) {
+            padding-top: 20px;
+          }
+          a.nav-scroll-link:nth-child(4) {
             padding: 20px 0;
           }
-
           a.nav-scroll-link.active,
           a.nav-scroll-link span {
             font-weight: 600;
