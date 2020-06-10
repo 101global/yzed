@@ -80,14 +80,21 @@ const PhotoInformationBox = ({ photo, text }) => {
         .photo-information-container {
           display: flex;
           flex-direction: row;
-          justify-content: center;
+          justify-content: start;
           align-items: center;
+          position: relative;
+          max-height: ${open ? '800px' : '200px'};
+          transition: max-height 0.5s ease-out;
+          overflow: hidden;
+          height: 1000px;
         }
         img {
-          width: 50%;
-          height: auto;
+          height: 300px;
+          width: 500px;
           transform: scale(1);
           transition: all 1s;
+          position: absolute;
+          top: 0;
         }
         p {
           font-size: 1rem;
@@ -99,6 +106,10 @@ const PhotoInformationBox = ({ photo, text }) => {
           z-index: 100;
           padding: 20px;
           box-shadow: 0 0 12px #0d0d0d87;
+          position: absolute;
+          width: 50%;
+          left: 50%;
+          top: 10px;
         }
         .text-wrapper {
           height: auto;

@@ -33,12 +33,16 @@ const StationaryModelViewer = ({ model }) => {
           interaction-policy='allow-when-focused'></model-viewer>
       </div>
       <style jsx global>{`
+         {
+          /* width: 80% and margin-left 20% for centered in other section */
+        }
         .model-viewer-container {
           height: 100%;
           width: 100%;
         }
         model-viewer {
           margin: 0 auto;
+          z-index: 101;
           height: 100%;
           width: 100%;
           --poster-color: transparent;

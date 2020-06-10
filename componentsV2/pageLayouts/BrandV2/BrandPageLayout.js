@@ -158,7 +158,7 @@ const Sticky2 = ({ model }) => {
           }
           .logo-container {
             text-align: left;
-            width: 220px;
+            min-width: 220px;
           }
           .link-container {
             border-left: 3px solid ${theme.colors.white};
