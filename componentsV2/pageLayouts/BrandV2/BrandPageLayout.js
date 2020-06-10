@@ -27,7 +27,9 @@ const Sticky2 = ({ model }) => {
     <Layout>
       <div className='layout-container'>
         <nav>
-          <YZEDLogoSVG fill={theme.colors.white} />
+          <div className='logo-container'>
+            <YZEDLogoSVG fill={theme.colors.white} />
+          </div>
           <div className='link-container'>
             <Link
               to='model'
@@ -143,19 +145,20 @@ const Sticky2 = ({ model }) => {
             position: fixed;
             display: flex;
             flex-direction: column;
-            align-items: start;
-            justify-content: space-between;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: #0d0d0d;
-            padding: 40px;
-            border: 1px solid ${theme.colors.white};
-            border-radius: 0 40px 40px 0;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            background-color: ${theme.colors.black};
             transition: all 0.5s;
             z-index: 100;
             color: white;
-            display: flex;
-            left: 10%;
+            left: 0;
+            height: 100%;
+            width: 20%;
+          }
+          .logo-container {
+            text-align: left;
+            width: 220px;
           }
           .link-container {
             border-left: 3px solid ${theme.colors.white};

@@ -37,7 +37,8 @@ const BrandServices = () => (
         transition: all 0.5s;
       }
       .photo-information-container {
-        min-height: 500px;
+        min-height: 200px;
+        padding: 50px 0;
       }
     `}</style>
     <style jsx global>{``}</style>
@@ -101,7 +102,7 @@ const PhotoInformationBox = ({ photo, text }) => {
         }
         .text-wrapper {
           height: auto;
-          max-height: ${open ? '400px' : '100px'};
+          max-height: ${open ? '400px' : '80px'};
           transition: max-height 0.5s ease-out;
           overflow: hidden;
         }
