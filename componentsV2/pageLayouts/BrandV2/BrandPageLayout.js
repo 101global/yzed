@@ -142,7 +142,8 @@ const Sticky2 = ({ model }) => {
             position: fixed;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: start;
+            justify-content: space-between;
             top: 50%;
             transform: translateY(-50%);
             background-color: #0d0d0d;
@@ -153,15 +154,13 @@ const Sticky2 = ({ model }) => {
             z-index: 100;
             color: white;
             display: flex;
-            align-items: start;
-            justify-content: space-between;
             left: 10%;
           }
           .link-container {
-            min-width: 220px;
             border-left: 3px solid ${theme.colors.white};
             padding-left: 20px;
             margin-top: 30px;
+            min-width: 220px;
           }
           .section-container {
             min-height: 100vh;
