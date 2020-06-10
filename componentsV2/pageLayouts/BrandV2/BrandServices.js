@@ -74,6 +74,7 @@ const PhotoInformationBox = ({ photo, text }) => {
             </p>
           </div>
           <button onClick={() => setOpen(!open)}>{open ? 'SHOW LESS' : 'READ MORE'}</button>
+          <div className={open ? 'arrow-up' : 'arrow-down'}></div>
         </div>
       </div>
       <style jsx>{`
@@ -83,10 +84,10 @@ const PhotoInformationBox = ({ photo, text }) => {
           justify-content: start;
           align-items: center;
           position: relative;
-          max-height: ${open ? '800px' : '200px'};
+          max-height: ${open ? '600px' : '300px'};
           transition: max-height 0.5s ease-out;
           overflow: hidden;
-          height: 1000px;
+          height: 600px;
         }
         img {
           height: 300px;
@@ -120,6 +121,30 @@ const PhotoInformationBox = ({ photo, text }) => {
         h3 {
           margin: 0;
           font-size: 1.3rem;
+        }
+        button {
+          border: none;
+          background: none;
+          border-bottom: 1px solid ${theme.colors.black};
+          padding: 0;
+        }
+        .arrow-down {
+          display: inline-block;
+          margin-left: 10px;
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-top: 7px solid ${theme.colors.black};
+        }
+        .arrow-up {
+          display: inline-block;
+          margin-left: 10px;
+          width: 0;
+          height: 0;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid ${theme.colors.black};
         }
       `}</style>
       <style jsx global>{`
