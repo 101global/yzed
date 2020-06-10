@@ -75,7 +75,7 @@ const BrandAbout = ({ lightMode }) => {
           border-radius: 25px;
           border: 1px solid ${lightMode ? theme.colors.white : theme.colors.black};
           transition: all 0.4s ease;
-          width: 350px !important;
+          width: 350px;
           font-size: ${theme.fontSizes.pSizeDesktop};
           text-align: center;
         }

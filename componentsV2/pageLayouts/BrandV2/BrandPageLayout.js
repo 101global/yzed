@@ -11,7 +11,6 @@ import BrandAbout from './BrandAbout';
 const Sticky2 = ({ model }) => {
   const [dark, setDark] = useState(true);
   const [topModelDark, setTopModelDark] = useState(true);
-  const [windowHeight, setWindowHeight] = useState(0);
 
   const toggleLightMode = (status) => {
     if (topModelDark && !status) {
@@ -23,15 +22,11 @@ const Sticky2 = ({ model }) => {
     }
   };
 
-  useEffect(() => {
-    setWindowHeight(window.innerHeight);
-  }, []);
-
   return (
     <Layout>
       <div className='layout-container'>
         <nav>
-          <YZEDLogoSVG fill={!dark ? theme.colors.black : theme.colors.white} />
+          <YZEDLogoSVG fill={theme.colors.white} />
           <div className='link-container'>
             <Link
               to='model'
@@ -92,7 +87,7 @@ const Sticky2 = ({ model }) => {
           </div>
         </nav>
         <div>
-          <Element name='model'>
+          <Element name='model' className='body-element'>
             <div
               className='section-container dark-section'
               style={{
@@ -106,23 +101,23 @@ const Sticky2 = ({ model }) => {
             </div>
           </Element>
 
-          <Element name='2'>
-            <div className='section-container light-section'>
+          <Element name='2' className='body-element'>
+            <div className='section-container light-section middle'>
               <BrandAbout />
             </div>
           </Element>
 
-          <Element name='3'>
+          <Element name='3' className='body-element'>
             <div className='section-container dark-section'>
               <h1>3</h1>
             </div>
           </Element>
-          <Element name='4'>
+          <Element name='4' className='body-element'>
             <div className='section-container light-section'>
               <h1>4</h1>
             </div>
           </Element>
-          <Element name='5'>
+          <Element name='5' className='body-element'>
             <div className='section-container dark-section'>
               <h1>5</h1>
             </div>
@@ -150,18 +145,21 @@ const Sticky2 = ({ model }) => {
             align-items: center;
             top: 50%;
             transform: translateY(-50%);
-            background-color: transparent;
+            background-color: #0d0d0d;
+            padding: 40px;
+            border: 1px solid ${theme.colors.white};
+            border-radius: 0 40px 40px 0;
             transition: all 0.5s;
             z-index: 100;
             color: white;
             display: flex;
-
             align-items: start;
             justify-content: space-between;
             left: 10%;
           }
           .link-container {
-            border-left: 3px solid ${dark ? theme.colors.white : theme.colors.black};
+            min-width: 220px;
+            border-left: 3px solid ${theme.colors.white};
             padding-left: 20px;
             margin-top: 30px;
           }
@@ -175,13 +173,9 @@ const Sticky2 = ({ model }) => {
           }
         `}</style>
         <style jsx global>{`
-          body,
-          h1 {
-            margin: 0;
-          }
           a.nav-scroll-link {
-            font-size: 1.2rem;
-            color: ${dark ? theme.colors.white : theme.colors.black};
+            font-size: 1.1rem;
+            color: ${theme.colors.white};
             transition: all 0.2s;
             display: block;
             font-weight: 100;

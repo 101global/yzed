@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@arturmiglio/react-skroll": "^0.7.5",
+    "core-js": "^3.6.5",
     "firebase": "^7.14.2",
     "next": "9.3.6",
     "next-pwa": "^2.5.0",
@@ -20,6 +22,7 @@
     "react-morphing-modal": "^0.2.2",
     "react-multi-carousel": "^2.5.5",
     "react-scroll": "^1.7.16",
+    "react-skroll": "^0.7.3",
     "react-switch-selector": "^1.1.2",
     "styled-components": "^5.1.1"
   }
