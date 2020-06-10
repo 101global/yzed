@@ -7,6 +7,7 @@ import ModelViewerController from '../../reusableStyledComponents/modelViewers/M
 import YZEDLogoSVG from '../../reusableStyledComponents/YZEDLogoSVG';
 import theme from '../../../utilities/theme';
 import BrandAbout from './BrandAbout';
+import BrandServices from './BrandServices';
 
 const Sticky2 = ({ model }) => {
   const [dark, setDark] = useState(true);
@@ -108,8 +109,8 @@ const Sticky2 = ({ model }) => {
           </Element>
 
           <Element name='3' className='body-element'>
-            <div className='section-container dark-section'>
-              <h1>3</h1>
+            <div className='dynamic-section-container dark-section'>
+              <BrandServices />
             </div>
           </Element>
           <Element name='4' className='body-element'>
@@ -126,7 +127,7 @@ const Sticky2 = ({ model }) => {
         <style jsx>{`
           .dark-section,
           .light-section {
-            height: 100vh;
+            min-height: 100vh;
             color: white;
             font-size: 5rem;
           }
@@ -161,6 +162,13 @@ const Sticky2 = ({ model }) => {
             padding-left: 20px;
             margin-top: 30px;
             min-width: 220px;
+          }
+          .dynamic-section-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
           }
           .section-container {
             min-height: 100vh;

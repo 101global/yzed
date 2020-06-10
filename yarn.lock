@@ -888,6 +888,14 @@
     "@babel/helper-create-regexp-features-plugin" "^7.10.1"
     "@babel/helper-plugin-utils" "^7.10.1"
 
+"@babel/polyfill@^7.8.7":
+  version "7.10.1"
+  resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.10.1.tgz#d56d4c8be8dd6ec4dce2649474e9b707089f739f"
+  integrity sha512-TviueJ4PBW5p48ra8IMtLXVkDucrlOZAIZ+EXqS3Ot4eukHbWiqcn7DcqpA1k5PcKtmJ4Xl9xwdv6yQvvcA+3g==
+  dependencies:
+    core-js "^2.6.5"
+    regenerator-runtime "^0.13.4"
+
 "@babel/preset-env@7.7.1":
   version "7.7.1"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.7.1.tgz#04a2ff53552c5885cf1083e291c8dd5490f744bb"
@@ -2676,7 +2684,7 @@ core-js@3.6.5, core-js@^3.6.5:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
   integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==
 
-core-js@^2.4.0:
+core-js@^2.4.0, core-js@^2.6.5:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
@@ -5633,6 +5641,19 @@ react-scroll@^1.7.16:
   dependencies:
     lodash.throttle "^4.1.1"
     prop-types "^15.5.8"
+
+react-scrollmagic@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-scrollmagic/-/react-scrollmagic-2.2.0.tgz#6e5ca428411221605ce4edb667819394c6a4e6c0"
+  integrity sha512-2DlzgJVuFohka0HG71haN4fugXoNUIZ4xT0mb4k03Xx1CyGXqPMxKekFEGhVjYyqpQmibtdTOfh49ZsHzuNVtw==
+
+react-show-more-text@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/react-show-more-text/-/react-show-more-text-1.4.2.tgz#4dc8771823b7e1ce570c6bc739fd8bd9a3807a06"
+  integrity sha512-vqf5FEzM66HodHJbwKrtuH7pgd9KdCEoTEa5lip0+EbjHjnU7DJLwyIXORUnso+B5qiJmAOUFoVd80o4kGJU/g==
+  dependencies:
+    "@babel/polyfill" "^7.8.7"
+    prop-types "^15.7.2"
 
 react-skroll@^0.7.3:
   version "0.7.3"
