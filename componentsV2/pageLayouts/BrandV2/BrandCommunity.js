@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import BlackLink from '../../reusableStyledComponents/BlackLink';
 import PropTypes from 'prop-types';
 import theme from '../../../utilities/theme';
 
@@ -17,13 +18,10 @@ const BrandCommunity = ({ lightMode }) => {
             shows.
           </p>
         </div>
-        <a
-          className='black-link'
-          href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
-          target='_blank'
-          rel='noopener noreferrer'>
-          READ MORE
-        </a>
+        <BlackLink
+          title='READ MORE'
+          link='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
+        />
       </div>
       <style jsx>{`
         .about-container {
@@ -71,7 +69,7 @@ const BrandCommunity = ({ lightMode }) => {
         a.black-link:hover {
           background-color: ${theme.colors.white};
           color: ${theme.colors.black};
-          transition: all 0.3s ease;
+          transition: all 0.4s ease;
           border-color: ${theme.colors.black};
         }
 

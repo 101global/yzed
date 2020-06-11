@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import BlackLink from '../../reusableStyledComponents/BlackLink';
 import PropTypes from 'prop-types';
 import theme from '../../../utilities/theme';
 
@@ -32,13 +33,10 @@ const BrandAbout = ({ lightMode }) => {
             A digital community where your self-discovery leads our decisions.
           </p>
         </div>
-        <a
-          className='black-link'
-          href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
-          target='_blank'
-          rel='noopener noreferrer'>
-          READ MORE
-        </a>
+        <BlackLink
+          title='READ MORE'
+          link='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
+        />
       </div>
       <style jsx>{`
         .about-container {
@@ -78,6 +76,7 @@ const BrandAbout = ({ lightMode }) => {
           width: 350px;
           font-size: ${theme.fontSizes.pSizeDesktop};
           text-align: center;
+          margin-top: 50px;
         }
         a {
           letter-spacing: 0.2em;

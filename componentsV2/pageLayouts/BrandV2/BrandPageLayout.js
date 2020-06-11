@@ -48,7 +48,7 @@ const BrandLayout = ({ model }) => {
               <span>01.</span> 3D Model
             </Link>
             <Link
-              to='2'
+              to='about'
               spy={true}
               smooth={true}
               duration={500}
@@ -58,7 +58,7 @@ const BrandLayout = ({ model }) => {
               <span>02.</span> About
             </Link>
             <Link
-              to='3'
+              to='services'
               spy={true}
               smooth={true}
               duration={500}
@@ -104,13 +104,13 @@ const BrandLayout = ({ model }) => {
             </div>
           </Element>
 
-          <Element name='2' className='body-element'>
+          <Element name='about' className='body-element'>
             <div className='section-container light-section middle'>
               <BrandAbout />
             </div>
           </Element>
 
-          <Element name='3' className='body-element'>
+          <Element name='services' className='body-element'>
             <div className='dynamic-section-container dark-section'>
               <BrandServices />
             </div>
