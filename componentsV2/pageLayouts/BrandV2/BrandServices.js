@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
+import React, { useState } from 'react';
+
 import theme from '../../../utilities/theme';
 
 const BrandServices = () => (
@@ -7,22 +8,22 @@ const BrandServices = () => (
     <div className='services-container'>
       <Controller>
         <Scene duration={400} classToggle='expanded'>
-          <div className='photo-information-container'>
+          <div className='photo-information-container left'>
             <PhotoInformationBox />
           </div>
         </Scene>
         <Scene duration={400} classToggle='expanded'>
-          <div className='photo-information-container'>
+          <div className='photo-information-container right'>
             <PhotoInformationBox />
           </div>
         </Scene>
         <Scene duration={400} classToggle='expanded'>
-          <div className='photo-information-container'>
+          <div className='photo-information-container left'>
             <PhotoInformationBox />
           </div>
         </Scene>
         <Scene duration={400} classToggle='expanded'>
-          <div className='photo-information-container'>
+          <div className='photo-information-container right'>
             <PhotoInformationBox />
           </div>
         </Scene>
@@ -30,10 +31,10 @@ const BrandServices = () => (
     </div>
     <style jsx>{`
       .services-container {
-        width: ${theme.boxSizes.mainContentWidthDesktop};
+        width: 65%;
         background-color: ${theme.colors.black};
         color: ${theme.colors.white};
-        margin-left: ${theme.boxSizes.mainContentMarginLeftDesktop};
+        margin-left: 25%;
         transition: all 0.5s;
       }
       .photo-information-container {
@@ -73,8 +74,10 @@ const PhotoInformationBox = ({ photo, text }) => {
               intelligentsia cloud bread live-edge air plant jianbing paleo bushwick banjo hashtag.
             </p>
           </div>
-          <button onClick={() => setOpen(!open)}>{open ? 'SHOW LESS' : 'READ MORE'}</button>
-          <div className={open ? 'arrow-up' : 'arrow-down'}></div>
+          <button onClick={() => setOpen(!open)}>
+            {open ? 'SHOW LESS' : 'READ MORE'}
+            <div className={open ? 'arrow-up' : 'arrow-down'}></div>
+          </button>
         </div>
       </div>
       <style jsx>{`
@@ -84,14 +87,14 @@ const PhotoInformationBox = ({ photo, text }) => {
           justify-content: start;
           align-items: center;
           position: relative;
-          max-height: ${open ? '600px' : '300px'};
+          max-height: ${open ? '600px' : '335px'};
           transition: max-height 0.5s ease-out;
           overflow: hidden;
           height: 600px;
         }
         img {
-          height: 300px;
-          width: 500px;
+          height: 355px;
+          width: 515px;
           transform: scale(1);
           transition: all 1s;
           position: absolute;
@@ -105,28 +108,53 @@ const PhotoInformationBox = ({ photo, text }) => {
           color: ${theme.colors.black};
           margin-left: -10%;
           z-index: 100;
-          padding: 20px;
+          padding: 30px;
           box-shadow: 0 0 12px #0d0d0d87;
           position: absolute;
-          width: 50%;
-          left: 50%;
-          top: 10px;
+          width: 60%;
+          left: 40%;
+          top: 50%;
+          transform: translateY(-50%);
+          max-height: ${open ? '550px' : '200px'};
+          transition: all 1s ease-out;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          justify-content: space-between;
+          min-height: 200px;
         }
+
         .text-wrapper {
           height: auto;
           max-height: ${open ? '400px' : '80px'};
-          transition: max-height 0.5s ease-out;
+          transition: all 1s ease-out;
           overflow: hidden;
+          width: 100%;
+        }
+
+        p {
+          width: 100%;
+          margin-bottom: ${!open && '0px'};
         }
         h3 {
           margin: 0;
-          font-size: 1.3rem;
+          font-size: 1.2rem;
         }
         button {
           border: none;
           background: none;
-          border-bottom: 1px solid ${theme.colors.black};
           padding: 0;
+          transition: all 1s ease-out;
+        }
+        button:after {
+          content: '';
+          border-bottom: 1px solid ${theme.colors.black};
+          width: 80px;
+          height: 1px;
+          display: block;
+        }
+        button:hover:after {
+          border-bottom: 2px solid ${theme.colors.black};
         }
         .arrow-down {
           display: inline-block;
@@ -149,9 +177,18 @@ const PhotoInformationBox = ({ photo, text }) => {
       `}</style>
       <style jsx global>{`
         .expanded img {
-          transform: scale(1.2);
-          transition: all 1s;
-          border: 2px solid green;
+          height: 455px;
+          width: 655px;
+          transition: all 1.5s ease-out;
+        }
+        .expanded .photo-information-container {
+          max-height: 402px;
+        }
+        .right .service-text-container {
+          left: 10% !important;
+        }
+        .right img {
+          right: 10%;
         }
       `}</style>
     </>

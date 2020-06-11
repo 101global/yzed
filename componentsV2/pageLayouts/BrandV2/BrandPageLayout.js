@@ -1,15 +1,15 @@
 import { Element, Events, Link, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
-
 import { useEffect, useRef, useState } from 'react';
 
+import BrandAbout from './BrandAbout';
+import BrandCommunity from './BrandCommunity';
+import BrandServices from './BrandServices';
 import Layout from '../../Layout';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
 import YZEDLogoSVG from '../../reusableStyledComponents/YZEDLogoSVG';
 import theme from '../../../utilities/theme';
-import BrandAbout from './BrandAbout';
-import BrandServices from './BrandServices';
 
-const Sticky2 = ({ model }) => {
+const BrandLayout = ({ model }) => {
   const [dark, setDark] = useState(true);
   const [topModelDark, setTopModelDark] = useState(true);
 
@@ -65,7 +65,7 @@ const Sticky2 = ({ model }) => {
               className='nav-scroll-link'
               activeClass='active'
               onSetActive={() => setDark(true)}>
-              <span>03.</span> The Process
+              <span>03.</span> Our Services
             </Link>
             <Link
               to='4'
@@ -75,7 +75,7 @@ const Sticky2 = ({ model }) => {
               className='nav-scroll-link'
               activeClass='active'
               onSetActive={() => setDark(false)}>
-              <span>04.</span> More About
+              <span>04.</span> Community
             </Link>
             <Link
               to='5'
@@ -85,7 +85,7 @@ const Sticky2 = ({ model }) => {
               className='nav-scroll-link'
               activeClass='active'
               onSetActive={() => setDark(true)}>
-              <span>05.</span> More About Info
+              <span>05.</span> Connect
             </Link>
           </div>
         </nav>
@@ -117,7 +117,7 @@ const Sticky2 = ({ model }) => {
           </Element>
           <Element name='4' className='body-element'>
             <div className='section-container light-section'>
-              <h1>4</h1>
+              <BrandCommunity />
             </div>
           </Element>
           <Element name='5' className='body-element'>
@@ -184,23 +184,25 @@ const Sticky2 = ({ model }) => {
         `}</style>
         <style jsx global>{`
           a.nav-scroll-link {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: ${theme.colors.white};
             transition: all 0.2s;
             display: block;
             font-weight: 100;
             letter-spacing: 0.02em;
             cursor: pointer;
+            z-index: 500;
           }
           a.nav-scroll-link:nth-child(2),
           a.nav-scroll-link:nth-child(3) {
-            padding-top: 20px;
+            margin-top: 20px;
           }
           a.nav-scroll-link:nth-child(4) {
-            padding: 20px 0;
+            margin: 20px 0;
           }
           a.nav-scroll-link.active,
-          a.nav-scroll-link span {
+          a.nav-scroll-link span,
+          a.nav-scroll-link:hover {
             font-weight: 700;
           }
           a.nav-scroll-link span {
@@ -215,4 +217,4 @@ const Sticky2 = ({ model }) => {
   );
 };
 
-export default Sticky2;
+export default BrandLayout;
