@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import BrandAbout from './BrandAbout';
 import BrandCommunity from './BrandCommunity';
+import BrandContact from './BrandContact';
 import BrandServices from './BrandServices';
 import Layout from '../../Layout';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
@@ -122,7 +123,7 @@ const BrandLayout = ({ model }) => {
           </Element>
           <Element name='5' className='body-element'>
             <div className='section-container dark-section'>
-              <h1>5</h1>
+              <BrandContact />
             </div>
           </Element>
         </div>

@@ -64,30 +64,7 @@ const BrandAbout = ({ lightMode }) => {
           letter-spacing: 0em;
           text-decoration: none;
         }
-        a.black-link {
-          display: block;
-          background-color: ${lightMode ? theme.colors.white : theme.colors.black};
-          color: ${lightMode ? theme.colors.black : theme.colors.white};
-          text-decoration: none;
-          padding: 10px 0;
-          border-radius: 25px;
-          border: 1px solid ${lightMode ? theme.colors.white : theme.colors.black};
-          transition: all 0.4s ease;
-          width: 350px;
-          font-size: ${theme.fontSizes.pSizeDesktop};
-          text-align: center;
-          margin-top: 50px;
-        }
-        a {
-          letter-spacing: 0.2em;
-          font-weight: ${theme.fontWeights.medium};
-        }
-        a.black-link:hover {
-          background-color: ${lightMode ? theme.colors.black : theme.colors.white};
-          color: ${lightMode ? theme.colors.white : theme.colors.black};
-          transition: all 0.3s ease;
-          border-color: ${lightMode ? theme.colors.white : theme.colors.black};
-        }
+
 
          {
           /* Tablet Portrait */
