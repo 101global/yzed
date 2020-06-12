@@ -27,44 +27,46 @@ const BrandContact = () => {
   return (
     <>
       <div className='contact-container'>
-        <h2>Interested? Sign Up for Updates.</h2>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}>
-          <input
-            required
-            type='text'
-            name='name'
-            value={name}
-            placeholder='Name'
-            aria-label='name'
-            minLength='3'
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            required
-            type='email'
-            name='email'
-            value={email}
-            placeholder='Email Address'
-            aria-label='email address'
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type='text'
-            name='message'
-            value={message}
-            placeholder='Message (Optional)'
-            aria-label='optional message'
-            maxLength='200'
-            onChange={(e) => setMessage(e.target.value)}
-          />
-          <button className='white-button' disabled={!name.length || !email.length} type='submit'>
-            {loading ? 'SENDING' : 'RECEIVE UPDATES'}
-          </button>
-        </form>
+        <div className='form-container'>
+          <h2>Interested? Sign Up for Updates.</h2>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit();
+            }}>
+            <input
+              required
+              type='text'
+              name='name'
+              value={name}
+              placeholder='Representative name'
+              aria-label='Represetnative name'
+              minLength='3'
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              required
+              type='email'
+              name='email'
+              value={email}
+              placeholder='Representative email'
+              aria-label='Representative email'
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type='text'
+              name='message'
+              value={message}
+              placeholder='Message (optional)'
+              aria-label='optional message'
+              maxLength='200'
+              onChange={(e) => setMessage(e.target.value)}
+            />
+            <button className='white-button' disabled={!name.length || !email.length} type='submit'>
+              {loading ? 'SENDING' : 'RECEIVE UPDATES'}
+            </button>
+          </form>
+        </div>
         <ul className='contact-information'>
           <h2>Contact Information</h2>
           <li>
@@ -85,6 +87,10 @@ const BrandContact = () => {
             color: ${theme.colors.white};
             margin-left: ${theme.boxSizes.mainContentMarginLeftDesktop};
             color: ${theme.colors.white};
+            display: flex;
+            justify-content: space-between;
+            min-height: 70vh;
+            flex-direction: column;
           }
           h2 {
             font-size: ${theme.fontSizes.h2SizeDesktop};
@@ -104,7 +110,7 @@ const BrandContact = () => {
           .contact-information li span {
             font-weight: 600;
           }
-          form input {
+          input {
             display: block;
             background: ${theme.colors.black};
             border: none;
@@ -116,9 +122,17 @@ const BrandContact = () => {
             width: 90%;
             max-width: 600px;
             margin-bottom: 30px;
+            letter-spacing: 0.02em;
+            font-weight: 100;
+            font-family: ${theme.fonts.main};
           }
-          input::placeholder {
-            color: ${theme.colors.lightGrey};
+          ::placeholder,
+          ::-webkit-input-placeholder,
+          :-moz-placeholder,
+          ::-moz-placeholder {
+            color: ${theme.colors.grey};
+            font-weight: 100;
+            letter-spacing: 0.02em;
           }
           button.white-button {
             display: block;
@@ -137,6 +151,9 @@ const BrandContact = () => {
           button {
             letter-spacing: 0.2em;
             font-weight: ${theme.fontWeights.medium};
+          }
+          button:disabled {
+            background: ${theme.colors.grey};
           }
           button.white-button:hover {
             background-color: ${theme.colors.black};
