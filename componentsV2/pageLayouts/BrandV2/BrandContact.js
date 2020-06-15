@@ -131,8 +131,6 @@ const BrandContact = () => {
           :-moz-placeholder,
           ::-moz-placeholder {
             color: ${theme.colors.grey};
-            font-weight: 100;
-            letter-spacing: 0.02em;
           }
           button.white-button {
             display: block;
