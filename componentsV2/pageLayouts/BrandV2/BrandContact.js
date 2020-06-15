@@ -150,14 +150,16 @@ const BrandContact = () => {
             letter-spacing: 0.2em;
             font-weight: ${theme.fontWeights.medium};
           }
-          button:disabled {
-            background: ${theme.colors.grey};
-          }
           button.white-button:hover {
             background-color: ${theme.colors.black};
             color: ${theme.colors.white};
             transition: all 0.3s ease;
             border-color: ${theme.colors.white};
+          }
+          button:disabled,
+          button:disabled:hover {
+            background: #f3f3f3;
+            color: ${theme.colors.black};
           }
         `}
       </style>

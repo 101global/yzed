@@ -7,6 +7,7 @@ import BrandContact from './BrandContact';
 import BrandServices from './BrandServices';
 import Layout from '../../Layout';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
+import VideoSection from './VideoSection';
 import YZEDLogoSVG from '../../reusableStyledComponents/YZEDLogoSVG';
 import theme from '../../../utilities/theme';
 
@@ -113,7 +114,7 @@ const BrandLayout = ({ model }) => {
 
           <Element name='services' className='body-element'>
             <div className='dynamic-section-container dark-section'>
-              <BrandServices />
+              <VideoSection />
             </div>
           </Element>
           <Element name='4' className='body-element'>
