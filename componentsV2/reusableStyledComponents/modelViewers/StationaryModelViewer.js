@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import svg from '../../../public/yzed_logo_outline_gradient_animated.svg';
 
 const StationaryModelViewer = ({ model }) => {
   const modelRef = useRef(null);
@@ -29,7 +30,7 @@ const StationaryModelViewer = ({ model }) => {
           camera-controls
           ar
           exposure={0.5}
-          poster={'YZED_loadingkopie.png'}
+          poster={svg}
           interaction-policy='allow-when-focused'></model-viewer>
       </div>
       <style jsx global>{`

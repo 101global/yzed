@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import svg from '../../../public/yzed_logo_outline_gradient_animated.svg';
 
 const AnimatedModelViewer = ({ model }) => {
   const modelRef = useRef(null);
@@ -24,7 +25,7 @@ const AnimatedModelViewer = ({ model }) => {
           preload
           auto-rotate
           camera-controls
-          poster={'YZED_loadingkopie.png'}
+          poster={svg}
           exposure={0.5}
           interaction-policy='allow-when-focused'
           autoplay></model-viewer>
