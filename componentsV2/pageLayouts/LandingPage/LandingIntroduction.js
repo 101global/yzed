@@ -19,7 +19,10 @@ const LandingIntroduction = () => {
               upon the five most important factors of this practice, which you can read more about
               in our manifesto.
             </p>
-            <BlackLink title='DOWNLOAD MANIFESTO' href='' />
+            <BlackLink
+              title='DOWNLOAD MANIFESTO'
+              href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
+            />
           </div>
         </div>
         <div className='photo-section'>
