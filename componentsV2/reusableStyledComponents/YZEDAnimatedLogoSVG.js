@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import ReactVivus from 'react-vivus';
-import svg from '../../public/yzed_logo_outline2.svg';
+import svg from '../../public/yzed_logo_outline_gradient.svg';
 
 const AnimatedLogo = () => {
   const [animationOver, setAnimationOver] = useState(false);
@@ -14,29 +14,34 @@ const AnimatedLogo = () => {
 
   return (
     <>
-      <div className='gradient-container'>
-        <div className='animated-svg-container'>
-          <ReactVivus
-            id='foo'
-            option={{
-              file: svg,
-              animTimingFunction: 'EASE',
-              type: 'oneByOne',
+      <ReactVivus
+        id='animated-svg'
+        option={{
+          file: svg,
+          animTimingFunction: 'EASE-IN',
+          type: 'oneByOne',
 
-              duration: 300,
-            }}
-            style={{ height: '60px' }}
-            callback={animationFinished}
-          />
-        </div>
-      </div>
+          duration: 300,
+        }}
+        style={{
+          height: '100px',
+        }}
+        callback={animationFinished}
+      />
+
       <style jsx global>
         {`
-          {/* .animated-svg-container {
-            background: ${!animationOver ? 'transparent' : 'transparent'};
-            clip-path: url(#svgPath);
-            min-width: 500px;
-          } */}
+          #animated-svg {
+            position: absolute;
+            min-width: 45%;
+            margin-top: 10px;
+          }
+          #animated-svg svg {
+            height: 80px !important;
+            display: inline !important;
+            width: auto;
+            transform: translateX(calc(50% - 22.5%));
+          }
         `}
       </style>
     </>

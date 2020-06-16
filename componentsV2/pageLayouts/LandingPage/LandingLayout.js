@@ -4,6 +4,7 @@ import { Element } from 'react-scroll';
 import LandingNavigation from './LandingNavigation';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
 import theme from '../../../utilities/theme';
+import LandingIntroduction from './LandingIntroduction';
 
 const LandingLayout = ({ model }) => {
   const [topModelDark, setTopModelDark] = useState(true);
@@ -23,7 +24,9 @@ const LandingLayout = ({ model }) => {
           </Element>
         </section>
         <section className='landing-section'>
-          <Element name='introduction' className='scroll-section light'></Element>
+          <Element id='intro-section' name='introduction' className='scroll-section light '>
+            <LandingIntroduction model={model} />
+          </Element>
         </section>
         <section className='landing-section'>
           <Element name='about' className='scroll-section dark'></Element>
@@ -66,6 +69,11 @@ const LandingLayout = ({ model }) => {
             background-color: ${topModelDark ? theme.colors.black : theme.colors.white};
             min-height: 100vh;
             padding-top: 85px;
+          }
+          #intro-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
           }
         `}
       </style>
