@@ -6,6 +6,7 @@ import ModelViewerController from '../../reusableStyledComponents/modelViewers/M
 import theme from '../../../utilities/theme';
 
 const LandingLayout = ({ model }) => {
+  const [topModelDark, setTopModelDark] = useState(true);
   return (
     <>
       <header id='top' className='w-full flex flex-col fixed  pin-t pin-r pin-l'>
@@ -14,8 +15,21 @@ const LandingLayout = ({ model }) => {
       <main>
         <section className='landing-section'>
           <Element id='model-section' name='model' className='scroll-section dark'>
-            <ModelViewerController model={model} />
+            <ModelViewerController
+              model={model}
+              topModelDark={topModelDark}
+              setTopModelDark={setTopModelDark}
+            />
           </Element>
+        </section>
+        <section className='landing-section'>
+          <Element name='introduction' className='scroll-section light'></Element>
+        </section>
+        <section className='landing-section'>
+          <Element name='about' className='scroll-section dark'></Element>
+        </section>
+        <section className='landing-section'>
+          <Element name='contact' className='scroll-section light'></Element>
         </section>
       </main>
       <style jsx>{`
@@ -25,6 +39,7 @@ const LandingLayout = ({ model }) => {
           left: 0;
           top: 0;
           z-index: 10000;
+          padding: 0 10%;
         }
         .landing-section {
           min-height: 100vh;
@@ -41,13 +56,15 @@ const LandingLayout = ({ model }) => {
       <style jsx global>
         {`
           .scroll-section {
-            height: 100%;
-            width: 100%;
+            min-height: 100vh;
+            min-width: 100vw;
           }
           .dark {
             background-color: ${theme.colors.black};
           }
           #model-section {
+            background-color: ${topModelDark ? theme.colors.black : theme.colors.white};
+            min-height: 100vh;
             padding-top: 85px;
           }
         `}

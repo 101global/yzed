@@ -7,7 +7,7 @@ import theme from '../../../utilities/theme';
 const LandingNavigation = () => {
   return (
     <>
-      <nav className='flex w-full justify-between sm:justify-start md:justify-between p-4'>
+      <nav className='flex w-full justify-between sm:justify-start md:justify-between py-4'>
         <div className='logo-container'>
           <svg
             version='1.1'
@@ -37,7 +37,7 @@ const LandingNavigation = () => {
             3D Model
           </Link>
           <Link
-            to='about'
+            to='introduction'
             spy={true}
             smooth={true}
             duration={500}
@@ -46,7 +46,7 @@ const LandingNavigation = () => {
             Introduction
           </Link>
           <Link
-            to='services'
+            to='about'
             spy={true}
             smooth={true}
             duration={500}
@@ -55,7 +55,7 @@ const LandingNavigation = () => {
             About Us
           </Link>
           <Link
-            to='4'
+            to='contact'
             spy={true}
             smooth={true}
             duration={500}
@@ -69,6 +69,7 @@ const LandingNavigation = () => {
         .link-container a {
           color: ${theme.colors.white};
           font-family: ${theme.fonts.main};
+          font-weight: 100;
         }
         .logo-container svg {
           height: 25px;
@@ -78,8 +79,21 @@ const LandingNavigation = () => {
           justify-content: center;
           align-items: center;
         }
-        .active {
-          border: 1px solid green;
+        a.nav-scroll-link.active {
+          font-weight: 600;
+        }
+        a.nav-scroll-link:hover {
+          cursor: pointer;
+        }
+
+        a.nav-scroll-link.active:after {
+          content: '';
+          background-image: linear-gradient(to left, #a891d9, #73cfdb);
+          width: 130%;
+          margin-left: -15%;
+          margin-top: -10px;
+          height: 10px;
+          display: block;
         }
       `}</style>
     </>

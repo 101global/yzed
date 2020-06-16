@@ -29,7 +29,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   };
 
   const onLightChange = (newValue) => {
-    setModelDart(newValue);
+    setTopModelDark(newValue);
   };
 
   return (
@@ -52,7 +52,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             </div>
             <div className='toggle-light-buttons'>
               <SwitchSelector
-                onChange={onAnimationChange}
+                onChange={onLightChange}
                 options={lightOptions}
                 initialSelectedIndex={0}
                 backgroundColor={'#0d0d0d'}
@@ -98,6 +98,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           right: 10vw;
           z-index: 1000;
           min-height: 100px;
+
           background: transparent;
 
           color: ${!topModelDark ? theme.colors.black : theme.colors.white};
@@ -111,7 +112,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
 
         .toggle-animated-buttons {
           height: 40px;
-          width: 250px;
+          width: 380px;
         }
         button,
         p {
@@ -144,6 +145,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           border: 1px solid ${theme.colors.white} !important;
           height: 30px !important;
           margin-bottom: 20px;
+          width: 380px;
         }
       `}</style>
     </>
