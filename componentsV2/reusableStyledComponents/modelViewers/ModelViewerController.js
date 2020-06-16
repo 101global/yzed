@@ -8,7 +8,7 @@ import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   const [showAnimated, setShowAnimated] = useState(false);
-  const options = [
+  const animationOptions = [
     {
       label: 'Stationary',
       value: false,
@@ -19,8 +19,17 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
     },
   ];
 
-  const onChange = (newValue) => {
+  const lightOptions = [
+    { label: 'Dark', value: true },
+    { label: 'Light', value: false },
+  ];
+
+  const onAnimationChange = (newValue) => {
     setShowAnimated(newValue);
+  };
+
+  const onLightChange = (newValue) => {
+    setModelDart(newValue);
   };
 
   return (
@@ -30,33 +39,29 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           <div className='controls'>
             <div className='toggle-animated-buttons'>
               <SwitchSelector
-                onChange={onChange}
-                options={options}
+                onChange={onAnimationChange}
+                options={animationOptions}
                 initialSelectedIndex={0}
                 backgroundColor={'#0d0d0d'}
                 fontColor={'#fff'}
                 selectedFontColor={'#0d0d0d'}
                 selectedBackgroundColor={'#fff'}
+                optionBorderRadius={0}
+                selectionIndicatorMargin={3}
               />
             </div>
-
-            <div className='dark-light-buttons'>
-              <div className='toggle-button-container'>
-                <button
-                  className={topModelDark ? 'toggle-light-button filled' : 'toggle-light-button'}
-                  onClick={() => setTopModelDark(true)}
-                  aria-label='Toggle Dark'
-                />
-                <p>Dark</p>
-              </div>
-              <div className='toggle-button-container'>
-                <button
-                  className={!topModelDark ? 'toggle-light-button filled' : 'toggle-light-button'}
-                  onClick={() => setTopModelDark(false)}
-                  aria-label='Toggle Light'
-                />
-                <p>Light</p>
-              </div>
+            <div className='toggle-light-buttons'>
+              <SwitchSelector
+                onChange={onAnimationChange}
+                options={lightOptions}
+                initialSelectedIndex={0}
+                backgroundColor={'#0d0d0d'}
+                fontColor={'#fff'}
+                selectedFontColor={'#0d0d0d'}
+                selectedBackgroundColor={'#fff'}
+                optionBorderRadius={0}
+                selectionIndicatorMargin={3}
+              />
             </div>
           </div>
         </div>
@@ -87,13 +92,14 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         .controls {
           display: inline-block;
           flex-direction: column;
-          justify-content: space-between;
-          align-items: left;
+          justify-content: space-around;
           position: absolute;
-          top: 10vh;
+          top: 12vh;
           right: 10vw;
           z-index: 1000;
+          min-height: 100px;
           background: transparent;
+
           color: ${!topModelDark ? theme.colors.black : theme.colors.white};
         }
         .toggle-button-container {
@@ -102,15 +108,9 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           align-items: center;
           justify-content: space-between;
         }
-        .dark-light-buttons {
-          width: 170px;
-          margin-top: 40px;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-        }
+
         .toggle-animated-buttons {
-          height: 30px;
+          height: 40px;
           width: 250px;
         }
         button,
@@ -122,26 +122,8 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           margin: 0;
           font-size: 1.2rem;
         }
-        .toggle-light-button {
-          border-radius: 15px;
-          height: 30px;
-          width: 30px;
-          background: ${theme.colors.black};
-          border: 1px solid ${theme.colors.white};
-          margin-right: 5px;
-          box-shadow: 0 0 1px 1px white;
-        }
-        .filled {
-          border: 1px solid ${theme.colors.black};
-          background: ${theme.colors.white};
-          color: ${theme.colors.black};
-          box-shadow: inset 0 0 0 2px ${theme.colors.white}, inset 0 0 0 4px ${theme.colors.black};
-        }
+
         @media (max-width: 640px) {
-          .dark-light-buttons {
-            min-height: 102px;
-            justify-content: space-around;
-          }
           .controls {
             height: 100px;
             flex-direction: column;
@@ -158,8 +140,10 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
       `}</style>
       <style jsx global>{`
         .react-switch-selector-wrapper {
-          border: 1px solid white !important;
-          box-shadow: 0 0 1px 1px white;
+          border-radius: 0px !important;
+          border: 1px solid ${theme.colors.white} !important;
+          height: 30px !important;
+          margin-bottom: 20px;
         }
       `}</style>
     </>
