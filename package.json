@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "firebase": "^7.14.2",
     "next": "9.3.6",
+    "next-images": "^1.4.0",
     "next-pwa": "^2.5.0",
     "next-seo": "^4.5.0",
     "node-fetch": "^2.6.0",
@@ -26,6 +27,13 @@
     "react-show-more-text": "^1.4.2",
     "react-skroll": "^0.7.3",
     "react-switch-selector": "^1.1.2",
-    "styled-components": "^5.1.1"
+    "react-vivus": "^0.0.2",
+    "styled-components": "^5.1.1",
+    "vivus": "^0.4.5"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "postcss-preset-env": "^6.7.0",
+    "tailwindcss": "^1.4.6"
   }
 }

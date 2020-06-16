@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import BrandPageLayout from '../componentsV2/pageLayouts/BrandV2/BrandPageLayout';
+import LandingLayout from '../componentsV2/pageLayouts/LandingPage/LandingLayout';
 import Layout from '../componentsV2/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
@@ -32,7 +32,7 @@ const Reserved = ({ product }) => {
 
   return (
     <Layout>
-      <BrandPageLayout model={mainProduct} />
+      <LandingLayout model={mainProduct} />
     </Layout>
   );
 };
