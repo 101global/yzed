@@ -11,10 +11,12 @@ import theme from '../../../utilities/theme';
 const LandingAbout = () => {
   return (
     <>
-      <div className='main-about-container'>
-        <div className='text-container'>
-          <h1>“The desire to make fashion more accessible to people.”</h1>
-          <p>
+      <div className='main-about-container pb-32 align-center justify-center w-full'>
+        <div className='text-container grid grid-cols-1 lg:block align-center justify-center w-full lg:w-4/5 mx-auto my-0 relative'>
+          <h1 className='text-xl px-4 lg:p-0 pb-12 lg:text-4xl w-full lg:w-5/12 inline-block'>
+            “The desire to make fashion more accessible to people.”
+          </h1>
+          <p className='text-lg w-full lg:w-6/12 block lg:inline-block relative lg:absolute right-o font-hairline z-50 right-0 p-4 pb-8 lg:pb-8 lg:pl-12 right-0 text-justify'>
             We are an international team of four, based in Seoul, South Korea. We became united by
             the desire to make fashion more accessible to people, which has continued to be our
             team’s top priority. We strongly believe that a change of status quo is imminent in the
@@ -23,72 +25,44 @@ const LandingAbout = () => {
             users self-expression leads our decisions.
           </p>
         </div>
-        <div className='bottom-section'>
-          <div className='image-container'>
-            <div className='large-image-container'>
-              <ProgressiveImage image={image1} />
-            </div>
-            <div className='small-image-container'>
+        <div className='bottom-section relative'>
+          <div className='image-container w-full'>
+            <div className='small-image-container relative lg:absolute right-0  lg:w-2/5 mb-8 lg:mb-0'>
               <ProgressiveImage image={image2} />
             </div>
+            <div className='large-image-container  lg:w-9/12'>
+              <ProgressiveImage image={image1} />
+            </div>
             <div className='word-mark'>
-              <img src={selfExpressionWhite} />
+              <img src={selfExpressionWhite} alt='contact us' />
             </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .bottom-section {
-          position: relative;
-        }
         .main-about-container {
-          width: 100%;
-          padding-bottom: 150px;
-          background-color: ${theme.colors.black};
-        }
-        .text-container {
-          width: 80%;
-          margin: 0px auto;
-          position: relative;
-          padding-top: 100px;
+          color: white;
         }
         h1,
         p {
           color: ${theme.colors.white};
-
-          display: inline-block;
+          background: ${theme.colors.black};
+        }
+        .text-container {
+          padding-top: 100px;
         }
         h1 {
           font-size: 2.5rem;
           line-height: 2.5rem;
-          width: 48%;
-          padding: 20px 0 40px;
+          padding-bottom: 60px;
         }
         p {
-          position: absolute;
-          right: 0;
-          top: 100px;
-          width: 48%;
-          margin-left: 4%;
-          z-index: 100;
-          background-color: ${theme.colors.black};
-          padding: 20px 20px 40px 40px;
           font-weight: 100;
-          font-size: 1.1rem;
-        }
-        .image-container {
-          overflow: hidden;
-          width: 100%;
-        }
-        .large-image-container {
-          width: 70%;
+          font-size: 1.4rem;
         }
         .small-image-container {
-          position: absolute;
-          right: 0;
-          width: 40%;
-          top: calc(50% - 222px);
+          top: calc(50% - 200px);
         }
         .word-mark img {
           overflow: hidden;
