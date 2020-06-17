@@ -7,67 +7,75 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
   return (
     <>
       <div className='mobile-nav flex flex-col lg:hidden justify-between w-full'>
-        <Link
-          to='model'
-          spy={true}
-          smooth={true}
-          duration={500}
-          className='nav-scroll-link inline-block lg:hidden'
-          activeClass='active'>
-          3D Model
-        </Link>
-        <Link
-          to='introduction'
-          spy={true}
-          smooth={true}
-          duration={500}
-          className='nav-scroll-link inline-block lg:hidden'
-          activeClass='active'>
-          Introduction
-        </Link>
-        <Link
-          to='about'
-          spy={true}
-          smooth={true}
-          duration={500}
-          className='nav-scroll-link inline-block lg:hidden'
-          activeClass='active'>
-          About Us
-        </Link>
-        <Link
-          to='contact'
-          spy={true}
-          smooth={true}
-          duration={500}
-          className='nav-scroll-link inline-block lg:hidden'
-          activeClass='active'>
-          Contact
-        </Link>
+        <div className='link-items-container'>
+          <Link
+            to='model'
+            spy={true}
+            smooth={true}
+            duration={500}
+            className='nav-scroll-link inline-block lg:hidden'
+            activeClass='active'>
+            3D Model
+          </Link>
+          <Link
+            to='introduction'
+            spy={true}
+            smooth={true}
+            duration={500}
+            className='nav-scroll-link inline-block lg:hidden'
+            activeClass='active'>
+            Introduction
+          </Link>
+          <Link
+            to='about'
+            spy={true}
+            smooth={true}
+            duration={500}
+            className='nav-scroll-link inline-block lg:hidden'
+            activeClass='active'>
+            About Us
+          </Link>
+          <Link
+            to='contact'
+            spy={true}
+            smooth={true}
+            duration={500}
+            className='nav-scroll-link inline-block lg:hidden'
+            activeClass='active'>
+            Contact
+          </Link>
+        </div>
       </div>
       <style jsx global>{`
         .mobile-nav {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
           background: #0d0d0dfb;
           transform: ${openMenu ? 'translateX(0)' : 'translateX(100%)'};
           min-width: ${openMenu ? '100%' : '0'};
-          min-height: calc(100vh - 68px);
+          min-height: calc(100vh - 72px);
           text-align: left;
           position: fixed;
-          margin-top: 88px;
+          margin-top: 72px;
           top: 0;
           left: 0;
-          z-index: 1001;
+          z-index: 800;
           transition: all 0.5s ease-in-out;
           font-family: ${theme.fonts.main};
           overflow-y: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
         .mobile-nav a {
           font-size: 1.6rem;
           text-align: center;
           max-width: 60%;
           margin: 0 auto;
+        }
+        .link-items-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          height: 60vh;
         }
       `}</style>
     </>

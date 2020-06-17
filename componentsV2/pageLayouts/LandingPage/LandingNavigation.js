@@ -46,14 +46,18 @@ const LandingNavigation = () => {
       <style jsx global>{`
         .hamburger-container {
           width: 100%;
+          position: relative;
+          top: 0;
+          height: 25px;
         }
         .hamburger-container button {
-          align-self: end;
-          width: 30%;
-          margin: 0 0 0 70%;
+          right: 0;
+          position: absolute;
+          bottom: -6px;
           display: flex;
           justify-content: center;
           align-items: center;
+          max-width: 50px;
         }
         .link-container a {
           color: ${theme.colors.white};
@@ -87,7 +91,6 @@ const LandingNavigation = () => {
           display: block;
         }
       `}</style>
-
     </>
   );
 };

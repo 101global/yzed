@@ -95,9 +95,8 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           justify-content: space-around;
           position: absolute;
           top: calc(30px + 3.2rem);
-          right: 10vw;
+          right: 10%;
           z-index: 1000;
-          min-height: 100px;
           background: transparent;
           color: ${!topModelDark ? theme.colors.black : theme.colors.white};
         }
@@ -120,17 +119,16 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             flex-direction: column;
             justify-content: flex-end;
             bottom: 200px;
-            top: calc(100% - 250px);
-            margin-bottom: 100px;
-            transform: translateY(50%);
-            left: 0;
-            right: 0;
-            max-width: 95%;
+            top: calc(100% - 180px);
+            width: 90%;
+            left: 5%;
           }
           .viewer-container {
-            margin-bottom: 100px;
             height: 100%;
-            max-width: 90%;
+          }
+          .toggle-animated-buttons,
+          .toggle-light-buttons {
+            width: 100%;
           }
         }
       `}</style>
@@ -139,13 +137,10 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           border-radius: 0px !important;
           border: 1px solid ${theme.colors.white} !important;
           height: 30px !important;
-          margin-bottom: 20px;
-          width: 380px;
         }
         @media (max-width: 640px) {
           .react-switch-selector-wrapper {
-            max-width: 90%;
-            left: calc(5%);
+            max-width: 100% !important;
           }
         }
       `}</style>

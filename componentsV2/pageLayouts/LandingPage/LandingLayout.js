@@ -14,7 +14,9 @@ const LandingLayout = ({ model }) => {
   const [topModelDark, setTopModelDark] = useState(true);
   return (
     <Layout>
-      <header id='top' className='w-full flex flex-col fixed pin-t pin-r pin-l px-dsk py-mob'>
+      <header
+        id='top'
+        className='w-full flex flex-col fixed pin-t pin-r pin-l px-4 py-mob lg:px-dsk'>
         <LandingNavigation />
       </header>
       <main className='w-full flex flex-col'>

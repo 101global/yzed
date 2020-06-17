@@ -9,8 +9,8 @@ import theme from '../../../utilities/theme';
 const LandingIntroduction = () => {
   return (
     <>
-      <div className='main-intro-container p-0 md:pl-dsk grid gap-8 md:gap-16 sm:grid-cols-1 md:grid-cols-2 mb-16 md:mb-0'>
-        <div className='text-section flex w-full mt-16 md:mt-0'>
+      <div className='main-intro-container p-0 lg:pl-dsk grid gap-8 lg:gap-16 sm:grid-cols-1 lg:grid-cols-2 mb-16 lg:mb-0'>
+        <div className='text-section flex w-full mt-16 md:mt-24 lg:mt-0 text-center lg:text-left'>
           <div className='text-content p-2'>
             <YZEDAnimatedLogo />
             <h1>Where Democratic Fashion catalyzes self-discovery.</h1>
