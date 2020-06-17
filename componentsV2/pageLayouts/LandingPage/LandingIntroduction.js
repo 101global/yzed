@@ -11,10 +11,10 @@ const LandingIntroduction = () => {
     <>
       <div className='main-intro-container p-0 lg:pl-dsk grid gap-8 lg:gap-16 sm:grid-cols-1 lg:grid-cols-2 mb-16 lg:mb-0'>
         <div className='text-section flex w-full mt-16 md:mt-24 lg:mt-0 text-center lg:text-left'>
-          <div className='text-content p-2'>
+          <div className='text-content mx-4 md:mx-0'>
             <YZEDAnimatedLogo />
             <h1>Where Democratic Fashion catalyzes self-discovery.</h1>
-            <p>
+            <p className='text-justify lg:text-left m-0 md: m-4 lg:m-0'>
               Democratic Fashion is a practice that minimizes the gap between a designers’ work and
               the mass market, while considering fair economic and social trade off. YZED is built
               upon the five most important factors of this practice, which you can read more about
@@ -78,7 +78,6 @@ const LandingIntroduction = () => {
           p {
             max-width: 90%;
             margin: 20px auto 10px;
-            text-align: justify;
           }
           .main-intro-container {
             margin-top: 1.5rem;

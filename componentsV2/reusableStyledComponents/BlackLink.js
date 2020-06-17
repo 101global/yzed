@@ -5,7 +5,11 @@ import theme from '../../utilities/theme';
 const BlackLink = ({ title, link }) => {
   return (
     <>
-      <a href={link} target='_blank' className='black-link' rel='noopener noreferrer'>
+      <a
+        href={link}
+        target='_blank'
+        className='black-link block lg:inline m-auto lg:m-0'
+        rel='noopener noreferrer'>
         {title}
       </a>
       <style jsx>{`
