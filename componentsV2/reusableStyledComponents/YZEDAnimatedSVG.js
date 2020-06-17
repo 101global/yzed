@@ -23,9 +23,6 @@ const AnimatedLogo = () => {
 
           duration: 300,
         }}
-        style={{
-          height: '100px',
-        }}
         callback={animationFinished}
       />
 
@@ -37,7 +34,15 @@ const AnimatedLogo = () => {
             top: 10px;
           }
           #animated-svg svg {
-            height: 80px !important;
+            height: 80px;
+          }
+          @media (max-width: 640px) {
+            #animated-svg {
+              top: 25px;
+            }
+            #animated-svg svg {
+              height: 60px;
+            }
           }
         `}
       </style>
