@@ -17,7 +17,7 @@ const LandingLayout = ({ model }) => {
       <header id='top' className='w-full flex flex-col fixed pin-t pin-r pin-l px-dsk py-mob'>
         <LandingNavigation />
       </header>
-      <main>
+      <main className='w-full flex flex-col'>
         <section className='landing-section'>
           <Element id='model-section' name='model' className='scroll-section dark'>
             <ModelViewerController
