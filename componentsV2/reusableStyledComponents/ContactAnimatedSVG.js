@@ -27,6 +27,7 @@ const ContactAnimated = () => {
             width: 80%;
             margin-left: 10%;
             display: inline-block;
+            position: absolute;
           }
           #animated-contact-svg svg {
             display: inline-block;

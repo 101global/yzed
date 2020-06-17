@@ -6,16 +6,27 @@ import contactText from '../../../public/contact_us.svg';
 const LandingContact = () => {
   return (
     <>
-
-        <div className='main-contact-container px-dsk grid grid-cols-1 lg:grid-cols-2 justify-center align-center'>
-          <div className='title-section flex flex-col justify-center align-center'>
-            <h1>Let's Work Together!</h1>
-            <ContactAnimated />
-          </div>
-          <div className='content-section flex flex-col justify-center align-center'>
-            <h1>Contact</h1>
+      <div className='main-contact-container px-dsk grid grid-cols-1 lg:grid-cols-2 gap-16 justify-center align-center'>
+        <div className='title-section flex flex-col justify-center align-center'>
+          <h1>Let's Work Together!</h1>
+          <ContactAnimated />
+        </div>
+        <div className='content-section flex flex-col justify-center align-center'>
+          <p>
+            Dive into a mixed-reality world with a team of professionals in 3D & graphic design,
+            UI/UX, trend forecasting, as well as front and back-end programming. YZED is turning
+            your exquisite physical products into digital-dazzle, leading your brand into the
+            digital era.
+          </p>
+          <div className='signature'>
+            <p>Interested in working with us? </p>
+            <p>
+              {' '}
+              Please contact us at <a className='email-link'>yzed@101.global</a>
+            </p>
           </div>
         </div>
+      </div>
 
       <style jsx>{`
         .flex-container {
@@ -26,6 +37,35 @@ const LandingContact = () => {
         }
         .title-section,
         .content-section {
+          position: relative;
+        }
+        .signature {
+          margin-top: 30px;
+        }
+        a {
+          font-weight: 600;
+        }
+        h1 {
+          text-align: right;
+          font-size: 2.8rem;
+          font-weight: 500;
+          z-index: 500;
+        }
+        p {
+          font-weight: 100;
+          font-size: 1.2rem;
+        }
+        a.email-link {
+          display: inline-block;
+        }
+        a.email-link:after {
+          content: '';
+          background-image: linear-gradient(to right, #a891d9, #73cfdb);
+          width: 110%;
+          margin-left: -5%;
+          margin-top: -10px;
+          height: 12px;
+          display: block;
         }
       `}</style>
     </>
