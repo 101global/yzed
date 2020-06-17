@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import { Element } from 'react-scroll';
+import LandingAbout from './LandingAbout';
+import LandingIntroduction from './LandingIntroduction';
 import LandingNavigation from './LandingNavigation';
+import Layout from '../../../components/Layout';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
 import theme from '../../../utilities/theme';
-import LandingIntroduction from './LandingIntroduction';
-import Layout from '../../../components/Layout';
 
 const LandingLayout = ({ model }) => {
   const [topModelDark, setTopModelDark] = useState(true);
@@ -30,7 +31,9 @@ const LandingLayout = ({ model }) => {
           </Element>
         </section>
         <section className='landing-section'>
-          <Element name='about' className='scroll-section dark'></Element>
+          <Element id='about-section' name='about' className='scroll-section dark'>
+            <LandingAbout model={model} />
+          </Element>
         </section>
         <section className='landing-section'>
           <Element name='contact' className='scroll-section light'></Element>
@@ -51,10 +54,6 @@ const LandingLayout = ({ model }) => {
           justify-content: center;
           align-items: center;
         }
-        .scroll-section {
-          height: 100%;
-          width: 100%;
-        }
       `}</style>
       <style jsx global>
         {`
@@ -70,11 +69,14 @@ const LandingLayout = ({ model }) => {
             min-height: 100vh;
             padding-top: 85px;
           }
-          #intro-section {
+          #intro-section,
+          #about-section {
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
           }
+          
         `}
       </style>
     </Layout>

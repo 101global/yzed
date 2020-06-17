@@ -1,14 +1,15 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
 import BlackLink from '../../reusableStyledComponents/BlackLink';
-import theme from '../../../utilities/theme';
 import ProgressiveImage from '../../ProgressiveImage';
-import image from '../../../public/HQ_IMGS3_0120.png';
 import YZEDAnimatedLogo from '../../reusableStyledComponents/YZEDAnimatedLogoSVG';
+import image from '../../../public/HQ_IMGS3_0120.png';
+import theme from '../../../utilities/theme';
 
 const LandingIntroduction = () => {
   return (
     <>
-      <div className='main-landing-container p-none md:pl-dsk grid gap-8 md:gap-16 sm:grid-cols-1 md:grid-cols-2'>
+      <div className='main-intro-container p-none md:pl-dsk grid gap-8 md:gap-16 sm:grid-cols-1 md:grid-cols-2'>
         <div className='text-section flex w-full'>
           <div className='text-content'>
             <YZEDAnimatedLogo />
@@ -57,6 +58,9 @@ const LandingIntroduction = () => {
         .text-section {
           position: relative;
         }
+        .main-intro-container {
+       
+        }
         img {
           max-height: 444px;
           width: auto;
@@ -76,7 +80,7 @@ const LandingIntroduction = () => {
             max-width: 95%;
             margin: 20px auto 10px;
           }
-          .main-landing-container {
+          .main-intro-container {
             margin-top: 1.5rem;
             margin-bottom: 1.5rem;
           }
