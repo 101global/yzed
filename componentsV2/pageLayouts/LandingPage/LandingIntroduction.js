@@ -68,6 +68,9 @@ const LandingIntroduction = () => {
           }
           h1 {
             text-align: center;
+            font-size: 2.6rem;
+            max-width: 95%;
+            margin: 0px auto;
           }
           p {
             max-width: 95%;
