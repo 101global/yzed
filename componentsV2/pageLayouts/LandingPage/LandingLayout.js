@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Element } from 'react-scroll';
 import LandingAbout from './LandingAbout';
 import LandingContact from './LandingContact';
+import LandingFooter from './LandingFooter';
 import LandingIntroduction from './LandingIntroduction';
 import LandingNavigation from './LandingNavigation';
 import Layout from '../../../components/Layout';
@@ -37,11 +38,12 @@ const LandingLayout = ({ model }) => {
           </Element>
         </section>
         <section className='landing-section'>
-          <Element id='class-section' name='contact' className='scroll-section light'>
+          <Element id='contact-section' name='contact' className='scroll-section light'>
             <LandingContact />
           </Element>
         </section>
       </main>
+      <LandingFooter />
       <style jsx>{`
         #top {
           background-color: #0d0d0df6;
@@ -77,10 +79,11 @@ const LandingLayout = ({ model }) => {
           }
           #contact-section {
             min-width: 100vw;
+            display: grid;
           }
           .scroll-section {
             width: 100%;
-            min-height: 500px;
+            min-height: 100vh;
              {
               /* min-height: 100vh; */
             }

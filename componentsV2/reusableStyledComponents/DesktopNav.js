@@ -37,7 +37,6 @@ const DesktopNav = () => {
         spy={true}
         smooth={true}
         duration={500}
-        offset={-400}
         className='nav-scroll-link hidden lg:inline-block'
         activeClass='active'>
         Contact
