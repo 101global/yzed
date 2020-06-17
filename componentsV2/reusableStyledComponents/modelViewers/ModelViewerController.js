@@ -20,8 +20,8 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   ];
 
   const lightOptions = [
-    { label: 'Dark', value: true },
     { label: 'Light', value: false },
+    { label: 'Dark', value: true },
   ];
 
   const onAnimationChange = (newValue) => {
@@ -54,7 +54,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
               <SwitchSelector
                 onChange={onLightChange}
                 options={lightOptions}
-                initialSelectedIndex={0}
+                initialSelectedIndex={1}
                 backgroundColor={'#0d0d0d'}
                 fontColor={'#fff'}
                 selectedFontColor={'#0d0d0d'}
@@ -89,19 +89,16 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           width: 100%;
           display: flex;
         }
-
         .controls {
           display: inline-block;
           flex-direction: column;
           justify-content: space-around;
           position: absolute;
-          top: 12vh;
+          top: calc(30px + 3.2rem);
           right: 10vw;
           z-index: 1000;
           min-height: 100px;
-
           background: transparent;
-
           color: ${!topModelDark ? theme.colors.black : theme.colors.white};
         }
         .toggle-button-container {
@@ -111,28 +108,24 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           justify-content: space-between;
         }
 
-        .toggle-animated-buttons {
+        .toggle-animated-buttons,
+        .toggle-light-buttons {
           height: 40px;
           width: 380px;
+          margin-bottom: 20px;
+          margin-top: 10px;
         }
-        button,
-        p {
-          display: inline;
-        }
-        p {
-          font-weight: 100;
-          margin: 0;
-          font-size: 1.2rem;
-        }
-
         @media (max-width: 640px) {
           .controls {
-            height: 100px;
             flex-direction: column;
             justify-content: flex-end;
-            bottom: 0px;
-            top: calc(100% + 20px);
+            bottom: 200px;
+            top: calc(100% - 250px);
             margin-bottom: 100px;
+            transform: translateY(50%);
+            left: 0;
+            right: 0;
+            max-width: 95%;
           }
           .viewer-container {
             margin-bottom: 100px;
@@ -148,6 +141,12 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           height: 30px !important;
           margin-bottom: 20px;
           width: 380px;
+        }
+        @media (max-width: 640px) {
+          .react-switch-selector-wrapper {
+            max-width: 90%;
+            left: calc(5%);
+          }
         }
       `}</style>
     </>

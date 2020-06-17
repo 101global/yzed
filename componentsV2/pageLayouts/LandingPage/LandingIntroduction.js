@@ -8,10 +8,10 @@ import YZEDAnimatedLogo from '../../reusableStyledComponents/YZEDAnimatedLogoSVG
 const LandingIntroduction = () => {
   return (
     <>
-      <div className='main-landing-container grid col-gap-16 sm:grid-cols-1 md:grid-cols-2'>
-        <div className='text-section'>
+      <div className='main-landing-container p-none md:pl-dsk grid gap-8 md:gap-16 sm:grid-cols-1 md:grid-cols-2'>
+        <div className='text-section flex w-full'>
           <div className='text-content'>
-            {/* <YZEDAnimatedLogo /> */}
+            <YZEDAnimatedLogo />
             <h1>Where Democratic Fashion catalyzes self-discovery.</h1>
             <p>
               Democratic Fashion is a practice that minimizes the gap between a designers’ work and
@@ -21,7 +21,7 @@ const LandingIntroduction = () => {
             </p>
             <BlackLink
               title='DOWNLOAD MANIFESTO'
-              href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
+              link='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
             />
           </div>
         </div>
@@ -30,10 +30,6 @@ const LandingIntroduction = () => {
         </div>
       </div>
       <style jsx>{`
-        .main-landing-container {
-          width: 90%;
-          margin-left: 10%;
-        }
         h1 {
           font-size: 3rem;
           line-height: 3rem;
@@ -58,11 +54,41 @@ const LandingIntroduction = () => {
           justify-content: flex-end;
           padding-top: 60px;
         }
-
+        .text-section {
+          position: relative;
+        }
         img {
           max-height: 444px;
           width: auto;
           max-width: 90%;
+        }
+        @media (max-width: 640px) {
+          .photo-section {
+            padding-top: 0;
+          }
+          h1 {
+            text-align: center;
+          }
+          p {
+            max-width: 95%;
+            margin: 20px auto 10px;
+          }
+          .main-landing-container {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+          }
+        }
+      `}</style>
+      <style jsx global>{`
+        .black-link {
+          margin-top: 50px;
+        }
+        @media (max-width: 640px) {
+          .black-link {
+            display: block;
+            margin-top: 0px;
+            margin: 10px auto;
+          }
         }
       `}</style>
     </>

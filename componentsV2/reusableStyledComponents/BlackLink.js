@@ -19,9 +19,9 @@ const BlackLink = ({ title, link }) => {
           border: 1px solid ${theme.colors.black};
           transition: all 0.4s ease;
           width: 384px;
+          max-width: 90%;
           font-size: ${theme.fontSizes.pSizeDesktop};
           text-align: center;
-          margin-top: 50px;
         }
         a {
           letter-spacing: 0.2em;

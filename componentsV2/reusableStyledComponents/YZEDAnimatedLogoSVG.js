@@ -33,14 +33,11 @@ const AnimatedLogo = () => {
         {`
           #animated-svg {
             position: absolute;
-            min-width: 45%;
-            margin-top: 10px;
+            width: 100%;
+            top: 10px;
           }
           #animated-svg svg {
             height: 80px !important;
-            display: inline !important;
-            width: auto;
-            transform: translateX(calc(50% - 22.5%));
           }
         `}
       </style>

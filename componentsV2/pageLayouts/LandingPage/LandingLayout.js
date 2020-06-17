@@ -5,13 +5,13 @@ import LandingNavigation from './LandingNavigation';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
 import theme from '../../../utilities/theme';
 import LandingIntroduction from './LandingIntroduction';
-import Layout from '../../Layout';
+import Layout from '../../../components/Layout';
 
 const LandingLayout = ({ model }) => {
   const [topModelDark, setTopModelDark] = useState(true);
   return (
     <Layout>
-      <header id='top' className='w-full flex flex-col fixed pin-t pin-r pin-l'>
+      <header id='top' className='w-full flex flex-col fixed pin-t pin-r pin-l px-dsk py-mob'>
         <LandingNavigation />
       </header>
       <main>
@@ -43,7 +43,6 @@ const LandingLayout = ({ model }) => {
           left: 0;
           top: 0;
           z-index: 10000;
-          padding: 0 10%;
         }
         .landing-section {
           min-height: 100vh;
