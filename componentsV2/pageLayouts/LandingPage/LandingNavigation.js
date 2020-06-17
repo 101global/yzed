@@ -11,7 +11,7 @@ const LandingNavigation = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
-      <nav className='flex w-full justify-between sm:justify-start md:justify-between py-4'>
+      <nav className='flex w-full justify-between py-4'>
         <div className='logo-container'>
           <svg
             version='1.1'
