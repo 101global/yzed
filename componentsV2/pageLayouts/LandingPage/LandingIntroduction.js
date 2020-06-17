@@ -10,7 +10,7 @@ const LandingIntroduction = () => {
   return (
     <>
       <div className='main-intro-container p-0 md:pl-dsk grid gap-8 md:gap-16 sm:grid-cols-1 md:grid-cols-2'>
-        <div className='text-section flex w-full'>
+        <div className='text-section flex w-full mt-16 md:mt-0'>
           <div className='text-content p-2'>
             <YZEDAnimatedLogo />
             <h1>Where Democratic Fashion catalyzes self-discovery.</h1>
