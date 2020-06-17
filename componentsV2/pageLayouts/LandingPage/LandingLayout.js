@@ -5,12 +5,13 @@ import LandingNavigation from './LandingNavigation';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
 import theme from '../../../utilities/theme';
 import LandingIntroduction from './LandingIntroduction';
+import Layout from '../../Layout';
 
 const LandingLayout = ({ model }) => {
   const [topModelDark, setTopModelDark] = useState(true);
   return (
-    <>
-      <header id='top' className='w-full flex flex-col fixed  pin-t pin-r pin-l'>
+    <Layout>
+      <header id='top' className='w-full flex flex-col fixed pin-t pin-r pin-l'>
         <LandingNavigation />
       </header>
       <main>
@@ -77,7 +78,7 @@ const LandingLayout = ({ model }) => {
           }
         `}
       </style>
-    </>
+    </Layout>
   );
 };
 

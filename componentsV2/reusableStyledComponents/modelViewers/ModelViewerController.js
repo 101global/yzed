@@ -77,7 +77,8 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
       <style jsx>{`
         .viewer-container {
           height: 100%;
-          width: 80%;
+          width: 2000px;
+          max-width: 80%;
           margin: 0 auto;
           display: flex;
           justify-content: center;
@@ -136,6 +137,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           .viewer-container {
             margin-bottom: 100px;
             height: 100%;
+            max-width: 90%;
           }
         }
       `}</style>

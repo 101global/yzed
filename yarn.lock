@@ -6135,6 +6135,11 @@ randomfill@^1.0.3:
     randombytes "^2.0.5"
     safe-buffer "^5.1.0"
 
+react-animated-burgers@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/react-animated-burgers/-/react-animated-burgers-1.2.7.tgz#5fda9ec65134381a5c7eef866567f8f509a63fe9"
+  integrity sha512-2eCX3MBu2HYZMauzmod74MJz884/1sUqYOg4E/4sQQVu09FU26bjCdiIuNK/o1GZxfFNs2zFJTdRI7OmmclgSA==
+
 react-dom@16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"

@@ -11,7 +11,7 @@ const LandingIntroduction = () => {
       <div className='main-landing-container grid col-gap-16 sm:grid-cols-1 md:grid-cols-2'>
         <div className='text-section'>
           <div className='text-content'>
-            <YZEDAnimatedLogo />
+            {/* <YZEDAnimatedLogo /> */}
             <h1>Where Democratic Fashion catalyzes self-discovery.</h1>
             <p>
               Democratic Fashion is a practice that minimizes the gap between a designers’ work and

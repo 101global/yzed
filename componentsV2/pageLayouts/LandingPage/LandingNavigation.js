@@ -3,8 +3,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import YZEDNavLogo from '../../../public/yzed_logo_white.svg';
 import theme from '../../../utilities/theme';
+import { HamburgerMinus } from 'react-animated-burgers';
+import MobileNav from '../../reusableStyledComponents/MobileNav';
+import DesktopNav from '../../reusableStyledComponents/DesktopNav';
 
 const LandingNavigation = () => {
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
       <nav className='flex w-full justify-between sm:justify-start md:justify-between py-4'>
@@ -26,46 +30,31 @@ const LandingNavigation = () => {
             </g>
           </svg>
         </div>
-        <div className='link-container w-1/3 p-2 flex justify-between align-center'>
-          <Link
-            to='model'
-            spy={true}
-            smooth={true}
-            duration={500}
-            className='nav-scroll-link '
-            activeClass='active'>
-            3D Model
-          </Link>
-          <Link
-            to='introduction'
-            spy={true}
-            smooth={true}
-            duration={500}
-            className='nav-scroll-link '
-            activeClass='active'>
-            Introduction
-          </Link>
-          <Link
-            to='about'
-            spy={true}
-            smooth={true}
-            duration={500}
-            className='nav-scroll-link'
-            activeClass='active'>
-            About Us
-          </Link>
-          <Link
-            to='contact'
-            spy={true}
-            smooth={true}
-            duration={500}
-            className='nav-scroll-link'
-            activeClass='active'>
-            Contact
-          </Link>
+        <div className='link-container w-1/2 py-2 flex justify-between'>
+          <div className='flex md:hidden hamburger-container'>
+            <HamburgerMinus
+              isActive={openMenu}
+              toggleButton={() => setOpenMenu(!openMenu)}
+              barColor='white'
+              buttonWidth={30}
+            />
+          </div>
+          <MobileNav openMenu={openMenu} setOpenMenu={setOpenMenu} />
+          <DesktopNav />
         </div>
       </nav>
       <style jsx global>{`
+        .hamburger-container {
+          width: 100%;
+        }
+        .hamburger-container button {
+          align-self: end;
+          width: 30%;
+          margin: 0 0 0 70%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         .link-container a {
           color: ${theme.colors.white};
           font-family: ${theme.fonts.main};
@@ -79,6 +68,8 @@ const LandingNavigation = () => {
           justify-content: center;
           align-items: center;
         }
+        a.nav-scroll-link {
+        }
         a.nav-scroll-link.active {
           font-weight: 600;
         }
@@ -88,7 +79,7 @@ const LandingNavigation = () => {
 
         a.nav-scroll-link.active:after {
           content: '';
-          background-image: linear-gradient(to left, #a891d9, #73cfdb);
+          background-image: linear-gradient(to right, #a891d9, #73cfdb);
           width: 130%;
           margin-left: -15%;
           margin-top: -10px;
