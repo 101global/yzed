@@ -9,7 +9,7 @@ import theme from '../../../utilities/theme';
 const LandingIntroduction = () => {
   return (
     <>
-      <div className='main-intro-container p-0 md:pl-dsk grid gap-8 md:gap-16 sm:grid-cols-1 md:grid-cols-2'>
+      <div className='main-intro-container p-0 md:pl-dsk grid gap-8 md:gap-16 sm:grid-cols-1 md:grid-cols-2 mb-16 md:mb-0'>
         <div className='text-section flex w-full mt-16 md:mt-0'>
           <div className='text-content p-2'>
             <YZEDAnimatedLogo />
@@ -76,12 +76,13 @@ const LandingIntroduction = () => {
             margin: 0px auto;
           }
           p {
-            max-width: 95%;
+            max-width: 90%;
             margin: 20px auto 10px;
+            text-align: justify;
           }
           .main-intro-container {
             margin-top: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 4rem;
           }
         }
       `}</style>

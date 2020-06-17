@@ -13,8 +13,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
           smooth={true}
           duration={500}
           className='nav-scroll-link inline-block lg:hidden'
-          activeClass='active'
-          onSetActive={() => setOpenMenu(false)}>
+          activeClass='active'>
           3D Model
         </Link>
         <Link
@@ -23,8 +22,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
           smooth={true}
           duration={500}
           className='nav-scroll-link inline-block lg:hidden'
-          activeClass='active'
-          onSetActive={() => setOpenMenu(false)}>
+          activeClass='active'>
           Introduction
         </Link>
         <Link
@@ -33,8 +31,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
           smooth={true}
           duration={500}
           className='nav-scroll-link inline-block lg:hidden'
-          activeClass='active'
-          onSetActive={() => setOpenMenu(false)}>
+          activeClass='active'>
           About Us
         </Link>
         <Link
@@ -43,8 +40,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
           smooth={true}
           duration={500}
           className='nav-scroll-link inline-block lg:hidden'
-          activeClass='active'
-          onSetActive={() => setOpenMenu(false)}>
+          activeClass='active'>
           Contact
         </Link>
       </div>
@@ -53,19 +49,19 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
           display: flex;
           flex-direction: column;
           justify-content: space-around;
-          background: ${theme.colors.black};
+          background: #0d0d0dfb;
           transform: ${openMenu ? 'translateX(0)' : 'translateX(100%)'};
           min-width: ${openMenu ? '100%' : '0'};
-          height: calc(100vh - 88.5px);
+          min-height: calc(100vh - 68px);
           text-align: left;
           position: fixed;
-          margin-top: 88.5px;
+          margin-top: 88px;
           top: 0;
           left: 0;
           z-index: 1001;
           transition: all 0.5s ease-in-out;
           font-family: ${theme.fonts.main};
-          overflow-y: scroll;
+          overflow-y: hidden;
         }
         .mobile-nav a {
           font-size: 1.6rem;

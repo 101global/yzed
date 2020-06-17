@@ -46,7 +46,7 @@ const LandingLayout = ({ model }) => {
       <LandingFooter />
       <style jsx>{`
         #top {
-          background-color: #0d0d0df6;
+          background-color: #0d0d0dfb;
           display: fixed;
           left: 0;
           top: 0;
