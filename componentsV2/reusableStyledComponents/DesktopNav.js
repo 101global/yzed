@@ -1,16 +1,16 @@
-import { Link } from 'react-scroll';
+import React, { useContext, useEffect, useState } from 'react';
 
-import React, { useEffect, useContext, useState } from 'react';
+import { Link } from 'react-scroll';
 
 const DesktopNav = () => {
   return (
-    <div className='desktop-nav hidden md:flex justify-between w-full'>
+    <div className='desktop-nav hidden lg:flex justify-between w-full'>
       <Link
         to='model'
         spy={true}
         smooth={true}
         duration={500}
-        className='nav-scroll-link hidden md:inline-block'
+        className='nav-scroll-link hidden lg:inline-block'
         activeClass='active'>
         3D Model
       </Link>
@@ -19,7 +19,7 @@ const DesktopNav = () => {
         spy={true}
         smooth={true}
         duration={500}
-        className='nav-scroll-link hidden md:inline-block'
+        className='nav-scroll-link hidden lg:inline-block'
         activeClass='active'>
         Introduction
       </Link>
@@ -28,7 +28,7 @@ const DesktopNav = () => {
         spy={true}
         smooth={true}
         duration={500}
-        className='nav-scroll-link hidden md:inline-block'
+        className='nav-scroll-link hidden lg:inline-block'
         activeClass='active'>
         About Us
       </Link>
@@ -37,7 +37,8 @@ const DesktopNav = () => {
         spy={true}
         smooth={true}
         duration={500}
-        className='nav-scroll-link hidden md:inline-block'
+        offset={-400}
+        className='nav-scroll-link hidden lg:inline-block'
         activeClass='active'>
         Contact
       </Link>

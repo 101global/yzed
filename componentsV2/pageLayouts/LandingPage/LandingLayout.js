@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import { Element } from 'react-scroll';
 import LandingAbout from './LandingAbout';
+import LandingContact from './LandingContact';
 import LandingIntroduction from './LandingIntroduction';
 import LandingNavigation from './LandingNavigation';
 import Layout from '../../../components/Layout';
@@ -36,7 +37,9 @@ const LandingLayout = ({ model }) => {
           </Element>
         </section>
         <section className='landing-section'>
-          <Element name='contact' className='scroll-section light'></Element>
+          <Element id='class-section' name='contact' className='scroll-section light'>
+            <LandingContact />
+          </Element>
         </section>
       </main>
       <style jsx>{`
@@ -48,8 +51,6 @@ const LandingLayout = ({ model }) => {
           z-index: 10000;
         }
         .landing-section {
-          min-height: 100vh;
-          min-width: 100vw;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -57,10 +58,6 @@ const LandingLayout = ({ model }) => {
       `}</style>
       <style jsx global>
         {`
-          .scroll-section {
-            min-height: 100vh;
-            min-width: 100vw;
-          }
           .dark {
             background-color: ${theme.colors.black};
           }
@@ -68,6 +65,7 @@ const LandingLayout = ({ model }) => {
             background-color: ${topModelDark ? theme.colors.black : theme.colors.white};
             min-height: 100vh;
             padding-top: 85px;
+            min-width: 100vw;
           }
           #intro-section,
           #about-section {
@@ -75,8 +73,18 @@ const LandingLayout = ({ model }) => {
             display: flex;
             justify-content: center;
             align-items: center;
+            min-width: 100vw;
           }
-          
+          #contact-section {
+            min-width: 100vw;
+          }
+          .scroll-section {
+            width: 100%;
+            min-height: 500px;
+             {
+              /* min-height: 100vh; */
+            }
+          }
         `}
       </style>
     </Layout>

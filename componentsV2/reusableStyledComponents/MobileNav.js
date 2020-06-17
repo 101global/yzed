@@ -1,18 +1,18 @@
-import { Link } from 'react-scroll';
+import React, { useContext, useEffect, useState } from 'react';
 
-import React, { useEffect, useContext, useState } from 'react';
+import { Link } from 'react-scroll';
 import theme from '../../utilities/theme';
 
 const MobileNav = ({ openMenu, setOpenMenu }) => {
   return (
     <>
-      <div className='mobile-nav flex flex-col md:hidden justify-between w-full'>
+      <div className='mobile-nav flex flex-col lg:hidden justify-between w-full'>
         <Link
           to='model'
           spy={true}
           smooth={true}
           duration={500}
-          className='nav-scroll-link inline-block md:hidden'
+          className='nav-scroll-link inline-block lg:hidden'
           activeClass='active'
           onSetActive={() => setOpenMenu(false)}>
           3D Model
@@ -22,7 +22,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
           spy={true}
           smooth={true}
           duration={500}
-          className='nav-scroll-link inline-block md:hidden'
+          className='nav-scroll-link inline-block lg:hidden'
           activeClass='active'
           onSetActive={() => setOpenMenu(false)}>
           Introduction
@@ -32,7 +32,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
           spy={true}
           smooth={true}
           duration={500}
-          className='nav-scroll-link inline-block md:hidden'
+          className='nav-scroll-link inline-block lg:hidden'
           activeClass='active'
           onSetActive={() => setOpenMenu(false)}>
           About Us
@@ -42,7 +42,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
           spy={true}
           smooth={true}
           duration={500}
-          className='nav-scroll-link inline-block md:hidden'
+          className='nav-scroll-link inline-block lg:hidden'
           activeClass='active'
           onSetActive={() => setOpenMenu(false)}>
           Contact
