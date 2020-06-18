@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import DesktopNav from '../../reusableStyledComponents/DesktopNav';
-import { HamburgerMinus } from 'react-animated-burgers';
+import { HamburgerSqueeze } from 'react-animated-burgers';
 import { Link } from 'react-scroll';
 import MobileNav from '../../reusableStyledComponents/MobileNav';
 import YZEDNavLogo from '../../../public/yzed_logo_white.svg';
@@ -32,7 +32,7 @@ const LandingNavigation = () => {
         </div>
         <div className='link-container w-1/2 py-2 flex justify-between'>
           <div className='flex lg:hidden hamburger-container'>
-            <HamburgerMinus
+            <HamburgerSqueeze
               isActive={openMenu}
               toggleButton={() => setOpenMenu(!openMenu)}
               barColor='white'
