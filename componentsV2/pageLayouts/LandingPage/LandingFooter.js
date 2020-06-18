@@ -6,7 +6,7 @@ const LandingFooter = () => {
   return (
     <>
       <footer className='text-left'>
-        <p className='p-2 lg:px-dsk text-lg lg:text-xl'>
+        <p className='p-2 lg:px-dsk text-md lg:text-md'>
           <a className='color-link' href='/'>
             YZED
           </a>{' '}
