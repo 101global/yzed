@@ -83,8 +83,8 @@ const LandingNavigation = () => {
         a.nav-scroll-link.active:after,
         a.nav-scroll-link:hover:after {
           content: '';
-          background-image: linear-gradient(to right, #a891d9, #73cfdb);
-          background-size: 200% 200%;
+          background-image: linear-gradient(to right, #a891d9, #73cfdb, #a891d9, #73cfdb);
+          background-size: 260% 200%;
           width: 130%;
           margin-left: -15%;
           margin-top: -10px;

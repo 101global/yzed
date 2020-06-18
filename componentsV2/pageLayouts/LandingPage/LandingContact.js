@@ -31,7 +31,6 @@ const LandingContact = () => {
         </div>
       </>
       <style jsx>{`
-
         .main-contact-container {
           width: 100%;
         }
@@ -62,8 +61,8 @@ const LandingContact = () => {
         }
         a.email-link:after {
           content: '';
-          background-image: linear-gradient(to right, #a891d9, #73cfdb);
-          background-size: 200% 200%;
+          background-image: linear-gradient(to right, #a891d9, #73cfdb, #a891d9, #73cfdb);
+          background-size: 260% 200%;
           width: 110%;
           margin-left: -5%;
           margin-top: -10px;
@@ -72,8 +71,9 @@ const LandingContact = () => {
         }
         a.email-link:hover:after {
           animation: gradient 2s ease infinite;
+          animation-direction: alternate;
         }
-          @keyframes gradient {
+        @keyframes gradient {
           0% {
             background-position: 0% 50%;
           }
