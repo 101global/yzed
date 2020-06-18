@@ -25,7 +25,6 @@ const ContactAnimated = () => {
         {`
           #animated-contact-svg {
             width: 80%;
-
             display: inline-block;
             position: absolute;
           }
@@ -36,6 +35,7 @@ const ContactAnimated = () => {
           @media (max-width: 812px) {
             #animated-contact-svg {
               width: 100%;
+              bottom: 42px;
             }
             #animated-contact-svg svg {
               display: inline-block;

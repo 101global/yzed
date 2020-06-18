@@ -13,10 +13,10 @@ const LandingAbout = () => {
     <>
       <div className='main-about-container pb-32 align-center justify-center w-full'>
         <div className='text-container grid grid-cols-1 lg:block align-center justify-center w-full lg:w-4/5 mx-auto my-0 relative'>
-          <h1 className='text-xl px-4 lg:pb-8 lg:p-0 lg:text-4xl w-full lg:w-5/12 inline-block'>
+          <h1 className='text-3xl lg:text-4xl px-4 lg:pb-8 lg:p-0 lg:text-4xl w-full lg:w-5/12 inline-block text-center lg:text-left'>
             “The desire to make fashion more accessible to people.”
           </h1>
-          <p className='text-xl w-full lg:w-6/12 block lg:inline-block relative lg:absolute right-o font-hairline z-50 right-0 px-4 py-8 lg:pb-8 lg:pl-8 lg:pt-0 lg:pr-0 right-0 text-justify'>
+          <p className='text-xl w-full lg:w-6/12 block lg:inline-block relative lg:absolute right-o font-hairline z-50 right-0 px-4 py-12 lg:pb-8 lg:pl-8 lg:pt-0 lg:pr-0 right-0 text-justify'>
             We are an international team of four, based in Seoul, South Korea. We became united by
             the desire to make fashion more accessible to people, which has continued to be our
             team’s top priority. We strongly believe that a change of status quo is imminent in the
@@ -53,8 +53,7 @@ const LandingAbout = () => {
           padding-top: 100px;
         }
         h1 {
-          font-size: 2.5rem;
-          line-height: 2.5rem;
+          font-weight: 600;
         }
         p {
           font-weight: 100;

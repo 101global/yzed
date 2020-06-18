@@ -23,7 +23,7 @@ const LandingFooter = () => {
       </footer>
       <style jsx>{`
         footer p {
-          font-weight: 100;
+          font-weight: 200;
 
           background: ${theme.colors.black};
           color: ${theme.colors.white};
@@ -32,7 +32,6 @@ const LandingFooter = () => {
         }
 
         footer p a {
-          margin: 0 5px;
           font-weight: 600;
           display: inline-block;
         }

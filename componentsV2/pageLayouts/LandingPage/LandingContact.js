@@ -46,15 +46,13 @@ const LandingContact = () => {
         .signature {
           margin-top: 30px;
         }
-        a {
-          font-weight: 600;
-        }
         h1 {
           font-weight: 500;
           z-index: 500;
         }
 
         a.email-link {
+          font-weight: 600;
           display: inline-block;
           cursor: pointer;
         }

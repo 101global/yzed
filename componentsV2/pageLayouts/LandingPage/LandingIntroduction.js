@@ -13,7 +13,7 @@ const LandingIntroduction = () => {
         <div className='text-section flex w-full mt-16 md:mt-24 lg:mt-0 text-center lg:text-left relative'>
           <div className='text-content mx-4 md:mx-0 flex flex-col justify-between'>
             <YZEDAnimatedLogo />
-            <h1 className='pt-16 text-4xl my-0 mx-auto lg:text-5xl text-center lg:text-left'>
+            <h1 className='pt-16 text-4xl lg:text-5xl my-0 mx-auto text-center lg:text-left'>
               Where Democratic Fashion catalyzes self-discovery.
             </h1>
             <p className='text-xl text-justify lg:text-left py-12 lg:py-0 my-0 mx-auto lg:mt-24 lg:m-0'>
@@ -41,6 +41,7 @@ const LandingIntroduction = () => {
         }
         p {
           font-weight: 200;
+
           color: ${theme.colors.black};
         }
         img {
