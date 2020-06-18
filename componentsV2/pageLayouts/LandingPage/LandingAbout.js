@@ -8,7 +8,21 @@ import image2 from '../../../public/HQ_IMAGES8_0032.png';
 import selfExpressionWhite from '../../../public/self-expression.svg';
 import theme from '../../../utilities/theme';
 
-const LandingAbout = () => {
+const LandingAbout = ({ model }) => {
+  const imageBaseUrl = 'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/';
+  const smallPhoto = {
+    id: `${model.name} Detail View 2`,
+    mini: `${imageBaseUrl}${model.imageSlug}_image_2_mini-compressor.jpg`,
+    thumb: `${imageBaseUrl}${model.imageSlug}_image_2_thumb-compressor.jpg`,
+    max: `${imageBaseUrl}${model.imageSlug}_image_2_max-compressor.jpg`,
+  };
+  const largePhoto = {
+    id: `${model.name} Detail View 3`,
+    mini: `${imageBaseUrl}${model.imageSlug}_image_3_mini-compressor.jpg`,
+    thumb: `${imageBaseUrl}${model.imageSlug}_image_3_thumb-compressor.jpg`,
+    max: `${imageBaseUrl}${model.imageSlug}_image_3_max-compressor.jpg`,
+  };
+
   return (
     <>
       <div className='main-about-container pb-32 align-center justify-center w-full'>
@@ -28,10 +42,18 @@ const LandingAbout = () => {
         <div className='bottom-section relative'>
           <div className='image-container w-full'>
             <div className='small-image-container relative lg:absolute right-0  lg:w-2/5 mb-8 lg:mb-0'>
-              <ProgressiveImage image={image2} />
+              <ProgressiveImage
+                image={largePhoto.max}
+                preview={largePhoto.mini}
+                alt={largePhoto.id}
+              />
             </div>
             <div className='large-image-container  lg:w-9/12'>
-              <ProgressiveImage image={image1} />
+              <ProgressiveImage
+                image={smallPhoto.max}
+                preview={smallPhoto.mini}
+                alt={smallPhoto.id}
+              />
             </div>
             <div className='word-mark'>
               <img src={selfExpressionWhite} alt='contact us' />
@@ -59,7 +81,8 @@ const LandingAbout = () => {
           font-weight: 100;
         }
         .small-image-container {
-          top: calc(50% - 200px);
+          top: calc(50% - 120px);
+          z-index: 100;
         }
         .word-mark img {
           overflow: hidden;

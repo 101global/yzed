@@ -6,7 +6,15 @@ import YZEDAnimatedLogo from '../../reusableStyledComponents/YZEDAnimatedSVG';
 import image from '../../../public/HQ_IMGS3_0120.png';
 import theme from '../../../utilities/theme';
 
-const LandingIntroduction = () => {
+const LandingIntroduction = ({ model }) => {
+  const imageBaseUrl = 'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/';
+  const photo = {
+    id: `${model.name} Detail View 1`,
+    mini: `${imageBaseUrl}${model.imageSlug}_image_1_mini-compressor.jpg`,
+    thumb: `${imageBaseUrl}${model.imageSlug}_image_1_thumb-compressor.jpg`,
+    max: `${imageBaseUrl}${model.imageSlug}_image_1_max-compressor.jpg`,
+  };
+
   return (
     <>
       <div className='main-intro-container p-0 lg:pl-dsk grid gap-8 lg:gap-16 sm:grid-cols-1 lg:grid-cols-2 mb-16 lg:mb-0'>
@@ -29,7 +37,7 @@ const LandingIntroduction = () => {
           </div>
         </div>
         <div className='photo-section flex flex-col justify-end p-0 lg:pt-16'>
-          <ProgressiveImage image={image} />
+          <ProgressiveImage image={photo.max} preview={photo.mini} alt={photo.id} />
         </div>
       </div>
       <style jsx>{`
