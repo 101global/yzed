@@ -81,7 +81,7 @@ const LandingLayout = ({ model }) => {
           #contact-section {
             min-width: 100vw;
             display: grid;
-            min-height: calc(100vh - 44px);
+            min-height: 100vh;
           }
         `}
       </style>
