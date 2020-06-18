@@ -31,14 +31,14 @@ const AnimatedLogo = () => {
           #animated-svg {
             position: absolute;
             width: 100%;
-            top: 10px;
+            top: 20px;
           }
           #animated-svg svg {
             height: 80px;
           }
-          @media (max-width: 640px) {
+          @media (max-width: 768px) {
             #animated-svg {
-              top: 25px;
+              top: 30px;
             }
             #animated-svg svg {
               height: 60px;

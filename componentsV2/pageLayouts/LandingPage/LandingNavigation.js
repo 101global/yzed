@@ -72,23 +72,38 @@ const LandingNavigation = () => {
           justify-content: center;
           align-items: center;
         }
-        a.nav-scroll-link {
-        }
-        a.nav-scroll-link.active {
+        a.nav-scroll-link.active,
+        a.nav-scroll-link:hover {
           font-weight: 600;
         }
         a.nav-scroll-link:hover {
           cursor: pointer;
         }
 
-        a.nav-scroll-link.active:after {
+        a.nav-scroll-link.active:after,
+        a.nav-scroll-link:hover:after {
           content: '';
           background-image: linear-gradient(to right, #a891d9, #73cfdb);
+          background-size: 200% 200%;
           width: 130%;
           margin-left: -15%;
           margin-top: -10px;
           height: 10px;
           display: block;
+        }
+        a.nav-scroll-link:hover:after {
+          animation: gradient 2s ease infinite;
+        }
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
       `}</style>
     </>

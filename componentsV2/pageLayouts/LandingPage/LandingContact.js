@@ -8,21 +8,21 @@ const LandingContact = () => {
   return (
     <>
       <>
-        <div className='main-contact-container px-dsk grid grid-cols-1 lg:grid-cols-2 gap-16 justify-center align-center'>
+        <div className='main-contact-container px-dsk grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center align-center'>
           <div className='title-section flex flex-col justify-center align-center'>
-            <h1>Let's Work Together!</h1>
+            <h1 className='text-3xl lg:text-5xl'>Let's Work Together!</h1>
             <ContactAnimated />
           </div>
           <div className='content-section flex flex-col justify-center align-center'>
-            <p>
+            <p className='text-xl'>
               Dive into a mixed-reality world with a team of professionals in 3D & graphic design,
               UI/UX, trend forecasting, as well as front and back-end programming. YZED is turning
               your exquisite physical products into digital-dazzle, leading your brand into the
               digital era.
             </p>
             <div className='signature'>
-              <p>Interested in working with us? </p>
-              <p>
+              <p className='text-xl'>Interested in working with us? </p>
+              <p className='text-xl'>
                 {' '}
                 Please contact us at <a className='email-link'>yzed@101.global</a>
               </p>
@@ -31,14 +31,16 @@ const LandingContact = () => {
         </div>
       </>
       <style jsx>{`
-        .flex-container {
-        }
+
         .main-contact-container {
           width: 100%;
         }
         .title-section,
         .content-section {
           position: relative;
+        }
+        .content-section p {
+          font-weight: 200;
         }
         .signature {
           margin-top: 30px;
@@ -48,35 +50,39 @@ const LandingContact = () => {
         }
         h1 {
           text-align: right;
-          font-size: 2.8rem;
+
           font-weight: 500;
           z-index: 500;
+          margin-right: 20px;
         }
-        footer p {
-          font-weight: 100;
-          font-size: 1.2rem;
-          background: ${theme.colors.black};
-          color: ${theme.colors.white};
-          position: absolute;
-          width: 100%;
-          letter-spacing: 0.02em;
-        }
-        footer p a {
-          margin: 0 5px;
-        }
-        a.email-link,
-        footer p strong {
+
+        a.email-link {
           display: inline-block;
+          cursor: pointer;
         }
-        a.email-link:after,
-        footer p strong:after {
+        a.email-link:after {
           content: '';
           background-image: linear-gradient(to right, #a891d9, #73cfdb);
+          background-size: 200% 200%;
           width: 110%;
           margin-left: -5%;
           margin-top: -10px;
           height: 12px;
           display: block;
+        }
+        a.email-link:hover:after {
+          animation: gradient 2s ease infinite;
+        }
+          @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
       `}</style>
     </>

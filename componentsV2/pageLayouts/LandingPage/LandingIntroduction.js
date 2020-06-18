@@ -10,11 +10,13 @@ const LandingIntroduction = () => {
   return (
     <>
       <div className='main-intro-container p-0 lg:pl-dsk grid gap-8 lg:gap-16 sm:grid-cols-1 lg:grid-cols-2 mb-16 lg:mb-0'>
-        <div className='text-section flex w-full mt-16 md:mt-24 lg:mt-0 text-center lg:text-left'>
-          <div className='text-content mx-4 md:mx-0'>
+        <div className='text-section flex w-full mt-16 md:mt-24 lg:mt-0 text-center lg:text-left relative'>
+          <div className='text-content mx-4 md:mx-0 flex flex-col justify-between'>
             <YZEDAnimatedLogo />
-            <h1>Where Democratic Fashion catalyzes self-discovery.</h1>
-            <p className='text-justify lg:text-left m-0 md: m-4 lg:m-0'>
+            <h1 className='pt-16 text-4xl my-0 mx-auto lg:text-5xl text-center lg:text-left'>
+              Where Democratic Fashion catalyzes self-discovery.
+            </h1>
+            <p className='text-xl text-justify lg:text-left py-12 lg:py-0 my-0 mx-auto lg:mt-24 lg:m-0'>
               Democratic Fashion is a practice that minimizes the gap between a designers’ work and
               the mass market, while considering fair economic and social trade off. YZED is built
               upon the five most important factors of this practice, which you can read more about
@@ -26,62 +28,32 @@ const LandingIntroduction = () => {
             />
           </div>
         </div>
-        <div className='photo-section'>
+        <div className='photo-section flex flex-col justify-end p-0 lg:pt-16'>
           <ProgressiveImage image={image} />
         </div>
       </div>
       <style jsx>{`
         h1 {
-          font-size: 3rem;
-          line-height: 3rem;
           font-weight: ${theme.fontWeights.semiBold};
           z-index: 1000;
-          padding-top: 60px;
+          color: ${theme.colors.black};
+          font-weight: 600;
         }
         p {
-          margin-top: 100px;
-          font-weight: 100;
-          font-size: 1.4rem;
-        }
-        .text-content {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          height: 100%;
-        }
-        .photo-section {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          padding-top: 60px;
-        }
-        .text-section {
-          position: relative;
-        }
-        .main-intro-container {
+          font-weight: 200;
+          color: ${theme.colors.black};
         }
         img {
           max-height: 444px;
           width: auto;
           max-width: 90%;
         }
-        @media (max-width: 640px) {
-          .photo-section {
-            padding-top: 0;
-          }
+        @media (max-width: 768px) {
           h1 {
-            text-align: center;
-            font-size: 2.6rem;
-            max-width: 95%;
-            margin: 0px auto;
+            max-width: 90%;
           }
           p {
             max-width: 90%;
-            margin: 20px auto 10px;
-          }
-          .main-intro-container {
-            margin-top: 1.5rem;
-            margin-bottom: 4rem;
           }
         }
       `}</style>
@@ -89,7 +61,7 @@ const LandingIntroduction = () => {
         .black-link {
           margin-top: 50px;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .black-link {
             display: block;
             margin-top: 0px;

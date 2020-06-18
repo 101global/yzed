@@ -16,7 +16,7 @@ const LandingAbout = () => {
           <h1 className='text-xl px-4 lg:p-0 pb-12 lg:text-4xl w-full lg:w-5/12 inline-block'>
             “The desire to make fashion more accessible to people.”
           </h1>
-          <p className='text-lg w-full lg:w-6/12 block lg:inline-block relative lg:absolute right-o font-hairline z-50 right-0 p-4 pb-8 lg:pb-8 lg:pl-12 right-0 text-justify'>
+          <p className='text-xl w-full lg:w-6/12 block lg:inline-block relative lg:absolute right-o font-hairline z-50 right-0 p-4 pb-8 lg:pb-8 lg:pl-12 right-0 text-justify'>
             We are an international team of four, based in Seoul, South Korea. We became united by
             the desire to make fashion more accessible to people, which has continued to be our
             team’s top priority. We strongly believe that a change of status quo is imminent in the
@@ -59,7 +59,6 @@ const LandingAbout = () => {
         }
         p {
           font-weight: 100;
-          font-size: 1.4rem;
         }
         .small-image-container {
           top: calc(50% - 200px);
@@ -74,10 +73,7 @@ const LandingAbout = () => {
         }
       `}</style>
       <style jsx global>{`
-        .large-image-container img {
-        }
-        .small-image-container img {
-        }
+     
       `}</style>
     </>
   );
