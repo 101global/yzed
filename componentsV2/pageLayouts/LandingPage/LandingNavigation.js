@@ -92,7 +92,7 @@ const LandingNavigation = () => {
           display: block;
         }
         a.nav-scroll-link:hover:after {
-          animation: gradient 2s ease infinite;
+          animation: gradient 3s ease infinite;
         }
         @keyframes gradient {
           0% {

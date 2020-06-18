@@ -7,7 +7,10 @@ const LandingFooter = () => {
     <>
       <footer className='text-left'>
         <p className='p-2 lg:px-dsk'>
-          <strong>YZED</strong> - All rights reserved to{' '}
+          <a className='color-link' href='/'>
+            YZED
+          </a>{' '}
+          - All rights reserved to{' '}
           <a href='https://www.101.global/?lang=en' target='_blank' rel='noopener noreferrer'>
             101Global
           </a>{' '}
@@ -24,7 +27,6 @@ const LandingFooter = () => {
           font-size: 1.2rem;
           background: ${theme.colors.black};
           color: ${theme.colors.white};
-
           width: 100%;
           letter-spacing: 0.02em;
         }
@@ -32,18 +34,32 @@ const LandingFooter = () => {
         footer p a {
           margin: 0 5px;
           font-weight: 600;
-        }
-        footer p strong {
           display: inline-block;
         }
-        footer p strong:after {
+        .color-link:after {
           content: '';
-          background-image: linear-gradient(to right, #a891d9, #73cfdb);
+          background-image: linear-gradient(to right, #a891d9, #73cfdb, #a891d9, #73cfdb);
+          background-size: 260% 200%;
           width: 110%;
           margin-left: -5%;
           margin-top: -12px;
           height: 12px;
           display: block;
+        }
+        .color-link:hover:after {
+          animation: gradient 3s ease infinite;
+          animation-direction: alternate;
+        }
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
       `}</style>
     </>

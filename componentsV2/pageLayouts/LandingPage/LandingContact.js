@@ -8,12 +8,14 @@ const LandingContact = () => {
   return (
     <>
       <>
-        <div className='main-contact-container px-dsk grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center align-center'>
-          <div className='title-section flex flex-col justify-center align-center'>
-            <h1 className='text-3xl lg:text-5xl'>Let's Work Together!</h1>
+        <div className='main-contact-container px-4 lg:px-dsk flex flex-col lg:flex-row justify-center lg:justify-between align-center'>
+          <div className='title-section flex flex-col justify-center align-center w-full lg:w-6/12'>
+            <h1 className='text-3xl lg:text-5xl m-0 lg:mr-8 text-center lg:text-right mb-24 lg:mb-0'>
+              Let's Work Together!
+            </h1>
             <ContactAnimated />
           </div>
-          <div className='content-section flex flex-col justify-center align-center'>
+          <div className='content-section flex flex-col w-full lg:w-6/12 justify-center align-center'>
             <p className='text-xl'>
               Dive into a mixed-reality world with a team of professionals in 3D & graphic design,
               UI/UX, trend forecasting, as well as front and back-end programming. YZED is turning
@@ -48,11 +50,8 @@ const LandingContact = () => {
           font-weight: 600;
         }
         h1 {
-          text-align: right;
-
           font-weight: 500;
           z-index: 500;
-          margin-right: 20px;
         }
 
         a.email-link {
@@ -70,7 +69,7 @@ const LandingContact = () => {
           display: block;
         }
         a.email-link:hover:after {
-          animation: gradient 2s ease infinite;
+          animation: gradient 3s ease infinite;
           animation-direction: alternate;
         }
         @keyframes gradient {
