@@ -25,13 +25,22 @@ const ContactAnimated = () => {
         {`
           #animated-contact-svg {
             width: 80%;
-            
+
             display: inline-block;
             position: absolute;
           }
           #animated-contact-svg svg {
             display: inline-block;
             height: 60px;
+          }
+          @media (max-width: 768px) {
+            #animated-contact-svg {
+              width: 100%;
+            }
+            #animated-contact-svg svg {
+              display: inline-block;
+              height: 40px;
+            }
           }
         `}
       </style>
