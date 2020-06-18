@@ -13,7 +13,9 @@ const LandingNavigation = () => {
     <>
       <nav className='flex w-full justify-between py-4'>
         <div className='logo-container'>
-          <img src={YZEDNavLogo} alt='YZED logo' />
+          <a href='/' aria-label='home'>
+            <img src={YZEDNavLogo} alt='YZED logo' />
+          </a>
         </div>
         <div className='link-container w-1/2 py-2 flex justify-between'>
           <div className='flex lg:hidden hamburger-container'>
