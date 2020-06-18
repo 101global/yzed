@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import BlackLink from '../../reusableStyledComponents/BlackLink';
 import ProgressiveImage from '../../ProgressiveImage';
 import YZEDAnimatedLogo from '../../reusableStyledComponents/YZEDAnimatedSVG';
-import image from '../../../public/HQ_IMGS3_0120.png';
 import theme from '../../../utilities/theme';
 
 const LandingIntroduction = ({ model }) => {

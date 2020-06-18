@@ -47,7 +47,8 @@ const LandingNavigation = () => {
         .link-container a {
           color: ${theme.colors.white};
           font-family: ${theme.fonts.main};
-          font-weight: 100;
+          font-weight: 200;
+          letter-spacing: 0.03em;
         }
         .logo-container img {
           height: 25px;

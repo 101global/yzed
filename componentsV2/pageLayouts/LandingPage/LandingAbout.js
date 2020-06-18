@@ -3,8 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import BlackLink from '../../reusableStyledComponents/BlackLink';
 import ProgressiveImage from '../../ProgressiveImage';
 import YZEDAnimatedLogo from '../../reusableStyledComponents/YZEDAnimatedSVG';
-import image1 from '../../../public/HQ_IMGS2_0120.png';
-import image2 from '../../../public/HQ_IMAGES8_0032.png';
 import selfExpressionWhite from '../../../public/self-expression.svg';
 import theme from '../../../utilities/theme';
 
@@ -89,8 +87,7 @@ const LandingAbout = ({ model }) => {
           position: absolute;
           bottom: -30px;
           right: 80px;
-          mix-blend-mode: exclusion;
-          filter: contrast(175%) grayscale(100%);
+          mix-blend-mode: difference;
         }
       `}</style>
       <style jsx global>{``}</style>
