@@ -33,7 +33,7 @@ const ContactAnimated = () => {
             display: inline-block;
             height: 60px;
           }
-          @media (max-width: 768px) {
+          @media (max-width: 812px) {
             #animated-contact-svg {
               width: 100%;
             }

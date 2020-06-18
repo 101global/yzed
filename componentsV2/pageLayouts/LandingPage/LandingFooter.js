@@ -6,7 +6,7 @@ const LandingFooter = () => {
   return (
     <>
       <footer className='text-left'>
-        <p className='p-2 lg:px-dsk'>
+        <p className='p-2 lg:px-dsk text-lg lg:text-xl'>
           <a className='color-link' href='/'>
             YZED
           </a>{' '}
@@ -24,7 +24,7 @@ const LandingFooter = () => {
       <style jsx>{`
         footer p {
           font-weight: 100;
-          font-size: 1.2rem;
+
           background: ${theme.colors.black};
           color: ${theme.colors.white};
           width: 100%;
