@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import svg from '../../../public/yzed_logo_outline_gradient_animated.svg';
+import svg from '../../../public/YZED_Square.svg';
 
 const StationaryModelViewer = ({ model }) => {
   const modelRef = useRef(null);
