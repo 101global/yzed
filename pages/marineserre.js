@@ -5,13 +5,10 @@ import Layout from '../componentsV2/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
-const Reserved = ({ product }) => {
+const MarineSerre = ({ product }) => {
   const [loading, setLoading] = useState(false);
-  const [displayDate, setDisplayDate] = useState('');
 
   const [mainProduct, setMainProduct] = useState({});
-
-  const currentMarker = null;
 
   useEffect(() => {
     setLoading(true);
@@ -26,13 +23,12 @@ const Reserved = ({ product }) => {
         (value) => value.stringValue
       ),
     };
-    console.log(model);
     setMainProduct(model);
     setLoading(false);
-  }, [currentMarker]);
+  }, []);
 
   return (
-    <Layout>
+    <Layout title='YZED x Marine Serre' loading={!mainProduct || loading}>
       <LandingLayout model={mainProduct} />
     </Layout>
   );
@@ -51,4 +47,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Reserved;
+export default MarineSerre;

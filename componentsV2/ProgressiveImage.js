@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const ProgressiveImage = ({ preview, image, alt }) => {
+  console.log(preview);
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
 
   const fetchImage = (src) => {
+    setCurrentImage(preview);
     const loadingImage = new Image();
     loadingImage.src = src;
     loadingImage.onload = () => {
@@ -31,6 +33,7 @@ const ProgressiveImage = ({ preview, image, alt }) => {
         width: '1515px',
         maxWidth: '100%',
         height: 'auto',
+        overflow: 'hidden',
       }}
       src={currentImage}
       alt={alt}

@@ -6,14 +6,13 @@ import LandingContact from './LandingContact';
 import LandingFooter from './LandingFooter';
 import LandingIntroduction from './LandingIntroduction';
 import LandingNavigation from './LandingNavigation';
-import Layout from '../../../components/Layout';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
 import theme from '../../../utilities/theme';
 
 const LandingLayout = ({ model }) => {
   const [topModelDark, setTopModelDark] = useState(true);
   return (
-    <Layout>
+    <>
       <header
         id='top'
         className='w-full flex flex-col fixed pin-t pin-r pin-l px-4 py-mob lg:px-dsk'>
@@ -86,7 +85,7 @@ const LandingLayout = ({ model }) => {
           }
         `}
       </style>
-    </Layout>
+    </>
   );
 };
 

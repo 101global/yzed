@@ -79,7 +79,7 @@ const LandingAbout = ({ model }) => {
           font-weight: 100;
         }
         .small-image-container {
-          top: calc(50% - 120px);
+          top: calc(50% - 140px);
           z-index: 100;
         }
         .word-mark img {

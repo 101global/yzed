@@ -152,6 +152,6 @@ export default ModelViewerController;
 
 ModelViewerController.propTypes = {
   model: PropTypes.object.isRequired,
-  lightMode: PropTypes.bool.isRequired,
-  setLightMode: PropTypes.func.isRequired,
+  topModelDark: PropTypes.bool.isRequired,
+  setTopModelDark: PropTypes.func.isRequired,
 };
