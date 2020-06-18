@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const ProgressiveImage = ({ preview, image, alt }) => {
-  console.log(preview);
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
 
