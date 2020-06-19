@@ -15,7 +15,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             duration={500}
             className='nav-scroll-link inline-block lg:hidden'
             activeClass='active'>
-            3D Model
+            <p onClick={() => setOpenMenu(false)}>3D Model</p>
           </Link>
           <Link
             to='introduction'
@@ -24,7 +24,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             duration={500}
             className='nav-scroll-link inline-block lg:hidden'
             activeClass='active'>
-            Introduction
+            <p onClick={() => setOpenMenu(false)}>Introduction</p>
           </Link>
           <Link
             to='about'
@@ -33,7 +33,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             duration={500}
             className='nav-scroll-link inline-block lg:hidden'
             activeClass='active'>
-            About Us
+            <p onClick={() => setOpenMenu(false)}>About Us</p>
           </Link>
           <Link
             to='contact'
@@ -42,7 +42,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             duration={500}
             className='nav-scroll-link inline-block lg:hidden'
             activeClass='active'>
-            Contact
+            <p onClick={() => setOpenMenu(false)}>Contact</p>
           </Link>
         </div>
       </div>
@@ -58,7 +58,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
           top: 0;
           left: 0;
           z-index: 800;
-          transition: all 0.5s ease-in-out;
+          transition: all 0.7s ease-in-out;
           font-family: ${theme.fonts.main};
           overflow-y: hidden;
           display: flex;
