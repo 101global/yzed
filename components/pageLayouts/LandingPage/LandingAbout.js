@@ -98,7 +98,6 @@ const LandingAbout = ({ model }) => {
           }
         }
       `}</style>
-      <style jsx global>{``}</style>
     </>
   );
 };
