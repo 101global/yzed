@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayout';
+import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayoutIndexRoute';
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';

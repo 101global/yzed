@@ -45,7 +45,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
 
         <div className='controls'>
           <div className='toggle-animated-buttons'>
-            <SwitchSelector
+            {/* <SwitchSelector
               onChange={onAnimationChange}
               options={animationOptions}
               initialSelectedIndex={0}
@@ -55,9 +55,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
               selectedBackgroundColor={'#fff'}
               optionBorderRadius={0}
               selectionIndicatorMargin={3}
-            />
-          </div>
-          <div className='toggle-light-buttons'>
+            /> */}
             <SwitchSelector
               onChange={onLightChange}
               options={lightOptions}
@@ -70,6 +68,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
               selectionIndicatorMargin={3}
             />
           </div>
+          <div className='toggle-light-buttons'></div>
         </div>
         <svg
           version='1.1'
