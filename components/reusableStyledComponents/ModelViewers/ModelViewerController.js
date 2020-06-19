@@ -139,7 +139,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             left: 0;
             width: 100%;
             padding: 2.5%;
-            background: ${theme.colors.black};
+            background: ${topModelDark ? theme.colors.black : theme.colors.white};
             margin-bottom: 40px;
           }
           .down-chevron {
