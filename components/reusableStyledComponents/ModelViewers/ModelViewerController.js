@@ -35,11 +35,13 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   return (
     <>
       <div className='viewer-container'>
-        {showAnimated ? (
-          <AnimatedModelViewer model={model} topModelDark={topModelDark} />
-        ) : (
-          <StationaryModelViewer model={model} topModelDark={topModelDark} />
-        )}
+        <div className='model-viewer-container'>
+          {showAnimated ? (
+            <AnimatedModelViewer model={model} topModelDark={topModelDark} />
+          ) : (
+            <StationaryModelViewer model={model} topModelDark={topModelDark} />
+          )}
+        </div>
 
         <div className='controls'>
           <div className='toggle-animated-buttons'>
@@ -68,23 +70,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
               selectionIndicatorMargin={3}
             />
           </div>
-          <svg
-            version='1.1'
-            xmlns='http://www.w3.org/2000/svg'
-            x='0px'
-            y='0px'
-            viewBox='0 0 1000 1000'
-            enable-background='new 0 0 1000 1000'
-            className='down-chevron control-chevron block lg:hidden'>
-            <g>
-              <path
-                fill={topModelDark ? theme.colors.white : theme.colors.black}
-                d='M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z'
-              />
-            </g>
-          </svg>
         </div>
-
         <svg
           version='1.1'
           xmlns='http://www.w3.org/2000/svg'
@@ -114,7 +100,6 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           margin: 0;
           margin-top: -30px;
         }
-
         .viewer-container {
           height: 80vh;
           width: 2000px;
@@ -123,6 +108,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           display: flex;
           justify-content: center;
           align-items: center;
+          margin-top:calc(30px + 3.2rem);
         }
         .controls {
           display: flex;
@@ -145,16 +131,28 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         }
         @media (max-width: 768px) {
           .controls {
-            justify-content: flex-end;
-            width: 90%;
-            left: 5%;
-            bottom: 5%;
+            display: block;
+            position: relative;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            padding: 2.5%;
+            background: ${theme.colors.black};
+            margin-bottom: 40px;
           }
           .down-chevron {
             bottom: -5%;
           }
           .viewer-container {
-            height: 80vh;
+            min-height: 80vh;
+            display: flex;flex-direction: column;
+            max-width: 100%;
+          }
+          .model-viewer-container {
+            max-width: 90%;
+            margin: 0 auto;
           }
           .toggle-animated-buttons,
           .toggle-light-buttons {
