@@ -107,6 +107,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           display: flex;
           justify-content: center;
           align-items: center;
+
         }
         .controls {
           display: flex;
@@ -147,6 +148,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             min-height: 80vh;
             display: flex;flex-direction: column;
             max-width: 100%;
+            margin-top:calc(30px + 3.2rem);
           }
           .model-viewer-container {
             max-width: 90%;
