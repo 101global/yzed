@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import LandingLayout from '../componentsV2/pageLayouts/LandingPage/LandingLayout';
-import Layout from '../componentsV2/Layout';
+import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayout';
+import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
