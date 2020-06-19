@@ -38,31 +38,6 @@ const LandingFooter = () => {
           height: 1rem;
           vertical-align: middle;
         }
-        .color-link:after {
-          content: '';
-          background-image: linear-gradient(to right, #a891d9, #73cfdb, #a891d9, #73cfdb);
-          background-size: 260% 200%;
-          width: 110%;
-          margin-left: -5%;
-          margin-top: -7px;
-          height: 12px;
-          display: block;
-        }
-        .color-link:hover:after {
-          animation: gradient 3s ease infinite;
-          animation-direction: alternate;
-        }
-        @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
       `}</style>
     </>
   );

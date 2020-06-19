@@ -88,6 +88,7 @@ const LandingAbout = ({ model }) => {
           bottom: -30px;
           right: 80px;
           mix-blend-mode: difference;
+          filter: grayscale(100%) !important;
         }
         @media (max-width: 768px) {
           .word-mark img {
