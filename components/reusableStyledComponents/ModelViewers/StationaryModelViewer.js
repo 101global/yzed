@@ -27,6 +27,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           ios-src={model.usdzFile}
           alt={model.name}
           loading='lazy'
+          ar-modes='scene-viewer webxr quick-look'
           auto-rotate
           camera-controls
           ar

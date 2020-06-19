@@ -105,7 +105,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         .model-chevron {
           height: 30px;
           position: absolute;
-          bottom: 5px;
+          bottom: 5%;
           z-index: 501;
         }
         .control-chevron {
@@ -116,7 +116,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         }
 
         .viewer-container {
-          height: 90vh;
+          height: 80vh;
           width: 2000px;
           max-width: 80%;
           margin: 0 auto;
