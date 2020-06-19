@@ -26,7 +26,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           src={model.glbFile}
           ios-src={model.usdzFile}
           alt={model.name}
-          preload
+          loading='lazy'
           auto-rotate
           camera-controls
           ar

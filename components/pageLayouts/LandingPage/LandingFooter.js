@@ -35,7 +35,7 @@ const LandingFooter = () => {
           display: inline-block;
         }
         .color-link {
-          height: 1rem;
+          height: 0.9rem;
           vertical-align: middle;
         }
       `}</style>

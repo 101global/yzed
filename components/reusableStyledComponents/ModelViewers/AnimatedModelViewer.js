@@ -23,7 +23,7 @@ const AnimatedModelViewer = ({ model, topModelDark }) => {
           ref={modelRef}
           src={model.animatedGlbFile}
           alt={model.name}
-          preload
+          loading='lazy'
           auto-rotate
           camera-controls
           poster={topModelDark ? svg : svgDark}
