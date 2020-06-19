@@ -27,18 +27,6 @@ function Layout({ children, title, loading }) {
             box-sizing: border-box;
           }
         `}</style>
-        <style jsx>{`
-          .layout-container {
-            width: 100vw;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          h1 {
-            width: 100%;
-          }
-        `}</style>
       </>
     );
 
@@ -66,6 +54,8 @@ function Layout({ children, title, loading }) {
       <style jsx>{`
         .layout-container {
           min-height: 100vh;
+          overflow: hidden;
+          max-width: 100vw;
         }
       `}</style>
     </>
@@ -75,7 +65,7 @@ function Layout({ children, title, loading }) {
 export default Layout;
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node,
   title: PropTypes.string.isRequired,
   loading: PropTypes.bool,
 };

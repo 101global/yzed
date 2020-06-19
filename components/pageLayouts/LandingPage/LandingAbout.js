@@ -23,7 +23,7 @@ const LandingAbout = ({ model }) => {
 
   return (
     <>
-      <div className='main-about-container pb-32 align-center justify-center w-full'>
+      <div className='main-about-container pb-16 lg:pb-32 align-center justify-center w-full'>
         <div className='text-container grid grid-cols-1 lg:block align-center justify-center w-full lg:w-4/5 mx-auto my-0 relative'>
           <h1 className='text-3xl lg:text-4xl px-4 lg:pb-8 lg:p-0 lg:text-4xl w-full lg:w-5/12 inline-block text-center lg:text-left'>
             “The desire to make fashion more accessible to people.”
@@ -88,6 +88,14 @@ const LandingAbout = ({ model }) => {
           bottom: -30px;
           right: 80px;
           mix-blend-mode: difference;
+        }
+        @media (max-width: 768px) {
+          .word-mark img {
+            max-width: 100%;
+            right: 0;
+            left: 0;
+            bottom: -20px;
+          }
         }
       `}</style>
       <style jsx global>{``}</style>

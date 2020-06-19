@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import svg from '../../../public/YZED_Square.svg';
+import svgDark from '../../../public/YZED_Square_Dark.svg';
 
-const StationaryModelViewer = ({ model }) => {
+const StationaryModelViewer = ({ model, topModelDark }) => {
   const modelRef = useRef(null);
   const [loading, setLoading] = useState(false);
 
@@ -29,19 +31,22 @@ const StationaryModelViewer = ({ model }) => {
           camera-controls
           ar
           exposure={0.5}
-          poster={'YZED_loadingkopie.png'}
+          poster={topModelDark ? svg : svgDark}
           interaction-policy='allow-when-focused'></model-viewer>
       </div>
       <style jsx global>{`
+         {
+          /* width: 80% and margin-left 20% for centered in other section */
+        }
         .model-viewer-container {
-          padding: 20px 0;
-          min-height: 700px;
+          height: 100%;
           width: 100%;
         }
         model-viewer {
-          width: 100%;
-          height: 750px;
           margin: 0 auto;
+          z-index: 101;
+          height: 100%;
+          width: 100%;
           --poster-color: transparent;
         }
       `}</style>

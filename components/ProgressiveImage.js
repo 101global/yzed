@@ -7,6 +7,7 @@ const ProgressiveImage = ({ preview, image, alt }) => {
   const [loading, setLoading] = useState(true);
 
   const fetchImage = (src) => {
+    setCurrentImage(preview);
     const loadingImage = new Image();
     loadingImage.src = src;
     loadingImage.onload = () => {
@@ -26,14 +27,16 @@ const ProgressiveImage = ({ preview, image, alt }) => {
       style={{
         filter: `${loading ? 'blur(30px)' : ''}`,
         transition: '1s filter linear',
-        background: '#B2CCA2',
+        background: 'grey',
         height: '775px',
         width: '1515px',
         maxWidth: '100%',
         height: 'auto',
+        overflow: 'hidden',
       }}
       src={currentImage}
       alt={alt}
+      loading='lazy'
     />
   );
 };

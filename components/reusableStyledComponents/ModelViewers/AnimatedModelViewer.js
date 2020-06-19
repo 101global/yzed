@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import svg from '../../../public/YZED_Square.svg';
+import svgDark from '../../../public/YZED_Square_Dark.svg';
 
-const AnimatedModelViewer = ({ model }) => {
+const AnimatedModelViewer = ({ model, topModelDark }) => {
   const modelRef = useRef(null);
 
   return (
@@ -24,20 +26,21 @@ const AnimatedModelViewer = ({ model }) => {
           preload
           auto-rotate
           camera-controls
-          poster={'YZED_loadingkopie.png'}
+          poster={topModelDark ? svg : svgDark}
           exposure={0.5}
           interaction-policy='allow-when-focused'
           autoplay></model-viewer>
       </div>
       <style jsx global>{`
         .model-viewer-container {
-          padding: 20px 0;
-          min-height: 200px;
+          height: 100%;
+          width: 100%;
         }
         model-viewer {
-          width: 100%;
-          height: 750px;
           margin: 0 auto;
+
+          height: 100%;
+          width: 100%;
           --poster-color: transparent;
         }
       `}</style>
