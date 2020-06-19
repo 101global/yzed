@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import YZEDsvg from '../../../public/yzed_logo_white.svg';
 import theme from '../../../utilities/theme';
 
 const LandingFooter = () => {
   return (
     <>
       <footer className='text-left'>
-        <p className='p-2 lg:px-dsk text-md lg:text-md'>
+        <p className='p-2 lg:px-dsk text-md lg:text-base'>
           <a className='color-link' href='/'>
-            YZED
+            <img src={YZEDsvg} className='color-link' />
           </a>{' '}
           - All rights reserved to{' '}
           <a href='https://www.101.global/?lang=en' target='_blank' rel='noopener noreferrer'>
@@ -24,16 +25,18 @@ const LandingFooter = () => {
       <style jsx>{`
         footer p {
           font-weight: 200;
-
           background: ${theme.colors.black};
           color: ${theme.colors.white};
           width: 100%;
           letter-spacing: 0.02em;
         }
-
         footer p a {
           font-weight: 600;
           display: inline-block;
+        }
+        .color-link {
+          height: 1rem;
+          vertical-align: middle;
         }
         .color-link:after {
           content: '';
@@ -41,7 +44,7 @@ const LandingFooter = () => {
           background-size: 260% 200%;
           width: 110%;
           margin-left: -5%;
-          margin-top: -12px;
+          margin-top: -7px;
           height: 12px;
           display: block;
         }
