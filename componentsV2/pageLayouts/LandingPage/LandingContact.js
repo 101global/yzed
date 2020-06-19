@@ -41,13 +41,13 @@ const LandingContact = () => {
           position: relative;
         }
         .content-section p {
-          font-weight: 200;
+          font-weight: 300;
         }
         .signature {
           margin-top: 30px;
         }
         h1 {
-          font-weight: 500;
+          font-weight: 600;
           z-index: 500;
         }
 

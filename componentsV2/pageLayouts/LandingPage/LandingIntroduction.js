@@ -47,8 +47,7 @@ const LandingIntroduction = ({ model }) => {
           font-weight: 600;
         }
         p {
-          font-weight: 200;
-
+          font-weight: 300;
           color: ${theme.colors.black};
         }
         img {

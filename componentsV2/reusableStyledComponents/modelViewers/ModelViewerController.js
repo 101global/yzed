@@ -4,7 +4,6 @@ import AnimatedModelViewer from './AnimatedModelViewer';
 import PropTypes from 'prop-types';
 import StationaryModelViewer from './StationaryModelViewer';
 import SwitchSelector from 'react-switch-selector';
-import chevron from '../../../public/down_chevron.svg';
 import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
