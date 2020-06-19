@@ -34,44 +34,40 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
 
   return (
     <>
-      <div className='control-container'>
-        <div className='controls-section'>
-          <div className='controls'>
-            <div className='toggle-animated-buttons'>
-              <SwitchSelector
-                onChange={onAnimationChange}
-                options={animationOptions}
-                initialSelectedIndex={0}
-                backgroundColor={'#0d0d0d'}
-                fontColor={'#fff'}
-                selectedFontColor={'#0d0d0d'}
-                selectedBackgroundColor={'#fff'}
-                optionBorderRadius={0}
-                selectionIndicatorMargin={3}
-              />
-            </div>
-            <div className='toggle-light-buttons'>
-              <SwitchSelector
-                onChange={onLightChange}
-                options={lightOptions}
-                initialSelectedIndex={1}
-                backgroundColor={'#0d0d0d'}
-                fontColor={'#fff'}
-                selectedFontColor={'#0d0d0d'}
-                selectedBackgroundColor={'#fff'}
-                optionBorderRadius={0}
-                selectionIndicatorMargin={3}
-              />
-            </div>
-          </div>
-        </div>
+      <div className='viewer-container'>
+        {showAnimated ? (
+          <AnimatedModelViewer model={model} topModelDark={topModelDark} />
+        ) : (
+          <StationaryModelViewer model={model} topModelDark={topModelDark} />
+        )}
 
-        <div className='viewer-container'>
-          {showAnimated ? (
-            <AnimatedModelViewer model={model} topModelDark={topModelDark} />
-          ) : (
-            <StationaryModelViewer model={model} topModelDark={topModelDark} />
-          )}
+        <div className='controls'>
+          <div className='toggle-animated-buttons'>
+            <SwitchSelector
+              onChange={onAnimationChange}
+              options={animationOptions}
+              initialSelectedIndex={0}
+              backgroundColor={'#0d0d0d'}
+              fontColor={'#fff'}
+              selectedFontColor={'#0d0d0d'}
+              selectedBackgroundColor={'#fff'}
+              optionBorderRadius={0}
+              selectionIndicatorMargin={3}
+            />
+          </div>
+          <div className='toggle-light-buttons'>
+            <SwitchSelector
+              onChange={onLightChange}
+              options={lightOptions}
+              initialSelectedIndex={1}
+              backgroundColor={'#0d0d0d'}
+              fontColor={'#fff'}
+              selectedFontColor={'#0d0d0d'}
+              selectedBackgroundColor={'#fff'}
+              optionBorderRadius={0}
+              selectionIndicatorMargin={3}
+            />
+          </div>
           <svg
             version='1.1'
             xmlns='http://www.w3.org/2000/svg'
@@ -79,7 +75,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             y='0px'
             viewBox='0 0 1000 1000'
             enable-background='new 0 0 1000 1000'
-            className='down-chevron'>
+            className='down-chevron control-chevron block lg:hidden'>
             <g>
               <path
                 fill={topModelDark ? theme.colors.white : theme.colors.black}
@@ -88,15 +84,39 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             </g>
           </svg>
         </div>
+
+        <svg
+          version='1.1'
+          xmlns='http://www.w3.org/2000/svg'
+          x='0px'
+          y='0px'
+          viewBox='0 0 1000 1000'
+          enable-background='new 0 0 1000 1000'
+          className='down-chevron model-chevron hidden lg:block'>
+          <g>
+            <path
+              fill={topModelDark ? theme.colors.white : theme.colors.black}
+              d='M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z'
+            />
+          </g>
+        </svg>
       </div>
       <style jsx>{`
-        .down-chevron {
+        .model-chevron {
           height: 30px;
           position: absolute;
           bottom: 5px;
+          z-index: 501;
         }
+        .control-chevron {
+          position: relative;
+          height: 30px;
+          margin: 0;
+          margin-top: -30px;
+        }
+
         .viewer-container {
-          height: 95%;
+          height: 90vh;
           width: 2000px;
           max-width: 80%;
           margin: 0 auto;
@@ -104,13 +124,8 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           justify-content: center;
           align-items: center;
         }
-        .control-container {
-          height: 90vh;
-          width: 100%;
-          display: flex;
-        }
         .controls {
-          display: inline-block;
+          display: flex;
           flex-direction: column;
           justify-content: space-around;
           position: absolute;
@@ -120,12 +135,6 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           background: transparent;
           color: ${!topModelDark ? theme.colors.black : theme.colors.white};
         }
-        .toggle-button-container {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-        }
 
         .toggle-animated-buttons,
         .toggle-light-buttons {
@@ -134,23 +143,25 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           margin-bottom: 20px;
           margin-top: 10px;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .controls {
-            flex-direction: column;
             justify-content: flex-end;
-            bottom: 200px;
-            top: calc(100% - 180px);
             width: 90%;
             left: 5%;
+            bottom: 5%;
+          }
+          .down-chevron {
+            bottom: -5%;
           }
           .viewer-container {
-            height: 100%;
+            height: 80vh;
           }
           .toggle-animated-buttons,
           .toggle-light-buttons {
             width: 100%;
+            margin-bottom: 0px;
           }
-        }
+
       `}</style>
       <style jsx global>{`
         .more-chevron svg {
