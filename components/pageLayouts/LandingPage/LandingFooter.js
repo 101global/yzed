@@ -7,11 +7,11 @@ const LandingFooter = () => {
   return (
     <>
       <footer className='text-left'>
-        <p className='p-2 lg:px-dsk text-md lg:text-base'>
-          <a className='color-link' href='/'>
+        <p className='p-2 lg:px-dsk text-md lg:text-base text-center lg:text-left'>
+          <a className='color-link block lg:inline-block pb-6 pt-2 lg:pb0 lg:pt-0' href='/'>
             <img src={YZEDsvg} className='color-link' />
           </a>{' '}
-          - All rights reserved to{' '}
+          <span className='hidden lg:inline'>- </span>All rights reserved to{' '}
           <a href='https://www.101.global/?lang=en' target='_blank' rel='noopener noreferrer'>
             101Global
           </a>{' '}
@@ -32,11 +32,11 @@ const LandingFooter = () => {
         }
         footer p a {
           font-weight: 600;
-          display: inline-block;
         }
         .color-link {
           height: 0.9rem;
           vertical-align: middle;
+          margin: 0 auto;
         }
       `}</style>
     </>
