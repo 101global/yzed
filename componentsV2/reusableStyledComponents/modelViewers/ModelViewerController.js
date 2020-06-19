@@ -68,11 +68,12 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
 
         <div className='viewer-container'>
           {showAnimated ? (
-            <AnimatedModelViewer model={model} />
+            <AnimatedModelViewer model={model} topModelDark={topModelDark} />
           ) : (
-            <StationaryModelViewer model={model} />
+            <StationaryModelViewer model={model} topModelDark={topModelDark} />
           )}
         </div>
+        <div className='down-chevron' />
       </div>
       <style jsx>{`
         .viewer-container {

@@ -3,8 +3,9 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import svg from '../../../public/YZED_Square.svg';
+import svgDark from '../../../public/YZED_Square_Dark.svg';
 
-const StationaryModelViewer = ({ model }) => {
+const StationaryModelViewer = ({ model, topModelDark }) => {
   const modelRef = useRef(null);
   const [loading, setLoading] = useState(false);
 
@@ -30,7 +31,7 @@ const StationaryModelViewer = ({ model }) => {
           camera-controls
           ar
           exposure={0.5}
-          poster={svg}
+          poster={topModelDark ? svg : svgDark}
           interaction-policy='allow-when-focused'></model-viewer>
       </div>
       <style jsx global>{`
