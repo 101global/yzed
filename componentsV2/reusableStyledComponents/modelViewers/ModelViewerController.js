@@ -4,6 +4,7 @@ import AnimatedModelViewer from './AnimatedModelViewer';
 import PropTypes from 'prop-types';
 import StationaryModelViewer from './StationaryModelViewer';
 import SwitchSelector from 'react-switch-selector';
+import chevron from '../../../public/down_chevron.svg';
 import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
@@ -72,12 +73,31 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           ) : (
             <StationaryModelViewer model={model} topModelDark={topModelDark} />
           )}
+          <svg
+            version='1.1'
+            xmlns='http://www.w3.org/2000/svg'
+            x='0px'
+            y='0px'
+            viewBox='0 0 1000 1000'
+            enable-background='new 0 0 1000 1000'
+            className='down-chevron'>
+            <g>
+              <path
+                fill={topModelDark ? theme.colors.white : theme.colors.black}
+                d='M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z'
+              />
+            </g>
+          </svg>
         </div>
-        <div className='down-chevron' />
       </div>
       <style jsx>{`
+        .down-chevron {
+          height: 30px;
+          position: absolute;
+          bottom: 5px;
+        }
         .viewer-container {
-          height: 100%;
+          height: 95%;
           width: 2000px;
           max-width: 80%;
           margin: 0 auto;
@@ -134,6 +154,9 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         }
       `}</style>
       <style jsx global>{`
+        .more-chevron svg {
+          fill: white !important;
+        }
         .react-switch-selector-wrapper {
           border-radius: 0px !important;
           border: 1px solid ${theme.colors.white} !important;
