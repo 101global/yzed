@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayout';
+import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayoutIndexRoute';
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
-const MarineSerre = ({ product }) => {
+const Index = ({ product }) => {
   const [loading, setLoading] = useState(false);
 
   const [mainProduct, setMainProduct] = useState({});
@@ -23,7 +23,6 @@ const MarineSerre = ({ product }) => {
         (value) => value.stringValue
       ),
     };
-    console.log(model);
     setMainProduct(model);
     setLoading(false);
   }, []);
@@ -48,4 +47,4 @@ export async function getStaticProps() {
   };
 }
 
-export default MarineSerre;
+export default Index;

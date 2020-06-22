@@ -8,6 +8,8 @@ import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   const [showAnimated, setShowAnimated] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
   const animationOptions = [
     {
       label: 'Stationary',
@@ -32,6 +34,12 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
     setTopModelDark(newValue);
   };
 
+  useEffect(() => {
+    if (window.innerWidth > 1024) {
+      setIsDesktop(true);
+    }
+  }, []);
+
   return (
     <>
       <div className='viewer-container'>
@@ -42,20 +50,23 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             <StationaryModelViewer model={model} topModelDark={topModelDark} />
           )}
         </div>
-
         <div className='controls'>
-          <div className='toggle-animated-buttons'>
-            {/* <SwitchSelector
-              onChange={onAnimationChange}
-              options={animationOptions}
-              initialSelectedIndex={0}
-              backgroundColor={'#0d0d0d'}
-              fontColor={'#fff'}
-              selectedFontColor={'#0d0d0d'}
-              selectedBackgroundColor={'#fff'}
-              optionBorderRadius={0}
-              selectionIndicatorMargin={3}
-            /> */}
+          {isDesktop && (
+            <div className='toggle-animated-buttons'>
+              <SwitchSelector
+                onChange={onAnimationChange}
+                options={animationOptions}
+                initialSelectedIndex={0}
+                backgroundColor={'#0d0d0d'}
+                fontColor={'#fff'}
+                selectedFontColor={'#0d0d0d'}
+                selectedBackgroundColor={'#fff'}
+                optionBorderRadius={0}
+                selectionIndicatorMargin={3}
+              />
+            </div>
+          )}
+          <div className='toggle-light-buttons'>
             <SwitchSelector
               onChange={onLightChange}
               options={lightOptions}
@@ -68,7 +79,6 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
               selectionIndicatorMargin={3}
             />
           </div>
-          <div className='toggle-light-buttons'></div>
         </div>
         <svg
           version='1.1'
