@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayout';
 import Layout from '../components/Layout';
+import ReactVivus from 'react-vivus';
 import fetch from 'node-fetch';
+import svg from '../public/Model_SVG.svg';
 import theme from '../utilities/theme';
 
 const Reserved = ({ product }) => {
@@ -32,9 +34,46 @@ const Reserved = ({ product }) => {
   }, [currentMarker]);
 
   return (
-    <Layout>
-      <LandingLayout model={mainProduct} />
-    </Layout>
+    <>
+      <Layout>
+        <LandingLayout model={mainProduct} />
+        <div className='test-div'>
+          <ReactVivus
+            id='animated-svg-test'
+            option={{
+              file: svg,
+              animTimingFunction: 'EASE-IN',
+              type: 'delayed',
+              duration: 300,
+            }}
+          />
+        </div>
+      </Layout>
+      <style jsx global>
+        {`
+          .test-div {
+            height: 100vh;
+            position: relative;
+          }
+          #animated-svg-test {
+            position: absolute;
+            width: 100%;
+            top: 20px;
+          }
+          #animated-svg-test svg {
+            height: 90vh;
+          }
+          @media (max-width: 768px) {
+            #animated-svg-test {
+              top: 30px;
+            }
+            #animated-svg-test svg {
+              height: 60px;
+            }
+          }
+        `}
+      </style>
+    </>
   );
 };
 

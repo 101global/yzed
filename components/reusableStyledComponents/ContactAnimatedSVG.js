@@ -13,8 +13,8 @@ const ContactAnimated = () => {
         option={{
           file: svg,
           animTimingFunction: 'EASE-IN',
-          type: 'oneByOne',
-          duration: 1000,
+          type: 'delayed',
+          duration: 1400,
         }}
         style={{
           height: '100px',
