@@ -11,7 +11,7 @@ function Layout({ children, title, loading }) {
         <Head>
           <title>{title}</title>
         </Head>
-        <div className='layout-container'>
+        <div className='layout-container antialiased'>
           <LoadingSpinner />
         </div>
         <style jsx global>{`
