@@ -19,7 +19,7 @@ const BlackLink = ({ title, link }) => {
           max-width: 90%;
         }
         a.black-link:hover {
-          transition: all 0.3s ease;
+          transition: all 0.4s ease;
         }
       `}</style>
     </>
