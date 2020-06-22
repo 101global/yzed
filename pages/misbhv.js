@@ -23,13 +23,12 @@ const MarineSerre = ({ product }) => {
         (value) => value.stringValue
       ),
     };
-    console.log(model);
     setMainProduct(model);
     setLoading(false);
   }, []);
 
   return (
-    <Layout title='YZED.me' loading={!mainProduct || loading}>
+    <Layout title='YZED x Marine Serre' loading={!mainProduct || loading}>
       <LandingLayout model={mainProduct} />
     </Layout>
   );
@@ -37,7 +36,7 @@ const MarineSerre = ({ product }) => {
 
 export async function getStaticProps() {
   const product = await fetch(
-    `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/landingBrand/${process.env.brandLandingYZED}`,
+    `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/landingBrand/${process.env.brandLandingMisbhv}`,
     { cors: 'no-cors' }
   ).then((res) => res.json().then((data) => data));
 

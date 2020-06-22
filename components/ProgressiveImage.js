@@ -14,7 +14,7 @@ const ProgressiveImage = ({ preview, image, alt }) => {
       setTimeout(() => {
         setCurrentImage(loadingImage.src);
         setLoading(false);
-      }, 200);
+      }, 20000);
     };
   };
 
