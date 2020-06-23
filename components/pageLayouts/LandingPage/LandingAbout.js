@@ -28,14 +28,14 @@ const LandingAbout = ({ model }) => {
           <h1 className='text-3xl lg:text-4xl px-4 lg:pb-8 lg:p-0 lg:text-4xl w-full lg:w-5/12 inline-block text-center lg:text-left font-semibold bg-black text-white'>
             “The desire to make fashion more accessible to people.”
           </h1>
-          <p className='text-xl w-full lg:w-6/12 block lg:inline-block relative lg:absolute right-o font-hairline z-50 right-0 px-4 py-12 lg:pb-8 lg:pl-8 lg:pt-0 lg:pr-0 right-0 text-justify font-thin bg-black text-white'>
+          <p className='text-xl w-full lg:w-6/12 block lg:inline-block relative lg:absolute right-o font-hairline z-50 right-0 px-4 py-12 lg:pb-8 lg:pl-8 lg:pt-0 lg:pr-0 right-0 text-justify font-light bg-black text-white'>
             We are an international team of four, based in Seoul, South Korea. We became united by
             the desire to make fashion more accessible to people, which has continued to be our
             team’s top priority. We strongly believe that a change of status quo is imminent in the
             fashion industry - and that it’s going to be catal
-            <strong className='font-semibold'>yzed</strong> by none other than digital garments
-            created in 3D & AR. We strive to create a community where our users self-expression
-            leads our decisions.
+            <strong className='font-bold'>yzed</strong> by none other than digital garments created
+            in 3D & AR. We strive to create a community where our users self-expression leads our
+            decisions.
           </p>
         </div>
         <div className='bottom-section relative'>
