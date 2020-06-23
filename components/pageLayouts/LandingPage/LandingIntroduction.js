@@ -36,7 +36,9 @@ const LandingIntroduction = ({ model }) => {
           </div>
         </div>
         <div className='photo-section flex flex-col justify-end p-0 lg:pt-16'>
-          <ProgressiveImage image={photo.max} preview={photo.mini} alt={photo.id} />
+          {model.imageSlug && (
+            <ProgressiveImage image={photo.max} preview={photo.mini} alt={photo.id} />
+          )}
         </div>
       </div>
       <style jsx>{`

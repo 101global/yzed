@@ -7,7 +7,6 @@ const ProgressiveImage = ({ preview, image, alt }) => {
   const [loading, setLoading] = useState(true);
 
   const fetchImage = (src) => {
-    setCurrentImage(preview);
     const loadingImage = new Image();
     loadingImage.src = src;
     loadingImage.onload = () => {

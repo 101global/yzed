@@ -41,18 +41,22 @@ const LandingAbout = ({ model }) => {
         <div className='bottom-section relative'>
           <div className='image-container w-full'>
             <div className='small-image-container relative lg:absolute right-0 lg:w-2/5 mb-8 lg:mb-0'>
-              <ProgressiveImage
-                image={largePhoto.max}
-                preview={largePhoto.mini}
-                alt={largePhoto.id}
-              />
+              {model.imageSlug && (
+                <ProgressiveImage
+                  image={largePhoto.max}
+                  preview={largePhoto.mini}
+                  alt={largePhoto.id}
+                />
+              )}
             </div>
-            <div className='large-image-container  lg:w-9/12'>
-              <ProgressiveImage
-                image={smallPhoto.max}
-                preview={smallPhoto.mini}
-                alt={smallPhoto.id}
-              />
+            <div className='large-image-container lg:w-9/12'>
+              {model.imageSlug && (
+                <ProgressiveImage
+                  image={smallPhoto.max}
+                  preview={smallPhoto.mini}
+                  alt={smallPhoto.id}
+                />
+              )}
             </div>
             <div className='word-mark'>
               <img src={selfExpressionWhite} alt='contact us' />

@@ -24,8 +24,6 @@ const Index = ({ product }) => {
       ),
       animatedVideo: product.fields.animatedVideo.stringValue ?? null,
     };
-
-    console.log(model);
     setMainProduct(model);
     setLoading(false);
   }, []);

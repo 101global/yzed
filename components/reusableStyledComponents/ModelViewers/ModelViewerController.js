@@ -47,7 +47,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           {showAnimated ? (
             model.animatedVideo && !isDesktop ? (
               <div className='video-container text-white flex flex-col justify-center items-center h-full'>
-                <video playsInline autoplay='autoplay ' muted loop src={model.animatedVideo} />
+                <video playsInline autoplay='autoplay' muted loop src={model.animatedVideo} />
               </div>
             ) : (
               <AnimatedModelViewer model={model} topModelDark={topModelDark} />
@@ -90,7 +90,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           x='0px'
           y='0px'
           viewBox='0 0 1000 1000'
-          enable-background='new 0 0 1000 1000'
+          enableBackground='new 0 0 1000 1000'
           className='down-chevron model-chevron hidden lg:block'>
           <g>
             <path
