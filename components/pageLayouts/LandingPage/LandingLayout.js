@@ -54,7 +54,7 @@ const LandingLayout = ({ model }) => {
       <style jsx global>{`
         @media (max-width: 768px) {
           #model-section {
-            min-height: 110vh;
+            min-height: 112vh;
           }
         }
       `}</style>

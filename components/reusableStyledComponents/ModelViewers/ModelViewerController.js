@@ -88,7 +88,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             y='0px'
             viewBox='0 0 1000 1000'
             enableBackground='new 0 0 1000 1000'
-            className='down-chevron model-chevron block'>
+            className='down-chevron model-chevron hidden lg:block'>
             <g>
               <path
                 fill={topModelDark ? theme.colors.white : theme.colors.black}
@@ -177,9 +177,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             padding: 2.5%;
             background: ${topModelDark ? theme.colors.black : theme.colors.white};
           }
-          .down-chevron {
-            bottom: 5px;
-          }
+
           .viewer-container {
             display: flex;
             flex-direction: column;
