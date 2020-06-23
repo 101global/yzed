@@ -15,7 +15,7 @@ const LandingLayout = ({ model }) => {
     <>
       <header
         id='top'
-        className='w-full flex flex-col fixed pin-t pin-r pin-l px-4 py-mob lg:px-dsk bg-transparentBlack z-high'>
+        className='w-full flex flex-col fixed pin-t pin-r pin-l px-4 py-mob lg:px-dsk bg-transparentBlack z-tenThous'>
         <LandingNavigation />
       </header>
       <main className='w-full flex flex-col'>
