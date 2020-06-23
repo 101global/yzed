@@ -55,6 +55,21 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           ) : (
             <StationaryModelViewer model={model} topModelDark={topModelDark} />
           )}
+          <svg
+            version='1.1'
+            xmlns='http://www.w3.org/2000/svg'
+            x='0px'
+            y='0px'
+            viewBox='0 0 1000 1000'
+            enableBackground='new 0 0 1000 1000'
+            className='down-chevron model-chevron block'>
+            <g>
+              <path
+                fill={topModelDark ? theme.colors.white : theme.colors.black}
+                d='M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z'
+              />
+            </g>
+          </svg>
         </div>
         <div className='controls'>
           <div className='toggle-animated-buttons'>
@@ -84,27 +99,12 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             />
           </div>
         </div>
-        <svg
-          version='1.1'
-          xmlns='http://www.w3.org/2000/svg'
-          x='0px'
-          y='0px'
-          viewBox='0 0 1000 1000'
-          enableBackground='new 0 0 1000 1000'
-          className='down-chevron model-chevron hidden lg:block'>
-          <g>
-            <path
-              fill={topModelDark ? theme.colors.white : theme.colors.black}
-              d='M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z'
-            />
-          </g>
-        </svg>
       </div>
       <style jsx>{`
         .model-chevron {
           height: 30px;
           position: absolute;
-          bottom: 5%;
+          bottom: 20px;
           z-index: 501;
           left: calc(50% - 15px);
         }
@@ -121,7 +121,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           flex-direction: column;
           justify-content: space-around;
           position: absolute;
-          top: calc(30px + 3.2rem);
+          top: 4.8rem;
           right: 10%;
           z-index: 1000;
           background: transparent;
@@ -148,11 +148,11 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             background: ${topModelDark ? theme.colors.black : theme.colors.white};
           }
           .down-chevron {
-            bottom: -5%;
+            bottom: 5px;
           }
           .viewer-container {
-            height: calc(90vh + 120px);
-            display: flex;flex-direction: column;
+            display: flex;
+            flex-direction: column;
             max-width: 100%;
           }
           .model-viewer-container {
@@ -167,9 +167,6 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           }
       `}</style>
       <style jsx global>{`
-        .more-chevron svg {
-          fill: white !important;
-        }
         .react-switch-selector-wrapper {
           border-radius: 0px !important;
           border: 1px solid ${theme.colors.white} !important;
