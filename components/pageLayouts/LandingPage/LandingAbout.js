@@ -82,6 +82,9 @@ const LandingAbout = ({ model }) => {
             left: 0;
             bottom: -20px;
           }
+          .small-image-container {
+            transform: translateY(0);
+          }
         }
       `}</style>
     </>

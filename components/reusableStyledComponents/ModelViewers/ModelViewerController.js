@@ -113,7 +113,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           margin-top: 10px;
         }
         @media (max-width: 768px) {
-          .controls {
+           .controls {
             display: block;
             position: relative;
             top: 0;
@@ -129,12 +129,11 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             bottom: -5%;
           }
           .viewer-container {
-            min-height: 80vh;
             display: flex;flex-direction: column;
             max-width: 100%;
-            margin-top:calc(30px + 3.2rem);
           }
           .model-viewer-container {
+            min-height: 80vh;
             max-width: 90%;
             margin: 0 auto;
           }
@@ -143,7 +142,6 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             width: 100%;
             margin-bottom: 0px;
           }
-
       `}</style>
       <style jsx global>{`
         .more-chevron svg {
