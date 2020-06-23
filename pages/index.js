@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayoutIndexRoute';
+import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayout';
 import Layout from '../components/Layout';
 import fetch from 'node-fetch';
 import theme from '../utilities/theme';
@@ -22,7 +22,10 @@ const Index = ({ product }) => {
       descriptions: product.fields.productDescriptions.arrayValue.values.map(
         (value) => value.stringValue
       ),
+      animatedVideo: product.fields.animatedVideo.stringValue ?? null,
     };
+
+    console.log(model);
     setMainProduct(model);
     setLoading(false);
   }, []);

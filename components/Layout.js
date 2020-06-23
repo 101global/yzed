@@ -35,7 +35,7 @@ function Layout({ children, title, loading }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className='antialiased'>
+      <div className='layout-container antialiased max-w-screen min-h-screen overflow-hidden'>
         <section className='main-content'>{children}</section>
       </div>
       <style jsx global>{`

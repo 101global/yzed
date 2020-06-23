@@ -8,6 +8,8 @@ import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   const [showAnimated, setShowAnimated] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
   const animationOptions = [
     {
       label: 'Stationary',
@@ -32,17 +34,28 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
     setTopModelDark(newValue);
   };
 
+  useEffect(() => {
+    if (window.innerWidth > 1024) {
+      setIsDesktop(true);
+    }
+  }, []);
+
   return (
     <>
       <div className='viewer-container flex justify-between items-center'>
         <div className='model-viewer-container'>
           {showAnimated ? (
-            <AnimatedModelViewer model={model} topModelDark={topModelDark} />
+            model.animatedVideo && !isDesktop ? (
+              <div className='video-container text-white flex flex-col justify-center items-center h-full'>
+                <video playsInline autoplay='autoplay ' muted loop src={model.animatedVideo} />
+              </div>
+            ) : (
+              <AnimatedModelViewer model={model} topModelDark={topModelDark} />
+            )
           ) : (
             <StationaryModelViewer model={model} topModelDark={topModelDark} />
           )}
         </div>
-
         <div className='controls'>
           <div className='toggle-animated-buttons'>
             <SwitchSelector
@@ -88,6 +101,13 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         </svg>
       </div>
       <style jsx>{`
+        .model-chevron {
+          height: 30px;
+          position: absolute;
+          bottom: 5%;
+          z-index: 501;
+          left: calc(50% - 15px);
+        }
         .viewer-container {
           height: 90vh;
           max-width: 80%;

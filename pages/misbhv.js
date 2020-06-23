@@ -28,7 +28,7 @@ const MarineSerre = ({ product }) => {
   }, []);
 
   return (
-    <Layout title='YZED x Marine Serre' loading={!mainProduct || loading}>
+    <Layout title='YZED x Misbhv' loading={!mainProduct || loading}>
       <LandingLayout model={mainProduct} />
     </Layout>
   );
