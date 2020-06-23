@@ -34,7 +34,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
 
   return (
     <>
-      <div className='viewer-container'>
+      <div className='viewer-container flex justify-between items-center'>
         <div className='model-viewer-container'>
           {showAnimated ? (
             <AnimatedModelViewer model={model} topModelDark={topModelDark} />
@@ -88,26 +88,10 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         </svg>
       </div>
       <style jsx>{`
-        .model-chevron {
-          height: 30px;
-          position: absolute;
-          bottom: 5%;
-          z-index: 501;
-        }
-        .control-chevron {
-          position: relative;
-          height: 30px;
-          margin: 0;
-          margin-top: -30px;
-        }
         .viewer-container {
           height: 90vh;
-          width: 2000px;
           max-width: 80%;
           margin: 0 auto;
-          display: flex;
-          justify-content: center;
-          align-items: center;
         }
         .controls {
           display: flex;

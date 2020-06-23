@@ -43,7 +43,7 @@ const Reserved = ({ product }) => {
             option={{
               file: svg,
               animTimingFunction: 'EASE-IN',
-              type: 'delayed',
+              type: 'oneByOne',
               duration: 300,
             }}
           />

@@ -15,76 +15,42 @@ const LandingLayout = ({ model }) => {
     <>
       <header
         id='top'
-        className='w-full flex flex-col fixed pin-t pin-r pin-l px-4 py-mob lg:px-dsk'>
+        className='w-full flex flex-col fixed pin-t pin-r pin-l px-4 py-mob lg:px-dsk bg-transparentBlack z-high'>
         <LandingNavigation />
       </header>
       <main className='w-full flex flex-col'>
-        <section className='landing-section'>
-          <Element id='model-section' name='model' className='scroll-section dark'>
-            <ModelViewerController
-              model={model}
-              topModelDark={topModelDark}
-              setTopModelDark={setTopModelDark}
-            />
-          </Element>
-        </section>
-        <section className='landing-section'>
-          <Element id='intro-section' name='introduction' className='scroll-section light '>
-            <LandingIntroduction model={model} />
-          </Element>
-        </section>
-        <section className='landing-section'>
-          <Element id='about-section' name='about' className='scroll-section dark'>
-            <LandingAbout model={model} />
-          </Element>
-        </section>
-        <section className='landing-section'>
-          <Element id='contact-section' name='contact' className='scroll-section light'>
-            <LandingContact />
-          </Element>
-        </section>
+        <Element
+          id='model-section'
+          name='model'
+          className={`scroll-section dark min-h-screen min-w-screen ${
+            topModelDark ? 'bg-black' : 'bg-white'
+          } pt-nav`}>
+          <ModelViewerController
+            model={model}
+            topModelDark={topModelDark}
+            setTopModelDark={setTopModelDark}
+          />
+        </Element>
+
+        <Element
+          id='intro-section'
+          name='introduction'
+          className='min-h-screen min-w-screen flex items-center justify-center'>
+          <LandingIntroduction model={model} />
+        </Element>
+
+        <Element
+          id='about-section'
+          name='about'
+          className='min-h-screen min-w-screen flex items-center justify-center bg-black'>
+          <LandingAbout model={model} />
+        </Element>
+
+        <Element id='contact-section' name='contact' className='min-h-screen min-w-screen grid'>
+          <LandingContact />
+        </Element>
       </main>
       <LandingFooter />
-      <style jsx>{`
-        #top {
-          background-color: #0d0d0dfb;
-          display: fixed;
-          left: 0;
-          top: 0;
-          z-index: 10000;
-        }
-        .landing-section {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      `}</style>
-      <style jsx global>
-        {`
-          .dark {
-            background-color: ${theme.colors.black};
-          }
-          #model-section {
-            background-color: ${topModelDark ? theme.colors.black : theme.colors.white};
-            min-height: 100vh;
-            padding-top: 85px;
-            min-width: 100vw;
-          }
-          #intro-section,
-          #about-section {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 100vw;
-          }
-          #contact-section {
-            min-width: 100vw;
-            display: grid;
-            min-height: 100vh;
-          }
-        `}
-      </style>
     </>
   );
 };
