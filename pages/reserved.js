@@ -28,7 +28,7 @@ const Reserved = ({ product }) => {
   }, []);
 
   return (
-    <Layout title='YZED x Reserved' loading={!mainProduct || loading}>
+    <Layout title={`YZED x ${mainProduct.brandName}`} loading={!mainProduct || loading}>
       <LandingLayout model={mainProduct} />
     </Layout>
   );
