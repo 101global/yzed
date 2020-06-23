@@ -51,6 +51,13 @@ const LandingLayout = ({ model }) => {
         </Element>
       </main>
       <LandingFooter />
+      <style jsx global>{`
+        @media (max-width: 768px) {
+          #model-section {
+            min-height: 110vh;
+          }
+        }
+      `}</style>
     </>
   );
 };
