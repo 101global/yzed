@@ -113,6 +113,9 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           max-width: 80%;
           margin: 0 auto;
         }
+        .video-container {
+          height: 80vh;
+        }
         .controls {
           display: flex;
           flex-direction: column;
