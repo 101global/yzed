@@ -35,7 +35,7 @@ function Layout({ children, title, loading }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className='layout-container antialiased'>
+      <div className='antialiased'>
         <section className='main-content'>{children}</section>
       </div>
       <style jsx global>{`
@@ -49,13 +49,6 @@ function Layout({ children, title, loading }) {
         }
         * {
           box-sizing: border-box;
-        }
-      `}</style>
-      <style jsx>{`
-        .layout-container {
-          min-height: 100vh;
-          overflow: hidden;
-          max-width: 100vw;
         }
       `}</style>
     </>

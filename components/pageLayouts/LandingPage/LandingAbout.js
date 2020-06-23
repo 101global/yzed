@@ -23,7 +23,7 @@ const LandingAbout = ({ model }) => {
 
   return (
     <>
-      <div className='main-about-container pb-16 lg:pb-32 align-center justify-center w-full'>
+      <div className='main-about-container py-16 lg:pb-32 lg:pt-0 align-center justify-center w-full'>
         <div className='text-container grid grid-cols-1 lg:block align-center justify-center w-full lg:w-4/5 mx-auto my-0 relative p-0 lg:pt-32'>
           <h1 className='text-3xl lg:text-4xl px-4 lg:pb-8 lg:p-0 lg:text-4xl w-full lg:w-5/12 inline-block text-center lg:text-left font-semibold bg-black text-white'>
             “The desire to make fashion more accessible to people.”

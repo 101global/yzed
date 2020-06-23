@@ -40,6 +40,13 @@ const LandingNavigation = () => {
           align-items: center;
           max-width: 50px;
         }
+        a.nav-scroll-link.active,
+        a.nav-scroll-link:hover {
+          font-weight: 600;
+        }
+        a.nav-scroll-link:hover {
+          cursor: pointer;
+        }
         a.nav-scroll-link.active:after,
         a.nav-scroll-link:hover:after {
           content: '';
