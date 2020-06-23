@@ -35,7 +35,7 @@ function Layout({ children, title, loading }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className='layout-container'>
+      <div className='layout-container antialiased'>
         <section className='main-content'>{children}</section>
       </div>
       <style jsx global>{`
