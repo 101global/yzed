@@ -18,7 +18,7 @@ const LandingNavigation = () => {
           </a>
         </div>
         <div className='link-container w-1/2 py-2 flex justify-between'>
-          <div className='flex lg:hidden hamburger-container relative w-full top-0'>
+          <div className='flex lg:hidden hamburger-container relative w-full top-0 h-6'>
             <HamburgerSqueeze
               isActive={openMenu}
               toggleButton={() => setOpenMenu(!openMenu)}
