@@ -13,7 +13,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             spy={true}
             smooth={true}
             duration={500}
-            className='nav-scroll-link inline-block lg:hidden'
+            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide active:font-semibold hover:semi-bold hover:cursor-pointer'
             activeClass='active'>
             <p onClick={() => setOpenMenu(false)}>3D Model</p>
           </Link>
@@ -22,7 +22,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             spy={true}
             smooth={true}
             duration={500}
-            className='nav-scroll-link inline-block lg:hidden'
+            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide active:font-semibold hover:semi-bold hover:cursor-pointer'
             activeClass='active'>
             <p onClick={() => setOpenMenu(false)}>Introduction</p>
           </Link>
@@ -31,7 +31,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             spy={true}
             smooth={true}
             duration={500}
-            className='nav-scroll-link inline-block lg:hidden'
+            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide active:font-semibold hover:semi-bold hover:cursor-pointer'
             activeClass='active'>
             <p onClick={() => setOpenMenu(false)}>About Us</p>
           </Link>
@@ -40,7 +40,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             spy={true}
             smooth={true}
             duration={500}
-            className='nav-scroll-link inline-block lg:hidden'
+            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide active:font-semibold hover:semi-bold hover:cursor-pointer'
             activeClass='active'>
             <p onClick={() => setOpenMenu(false)}>Contact</p>
           </Link>

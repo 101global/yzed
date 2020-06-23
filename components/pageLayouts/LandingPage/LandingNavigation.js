@@ -12,13 +12,13 @@ const LandingNavigation = () => {
   return (
     <>
       <nav className='flex w-full justify-between py-4'>
-        <div className='logo-container'>
+        <div className='logo-container flex justify-center items-center'>
           <a href='/' aria-label='home'>
-            <img src={YZEDNavLogo} alt='YZED logo' />
+            <img src={YZEDNavLogo} alt='YZED logo' className='h-6' />
           </a>
         </div>
         <div className='link-container w-1/2 py-2 flex justify-between'>
-          <div className='flex lg:hidden hamburger-container'>
+          <div className='flex lg:hidden hamburger-container relative w-full top-0'>
             <HamburgerSqueeze
               isActive={openMenu}
               toggleButton={() => setOpenMenu(!openMenu)}
@@ -31,12 +31,6 @@ const LandingNavigation = () => {
         </div>
       </nav>
       <style jsx global>{`
-        .hamburger-container {
-          width: 100%;
-          position: relative;
-          top: 0;
-          height: 25px;
-        }
         .hamburger-container button {
           right: 0;
           position: absolute;
@@ -46,28 +40,6 @@ const LandingNavigation = () => {
           align-items: center;
           max-width: 50px;
         }
-        .link-container a {
-          color: ${theme.colors.white};
-          font-family: ${theme.fonts.main};
-          font-weight: 200;
-          letter-spacing: 0.03em;
-        }
-        .logo-container img {
-          height: 25px;
-        }
-        .logo-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        a.nav-scroll-link.active,
-        a.nav-scroll-link:hover {
-          font-weight: 600;
-        }
-        a.nav-scroll-link:hover {
-          cursor: pointer;
-        }
-
         a.nav-scroll-link.active:after,
         a.nav-scroll-link:hover:after {
           content: '';

@@ -10,7 +10,7 @@ const DesktopNav = () => {
         spy={true}
         smooth={true}
         duration={500}
-        className='nav-scroll-link hidden lg:inline-block'
+        className='nav-scroll-link hidden lg:inline-block font-light text-white tracking-wide active:font-semibold hover:semi-bold hover:cursor-pointer'
         activeClass='active'>
         3D Model
       </Link>
@@ -19,7 +19,7 @@ const DesktopNav = () => {
         spy={true}
         smooth={true}
         duration={500}
-        className='nav-scroll-link hidden lg:inline-block'
+        className='nav-scroll-link hidden lg:inline-block font-light text-white tracking-wide active:font-semibold hover:semi-bold hover:cursor-pointer'
         activeClass='active'>
         Introduction
       </Link>
@@ -28,7 +28,7 @@ const DesktopNav = () => {
         spy={true}
         smooth={true}
         duration={500}
-        className='nav-scroll-link hidden lg:inline-block'
+        className='nav-scroll-link hidden lg:inline-block font-light text-white tracking-wide active:font-semibold hover:semi-bold hover:cursor-pointer'
         activeClass='active'>
         About Us
       </Link>
@@ -37,7 +37,7 @@ const DesktopNav = () => {
         spy={true}
         smooth={true}
         duration={500}
-        className='nav-scroll-link hidden lg:inline-block'
+        className='nav-scroll-link hidden lg:inline-block font-light text-white tracking-wide active:font-semibold hover:semi-bold hover:cursor-pointer'
         activeClass='active'>
         Contact
       </Link>

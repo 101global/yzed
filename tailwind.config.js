@@ -4,7 +4,7 @@ module.exports = {
     extend: {
       padding: {
         dsk: '10%',
-        nav: 'calc(25px + 3.2rem)',
+        nav: '4.7rem',
       },
       zIndex: {
         tenThous: '10000',
