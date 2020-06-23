@@ -136,8 +136,9 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           margin-top: 10px;
         }
         @media (max-width: 768px) {
-           .controls {
+          .controls {
             position: relative;
+            display: block;
             top: 0;
             bottom: 0;
             right: 0;
@@ -145,11 +146,12 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             width: 100%;
             padding: 2.5%;
             background: ${topModelDark ? theme.colors.black : theme.colors.white};
-           }
+          }
           .down-chevron {
             bottom: -5%;
           }
           .viewer-container {
+            height: calc(90vh + 120px);
             display: flex;flex-direction: column;
             max-width: 100%;
           }
