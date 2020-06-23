@@ -5,10 +5,13 @@ import PropTypes from 'prop-types';
 import StationaryModelViewer from './StationaryModelViewer';
 import SwitchSelector from 'react-switch-selector';
 import theme from '../../../utilities/theme';
+import loadingSVG from '../../../public/YZED_Square.svg';
+import loadingSVGDark from '../../../public/YZED_Square_Dark.svg';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   const [showAnimated, setShowAnimated] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
 
   const animationOptions = [
     {
@@ -28,10 +31,19 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
 
   const onAnimationChange = (newValue) => {
     setShowAnimated(newValue);
+    if (newValue === true) {
+      setIsVideoLoading(true);
+    } else {
+      setIsVideoLoading(false);
+    }
   };
 
   const onLightChange = (newValue) => {
     setTopModelDark(newValue);
+  };
+
+  const onLoadedData = () => {
+    setIsVideoLoading(false);
   };
 
   useEffect(() => {
@@ -47,7 +59,21 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           {showAnimated ? (
             model.animatedVideo && !isDesktop ? (
               <div className='video-container text-white flex flex-col justify-center items-center h-full'>
-                <video playsInline autoplay='autoplay' muted loop src={model.animatedVideo} />
+                <video
+                  playsInline
+                  autoplay='autoplay'
+                  muted
+                  loop
+                  src={model.animatedVideo}
+                  onLoadedData={onLoadedData}
+                />
+                {isVideoLoading && (
+                  <img
+                    src={topModelDark ? loadingSVG : loadingSVGDark}
+                    alt='loading logo'
+                    className='video-loading-logo absolute w-full h-full'
+                  />
+                )}
               </div>
             ) : (
               <AnimatedModelViewer model={model} topModelDark={topModelDark} />
@@ -101,6 +127,10 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         </div>
       </div>
       <style jsx>{`
+        .video-loading-logo {
+          height: 90vh;
+          z-index: 1000;
+        }
         .model-chevron {
           height: 30px;
           position: absolute;
@@ -175,7 +205,8 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         @media (max-width: 640px) {
           .react-switch-selector-wrapper {
             max-width: 100% !important;
-          }
+          }import LoadingSpinner from '../LoadingSpinner';
+
         }
       `}</style>
     </>

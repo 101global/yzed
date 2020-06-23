@@ -25,21 +25,18 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           ref={modelRef}
           src={model.glbFile}
           ios-src={model.usdzFile}
-          alt={model.name}
+          alt={model.id}
           loading='lazy'
           ar-modes='scene-viewer webxr quick-look'
           ar-scale='fixed'
           auto-rotate
           camera-controls
           ar
-          exposure={0.5}
+          exposure={model.exposure ?? 0.5}
           poster={topModelDark ? svg : svgDark}
           interaction-policy='allow-when-focused'></model-viewer>
       </div>
       <style jsx global>{`
-         {
-          /* width: 80% and margin-left 20% for centered in other section */
-        }
         .model-viewer-container {
           height: 100%;
           width: 100%;

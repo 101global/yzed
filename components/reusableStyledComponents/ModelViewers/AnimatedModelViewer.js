@@ -22,12 +22,12 @@ const AnimatedModelViewer = ({ model, topModelDark }) => {
         <model-viewer
           ref={modelRef}
           src={model.animatedGlbFile}
-          alt={model.name}
+          alt={model.id}
           loading='lazy'
           auto-rotate
           camera-controls
           poster={topModelDark ? svg : svgDark}
-          exposure={0.5}
+          exposure={model.exposure ?? 0.5}
           interaction-policy='allow-when-focused'
           autoplay></model-viewer>
       </div>

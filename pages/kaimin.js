@@ -8,7 +8,7 @@ import theme from '../utilities/theme';
 const Reserved = ({ product }) => {
   const [loading, setLoading] = useState(false);
 
-  const [mainProduct, setMainProduct] = useState({ imageSlug: 'kaimin' });
+  const [mainProduct, setMainProduct] = useState({});
 
   useEffect(() => {
     setLoading(true);
@@ -17,11 +17,12 @@ const Reserved = ({ product }) => {
       glbFile: product.fields.glbFile.stringValue,
       usdzFile: product.fields.usdzFile.stringValue,
       id: product.name.slice(63),
-      imageSlug: 'kaimin',
+      imageSlug: product.fields.imageSlug.stringValue,
       animatedGlbFile: product.fields.animatedGlbFile.stringValue,
       descriptions: product.fields.productDescriptions.arrayValue.values.map(
         (value) => value.stringValue
       ),
+      exposure: 1,
     };
     setMainProduct(model);
     setLoading(false);
@@ -36,7 +37,7 @@ const Reserved = ({ product }) => {
 
 export async function getStaticProps() {
   const product = await fetch(
-    `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/landingBrand/${process.env.brandLandingKaimin}`,
+    `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/landingBrand/${process.env.brandLandingReserved}`,
     { cors: 'no-cors' }
   ).then((res) => res.json().then((data) => data));
 
