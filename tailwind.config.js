@@ -7,7 +7,9 @@ module.exports = {
         nav: 'calc(25px + 3.2rem)',
       },
       zIndex: {
-        high: '10000',
+        tenThous: '10000',
+        thous: '1000',
+        fiveHund: '500',
       },
     },
     colors: {
