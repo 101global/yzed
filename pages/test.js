@@ -24,7 +24,8 @@ const Reserved = ({ product }) => {
       id: product.name.slice(63),
       imageSlug: product.fields.imageSlug.stringValue,
       animatedGlbFile: product.fields.animatedGlbFile.stringValue,
-      animatedVideo: product.fields.animatedVideo.stringValue ?? null,
+      darkBackgroundVideo: product.fields.darkBackgroundVideo.stringValue,
+      lightBackgroundVideo: product.fields.lightBackgroundVideo.stringValue,
     };
     console.log(model);
     setMainProduct(model);
@@ -77,7 +78,7 @@ const Reserved = ({ product }) => {
 
 export async function getStaticProps() {
   const product = await fetch(
-    `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/landingBrand/${process.env.brandLandingMarineSerre}`,
+    `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/landingBrand/${process.env.brandLandingYZED}`,
     { cors: 'no-cors' }
   ).then((res) => res.json().then((data) => data));
 

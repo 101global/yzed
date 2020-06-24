@@ -19,7 +19,6 @@ const Index = ({ product }) => {
       id: product.name.slice(63),
       imageSlug: product.fields.imageSlug.stringValue,
       animatedGlbFile: product.fields.animatedGlbFile.stringValue,
-      animatedVideo: product.fields.animatedVideo.stringValue ?? null,
       darkBackgroundVideo: product.fields.darkBackgroundVideo.stringValue,
       lightBackgroundVideo: product.fields.lightBackgroundVideo.stringValue,
     };
