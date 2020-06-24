@@ -10,7 +10,7 @@ const LandingContact = () => {
       <>
         <div className='main-contact-container px-4 lg:px-dsk flex flex-col lg:flex-row justify-center lg:justify-between align-center w-full'>
           <div className='title-section flex flex-col justify-center align-center w-full lg:w-6/12 relative'>
-            <h1 className='text-3xl lg:text-5xl m-0 lg:mr-8 text-center lg:text-right mt-20 mb-20 lg:my-0 font-semibold z-fiveHund'>
+            <h1 className='text-3xl lg:text-5xl m-0 lg:mr-16 text-center lg:text-right mt-20 mb-20 lg:my-0 font-semibold z-fiveHund'>
               Let's Work Together!
             </h1>
             <ContactAnimated />
