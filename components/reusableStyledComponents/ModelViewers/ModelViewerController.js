@@ -114,9 +114,6 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           max-width: 80%;
           margin: 0 auto;
         }
-        .video-container {
-          height: 80vh;
-        }
         .controls {
           display: flex;
           flex-direction: column;
@@ -128,7 +125,6 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           background: transparent;
           color: ${!topModelDark ? theme.colors.black : theme.colors.white};
         }
-
         .toggle-animated-buttons,
         .toggle-light-buttons {
           height: 40px;
