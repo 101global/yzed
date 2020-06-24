@@ -81,21 +81,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           ) : (
             <StationaryModelViewer model={model} topModelDark={topModelDark} />
           )}
-          <svg
-            version='1.1'
-            xmlns='http://www.w3.org/2000/svg'
-            x='0px'
-            y='0px'
-            viewBox='0 0 1000 1000'
-            enableBackground='new 0 0 1000 1000'
-            className='down-chevron model-chevron hidden lg:block'>
-            <g>
-              <path
-                fill={topModelDark ? theme.colors.white : theme.colors.black}
-                d='M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z'
-              />
-            </g>
-          </svg>
+
         </div>
         <div className='controls'>
           <div className='toggle-animated-buttons'>
@@ -130,13 +116,6 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         .video-loading-logo {
           height: 90vh;
           z-index: 1000;
-        }
-        .model-chevron {
-          height: 30px;
-          position: absolute;
-          bottom: 20px;
-          z-index: 501;
-          left: calc(50% - 15px);
         }
         .viewer-container {
           height: 90vh;
@@ -177,7 +156,6 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
             padding: 2.5%;
             background: ${topModelDark ? theme.colors.black : theme.colors.white};
           }
-
           .viewer-container {
             display: flex;
             flex-direction: column;

@@ -4,6 +4,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import svg from '../../../public/YZED_Square.svg';
 import svgDark from '../../../public/YZED_Square_Dark.svg';
+import DownChevron from '../DownChevron';
 
 const AnimatedModelViewer = ({ model, topModelDark }) => {
   const modelRef = useRef(null);
@@ -29,7 +30,9 @@ const AnimatedModelViewer = ({ model, topModelDark }) => {
           poster={topModelDark ? svg : svgDark}
           exposure={model.exposure ?? 0.5}
           interaction-policy='allow-when-focused'
-          autoplay></model-viewer>
+          autoplay>
+          <DownChevron topModelDark={topModelDark} />
+        </model-viewer>
       </div>
       <style jsx global>{`
         .model-viewer-container {
@@ -38,7 +41,6 @@ const AnimatedModelViewer = ({ model, topModelDark }) => {
         }
         model-viewer {
           margin: 0 auto;
-
           height: 100%;
           width: 100%;
           --poster-color: transparent;

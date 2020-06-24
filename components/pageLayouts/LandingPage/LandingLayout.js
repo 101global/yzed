@@ -31,21 +31,18 @@ const LandingLayout = ({ model }) => {
             setTopModelDark={setTopModelDark}
           />
         </Element>
-
         <Element
           id='intro-section'
           name='introduction'
           className='min-h-screen min-w-screen flex items-center justify-center'>
           <LandingIntroduction model={model} />
         </Element>
-
         <Element
           id='about-section'
           name='about'
           className='min-h-screen min-w-screen flex items-center justify-center bg-black'>
           <LandingAbout model={model} />
         </Element>
-
         <Element id='contact-section' name='contact' className='min-h-screen min-w-screen grid'>
           <LandingContact />
         </Element>

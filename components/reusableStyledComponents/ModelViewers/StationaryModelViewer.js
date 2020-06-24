@@ -4,6 +4,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import svg from '../../../public/YZED_Square.svg';
 import svgDark from '../../../public/YZED_Square_Dark.svg';
+import DownChevron from '../DownChevron';
 
 const StationaryModelViewer = ({ model, topModelDark }) => {
   const modelRef = useRef(null);
@@ -34,7 +35,9 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           ar
           exposure={model.exposure ?? 0.5}
           poster={topModelDark ? svg : svgDark}
-          interaction-policy='allow-when-focused'></model-viewer>
+          interaction-policy='allow-when-focused'>
+          <DownChevron topModelDark={topModelDark} />
+        </model-viewer>
       </div>
       <style jsx global>{`
         .model-viewer-container {
