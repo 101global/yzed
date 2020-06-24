@@ -11,15 +11,12 @@ function Layout({ children, title, loading }) {
         <Head>
           <title>{title}</title>
         </Head>
-        <div className='layout-container antialiased'>
+        <div className='layout-container antialiased p-0 m-0 scrolling-touch'>
           <LoadingSpinner />
         </div>
         <style jsx global>{`
           html,
           body {
-            scroll-behavior: smooth;
-            padding: 0;
-            margin: 0;
             font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
               Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
           }

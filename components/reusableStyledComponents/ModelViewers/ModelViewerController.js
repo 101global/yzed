@@ -170,9 +170,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         @media (max-width: 640px) {
           .react-switch-selector-wrapper {
             max-width: 100% !important;
-          }import LoadingSpinner from '../LoadingSpinner';
-import AnimatedVideoPlayer from './AnimatedVideoPlayer';
-
+          }
         }
       `}</style>
     </>

@@ -10,8 +10,13 @@ const LandingFooter = () => {
         <p className='p-2 lg:px-dsk lg:text-base text-center lg:text-left align-middle tracking-wide w-full bg-black text-white font-light'>
           <a
             className='color-link block lg:inline-block pb-6 pt-2 lg:pb-0 lg:pt-0 align-middle my-0 mx-auto h-3'
-            href='/'>
-            <img src={YZEDsvg} className='yzed-logo align-middle my-0 mx-auto h-3 -mt-1' />
+            href='/'
+            aria-label='YZED home'>
+            <img
+              src={YZEDsvg}
+              alt='YZED logo'
+              className='yzed-logo align-middle my-0 mx-auto h-3 -mt-1'
+            />
           </a>{' '}
           <span className='hidden lg:inline'>- </span>All rights reserved to{' '}
           <a
