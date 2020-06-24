@@ -22,7 +22,7 @@ const LandingLayout = ({ model }) => {
         <Element
           id='model-section'
           name='model'
-          className={`scroll-section dark min-h-screen min-w-screen ${
+          className={`dark min-h-screen min-w-screen ${
             topModelDark ? 'bg-black' : 'bg-white'
           } pt-nav`}>
           <ModelViewerController
