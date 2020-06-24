@@ -19,9 +19,7 @@ const MarineSerre = ({ product }) => {
       id: product.name.slice(63),
       imageSlug: product.fields.imageSlug.stringValue,
       animatedGlbFile: product.fields.animatedGlbFile.stringValue,
-      descriptions: product.fields.productDescriptions.arrayValue.values.map(
-        (value) => value.stringValue
-      ),
+      animatedVideo: product.fields.animatedVideo.stringValue ?? null,
     };
     setMainProduct(model);
     setLoading(false);

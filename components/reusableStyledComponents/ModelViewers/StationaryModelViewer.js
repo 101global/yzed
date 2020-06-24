@@ -1,9 +1,11 @@
+import '@google/model-viewer/dist/model-viewer';
+
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import DownChevron from '../DownChevron';
-import Head from 'next/head';
 import PropTypes from 'prop-types';
 import darkBackgroundLoading from '../../../public/yzed-loading-dark-background.svg';
+import dynamic from 'next/dynamic';
 import lightBackgroundLoading from '../../../public/yzed-loading-light-background.svg';
 
 const StationaryModelViewer = ({ model, topModelDark }) => {
@@ -12,16 +14,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
 
   return (
     <>
-      <Head>
-        <script
-          type='module'
-          src='https://unpkg.com/@google/model-viewer/dist/model-viewer.js'></script>
-        <script
-          noModule
-          src='https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js'></script>
-      </Head>
       <div className='model-viewer-container'>
-        {loading && <h1>Loading</h1>}
         <model-viewer
           ref={modelRef}
           src={model.glbFile}

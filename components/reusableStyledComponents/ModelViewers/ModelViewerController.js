@@ -1,16 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import AnimatedModelViewer from './AnimatedModelViewer';
 import AnimatedVideoPlayer from './AnimatedVideoPlayer';
 import PropTypes from 'prop-types';
-import StationaryModelViewer from './StationaryModelViewer';
 import SwitchSelector from 'react-switch-selector';
+import dynamic from 'next/dynamic';
 import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   const [showAnimated, setShowAnimated] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
   const [isVideoLoading, setIsVideoLoading] = useState(true);
+
+  const StationaryModelViewer = dynamic(() => import('./StationaryModelViewer'), {
+    ssr: false,
+  });
+
+  const AnimatedModelViewer = dynamic(() => import('./AnimatedModelViewer'));
 
   const animationOptions = [
     {
