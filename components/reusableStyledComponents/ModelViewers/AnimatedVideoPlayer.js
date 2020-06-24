@@ -5,7 +5,7 @@ import loadingSVGDark from '../../../public/YZED_Square_Dark.svg';
 
 const AnimatedVideoPlayer = ({ model, onLoadedData, isVideoLoading, topModelDark }) => {
   return (
-    <>
+
       <div className='video-container text-white flex flex-col justify-center items-center h-full'>
         <video
           playsInline
@@ -23,8 +23,7 @@ const AnimatedVideoPlayer = ({ model, onLoadedData, isVideoLoading, topModelDark
           />
         )}
       </div>
-      <style jsx>{``}</style>
-    </>
+
   );
 };
 

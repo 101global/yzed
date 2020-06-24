@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import AnimatedModelViewer from './AnimatedModelViewer';
+import AnimatedVideoPlayer from './AnimatedVideoPlayer';
 import PropTypes from 'prop-types';
 import StationaryModelViewer from './StationaryModelViewer';
 import SwitchSelector from 'react-switch-selector';
-import theme from '../../../utilities/theme';
 import loadingSVG from '../../../public/YZED_Square.svg';
 import loadingSVGDark from '../../../public/YZED_Square_Dark.svg';
+import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   const [showAnimated, setShowAnimated] = useState(false);
@@ -58,30 +59,18 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
         <div className='model-viewer-container'>
           {showAnimated ? (
             model.animatedVideo && !isDesktop ? (
-              <div className='video-container text-white flex flex-col justify-center items-center h-full'>
-                <video
-                  playsInline
-                  autoplay='autoplay'
-                  muted
-                  loop
-                  src={model.animatedVideo}
-                  onLoadedData={onLoadedData}
-                />
-                {isVideoLoading && (
-                  <img
-                    src={topModelDark ? loadingSVG : loadingSVGDark}
-                    alt='loading logo'
-                    className='video-loading-logo absolute w-full h-full'
-                  />
-                )}
-              </div>
+              <AnimatedVideoPlayer
+                model={model}
+                isVideoLoading={isVideoLoading}
+                onLoadedData={onLoadedData}
+                topModelDark={topModelDark}
+              />
             ) : (
               <AnimatedModelViewer model={model} topModelDark={topModelDark} />
             )
           ) : (
             <StationaryModelViewer model={model} topModelDark={topModelDark} />
           )}
-
         </div>
         <div className='controls'>
           <div className='toggle-animated-buttons'>
@@ -89,10 +78,10 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
               onChange={onAnimationChange}
               options={animationOptions}
               initialSelectedIndex={0}
-              backgroundColor={'#0d0d0d'}
-              fontColor={'#fff'}
-              selectedFontColor={'#0d0d0d'}
-              selectedBackgroundColor={'#fff'}
+              backgroundColor={theme.colors.black}
+              fontColor={theme.colors.white}
+              selectedFontColor={theme.colors.black}
+              selectedBackgroundColor={theme.colors.white}
               optionBorderRadius={0}
               selectionIndicatorMargin={3}
             />
@@ -102,10 +91,10 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
               onChange={onLightChange}
               options={lightOptions}
               initialSelectedIndex={1}
-              backgroundColor={'#0d0d0d'}
-              fontColor={'#fff'}
-              selectedFontColor={'#0d0d0d'}
-              selectedBackgroundColor={'#fff'}
+              backgroundColor={theme.colors.black}
+              fontColor={theme.colors.white}
+              selectedFontColor={theme.colors.black}
+              selectedBackgroundColor={theme.colors.white}
               optionBorderRadius={0}
               selectionIndicatorMargin={3}
             />
@@ -182,6 +171,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
           .react-switch-selector-wrapper {
             max-width: 100% !important;
           }import LoadingSpinner from '../LoadingSpinner';
+import AnimatedVideoPlayer from './AnimatedVideoPlayer';
 
         }
       `}</style>
