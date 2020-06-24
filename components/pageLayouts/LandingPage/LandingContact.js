@@ -22,7 +22,7 @@ const LandingContact = () => {
               your exquisite physical products into digital-dazzle, leading your brand into the
               digital era.
             </p>
-            <div className='signature mt-16'>
+            <div className='signature mt-16 text-left'>
               <p className='text-xl font-light'>Interested in working with us? </p>
               <p className='text-xl font-light'>
                 Please contact us at{' '}
