@@ -5,8 +5,6 @@ import AnimatedVideoPlayer from './AnimatedVideoPlayer';
 import PropTypes from 'prop-types';
 import StationaryModelViewer from './StationaryModelViewer';
 import SwitchSelector from 'react-switch-selector';
-import loadingSVG from '../../../public/YZED_Square.svg';
-import loadingSVGDark from '../../../public/YZED_Square_Dark.svg';
 import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {

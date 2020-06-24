@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
+import DownChevron from '../DownChevron';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import svg from '../../../public/YZED_Square.svg';
-import svgDark from '../../../public/YZED_Square_Dark.svg';
-import DownChevron from '../DownChevron';
+import darkBackgroundLoading from '../../../public/yzed-loading-dark-background.svg';
+import lightBackgroundLoading from '../../../public/yzed-loading-light-background.svg';
 
 const StationaryModelViewer = ({ model, topModelDark }) => {
   const modelRef = useRef(null);
@@ -34,7 +34,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           camera-controls
           ar
           exposure={model.exposure ?? 0.5}
-          poster={topModelDark ? svg : svgDark}
+          poster={topModelDark ? darkBackgroundLoading : lightBackgroundLoading}
           interaction-policy='allow-when-focused'>
           <DownChevron topModelDark={topModelDark} />
         </model-viewer>

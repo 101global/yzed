@@ -4,7 +4,7 @@ import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayout';
 import Layout from '../components/Layout';
 import ReactVivus from 'react-vivus';
 import fetch from 'node-fetch';
-import svg from '../public/Model_SVG.svg';
+import svg from '../public/animated-model.svg';
 import theme from '../utilities/theme';
 
 const Reserved = ({ product }) => {
