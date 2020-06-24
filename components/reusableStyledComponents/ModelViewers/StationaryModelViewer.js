@@ -9,8 +9,15 @@ import dynamic from 'next/dynamic';
 import lightBackgroundLoading from '../../../public/yzed-loading-light-background.svg';
 
 const StationaryModelViewer = ({ model, topModelDark }) => {
-  const modelRef = useRef(null);
   const [loading, setLoading] = useState(false);
+
+  const modelRef = useRef(null);
+
+  useEffect(() => {
+    modelRef.current.addEventListener('error', (error) => {
+      console.log(error);
+    });
+  }, []);
 
   return (
     <>
@@ -36,6 +43,10 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
         .model-viewer-container {
           height: 100%;
           width: 100%;
+        }
+        .model-viewer-container h1 {
+          color: red;
+          z-index: 1000;
         }
         model-viewer {
           margin: 0 auto;

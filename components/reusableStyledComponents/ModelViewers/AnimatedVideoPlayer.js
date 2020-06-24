@@ -12,7 +12,7 @@ const AnimatedVideoPlayer = ({ model, onLoadedData, isVideoLoading, topModelDark
           autoplay='autoplay'
           muted
           loop
-          src={model.animatedVideo}
+          src={topModelDark ? model.darkBackgroundVideo : model.lightBackgroundVideo}
           onLoadedData={onLoadedData}
         />
         {isVideoLoading && (

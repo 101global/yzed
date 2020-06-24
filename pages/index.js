@@ -20,6 +20,8 @@ const Index = ({ product }) => {
       imageSlug: product.fields.imageSlug.stringValue,
       animatedGlbFile: product.fields.animatedGlbFile.stringValue,
       animatedVideo: product.fields.animatedVideo.stringValue ?? null,
+      darkBackgroundVideo: product.fields.darkBackgroundVideo.stringValue,
+      lightBackgroundVideo: product.fields.lightBackgroundVideo.stringValue,
     };
     setMainProduct(model);
     setLoading(false);
