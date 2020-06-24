@@ -11,7 +11,7 @@ function Layout({ children, title, loading }) {
         <Head>
           <title>{title}</title>
         </Head>
-        <div className='layout-container antialiased p-0 m-0 scrolling-touch'>
+        <div className='antialiased p-0 m-0 scrolling-touch scrol'>
           <LoadingSpinner />
         </div>
         <style jsx global>{`
@@ -32,7 +32,7 @@ function Layout({ children, title, loading }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className='layout-container antialiased max-w-screen min-h-screen overflow-hidden'>
+      <div className='antialiased max-w-screen min-h-screen overflow-hidden'>
         <section className='main-content'>{children}</section>
       </div>
       <style jsx global>{`
