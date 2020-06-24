@@ -7,7 +7,7 @@ const LandingFooter = () => {
   return (
     <>
       <footer className='text-left'>
-        <p className='p-2 lg:px-dsk lg:text-base text-center lg:text-left align-middle tracking-wide w-full bg-black text-white font-light'>
+        <p className='px-2 py-4 lg:px-dsk lg:py-2 lg:text-base text-center lg:text-left align-middle tracking-wide w-full bg-black text-white font-light'>
           <a
             className='color-link block lg:inline-block pb-6 pt-2 lg:pb-0 lg:pt-0 align-middle my-0 mx-auto h-3'
             href='/'

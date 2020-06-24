@@ -28,6 +28,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           ar
           exposure={model.exposure ?? 0.5}
           poster={topModelDark ? darkBackgroundLoading : lightBackgroundLoading}
+          camera-orbit='calc(0rad + env(window-scroll-y) * 4rad) calc(90deg + env(window-scroll-y) * 180deg) calc(3m - env(window-scroll-y) * 1.5m)'
           interaction-policy='allow-when-focused'>
           <DownChevron topModelDark={topModelDark} />
         </model-viewer>

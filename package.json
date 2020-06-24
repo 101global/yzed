@@ -8,7 +8,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@arturmiglio/react-skroll": "^0.7.5",
     "@google/model-viewer": "^1.0.0",
     "core-js": "^3.6.5",
     "firebase": "^7.14.2",
@@ -21,22 +20,16 @@
     "react": "16.13.1",
     "react-animated-burgers": "^1.2.7",
     "react-dom": "16.13.1",
-    "react-lazy-load-image-component": "^1.5.0",
-    "react-morphing-modal": "^0.2.2",
-    "react-multi-carousel": "^2.5.5",
     "react-scroll": "^1.7.16",
-    "react-scrollmagic": "^2.2.0",
-    "react-show-more-text": "^1.4.2",
-    "react-skroll": "^0.7.3",
     "react-switch-selector": "^1.1.2",
-    "react-vivus": "^0.0.2",
-    "styled-components": "^5.1.1",
-    "vivus": "^0.4.5"
+    "react-vivus": "^0.0.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "autoprefixer": "^9.8.0",
     "postcss-preset-env": "^6.7.0",
-    "tailwindcss": "^1.4.6"
+    "styled-components": "^5.1.1",
+    "tailwindcss": "^1.4.6",
+    "vivus": "^0.4.5"
   }
 }
