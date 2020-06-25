@@ -15,16 +15,14 @@ const LandingLayout = ({ model }) => {
     <>
       <header
         id='top'
-        className='w-full flex flex-col fixed pin-t pin-r pin-l px-4 py-mob lg:px-dsk bg-transparentBlack z-tenThous'>
+        className='w-full flex fixed pin-t pin-r pin-l px-4 py-mob lg:px-dsk bg-transparentBlack z-tenThous'>
         <LandingNavigation />
       </header>
-      <main className='w-full flex flex-col'>
+      <main className='center-flex-col'>
         <Element
           id='model-section'
           name='model'
-          className={`min-h-screen min-w-screen ${
-            topModelDark ? 'bg-black' : 'bg-white'
-          } pt-nav`}>
+          className={`full-screen ${topModelDark ? 'bg-black' : 'bg-white'} pt-nav`}>
           <ModelViewerController
             model={model}
             topModelDark={topModelDark}
@@ -34,16 +32,16 @@ const LandingLayout = ({ model }) => {
         <Element
           id='intro-section'
           name='introduction'
-          className='min-h-screen min-w-screen flex items-center justify-center'>
+          className='full-screen center-flex-col items-center'>
           <LandingIntroduction model={model} />
         </Element>
         <Element
           id='about-section'
           name='about'
-          className='min-h-screen min-w-screen flex items-center justify-center bg-black'>
+          className='full-screen center-flex-col items-center bg-black'>
           <LandingAbout model={model} />
         </Element>
-        <Element id='contact-section' name='contact' className='min-h-screen min-w-screen grid'>
+        <Element id='contact-section' name='contact' className='full-screen grid'>
           <LandingContact />
         </Element>
       </main>

@@ -19,7 +19,7 @@ function Layout({ children, title, loading }) {
         <Head>
           <title>{title}</title>
         </Head>
-        <div className='antialiased p-0 m-0 scrolling-touch scrol'>
+        <div className='antialiased items-center justify-center full-screen p-0 m-0'>
           <LoadingSpinner />
         </div>
         <style jsx global>{`
@@ -27,6 +27,7 @@ function Layout({ children, title, loading }) {
           body {
             font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
               Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+            scroll-behavior: smooth;
           }
           * {
             box-sizing: border-box;
@@ -40,17 +41,15 @@ function Layout({ children, title, loading }) {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className='antialiased max-w-screen min-h-screen overflow-hidden'>
+      <div className='antialiased full-screen overflow-hidden p-0 m-0'>
         <section className='main-content'>{children}</section>
       </div>
       <style jsx global>{`
         html,
         body {
-          scroll-behavior: smooth;
-          padding: 0;
-          margin: 0;
           font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+          scroll-behavior: smooth;
         }
         * {
           box-sizing: border-box;
