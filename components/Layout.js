@@ -28,6 +28,8 @@ function Layout({ children, title, loading }) {
             font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
               Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
             scroll-behavior: smooth;
+            padding: 0;
+            margin: 0;
           }
           * {
             box-sizing: border-box;
@@ -50,6 +52,8 @@ function Layout({ children, title, loading }) {
           font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
           scroll-behavior: smooth;
+          padding: 0;
+          margin: 0;
         }
         * {
           box-sizing: border-box;
