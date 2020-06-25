@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
 const Index = ({ product }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const [mainProduct, setMainProduct] = useState({});
 

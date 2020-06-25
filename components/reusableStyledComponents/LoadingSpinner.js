@@ -5,13 +5,15 @@ import theme from '../../utilities/theme';
 const LoadingSpinner = ({ color }) => {
   return (
     <>
-      <div className='spinner-container' color={color}>
+      <div
+        className='spinner-container flex min-h-screen flex-col items-center justify-center'
+        color={color}>
         <div className='lds-facebook'>
           <div></div>
           <div></div>
           <div></div>
         </div>
-        <h1>Loading...</h1>
+        <h1 className='text-3xl font-semibold'>Loading...</h1>
       </div>
       <style jsx>
         {`
