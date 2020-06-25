@@ -2,9 +2,8 @@ import '../styles/index.css';
 
 import Head from 'next/head';
 
-// import App from 'next/app';
-
 function MyApp({ Component, pageProps }) {
+
   return (
     <>
       <Head>

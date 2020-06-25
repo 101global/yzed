@@ -2,9 +2,17 @@ import Head from 'next/head';
 import Link from 'next/link';
 import LoadingSpinner from './reusableStyledComponents/LoadingSpinner';
 import PropTypes from 'prop-types';
+import firebase from '../utilities/firebaseSetup';
 import theme from '../utilities/theme';
+import { useEffect } from 'react';
 
 function Layout({ children, title, loading }) {
+  useEffect(() => {
+    if (window) {
+      firebase.analytics();
+    }
+  }, []);
+
   if (loading)
     return (
       <>
