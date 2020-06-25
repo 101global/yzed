@@ -36,7 +36,11 @@ function Layout({ children, title, loading }) {
     }
   }, []);
 
-  return <BodyLayout title={title}>{loading ? <LoadingSpinner /> : children}</BodyLayout>;
+  return (
+    <BodyLayout title={title}>
+      {loading ? <LoadingSpinner color={theme.colors.black} /> : children}
+    </BodyLayout>
+  );
 }
 
 export default Layout;

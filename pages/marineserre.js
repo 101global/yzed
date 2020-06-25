@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 import theme from '../utilities/theme';
 
 const MarineSerre = ({ product }) => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const [mainProduct, setMainProduct] = useState({});
 
