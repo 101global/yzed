@@ -7,7 +7,6 @@
 			<stop offset="0%" stop-color="#A891D9">
 					<animate attributeName="stop-color" values="#fff; #A891D9; #73CFDB; #fff; #A891D9; #73CFDB;" dur="4s" repeatCount="indefinite"></animate>
 			</stop>
-
 			<stop offset="100%" stop-color="#73CFDB">
 					<animate attributeName="stop-color" values=" #73CFDB; #fff; #A891D9; #73CFDB; #fff; #A891D9;" dur="4s" repeatCount="indefinite"></animate>
 			</stop>

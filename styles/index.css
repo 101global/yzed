@@ -7,9 +7,11 @@
 .full-screen {
   @apply min-h-screen min-w-full;
 }
+
 .para-standard {
   @apply text-xl font-light;
 }
+
 .center-flex-col {
   @apply flex flex-col justify-center w-full relative;
 }
