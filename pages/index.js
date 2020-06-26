@@ -22,7 +22,6 @@ const Index = ({ product }) => {
       darkBackgroundVideo: product.fields.darkBackgroundVideo.stringValue,
       lightBackgroundVideo: product.fields.lightBackgroundVideo.stringValue,
     };
-    console.log(model);
     setMainProduct(model);
     setLoading(false);
   }, []);

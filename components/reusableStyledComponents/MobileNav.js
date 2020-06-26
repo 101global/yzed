@@ -6,14 +6,14 @@ import theme from '../../utilities/theme';
 const MobileNav = ({ openMenu, setOpenMenu }) => {
   return (
     <>
-      <div className='mobile-nav flex flex-col lg:hidden justify-between w-full'>
+      <div className='mobile-nav flex flex-col lg:hidden justify-between w-full bg-transparentBlack fixed top-0 left-0 z-thous'>
         <div className='link-items-container'>
           <Link
             to='model'
             spy={true}
             smooth={true}
             duration={500}
-            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide'
+            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center'
             activeClass='active'>
             <p onClick={() => setOpenMenu(false)}>3D Model</p>
           </Link>
@@ -22,7 +22,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             spy={true}
             smooth={true}
             duration={500}
-            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide'
+            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center'
             activeClass='active'>
             <p onClick={() => setOpenMenu(false)}>Introduction</p>
           </Link>
@@ -31,7 +31,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             spy={true}
             smooth={true}
             duration={500}
-            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide'
+            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center'
             activeClass='active'>
             <p onClick={() => setOpenMenu(false)}>About Us</p>
           </Link>
@@ -40,7 +40,7 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
             spy={true}
             smooth={true}
             duration={500}
-            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide'
+            className='nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center'
             activeClass='active'>
             <p onClick={() => setOpenMenu(false)}>Contact</p>
           </Link>
@@ -48,26 +48,17 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
       </div>
       <style jsx global>{`
         .mobile-nav {
-          background: #0d0d0dfb;
           transform: ${openMenu ? 'translateX(0)' : 'translateX(100%)'};
           min-width: ${openMenu ? '100%' : '0'};
           min-height: calc(100vh - 72px);
-          text-align: left;
-          position: fixed;
           margin-top: 72px;
-          top: 0;
-          left: 0;
-          z-index: 800;
+
           transition: all 0.7s ease-in-out;
-          font-family: ${theme.fonts.main};
           overflow-y: hidden;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
         }
         .mobile-nav a {
           font-size: 1.6rem;
-          text-align: center;
+
           max-width: 60%;
           margin: 0 auto;
         }

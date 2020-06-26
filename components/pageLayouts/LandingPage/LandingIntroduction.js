@@ -50,14 +50,7 @@ const LandingIntroduction = ({ model }) => {
           width: auto;
           max-width: 90%;
         }
-        @media (max-width: 768px) {
-          h1 {
-            max-width: 90%;
-          }
-          p {
-            max-width: 90%;
-          }
-        }
+  
       `}</style>
       <style jsx global>{`
         .black-link {
