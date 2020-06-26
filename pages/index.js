@@ -18,9 +18,9 @@ const Index = ({ product }) => {
       usdzFile: product.fields.usdzFile.stringValue,
       id: product.name.slice(63),
       imageSlug: product.fields.imageSlug.stringValue,
-      // animatedGlbFile: product.fields.animatedGlbFile.stringValue,
-      darkBackgroundVideo: product.fields.darkBackgroundVideo.stringValue,
-      lightBackgroundVideo: product.fields.lightBackgroundVideo.stringValue,
+      animatedGlbFile: product.fields.animatedGlbFile.stringValue,
+      // darkBackgroundVideo: product.fields.darkBackgroundVideo.stringValue,
+      // lightBackgroundVideo: product.fields.lightBackgroundVideo.stringValue,
     };
     setMainProduct(model);
     setLoading(false);
