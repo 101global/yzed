@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import AnimatedVideoPlayer from './AnimatedVideoPlayer';
 import PropTypes from 'prop-types';
 import SwitchSelector from 'react-switch-selector';
 import dynamic from 'next/dynamic';
@@ -9,13 +8,14 @@ import theme from '../../../utilities/theme';
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
   const [showAnimated, setShowAnimated] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [isVideoLoading, setIsVideoLoading] = useState(true);
 
   const StationaryModelViewer = dynamic(() => import('./StationaryModelViewer'), {
     ssr: false,
   });
 
-  const AnimatedModelViewer = dynamic(() => import('./AnimatedModelViewer'));
+  const AnimatedModelViewer = dynamic(() => import('./AnimatedModelViewer'), {
+    ssr: false,
+  });
 
   const animationOptions = [
     {
@@ -35,42 +35,18 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
 
   const onAnimationChange = (newValue) => {
     setShowAnimated(newValue);
-    if (newValue === true) {
-      setIsVideoLoading(true);
-    } else {
-      setIsVideoLoading(false);
-    }
   };
 
   const onLightChange = (newValue) => {
     setTopModelDark(newValue);
   };
 
-  const onLoadedData = () => {
-    setIsVideoLoading(false);
-  };
-
-  useEffect(() => {
-    if (window.innerWidth > 1024) {
-      setIsDesktop(true);
-    }
-  }, []);
-
   return (
     <>
       <div className='viewer-container flex justify-between items-center'>
         <div className='model-viewer-container'>
           {showAnimated ? (
-            !isDesktop && !model.animatedGlbFile ? (
-              <AnimatedVideoPlayer
-                model={model}
-                isVideoLoading={isVideoLoading}
-                onLoadedData={onLoadedData}
-                topModelDark={topModelDark}
-              />
-            ) : (
-              <AnimatedModelViewer model={model} topModelDark={topModelDark} />
-            )
+            <AnimatedModelViewer model={model} topModelDark={topModelDark} />
           ) : (
             <StationaryModelViewer model={model} topModelDark={topModelDark} />
           )}

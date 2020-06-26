@@ -24,10 +24,7 @@ const Reserved = ({ product }) => {
       id: product.name.slice(63),
       imageSlug: product.fields.imageSlug.stringValue,
       animatedGlbFile: product.fields.animatedGlbFile.stringValue,
-      // darkBackgroundVideo: product.fields.darkBackgroundVideo.stringValue,
-      // lightBackgroundVideo: product.fields.lightBackgroundVideo.stringValue,
     };
-    console.log(model);
     setMainProduct(model);
     setLoading(false);
   }, [currentMarker]);
