@@ -61,7 +61,7 @@ const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
       <div className='viewer-container flex justify-between items-center'>
         <div className='model-viewer-container'>
           {showAnimated ? (
-            model.animatedVideo && !isDesktop ? (
+            !isDesktop && !model.animatedGlbFile ? (
               <AnimatedVideoPlayer
                 model={model}
                 isVideoLoading={isVideoLoading}
