@@ -9,13 +9,13 @@ const LandingFooter = () => {
       <footer className='text-left'>
         <p className='px-2 py-4 lg:px-dsk lg:py-2 lg:text-base text-center lg:text-left align-middle tracking-wide w-full bg-black text-white font-light'>
           <a
-            className='color-link block lg:inline-block pb-6 pt-2 lg:pb-0 lg:pt-0 align-middle my-0 mx-auto h-3'
+            className='color-link block lg:inline-block pb-6 pt-2 lg:pb-0 lg:pt-0 align-middle my-0 mx-auto h-3 -mt-1'
             href='/'
             aria-label='YZED home'>
             <img
               src={YZEDsvg}
               alt='YZED logo'
-              className='yzed-logo align-middle my-0 mx-auto h-3 -mt-1'
+              className='yzed-logo align-middle my-0 mx-auto h-3'
             />
           </a>{' '}
           <span className='hidden lg:inline'>- </span>All rights reserved to{' '}
