@@ -5,9 +5,7 @@ import theme from '../../utilities/theme';
 const LoadingSpinner = ({ color }) => {
   return (
     <>
-      <div
-        className='spinner-container flex min-h-screen flex-col items-center justify-center bg-black'
-        color={color}>
+      <div className='spinner-container flex min-h-screen flex-col items-center justify-center bg-black'>
         <div className='lds-facebook'>
           <div></div>
           <div></div>

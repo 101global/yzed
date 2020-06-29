@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders black manifesto link unchanged 1`] = `
+<a
+  className="jsx-4218770882 black-link block lg:inline m-auto lg:m-0 py-2 bg-black text-white border border-black text-xl text-center rounded-full no-underline tracking-wider font-medium hover:text-black hover:bg-white"
+  rel="noopener noreferrer"
+  target="_blank"
+/>
+`;
+
+exports[`renders chevron unchanged 1`] = `
+<svg
+  className="jsx-3413298786 down-chevron model-chevron block"
+  enableBackground="new 0 0 1000 1000"
+  version="1.1"
+  viewBox="0 0 1000 1000"
+  x="0px"
+  xmlns="http://www.w3.org/2000/svg"
+  y="0px"
+>
+  <g
+    className="jsx-3413298786"
+  >
+    <path
+      className="jsx-3413298786"
+      d="M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z"
+      fill="#0d0d0d"
+    />
+  </g>
+</svg>
+`;
+
+exports[`renders desktop nav link unchanged 1`] = `
+<div
+  className="desktop-nav hidden lg:flex justify-between w-full"
+>
+  <a
+    className="nav-scroll-link hidden lg:inline-block font-light text-white tracking-wider"
+    onClick={[Function]}
+  >
+    3D Model
+  </a>
+  <a
+    className="nav-scroll-link hidden lg:inline-block font-light text-white tracking-wider"
+    onClick={[Function]}
+  >
+    Introduction
+  </a>
+  <a
+    className="nav-scroll-link hidden lg:inline-block font-light text-white tracking-wider"
+    onClick={[Function]}
+  >
+    About Us
+  </a>
+  <a
+    className="nav-scroll-link hidden lg:inline-block font-light text-white tracking-wider"
+    onClick={[Function]}
+  >
+    Contact
+  </a>
+</div>
+`;
+
+exports[`renders loadingSpinner unchanged 1`] = `
+<div
+  className="jsx-2606284602 spinner-container flex min-h-screen flex-col items-center justify-center bg-black"
+>
+  <div
+    className="jsx-2606284602 lds-facebook"
+  >
+    <div
+      className="jsx-2606284602"
+    />
+    <div
+      className="jsx-2606284602"
+    />
+    <div
+      className="jsx-2606284602"
+    />
+  </div>
+  <h1
+    className="jsx-2606284602 text-3xl font-semibold"
+  >
+    Loading...
+  </h1>
+</div>
+`;
+
+exports[`renders mobile nav unchanged 1`] = `
+<div
+  className="jsx-1097921059 mobile-nav flex flex-col lg:hidden justify-center w-full bg-transparentBlack fixed top-0 left-0 z-thous"
+>
+  <div
+    className="jsx-1097921059 link-items-container"
+  >
+    <a
+      className="nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center"
+      onClick={[Function]}
+    >
+      <p
+        className="jsx-1097921059"
+        onClick={[Function]}
+      >
+        3D Model
+      </p>
+    </a>
+    <a
+      className="nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center"
+      onClick={[Function]}
+    >
+      <p
+        className="jsx-1097921059"
+        onClick={[Function]}
+      >
+        Introduction
+      </p>
+    </a>
+    <a
+      className="nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center"
+      onClick={[Function]}
+    >
+      <p
+        className="jsx-1097921059"
+        onClick={[Function]}
+      >
+        About Us
+      </p>
+    </a>
+    <a
+      className="nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center"
+      onClick={[Function]}
+    >
+      <p
+        className="jsx-1097921059"
+        onClick={[Function]}
+      >
+        Contact
+      </p>
+    </a>
+  </div>
+</div>
+`;

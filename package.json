@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest --watch",
+    "test:ci": "jest --ci"
   },
   "dependencies": {
     "@google/model-viewer": "^1.0.0",
@@ -36,6 +37,15 @@
     "postcss-preset-env": "^6.7.0",
     "styled-components": "^5.1.1",
     "tailwindcss": "^1.4.6",
-    "vivus": "^0.4.5"
+    "vivus": "^0.4.5",
+    "@testing-library/jest-dom": "^5.1.0",
+    "@testing-library/react": "^9.4.0",
+    "identity-obj-proxy": "^3.0.0",
+    "react-test-renderer": "^16.12.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    }
   }
 }
