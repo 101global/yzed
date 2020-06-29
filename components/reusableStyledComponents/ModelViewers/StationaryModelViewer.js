@@ -33,7 +33,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           auto-rotate
           camera-controls
           ar
-          exposure={model.exposure ?? 0.5}
+          exposure={model.exposure}
           poster={topModelDark ? darkBackgroundLoading : lightBackgroundLoading}
           interaction-policy='allow-when-focused'>
           <DownChevron topModelDark={topModelDark} />

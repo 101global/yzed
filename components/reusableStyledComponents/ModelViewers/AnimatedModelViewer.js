@@ -19,7 +19,7 @@ const AnimatedModelViewer = ({ model, topModelDark }) => {
           auto-rotate
           camera-controls
           poster={topModelDark ? darkBackgroundLoading : lightBackgroundLoading}
-          exposure={model.exposure ?? 0.5}
+          exposure={model.exposure}
           interaction-policy='allow-when-focused'
           autoplay>
           <DownChevron topModelDark={topModelDark} />
