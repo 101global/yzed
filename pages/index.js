@@ -7,7 +7,6 @@ import theme from '../utilities/theme';
 
 const Index = ({ product }) => {
   const [loading, setLoading] = useState(false);
-
   const [mainProduct, setMainProduct] = useState({});
 
   useEffect(() => {
