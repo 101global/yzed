@@ -26,13 +26,13 @@ const Therapy = ({ product }) => {
   }, []);
 
   return (
-    <Layout title={`YZED x ${mainProduct.brandName}`} loading={!mainProduct || loading}>
+    <Layout title={`YZED x ${mainProduct.brandName}`} loading={!mainProduct || loading || !product}>
       <LandingLayout model={mainProduct} />
     </Layout>
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const product = await fetch(
     `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/landingBrand/${process.env.brandLandingTherapy}`,
     { cors: 'no-cors' }
