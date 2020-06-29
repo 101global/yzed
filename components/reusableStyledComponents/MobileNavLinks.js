@@ -6,7 +6,7 @@ import theme from '../../utilities/theme';
 const MobileNav = ({ openMenu, setOpenMenu }) => {
   return (
     <>
-      <div className='mobile-nav flex flex-col lg:hidden justify-between w-full bg-transparentBlack fixed top-0 left-0 z-thous'>
+      <div className='mobile-nav flex flex-col lg:hidden justify-center w-full bg-transparentBlack fixed top-0 left-0 z-thous'>
         <div className='link-items-container'>
           <Link
             to='model'
@@ -50,9 +50,8 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
         .mobile-nav {
           transform: ${openMenu ? 'translateX(0)' : 'translateX(100%)'};
           min-width: ${openMenu ? '100%' : '0'};
-          min-height: calc(100vh - 72px);
-          margin-top: 72px;
-
+          min-height: calc(100vh - 4.5rem);
+          margin-top: 4.5rem;
           transition: all 0.7s ease-in-out;
           overflow-y: hidden;
         }

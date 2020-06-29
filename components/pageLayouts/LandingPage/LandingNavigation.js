@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import DesktopNav from '../../reusableStyledComponents/DesktopNav';
+import DesktopNav from '../../reusableStyledComponents/DesktopNavLinks';
 import { HamburgerSqueeze } from 'react-animated-burgers';
 import { Link } from 'react-scroll';
-import MobileNav from '../../reusableStyledComponents/MobileNav';
+import MobileNav from '../../reusableStyledComponents/MobileNavLinks';
 import YZEDNavLogo from '../../../public/yzed_logo_white.svg';
 import theme from '../../../utilities/theme';
 
