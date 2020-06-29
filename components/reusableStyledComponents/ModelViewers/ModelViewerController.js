@@ -6,6 +6,7 @@ import dynamic from 'next/dynamic';
 import theme from '../../../utilities/theme';
 
 const ModelViewerController = ({ model, topModelDark, setTopModelDark }) => {
+  console.log(model);
   const [showAnimated, setShowAnimated] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 

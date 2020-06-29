@@ -4,6 +4,7 @@ import LandingLayout from '../components/pageLayouts/LandingPage/LandingLayout';
 import Layout from '../components/Layout';
 import ReactVivus from 'react-vivus';
 import fetch from 'node-fetch';
+import firebase from '../utilities/firebaseSetup';
 import svg from '../public/animated-model.svg';
 import theme from '../utilities/theme';
 
@@ -13,27 +14,29 @@ const Reserved = ({ product }) => {
 
   const [mainProduct, setMainProduct] = useState({});
 
-  const currentMarker = null;
+  const dbh = firebase.firestore();
 
   useEffect(() => {
     setLoading(true);
-    const model = {
-      brandName: product.fields.brandName.stringValue,
-      glbFile: product.fields.glbFile.stringValue,
-      usdzFile: product.fields.usdzFile.stringValue,
-      id: product.name.slice(63),
-      imageSlug: product.fields.imageSlug.stringValue,
-      animatedGlbFile: product.fields.animatedGlbFile.stringValue,
-    };
-    setMainProduct(model);
-    setLoading(false);
-  }, [currentMarker]);
+
+    firebase
+      .firestore()
+      .collection('landingBrand')
+      .doc(process.env.brandLandingYZED)
+      .get()
+      .then((doc) => {
+        const { brandName, glbFile, usdzFile, imageSlug, animatedGlbFile } = doc.data();
+        const model = { brandName, glbFile, usdzFile, imageSlug, animatedGlbFile, id: 'YZED' };
+        setMainProduct(model);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <>
-      <Layout>
+      <Layout title='TEST' loading={loading}>
         <LandingLayout model={mainProduct} />
-        <div className='test-div'>
+        {/* <div className='test-div'>
           <ReactVivus
             id='animated-svg-test'
             option={{
@@ -43,7 +46,7 @@ const Reserved = ({ product }) => {
               duration: 300,
             }}
           />
-        </div>
+        </div> */}
       </Layout>
       <style jsx global>
         {`
@@ -73,17 +76,17 @@ const Reserved = ({ product }) => {
   );
 };
 
-export async function getStaticProps() {
-  const product = await fetch(
-    `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/landingBrand/${process.env.brandLandingYZED}`,
-    { cors: 'no-cors' }
-  ).then((res) => res.json().then((data) => data));
+// export async function getStaticProps() {
+//   const product = await fetch(
+//     `https://firestore.googleapis.com/v1/projects/yzed-88819/databases/(default)/documents/landingBrand/${process.env.brandLandingYZED}`,
+//     { cors: 'no-cors' }
+//   ).then((res) => res.json().then((data) => data));
 
-  return {
-    props: {
-      product,
-    },
-  };
-}
+//   return {
+//     props: {
+//       product,
+//     },
+//   };
+// }
 
 export default Reserved;

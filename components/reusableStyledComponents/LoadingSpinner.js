@@ -6,7 +6,7 @@ const LoadingSpinner = ({ color }) => {
   return (
     <>
       <div
-        className='spinner-container flex min-h-screen flex-col items-center justify-center'
+        className='spinner-container flex min-h-screen flex-col items-center justify-center bg-black'
         color={color}>
         <div className='lds-facebook'>
           <div></div>
@@ -32,7 +32,7 @@ const LoadingSpinner = ({ color }) => {
             position: absolute;
             left: 8px;
             width: 16px;
-            background: ${theme.colors.black};
+            background: ${theme.colors.white};
             animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
           }
           .lds-facebook div:nth-child(1) {
@@ -48,7 +48,7 @@ const LoadingSpinner = ({ color }) => {
             animation-delay: 0;
           }
           h1 {
-            color: ${theme.colors.black};
+            color: ${theme.colors.white};
             font-family: ${theme.fonts.main};
             font-weight: 300;
             display: block;

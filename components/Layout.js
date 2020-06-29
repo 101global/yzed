@@ -29,7 +29,7 @@ const BodyLayout = ({ title, children }) => {
   );
 };
 
-function Layout({ children, title, loading }) {
+const Layout = ({ children, title, loading }) => {
   useEffect(() => {
     if (window) {
       firebase.analytics();
@@ -41,7 +41,7 @@ function Layout({ children, title, loading }) {
       {loading ? <LoadingSpinner color={theme.colors.black} /> : children}
     </BodyLayout>
   );
-}
+};
 
 export default Layout;
 
