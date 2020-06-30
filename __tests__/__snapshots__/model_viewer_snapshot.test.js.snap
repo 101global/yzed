@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders animated model viewer unchanged 1`] = `
+<div
+  className="jsx-1120965399 model-viewer-container"
+>
+  <model-viewer
+    auto-rotate={true}
+    autoplay={true}
+    camera-controls={true}
+    className="jsx-1120965399"
+    exposure={1}
+    interaction-policy="allow-when-focused"
+    loading="lazy"
+    poster="File Sub Mock"
+    src="https://www.testYZEDfile.com/animatedGlbFile.glb"
+  >
+    <svg
+      className="jsx-3413298786 down-chevron model-chevron block"
+      enableBackground="new 0 0 1000 1000"
+      version="1.1"
+      viewBox="0 0 1000 1000"
+      x="0px"
+      xmlns="http://www.w3.org/2000/svg"
+      y="0px"
+    >
+      <g
+        className="jsx-3413298786"
+      >
+        <path
+          className="jsx-3413298786"
+          d="M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z"
+          fill="#FFFFFF"
+        />
+      </g>
+    </svg>
+  </model-viewer>
+</div>
+`;
+
+exports[`renders model viewer controller unchanged 1`] = `
+<div
+  className="jsx-3651629905 jsx-385141003 viewer-container flex justify-between items-center"
+>
+  <div
+    className="jsx-3651629905 jsx-385141003 model-viewer-container"
+  />
+  <div
+    className="jsx-3651629905 jsx-385141003 controls"
+  >
+    <div
+      className="jsx-3651629905 jsx-385141003 toggle-animated-buttons"
+    >
+      <div
+        className="react-switch-selector-wrapper css-1b36uh8"
+      >
+        <div
+          className="react-switch-selector-option css-15e01fz"
+        >
+          <label
+            className="react-switch-selector-option-label css-1i2bepu"
+            fontSize={14}
+            selected={true}
+          >
+            <input
+              checked={true}
+              className="css-18exkk3"
+              id="rss-option-0"
+              onChange={[Function]}
+              type="radio"
+            />
+            Stationary
+          </label>
+        </div>
+        <div
+          className="react-switch-selector-option css-15e01fz"
+        >
+          <label
+            className="react-switch-selector-option-label css-d5taeg"
+            fontSize={14}
+            selected={false}
+          >
+            <input
+              checked={false}
+              className="css-18exkk3"
+              id="rss-option-1"
+              onChange={[Function]}
+              type="radio"
+            />
+            Walking
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      className="jsx-3651629905 jsx-385141003 toggle-light-buttons"
+    >
+      <div
+        className="react-switch-selector-wrapper css-yadhe3"
+      >
+        <div
+          className="react-switch-selector-option css-15e01fz"
+        >
+          <label
+            className="react-switch-selector-option-label css-d5taeg"
+            fontSize={14}
+            selected={false}
+          >
+            <input
+              checked={false}
+              className="css-18exkk3"
+              id="rss-option-0"
+              onChange={[Function]}
+              type="radio"
+            />
+            Light
+          </label>
+        </div>
+        <div
+          className="react-switch-selector-option css-15e01fz"
+        >
+          <label
+            className="react-switch-selector-option-label css-1i2bepu"
+            fontSize={14}
+            selected={true}
+          >
+            <input
+              checked={true}
+              className="css-18exkk3"
+              id="rss-option-1"
+              onChange={[Function]}
+              type="radio"
+            />
+            Dark
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders stationary model viewer unchanged 1`] = `
+<div
+  className="jsx-2155473893 model-viewer-container"
+>
+  <model-viewer
+    ar={true}
+    ar-modes="scene-viewer webxr quick-look"
+    ar-scale="fixed"
+    auto-rotate={true}
+    camera-controls={true}
+    className="jsx-2155473893"
+    exposure={1}
+    interaction-policy="allow-when-focused"
+    ios-src="https://www.testYZEDfile.com/usdzFile.usdz"
+    loading="lazy"
+    poster="File Sub Mock"
+    src="https://www.testYZEDfile.com/glbFile.glb"
+  >
+    <svg
+      className="jsx-3413298786 down-chevron model-chevron block"
+      enableBackground="new 0 0 1000 1000"
+      version="1.1"
+      viewBox="0 0 1000 1000"
+      x="0px"
+      xmlns="http://www.w3.org/2000/svg"
+      y="0px"
+    >
+      <g
+        className="jsx-3413298786"
+      >
+        <path
+          className="jsx-3413298786"
+          d="M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z"
+          fill="#FFFFFF"
+        />
+      </g>
+    </svg>
+  </model-viewer>
+</div>
+`;

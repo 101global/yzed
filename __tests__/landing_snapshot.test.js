@@ -10,9 +10,8 @@ import LandingContact from '../components/pageLayouts/LandingPage/LandingContact
 import LandingFooter from '../components/pageLayouts/LandingPage/LandingFooter';
 import LandingIntroduction from '../components/pageLayouts/LandingPage/LandingIntroduction';
 import React from 'react';
-import model from '../__mocks__/dataMock';
+import { model } from '../__mocks__/dataMock';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 
 it('renders introduction unchanged', () => {
   const wrapper = renderer.create(<LandingIntroduction model={model} />).toJSON();

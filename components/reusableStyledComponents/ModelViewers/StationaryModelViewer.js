@@ -14,9 +14,11 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
   const modelRef = useRef(null);
 
   useEffect(() => {
-    modelRef.current.addEventListener('error', (error) => {
-      console.log(error);
-    });
+    if (modelRef.current) {
+      modelRef.current.addEventListener('error', (error) => {
+        console.log(error);
+      });
+    }
   }, []);
 
   return (

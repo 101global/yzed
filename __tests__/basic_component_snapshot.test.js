@@ -30,18 +30,3 @@ it('renders loadingSpinner unchanged', () => {
   const tree = renderer.create(<LoadingSpinner color='#fff' />).toJSON();
   expect(tree).toMatchSnapshot();
 });
-
-// it('renders stationary viewer unchanged', () => {
-//   const tree = renderer.create(<StationaryModelViewer />).toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
-
-// it('renders animated viewer unchanged', () => {
-//   const tree = renderer.create(<AnimatedModelViewer />).toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
-
-// it('renders model controller unchanged', () => {
-//   const tree = renderer.create(<ModeViewerController />).toJSON();
-//   expect(tree).toMatchSnapshot();
-// });

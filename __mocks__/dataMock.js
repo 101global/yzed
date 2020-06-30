@@ -1,4 +1,5 @@
-const model = {
+export const model = {
+  name: 'YZED',
   brandName: 'YZED',
   imageSlug: 'yzed',
   glbFile: 'https://www.testYZEDfile.com/glbFile.glb',
