@@ -1,6 +1,4 @@
-jest.mock('../node_modules/@google/model-viewer/dist/model-viewer', () => () =>
-  'YZED Animated SVG Component'
-);
+jest.mock('../node_modules/@google/model-viewer/dist/model-viewer', () => () => 'Model Viewer');
 
 import AnimatedModelViewer from '../components/reusableStyledComponents/modelViewers/AnimatedModelViewer';
 import ModelViewerController from '../components/reusableStyledComponents/modelViewers/ModelViewerController';
