@@ -4,10 +4,11 @@ import DownChevron from '../components/reusableStyledComponents/DownChevron';
 import LoadingSpinner from '../components/reusableStyledComponents/LoadingSpinner';
 import MobileNav from '../components/reusableStyledComponents/MobileNavLinks';
 import React from 'react';
+import { buttonMock } from '../__mocks__/dataMock';
 import renderer from 'react-test-renderer';
 
 it('renders mobile nav unchanged', () => {
-  const tree = renderer.create(<MobileNav />).toJSON();
+  const tree = renderer.create(<MobileNav openMenu={true} setOpenMenu={() => {}} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -17,12 +18,14 @@ it('renders desktop nav link unchanged', () => {
 });
 
 it('renders black manifesto link unchanged', () => {
-  const tree = renderer.create(<BlackLink />).toJSON();
+  const tree = renderer
+    .create(<BlackLink title={buttonMock.title} link={buttonMock.href} />)
+    .toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('renders chevron unchanged', () => {
-  const tree = renderer.create(<DownChevron />).toJSON();
+  const tree = renderer.create(<DownChevron topModelDark={true} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
