@@ -30,7 +30,7 @@ const LoadingSpinner = ({ color }) => {
             position: absolute;
             left: 8px;
             width: 16px;
-            background: ${theme.colors.white};
+            background: ${color ?? theme.colors.white};
             animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
           }
           .lds-facebook div:nth-child(1) {
@@ -46,7 +46,7 @@ const LoadingSpinner = ({ color }) => {
             animation-delay: 0;
           }
           h1 {
-            color: ${theme.colors.white};
+            color: ${color ?? theme.colors.white};
             font-family: ${theme.fonts.main};
             font-weight: 300;
             display: block;
@@ -71,5 +71,5 @@ const LoadingSpinner = ({ color }) => {
 export default LoadingSpinner;
 
 LoadingSpinner.propTypes = {
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
 };

@@ -29,6 +29,11 @@ const BodyLayout = ({ title, children }) => {
   );
 };
 
+BodyLayout.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node,
+};
+
 const Layout = ({ children, title, loading }) => {
   useEffect(() => {
     if (window) {

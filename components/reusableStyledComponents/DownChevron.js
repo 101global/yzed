@@ -1,4 +1,6 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
+import PropTypes from 'prop-types';
 import theme from '../../utilities/theme';
 
 const DownChevron = ({ topModelDark }) => {
@@ -33,3 +35,7 @@ const DownChevron = ({ topModelDark }) => {
 };
 
 export default DownChevron;
+
+DownChevron.propTypes = {
+  topModelDark: PropTypes.bool.isRequired,
+};

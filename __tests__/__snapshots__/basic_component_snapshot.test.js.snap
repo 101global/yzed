@@ -63,23 +63,23 @@ exports[`renders desktop nav link unchanged 1`] = `
 
 exports[`renders loadingSpinner unchanged 1`] = `
 <div
-  className="jsx-2606284602 spinner-container flex min-h-screen flex-col items-center justify-center bg-black"
+  className="jsx-2898363057 spinner-container flex min-h-screen flex-col items-center justify-center bg-black"
 >
   <div
-    className="jsx-2606284602 lds-facebook"
+    className="jsx-2898363057 lds-facebook"
   >
     <div
-      className="jsx-2606284602"
+      className="jsx-2898363057"
     />
     <div
-      className="jsx-2606284602"
+      className="jsx-2898363057"
     />
     <div
-      className="jsx-2606284602"
+      className="jsx-2898363057"
     />
   </div>
   <h1
-    className="jsx-2606284602 text-3xl font-semibold"
+    className="jsx-2898363057 text-3xl font-semibold"
   >
     Loading...
   </h1>

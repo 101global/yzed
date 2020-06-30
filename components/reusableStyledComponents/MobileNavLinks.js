@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import { Link } from 'react-scroll';
+import PropTypes from 'prop-types';
 import theme from '../../utilities/theme';
 
 const MobileNav = ({ openMenu, setOpenMenu }) => {
@@ -73,3 +74,8 @@ const MobileNav = ({ openMenu, setOpenMenu }) => {
 };
 
 export default MobileNav;
+
+MobileNav.propTypes = {
+  openMenu: PropTypes.bool.isRequired,
+  setOpenMenu: PropTypes.func.isRequired,
+};

@@ -35,7 +35,6 @@ const ProgressiveImage = ({ preview, image, alt }) => {
       }}
       src={currentImage}
       alt={alt}
-      loading='lazy'
     />
   );
 };

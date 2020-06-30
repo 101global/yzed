@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import PropTypes from 'prop-types';
 import theme from '../../utilities/theme';
 
 const BlackLink = ({ title, link }) => {
@@ -27,3 +28,8 @@ const BlackLink = ({ title, link }) => {
 };
 
 export default BlackLink;
+
+BlackLink.propTypes = {
+  title: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+};

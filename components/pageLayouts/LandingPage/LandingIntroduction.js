@@ -71,5 +71,5 @@ const LandingIntroduction = ({ model }) => {
 export default LandingIntroduction;
 
 LandingIntroduction.propTypes = {
-  model: propTypes.object.isRequired,
+  model: PropTypes.object.isRequired,
 };

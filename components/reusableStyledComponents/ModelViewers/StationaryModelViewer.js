@@ -62,4 +62,5 @@ export default StationaryModelViewer;
 
 StationaryModelViewer.propTypes = {
   model: PropTypes.object.isRequired,
+  topModelDark: PropTypes.bool.isRequired,
 };
