@@ -9,7 +9,7 @@ import theme from '../../../utilities/theme';
 const LandingIntroduction = ({ model }) => {
   const imageBaseUrl = 'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/';
   const photo = {
-    id: `${model.name} Detail View 1`,
+    id: `${model.brandName} Detail View 1`,
     mini: `${imageBaseUrl}${model.imageSlug}_image_1_mini-compressor.jpg`,
     thumb: `${imageBaseUrl}${model.imageSlug}_image_1_thumb-compressor.jpg`,
     max: `${imageBaseUrl}${model.imageSlug}_image_1_max-compressor.jpg`,

@@ -10,13 +10,13 @@ import theme from '../../../utilities/theme';
 const LandingAbout = ({ model }) => {
   const imageBaseUrl = 'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/';
   const smallPhoto = {
-    id: `${model.name} Detail View 2`,
+    id: `${model.brandName} Detail View 2`,
     mini: `${imageBaseUrl}${model.imageSlug}_image_2_mini-compressor.jpg`,
     thumb: `${imageBaseUrl}${model.imageSlug}_image_2_thumb-compressor.jpg`,
     max: `${imageBaseUrl}${model.imageSlug}_image_2_max-compressor.jpg`,
   };
   const largePhoto = {
-    id: `${model.name} Detail View 3`,
+    id: `${model.brandName} Detail View 3`,
     mini: `${imageBaseUrl}${model.imageSlug}_image_3_mini-compressor.jpg`,
     thumb: `${imageBaseUrl}${model.imageSlug}_image_3_thumb-compressor.jpg`,
     max: `${imageBaseUrl}${model.imageSlug}_image_3_max-compressor.jpg`,
