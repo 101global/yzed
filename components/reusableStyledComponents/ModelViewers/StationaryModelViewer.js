@@ -46,10 +46,6 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           height: 100%;
           width: 100%;
         }
-        .model-viewer-container h1 {
-          color: red;
-          z-index: 1000;
-        }
         model-viewer {
           margin: 0 auto;
           z-index: 101;
