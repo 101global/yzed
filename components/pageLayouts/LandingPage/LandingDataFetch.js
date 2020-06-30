@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import LandingLayout from './LandingLayout';
 import Layout from '../../Layout';
-import fetch from 'node-fetch';
-import theme from '../../../utilities/theme';
+import PropTypes from 'prop-types';
 
 const LandingDataFetch = ({ product, exposure }) => {
   const [loading, setLoading] = useState(false);
@@ -32,3 +31,8 @@ const LandingDataFetch = ({ product, exposure }) => {
 };
 
 export default LandingDataFetch;
+
+LandingDataFetch.propTypes = {
+  product: PropTypes.object.isRequired,
+  exposure: PropTypes.number,
+};

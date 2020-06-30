@@ -7,6 +7,7 @@ import LandingFooter from './LandingFooter';
 import LandingIntroduction from './LandingIntroduction';
 import LandingNavigation from './LandingNavigation';
 import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
+import PropTypes from 'prop-types';
 import theme from '../../../utilities/theme';
 
 const LandingLayout = ({ model }) => {
@@ -58,3 +59,7 @@ const LandingLayout = ({ model }) => {
 };
 
 export default LandingLayout;
+
+LandingLayout.propTypes = {
+  model: PropTypes.object.isRequired,
+};

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import BlackLink from '../../reusableStyledComponents/BlackLink';
 import ProgressiveImage from '../../ProgressiveImage';
+import PropTypes from 'prop-types';
 import YZEDAnimatedLogo from '../../reusableStyledComponents/YZEDAnimatedSVG';
 import selfExpressionWhite from '../../../public/self-expression.svg';
 import theme from '../../../utilities/theme';
@@ -96,3 +97,7 @@ const LandingAbout = ({ model }) => {
 };
 
 export default LandingAbout;
+
+LandingAbout.propTypes = {
+  model: PropTypes.object.isRequired,
+};
