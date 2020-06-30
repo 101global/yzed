@@ -1,1 +1,1 @@
-module.exports = 'IconMock';
+module.exports = 'File Sub Mock';
