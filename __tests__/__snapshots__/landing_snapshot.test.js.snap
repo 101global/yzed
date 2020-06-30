@@ -37,6 +37,7 @@ exports[`renders contact unchanged 1`] = `
          
         <a
           className="jsx-4172434120 email-link font-semibold inline-block cursor-pointer"
+          href="mailto:yzed@101.global"
         >
           yzed@101.global
         </a>

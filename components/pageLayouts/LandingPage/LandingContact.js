@@ -25,7 +25,9 @@ const LandingContact = () => {
               <p className='para-standard'>Interested in working with us? </p>
               <p className='para-standard'>
                 Please contact us at{' '}
-                <a className='email-link font-semibold inline-block cursor-pointer'>
+                <a
+                  className='email-link font-semibold inline-block cursor-pointer'
+                  href='mailto:yzed@101.global'>
                   yzed@101.global
                 </a>
               </p>
