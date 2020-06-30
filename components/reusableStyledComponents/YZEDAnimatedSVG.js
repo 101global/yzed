@@ -6,7 +6,6 @@ import svg from '../../public/yzed-logo-outline-gradient.svg';
 const AnimatedLogo = () => {
   return (
     <>
-      /* istanbul ignore next */
       <ReactVivus
         id='animated-svg'
         option={{
