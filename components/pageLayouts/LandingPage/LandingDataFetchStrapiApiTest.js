@@ -4,19 +4,21 @@ import LandingLayout from './LandingLayout';
 import Layout from '../../Layout';
 import PropTypes from 'prop-types';
 
-const LandingDataFetch = ({ product, exposure }) => {
+const LandingDataFetchStrapiApiTest = ({ testApiProduct, exposure }) => {
+  console.log(testApiProduct);
   const [loading, setLoading] = useState(false);
   const [mainProduct, setMainProduct] = useState({});
 
   useEffect(() => {
     setLoading(true);
+    const { brandName, usdz, animated, glb, image } = testApiProduct[0];
     const model = {
-      brandName: product.fields.brandName.stringValue,
-      glbFile: product.fields.glbFile.stringValue,
-      usdzFile: product.fields.usdzFile.stringValue,
-      id: product.name.slice(63),
-      imageSlug: product.fields.imageSlug.stringValue,
-      animatedGlbFile: product.fields.animatedGlbFile.stringValue,
+      brandName,
+      glbFile: glb,
+      usdzFile: usdz,
+      id: brandName,
+      imageSlug: image,
+      animatedGlbFile: animated,
       exposure: exposure ?? 0.5,
     };
     setMainProduct(model);
@@ -24,15 +26,17 @@ const LandingDataFetch = ({ product, exposure }) => {
   }, []);
 
   return (
-    <Layout title={`YZED${mainProduct.brandName === undefined ? '.me' : ` x ${mainProduct.brandName}`}`} loading={!mainProduct || loading || !product}>
+    <Layout
+      title={`YZED${mainProduct.brandName === undefined ? '.me' : ` x ${mainProduct.brandName}`}`}
+      loading={!testApiProduct || loading || !mainProduct}>
       <LandingLayout model={mainProduct} />
     </Layout>
   );
 };
 
-export default LandingDataFetch;
+export default LandingDataFetchStrapiApiTest;
 
-LandingDataFetch.propTypes = {
+LandingDataFetchStrapiApiTest.propTypes = {
   product: PropTypes.object.isRequired,
   exposure: PropTypes.number,
 };
