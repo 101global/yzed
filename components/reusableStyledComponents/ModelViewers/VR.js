@@ -5,7 +5,7 @@ import Head from 'next/head';
 
 const VRComponent = () => {
   const [appRendered, setAppRendered] = useState(false);
-  const [color, setColor] = useState('red');
+  const [color, setColor] = useState('#FF6B6B');
   useEffect(() => {
     if (typeof window !== 'undefined') {
       require('aframe');
@@ -15,7 +15,7 @@ const VRComponent = () => {
   }, []);
 
   const changeColor = () => {
-    const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
+    const colors = ['#FF6B6B', '#fdbb2d', '#F3F9A7', '#40E0D0', '#ACB6E5', '#0082c8'];
     setColor(colors[Math.floor(Math.random() * colors.length)]);
   };
 
