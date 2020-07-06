@@ -31,15 +31,21 @@ const VRComponent = () => {
         <a-scene>
           <a-assets>
             <img id='groundTexture' src='https://cdn.aframe.io/a-painter/images/floor.jpg' />
-            <img id='skyTexture' src='https://cdn.aframe.io/a-painter/images/sky.jpg' />
+            <img id='skyTexture' src='https://cdn.aframe.io/a-painter/images/sky.jpg' />{' '}
             <a-asset-item
-              id='gltf-mod'
-              src='https://oneoone-resource.s3-ap-northeast-2.amazonaws.com/yzed/bvQP164cIw.gltf'></a-asset-item>
+              id='animatedModel'
+              src='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf'></a-asset-item>
           </a-assets>
           <a-entity
             gltf-model='url(https://oneoone-resource.s3-ap-northeast-2.amazonaws.com/yzed/bvQP164cIw.gltf)'
-            scale='0.8 0.8 0.8'
-            position='0 0 -2'></a-entity>
+            scale='1 1 1'
+            position='0 0 -2.5'></a-entity>
+          <a-entity
+            gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf)'
+            scale='1 1 1'
+            position='-2.5 0 0'
+            animation-mixer
+            rotation='0 90 0'></a-entity>
 
           <a-sky
             src='#skyTexture'
@@ -50,7 +56,7 @@ const VRComponent = () => {
             width='2048'></a-sky>
           <a-plane rotation='-90 0 0' width='100' height='100' src='#groundTexture'></a-plane>
           <a-light type='ambient' color='#445451'></a-light>
-          <a-light type='point' intensity='2' position='2 4 4'></a-light>
+          <a-light type='point' intensity='4' position='2 4 4'></a-light>
           <a-camera>
             <a-cursor></a-cursor>
           </a-camera>
