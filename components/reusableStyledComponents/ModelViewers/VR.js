@@ -21,7 +21,7 @@ const VRComponent = () => {
   };
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <>
       <Head>
         <meta charset='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -33,6 +33,10 @@ const VRComponent = () => {
           <a-assets>
             <img id='groundTexture' src='https://cdn.aframe.io/a-painter/images/floor.jpg' />
             <img id='skyTexture' src='https://cdn.aframe.io/a-painter/images/sky.jpg' />{' '}
+            <video
+              id='walking-video'
+              src='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/HQ_video_main_2_LOWER.mp4'
+              color='#fff'></video>
             <a-asset-item
               id='animatedModel'
               src='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf'></a-asset-item>
@@ -45,7 +49,7 @@ const VRComponent = () => {
             gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf)'
             scale='1 1 1'
             position='-2.5 0 0'
-            animation-mixer='clip: *'
+            animation-mixer='clip: *; repetitions: 3'
             rotation='0 90 0'></a-entity>
           <a-entity
             gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf)'
@@ -67,14 +71,20 @@ const VRComponent = () => {
             theta-length='90'
             width='2048'></a-sky>
           <a-plane rotation='-90 0 0' width='100' height='100' src='#groundTexture'></a-plane>
-          <a-light type='ambient' color='#445451'></a-light>
-          <a-light type='point' intensity='4' position='2 4 4'></a-light>
+          <a-light type='ambient' color='#fff'></a-light>
+          <a-entity color='#8498b2' instensity='2' position='-5 5 8'></a-entity>
+          <a-light type='point' intensity='3' position='2 4 4'></a-light>
           <a-camera>
-            <a-cursor></a-cursor>
+            <a-cursor
+              id='cursor'
+              animation__click='property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click'
+              animation__clickreset='property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click'
+              animation__fusing='property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing'></a-cursor>
           </a-camera>
+          <button>ENTER VR</button>
         </a-scene>
       )}
-    </div>
+    </>
   );
 };
 
