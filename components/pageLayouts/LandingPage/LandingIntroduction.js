@@ -18,7 +18,7 @@ const LandingIntroduction = ({ model }) => {
   return (
     <>
       <div className='main-intro-container p-0 lg:pl-dsk grid gap-8 lg:gap-16 sm:grid-cols-1 lg:grid-cols-2 mb-16 lg:mb-0'>
-        <div className='flex w-full mt-16 md:mt-24 lg:mt-0 text-center lg:text-left relative'>
+        <div className='grid grid-cols-1 lg:flex w-full mt-16 md:mt-24 lg:mt-0 text-center lg:text-left relative'>
           <div className='flex flex-col justify-between font-black'>
             <YZEDAnimatedLogo />
             <h1 className='pt-16 px-4 lg:px-0 text-4xl lg:text-5xl my-0 mx-auto text-center lg:text-left font-semibold'>

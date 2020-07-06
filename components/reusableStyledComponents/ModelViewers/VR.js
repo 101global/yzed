@@ -24,7 +24,7 @@ const VRComponent = () => {
       <Head>
         <meta charset='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <title>YZED React Test</title>
+        <title>YZED VR Test</title>
       </Head>
 
       {appRendered && (
