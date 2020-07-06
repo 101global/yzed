@@ -24,84 +24,37 @@ const VRComponent = () => {
       <Head>
         <meta charset='utf-8' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <title>YZED VR Test</title>
+        <title>YZED React Test</title>
       </Head>
 
       {appRendered && (
-        <Scene>
+        <a-scene>
           <a-assets>
             <img id='groundTexture' src='https://cdn.aframe.io/a-painter/images/floor.jpg' />
             <img id='skyTexture' src='https://cdn.aframe.io/a-painter/images/sky.jpg' />
+            <a-asset-item
+              id='gltf-mod'
+              src='https://oneoone-resource.s3-ap-northeast-2.amazonaws.com/yzed/bvQP164cIw.gltf'></a-asset-item>
           </a-assets>
+          <a-entity
+            gltf-model='url(https://oneoone-resource.s3-ap-northeast-2.amazonaws.com/yzed/bvQP164cIw.gltf)'
+            scale='0.8 0.8 0.8'
+            position='0 0 -2'></a-entity>
 
-          <Entity
-            primitive='a-plane'
-            src='#groundTexture'
-            rotation='-90 0 0'
-            height='100'
-            width='100'
-          />
-          <Entity primitive='a-light' type='ambient' color='#445451' />
-          <Entity primitive='a-light' type='point' intensity='2' position='2 4 4' />
-          <Entity
-            primitive='a-sky'
+          <a-sky
+            src='#skyTexture'
             height='2048'
             radius='30'
             src='#skyTexture'
             theta-length='90'
-            width='2048'
-          />
-          <Entity particle-system={{ preset: 'snow', particleCount: 2000 }} />
-          <Entity
-            text={{ value: 'Hello YZED VR Test!', align: 'center' }}
-            position={{ x: 0, y: 2, z: -1 }}
-          />
-
-          <Entity
-            id='box'
-            geometry={{ primitive: 'box' }}
-            material={{ color, opacity: 0.6 }}
-            animation__rotate={{
-              property: 'rotation',
-              dur: 20000,
-              loop: true,
-              to: '360 360 360',
-            }}
-            animation__scale={{
-              property: 'scale',
-              dir: 'alternate',
-              dur: 10000,
-              loop: true,
-              to: '1.1 1.1 1.1',
-            }}
-            position={{ x: 0, y: 1, z: -3 }}
-            events={{ click: changeColor }}>
-            <Entity
-              animation__scale={{
-                property: 'scale',
-                dir: 'alternate',
-                dur: 10000,
-                loop: true,
-                to: '2 2 2',
-              }}
-              geometry={{ primitive: 'box', depth: 0.2, height: 0.2, width: 0.2 }}
-              material={{ color: '#24CAFF' }}
-            />
-          </Entity>
-
-          <Entity primitive='a-camera'>
-            <Entity
-              primitive='a-cursor'
-              animation__click={{
-                property: 'scale',
-                startEvents: 'click',
-                from: '0.1 0.1 0.1',
-                to: '1 1 1',
-                dur: 150,
-              }}
-            />
-          </Entity>
-        </Scene>
+            width='2048'></a-sky>
+          <a-plane rotation='-90 0 0' width='100' height='100' src='#groundTexture'></a-plane>
+          <a-light type='ambient' color='#445451'></a-light>
+          <a-light type='point' intensity='2' position='2 4 4'></a-light>
+          <a-camera>
+            <a-cursor></a-cursor>
+          </a-camera>
+        </a-scene>
       )}
     </div>
   );
