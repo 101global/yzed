@@ -81,9 +81,15 @@ const VRComponent = () => {
               animation__clickreset='property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click'
               animation__fusing='property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing'></a-cursor>
           </a-camera>
-          <button>ENTER VR</button>
         </a-scene>
       )}
+      <style jsx global>
+        {`
+          .a-enter-vr {
+            bottom: -30px;
+          }
+        `}
+      </style>
     </>
   );
 };
