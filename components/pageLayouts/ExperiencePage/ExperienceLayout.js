@@ -12,7 +12,7 @@ const ExperienceLayout = () => {
   });
   console.log(ExperienceModel);
   return (
-    <div className='grid grid-cols-experience gap-6 min-h-screen px-12'>
+    <div className='grid grid-cols-experience gap-6 min-h-screen px-12 pt-16 bg-black text-white'>
       <div className='w-full'>
         <div>
           <ExperienceModel />
@@ -20,6 +20,7 @@ const ExperienceLayout = () => {
       </div>
       <section className='flex flex-col justify-start items-center'>
         <VideoStream />
+        <h1>Photos</h1>
       </section>
       <section>
         <h1>Content</h1>
