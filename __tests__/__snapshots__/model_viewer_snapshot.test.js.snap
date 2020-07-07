@@ -142,7 +142,7 @@ exports[`renders model viewer controller unchanged 1`] = `
 
 exports[`renders stationary model viewer unchanged 1`] = `
 <div
-  className="jsx-1120965399 model-viewer-container"
+  className="jsx-731752813 model-viewer-container"
 >
   <model-viewer
     ar={true}
@@ -150,7 +150,7 @@ exports[`renders stationary model viewer unchanged 1`] = `
     ar-scale="fixed"
     auto-rotate={true}
     camera-controls={true}
-    className="jsx-1120965399"
+    className="jsx-731752813"
     exposure={1}
     interaction-policy="allow-when-focused"
     ios-src="https://www.testYZEDfile.com/usdzFile.usdz"

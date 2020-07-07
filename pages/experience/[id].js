@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 
 const experience = () => {
   return (
-    <Layout>
+    <Layout title='YZED Experience'>
       <ExperienceLayout />
     </Layout>
   );

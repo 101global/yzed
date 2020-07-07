@@ -1,19 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import VideoStream from '../../reusableStyledComponents/VideoStream';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
 
 const ExperienceLayout = () => {
+  const router = useRouter();
+  const { id } = router.query;
+  const ExperienceModel = dynamic(() => import('./ExperienceModel'), {
+    ssr: false,
+  });
+  console.log(ExperienceModel);
   return (
-    <div className='grid grid-cols-experience min-h-screen px-12'>
-      <aside>
-        <h1>Content</h1>
-      </aside>
-      <div className='flex flex-col justify-start items-center'>
-        <VideoStream />
+    <div className='grid grid-cols-experience gap-6 min-h-screen px-12'>
+      <div className='w-full'>
+        <div>
+          <ExperienceModel />
+        </div>
       </div>
-      <aside>
+      <section className='flex flex-col justify-start items-center'>
+        <VideoStream />
+      </section>
+      <section>
         <h1>Content</h1>
-      </aside>
+      </section>
     </div>
   );
 };
