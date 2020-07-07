@@ -1,5 +1,5 @@
 import { Entity, Scene } from 'aframe-react';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Head from 'next/head';
 
@@ -48,10 +48,8 @@ const VRComponent = () => {
               position='0 0 -2.5'></a-entity> */}
             <a-entity
               gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf)'
-              scale='1 1 1'
-              position='-2.5 0 0'
-              animation-mixer='clip: *'
-              rotation='0 90 0'></a-entity>
+              position='0 0 -2.5'
+              animation-mixer='clip: *'></a-entity>
             {/* <a-entity
               gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf)'
               scale='1 1 1'
