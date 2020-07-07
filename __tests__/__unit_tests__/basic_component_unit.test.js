@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom';
 
 import BlackLink from '../../components/reusableStyledComponents/BlackLink';
-import DesktopNav from '../../components/reusableStyledComponents/DesktopNavLinks';
-import MobileNav from '../../components/reusableStyledComponents/MobileNavLinks';
+import DesktopNav from '../../components/pageLayouts/LandingPage/DesktopNavLinks';
+import MobileNav from '../../components/pageLayouts/LandingPage/DesktopNavLinks';
 import React from 'react';
 import { buttonMock } from '../../__mocks__/dataMock';
 import { render } from '@testing-library/react';

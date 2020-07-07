@@ -1,8 +1,8 @@
 import BlackLink from '../components/reusableStyledComponents/BlackLink';
-import DesktopNav from '../components/reusableStyledComponents/DesktopNavLinks';
+import DesktopNav from '../components/pageLayouts/LandingPage/DesktopNavLinks';
 import DownChevron from '../components/reusableStyledComponents/DownChevron';
 import LoadingSpinner from '../components/reusableStyledComponents/LoadingSpinner';
-import MobileNav from '../components/reusableStyledComponents/MobileNavLinks';
+import MobileNav from '../components/pageLayouts/LandingPage/MobileNavLinks';
 import React from 'react';
 import { buttonMock } from '../__mocks__/dataMock';
 import renderer from 'react-test-renderer';
