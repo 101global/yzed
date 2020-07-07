@@ -6,6 +6,13 @@ import Head from 'next/head';
 const VRComponent = () => {
   const [appRendered, setAppRendered] = useState(false);
   const [color, setColor] = useState('#FF6B6B');
+  const [currentModel, setCurrentModel] = useState(true);
+
+  const models = [
+    'https://oneoone-resource.s3-ap-northeast-2.amazonaws.com/yzed/4HFEV85uvEl.gltf',
+    'https://oneoone-resource.s3-ap-northeast-2.amazonaws.com/yzed/bvQP164cIw.gltf',
+  ];
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       require('aframe');
@@ -32,36 +39,30 @@ const VRComponent = () => {
         <div style={{ position: 'absolute', height: '100%', width: '100%' }}>
           <a-scene>
             <a-assets>
-              <img id='groundTexture' src='https://cdn.aframe.io/a-painter/images/floor.jpg' />
-              <img id='skyTexture' src='https://cdn.aframe.io/a-painter/images/sky.jpg' />{' '}
-              <video
-                id='walking-video'
-                src='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/HQ_video_main_2_LOWER.mp4'
-                color='#fff'></video>
-              <a-asset-item
-                id='animatedModel'
-                src='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf'></a-asset-item>
+              <img
+                id='groundTexture'
+                src='https://cdn.aframe.io/a-painter/images/floor.jpg'
+                crossOrigin='anonymous'
+              />
+              <img
+                id='skyTexture'
+                src='https://cdn.aframe.io/a-painter/images/sky.jpg'
+                crossOrigin='anonymous'
+              />
             </a-assets>
-            {/* <a-entity
-              gltf-model='url(https://oneoone-resource.s3-ap-northeast-2.amazonaws.com/yzed/bvQP164cIw.gltf)'
-              scale='1 1 1'
-              position='0 0 -2.5'></a-entity> */}
+            <a-text position='-1 2 -1.5' value='Welcome to YZED VR' color='#ff424f'></a-text>
             <a-entity
-              gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf)'
-              position='0 0 -2.5'
-              animation-mixer='clip: *'></a-entity>
-            {/* <a-entity
-              gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf)'
-              scale='1 1 1'
-              position='0 0 2.5'
+              opacity={0}
+              gltf-model='url(https://oneoone-resource.s3-ap-northeast-2.amazonaws.com/yzed/4HFEV85uvEl.gltf)'
+              position={currentModel ? '0 0 -2.5' : '0 0 -100'}
               animation-mixer='clip: *'
-              rotation='0 180 0'></a-entity>
+              onClick={() => setCurrentModel(!currentModel)}></a-entity>
             <a-entity
-              gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/cube_version14.glb)'
-              scale='0.1 0.1 0.1'
-              position='2 2 0'
+              id='model'
+              gltf-model={`url(${models[1]})`}
+              position={!currentModel ? '0 0 -2.5' : '0 0 -100'}
               animation-mixer='clip: *'
-              rotation='0 180 0'></a-entity> */}
+              onClick={() => setCurrentModel(!currentModel)}></a-entity>
             <a-sky
               src='#skyTexture'
               height='2048'
@@ -71,7 +72,7 @@ const VRComponent = () => {
               width='2048'></a-sky>
             <a-plane rotation='-90 0 0' width='100' height='100' src='#groundTexture'></a-plane>
             <a-light type='ambient' color='#fff'></a-light>
-            <a-entity color='#8498b2' instensity='2' position='-5 5 8'></a-entity>
+            <a-entity color='#8498b2' intensity='2' position='-5 5 8'></a-entity>
             <a-light type='point' intensity='3' position='2 4 4'></a-light>
             <a-camera>
               <a-cursor
