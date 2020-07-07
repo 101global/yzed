@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import { Link } from 'react-scroll';
 import PropTypes from 'prop-types';
-import theme from '../../utilities/theme';
+import theme from '../../../utilities/theme';
 
 const MobileNav = ({ openMenu, setOpenMenu }) => {
   return (

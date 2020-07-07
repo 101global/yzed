@@ -11,6 +11,9 @@ module.exports = {
         thous: '1000',
         fiveHund: '500',
       },
+      gridTemplateColumns: {
+        experience: '1fr 2fr 1fr',
+      },
     },
     colors: {
       transparentBlack: '#0d0d0df6',
