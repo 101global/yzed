@@ -42,17 +42,17 @@ const VRComponent = () => {
                 id='animatedModel'
                 src='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf'></a-asset-item>
             </a-assets>
-            <a-entity
+            {/* <a-entity
               gltf-model='url(https://oneoone-resource.s3-ap-northeast-2.amazonaws.com/yzed/bvQP164cIw.gltf)'
               scale='1 1 1'
-              position='0 0 -2.5'></a-entity>
+              position='0 0 -2.5'></a-entity> */}
             <a-entity
               gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf)'
               scale='1 1 1'
               position='-2.5 0 0'
-              animation-mixer='clip: *; repetitions: 3'
+              animation-mixer='clip: *'
               rotation='0 90 0'></a-entity>
-            <a-entity
+            {/* <a-entity
               gltf-model='url(https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/FORTHERAN_JULY6.gltf)'
               scale='1 1 1'
               position='0 0 2.5'
@@ -63,7 +63,7 @@ const VRComponent = () => {
               scale='0.1 0.1 0.1'
               position='2 2 0'
               animation-mixer='clip: *'
-              rotation='0 180 0'></a-entity>
+              rotation='0 180 0'></a-entity> */}
             <a-sky
               src='#skyTexture'
               height='2048'
