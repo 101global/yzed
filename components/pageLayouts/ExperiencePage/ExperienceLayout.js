@@ -16,13 +16,13 @@ const ExperienceLayout = () => {
   return (
     <>
       <UserNavigation />
-      <div className='grid grid-cols-experience gap-6 min-h-screen px-12 pt-16 bg-black text-white'>
+      <div className='grid grid-cols-experience gap-6 max-h-screen py-16 px-16 bg-black text-white'>
         <div className='w-full'>
           <div>
             <ExperienceModel />
           </div>
         </div>
-        <section className='flex flex-col justify-start items-center'>
+        <section className='flex flex-col justify-between items-center'>
           <VideoStream />
           <ExperiencePhotos />
         </section>

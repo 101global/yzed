@@ -1,17 +1,35 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 const images = [
-  'https://vg-images.condecdn.net/image/b0GKRp83JG7/crop/405/portrait/f/kaimin_fw18_001.jpg',
-  'https://vmagazine.com/wp-content/uploads/2019/11/KAIMIN-2.jpg',
-  'https://vmagazine.com/wp-content/uploads/2019/11/Kaimin1.png',
+  {
+    url: 'https://vg-images.condecdn.net/image/b0GKRp83JG7/crop/405/portrait/f/kaimin_fw18_001.jpg',
+    description: 'Kaimin Image',
+  },
+  {
+    url: 'https://vg-images.condecdn.net/image/b0GKRp83JG7/crop/405/portrait/f/kaimin_fw18_001.jpg',
+    description: 'Kaimin Image',
+  },
+  {
+    url: 'https://vg-images.condecdn.net/image/b0GKRp83JG7/crop/405/portrait/f/kaimin_fw18_001.jpg',
+    description: 'Kaimin Image',
+  },
 ];
+
 const ExperiencePhotos = () => {
   return (
-    <div>
-      {images.map((image) => (
-        <img src={image} alt={image} />
-      ))}
-    </div>
+    <>
+      <div className='grid grid-cols-3 gap-4 pt-4'>
+        {images.map((image) => (
+          <img className='' src={image.url} alt={image.description} />
+        ))}
+      </div>
+      <style jsx>{`
+        img {
+          height: 346px;
+          width: 263px;
+        }
+      `}</style>
+    </>
   );
 };
 
