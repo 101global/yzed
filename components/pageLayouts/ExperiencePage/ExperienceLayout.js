@@ -37,7 +37,7 @@ const ExperienceLayout = () => {
       </div>
       <style jsx>{`
         .main-container {
-          padding: 155px 150px 80px;
+          padding: 115px 120px 40px;
         }
       `}</style>
     </>
