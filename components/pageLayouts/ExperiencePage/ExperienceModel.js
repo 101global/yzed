@@ -17,6 +17,12 @@ const ExperienceModel = () => {
           camera-controls></model-viewer>
       </div>
       <style jsx global>{`
+        .model-viewer-experience {
+          height: 300px;
+          width: 300px;
+          max-width: 100%;
+          max-height: 70vh;
+        }
         .model-viewer-experience model-viewer {
           margin: 0 auto;
           z-index: 101;

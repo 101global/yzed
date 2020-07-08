@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import ExperienceChat from './ExperienceChat';
+import ExperienceModelInformation from './ExperienceModelInformation';
 import ExperiencePhotos from './ExperiencePhotos';
+import ExperienceShop from './ExperienceShop';
 import UserNavigation from '../../reusableStyledComponents/navigation/UserNavigation';
 import VideoStream from '../../reusableStyledComponents/VideoStream';
 import dynamic from 'next/dynamic';
@@ -16,20 +19,27 @@ const ExperienceLayout = () => {
   return (
     <>
       <UserNavigation />
-      <div className='grid grid-cols-experience gap-6 max-h-screen py-16 px-16 bg-black text-white'>
-        <div className='w-full'>
-          <div>
+      <div className='main-container grid grid-cols-experience gap-6 min-h-screen bg-black text-white'>
+        <section className='w-full flex flex-col justify-between items-center'>
+          <div className='h-full'>
             <ExperienceModel />
           </div>
-        </div>
-        <section className='flex flex-col justify-between items-center'>
+          <ExperienceModelInformation />
+        </section>
+        <section className='w-full flex flex-col justify-between items-center'>
           <VideoStream />
           <ExperiencePhotos />
         </section>
-        <section>
-          <h1>Content</h1>
+        <section className='w-full flex flex-col justify-between items-center'>
+          <ExperienceChat />
+          <ExperienceShop />
         </section>
       </div>
+      <style jsx>{`
+        .main-container {
+          padding: 155px 150px 80px;
+        }
+      `}</style>
     </>
   );
 };
