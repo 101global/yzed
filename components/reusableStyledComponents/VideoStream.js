@@ -7,7 +7,7 @@ const VideoStream = () => {
         <iframe
           width='560'
           height='349'
-          src='https://www.youtube.com/embed/QH2-TGUlwu4'
+          src='https://www.youtube.com/embed/QH2-TGUlwu4?modestbranding=1&rel=0&fs=0&color=white'
           frameborder='0'></iframe>
       </div>
       <style jsx>{`

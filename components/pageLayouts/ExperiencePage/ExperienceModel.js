@@ -21,7 +21,7 @@ const ExperienceModel = () => {
           margin: 0 auto;
           z-index: 101;
           min-width: 80%;
-          min-height: 80vh;
+          min-height: 70vh;
           height: 100%;
           width: 100%;
           --poster-color: transparent;
