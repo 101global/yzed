@@ -8,7 +8,7 @@ import userIcon from '../../../public/icons/account-icon.svg';
 const messages = [
   {
     user: {
-      userName: 'Theran',
+      userName: 'User123',
       avatar:
         'https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png',
     },
@@ -16,7 +16,7 @@ const messages = [
   },
   {
     user: {
-      userName: 'Theran',
+      userName: 'User123',
       avatar:
         'https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png',
     },
@@ -24,7 +24,7 @@ const messages = [
   },
   {
     user: {
-      userName: 'Theran',
+      userName: 'User123',
       avatar:
         'https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png',
     },
@@ -33,7 +33,7 @@ const messages = [
   },
   {
     user: {
-      userName: 'Theran',
+      userName: 'User123',
       avatar:
         'https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png',
     },
@@ -42,7 +42,7 @@ const messages = [
   },
   {
     user: {
-      userName: 'Theran',
+      userName: 'User123',
       avatar:
         'https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png',
     },
@@ -50,7 +50,7 @@ const messages = [
   },
   {
     user: {
-      userName: 'Theran',
+      userName: 'User123',
       avatar:
         'https://www.pikpng.com/pngl/m/80-805523_default-avatar-svg-png-icon-free-download-264157.png',
     },
@@ -79,8 +79,8 @@ const ExperienceChat = () => {
           ))}
         </ScrollToBottom>
       </div>
-      <form>
-        <input />
+      <form className='w-full grid grid-cols-comment gap-4 justify-between items-center'>
+        <input className='w-full' />
         <button>
           <img src={sendIcon} />
         </button>
@@ -94,6 +94,26 @@ const ExperienceChat = () => {
         }
         .chat-container {
           height: 350px;
+        }
+        button {
+          height: 40px;
+          width: 40px;
+          background: linear-gradient(253.24deg, #73cfdb 8.1%, #a891d9 95.07%);
+          border-radius: 20px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0px;
+        }
+        button img {
+          height: 25px;
+        }
+        input {
+          width: 100%;
+          height: 40px;
+          border-radius: 20px;
+          box-shadow: none;
         }
       `}</style>
     </>
