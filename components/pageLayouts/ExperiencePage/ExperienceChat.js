@@ -4,6 +4,7 @@ import ScrollToBottom, { useScrollToBottom } from 'react-scroll-to-bottom';
 import { css } from 'glamor';
 import sendIcon from '../../../public/icons/send-icon.svg';
 import userIcon from '../../../public/icons/account-icon.svg';
+import theme from '../../../utilities/theme';
 
 const messages = [
   {
@@ -79,9 +80,13 @@ const ExperienceChat = () => {
           ))}
         </ScrollToBottom>
       </div>
-      <form className='w-full grid grid-cols-comment gap-4 justify-between items-center'>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+        className='w-full grid grid-cols-comment gap-4 justify-between items-center'>
         <input className='w-full' />
-        <button>
+        <button type="submit">
           <img src={sendIcon} />
         </button>
       </form>
@@ -114,6 +119,10 @@ const ExperienceChat = () => {
           height: 40px;
           border-radius: 20px;
           box-shadow: none;
+          background: ${theme.colors.black};
+          border: 1px solid ${theme.colors.white};
+          padding: 0px 10px;
+          font-weight: 300;
         }
       `}</style>
     </>
