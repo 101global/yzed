@@ -4,6 +4,7 @@ import { UserContext } from '../utilities/context/UserContext';
 import UserNavigation from '../components/ReusableComponents/Navigation/UserNavigation';
 import LoadingSpinner from '../components/ReusableComponents/Loading/LoadingSpinner';
 import { useRouter } from 'next/router';
+import FormError from '../components/ReusableComponents/Errors/FormError';
 
 const login = () => {
   const [username, setUsername] = useState('');
@@ -51,7 +52,7 @@ const login = () => {
           Login
         </button>
       </form>
-      <LoadingSpinner />
+      <FormError message='Something is not right' />
       <style jsx>{`
         form {
           padding: 100px 0;
