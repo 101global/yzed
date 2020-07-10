@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import Link from 'next/link';
+import { UserContext } from '../../../utilities/context/UserContext';
 import YZEDLogo from '../../../public/yzed_logo_white.svg';
 import theme from '../../../utilities/theme';
 
 const UserNavigation = () => {
+  const { user, userLoading } = useContext(UserContext);
   return (
     <>
       <div className='navigation-container w-full fixed flex flex-row justify-between items-center top-0 left-0'>
@@ -14,9 +16,17 @@ const UserNavigation = () => {
           </a>
         </Link>
         <div className='links-container'>
-          <Link href='/login'>
-            <a>Login</a>
-          </Link>
+          {userLoading ? (
+            <p>Loading</p>
+          ) : user.loggedIn ? (
+            <Link href='/logout'>
+              <a>Logout</a>
+            </Link>
+          ) : (
+            <Link href='/login'>
+              <a>Login</a>
+            </Link>
+          )}
         </div>
       </div>
       <style jsx>{`

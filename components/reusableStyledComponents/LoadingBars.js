@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import theme from '../../utilities/theme';
 
-const LoadingSpinner = ({ color }) => {
+const LoadingBars = ({ color }) => {
   return (
     <>
       <div className='spinner-container flex min-h-screen flex-col items-center justify-center bg-black'>
@@ -68,8 +68,8 @@ const LoadingSpinner = ({ color }) => {
   );
 };
 
-export default LoadingSpinner;
+export default LoadingBars;
 
-LoadingSpinner.propTypes = {
+LoadingBars.propTypes = {
   color: PropTypes.string,
 };

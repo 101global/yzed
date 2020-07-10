@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import LoadingSpinner from './reusableStyledComponents/LoadingSpinner';
+import LoadingBars from './reusableStyledComponents/LoadingBars';
 import PropTypes from 'prop-types';
 import firebase from '../utilities/firebaseSetup';
 import theme from '../utilities/theme';
@@ -43,7 +43,7 @@ const Layout = ({ children, title, loading }) => {
 
   return (
     <BodyLayout title={title}>
-      {loading ? <LoadingSpinner color={theme.colors.black} /> : children}
+      {loading ? <LoadingBars color={theme.colors.black} /> : children}
     </BodyLayout>
   );
 };

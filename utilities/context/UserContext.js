@@ -9,16 +9,20 @@ const dbh = firebase.firestore();
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({ loggedIn: false });
+  const [userLoading, setUserLoading] = useState(false);
 
   function onAuthStateChange(callback) {
+    setUserLoading(true);
     return firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log(user);
         console.log('The user is logged in');
         callback({ loggedIn: true, email: user.email });
+        setUserLoading(false);
       } else {
         console.log('The user is not logged in');
         callback({ loggedIn: false });
+        setUserLoading(false);
       }
     });
   }
@@ -53,7 +57,7 @@ const UserProvider = ({ children }) => {
   // }, []);
 
   return (
-    <UserContext.Provider value={{ user, requestLogin, requestLogout }}>
+    <UserContext.Provider value={{ user, userLoading, requestLogin, requestLogout }}>
       {children}
     </UserContext.Provider>
   );
