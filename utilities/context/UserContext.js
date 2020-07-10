@@ -10,6 +10,7 @@ const dbh = firebase.firestore();
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({ loggedIn: false });
   const [userLoading, setUserLoading] = useState(false);
+  const [userError, setUserError] = useState(null);
 
   function onAuthStateChange(callback) {
     setUserLoading(true);
@@ -27,13 +28,19 @@ const UserProvider = ({ children }) => {
     });
   }
 
-  function login(username, password) {
-    firebase.auth().signInWithEmailAndPassword(username, password);
-  }
+  const signup = async (username, password, redirectCallback) => {};
 
-  function logout() {
+  const login = async (username, password, redirectCallback) => {
+    await firebase
+      .auth()
+      .signInWithEmailAndPassword(username, password)
+      .then(() => redirectCallback())
+      .catch((err) => setUserError(err.message));
+  };
+
+  const logout = () => {
     firebase.auth().signOut();
-  }
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChange(setUser);
@@ -42,8 +49,12 @@ const UserProvider = ({ children }) => {
     };
   }, []);
 
-  const requestLogin = useCallback((username, password) => {
-    login(username, password);
+  const requestSignup = useCallback((username, password, redirectCallback) => {
+    signup(username, password, redirectCallback);
+  });
+
+  const requestLogin = useCallback((username, password, redirectCallback) => {
+    login(username, password, redirectCallback);
   });
 
   const requestLogout = useCallback(() => {
@@ -51,7 +62,7 @@ const UserProvider = ({ children }) => {
   });
 
   return (
-    <UserContext.Provider value={{ user, userLoading, requestLogin, requestLogout }}>
+    <UserContext.Provider value={{ user, userLoading, userError, requestLogin, requestLogout }}>
       {children}
     </UserContext.Provider>
   );

@@ -9,12 +9,15 @@ import FormError from '../components/ReusableComponents/Errors/FormError';
 const login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const { user, requestLogin } = useContext(UserContext);
+  const { user, userError, requestLogin } = useContext(UserContext);
 
   const router = useRouter();
 
+  const pushLoggedIn = () => {
+    router.push('/experience/1');
+  };
+
   useEffect(() => {
-    console.log(user);
     if (user.loggedIn) {
       router.push('/experience/1');
     }
@@ -26,10 +29,7 @@ const login = () => {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          await requestLogin(username, password);
-          if (user.isLoggedIn) {
-            router.push('/experience/1');
-          }
+          await requestLogin(username, password, pushLoggedIn);
         }}
         className='bg-black flex flex-col justify-center items-center'>
         <input
@@ -52,7 +52,7 @@ const login = () => {
           Login
         </button>
       </form>
-      <FormError message='Something is not right' />
+      {userError && <FormError message={userError} />}
       <style jsx>{`
         form {
           padding: 100px 0;
