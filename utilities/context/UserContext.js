@@ -21,7 +21,7 @@ const UserProvider = ({ children }) => {
         setUserLoading(false);
       } else {
         console.log('The user is not logged in');
-        callback({ loggedIn: false });
+        callback({ loggedIn: false, email: '' });
         setUserLoading(false);
       }
     });
@@ -45,16 +45,10 @@ const UserProvider = ({ children }) => {
   const requestLogin = useCallback((username, password) => {
     login(username, password);
   });
+
   const requestLogout = useCallback((username, password) => {
     logout();
   });
-  // useEffect(() => {
-  //   setUserLoading(true);
-  //   onAuthStateChange(setUserData);
-  //   return () => {
-  //     onAuthStateChange(setUserData);
-  //   };
-  // }, []);
 
   return (
     <UserContext.Provider value={{ user, userLoading, requestLogin, requestLogout }}>

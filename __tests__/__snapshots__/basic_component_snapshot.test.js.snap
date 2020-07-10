@@ -27,7 +27,7 @@ exports[`renders chevron unchanged 1`] = `
     <path
       className="jsx-3413298786"
       d="M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z"
-      fill="#FFFFFF"
+      fill="#fff"
     />
   </g>
 </svg>

@@ -30,7 +30,7 @@ exports[`renders animated model viewer unchanged 1`] = `
         <path
           className="jsx-3413298786"
           d="M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z"
-          fill="#FFFFFF"
+          fill="#fff"
         />
       </g>
     </svg>
@@ -40,19 +40,19 @@ exports[`renders animated model viewer unchanged 1`] = `
 
 exports[`renders model viewer controller unchanged 1`] = `
 <div
-  className="jsx-3651629905 jsx-385141003 viewer-container flex justify-between items-center"
+  className="jsx-3551498935 jsx-3808981773 viewer-container flex justify-between items-center"
 >
   <div
-    className="jsx-3651629905 jsx-385141003 model-viewer-container"
+    className="jsx-3551498935 jsx-3808981773 model-viewer-container"
   />
   <div
-    className="jsx-3651629905 jsx-385141003 controls"
+    className="jsx-3551498935 jsx-3808981773 controls"
   >
     <div
-      className="jsx-3651629905 jsx-385141003 toggle-animated-buttons"
+      className="jsx-3551498935 jsx-3808981773 toggle-animated-buttons"
     >
       <div
-        className="react-switch-selector-wrapper css-1b36uh8"
+        className="react-switch-selector-wrapper css-ptz1ma"
       >
         <div
           className="react-switch-selector-option css-15e01fz"
@@ -76,7 +76,7 @@ exports[`renders model viewer controller unchanged 1`] = `
           className="react-switch-selector-option css-15e01fz"
         >
           <label
-            className="react-switch-selector-option-label css-d5taeg"
+            className="react-switch-selector-option-label css-1nq8m5d"
             fontSize={14}
             selected={false}
           >
@@ -93,16 +93,16 @@ exports[`renders model viewer controller unchanged 1`] = `
       </div>
     </div>
     <div
-      className="jsx-3651629905 jsx-385141003 toggle-light-buttons"
+      className="jsx-3551498935 jsx-3808981773 toggle-light-buttons"
     >
       <div
-        className="react-switch-selector-wrapper css-yadhe3"
+        className="react-switch-selector-wrapper css-1hiuixs"
       >
         <div
           className="react-switch-selector-option css-15e01fz"
         >
           <label
-            className="react-switch-selector-option-label css-d5taeg"
+            className="react-switch-selector-option-label css-1nq8m5d"
             fontSize={14}
             selected={false}
           >
@@ -173,7 +173,7 @@ exports[`renders stationary model viewer unchanged 1`] = `
         <path
           className="jsx-3413298786"
           d="M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z"
-          fill="#FFFFFF"
+          fill="#fff"
         />
       </g>
     </svg>
