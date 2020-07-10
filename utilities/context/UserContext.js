@@ -32,7 +32,7 @@ const UserProvider = ({ children }) => {
   }
 
   function logout() {
-    firebase.auth().signout();
+    firebase.auth().signOut();
   }
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const UserProvider = ({ children }) => {
     login(username, password);
   });
 
-  const requestLogout = useCallback((username, password) => {
+  const requestLogout = useCallback(() => {
     logout();
   });
 

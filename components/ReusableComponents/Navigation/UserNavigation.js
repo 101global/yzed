@@ -5,6 +5,7 @@ import { UserContext } from '../../../utilities/context/UserContext';
 import YZEDLogo from '../../../public/yzed_logo_white.svg';
 import theme from '../../../utilities/theme';
 import LoadingSpinner from '../Loading/LoadingSpinner';
+import LogoutButton from '../Buttons/LogoutButton';
 
 const UserNavigation = () => {
   const { user, userLoading } = useContext(UserContext);
@@ -21,12 +22,10 @@ const UserNavigation = () => {
           {userLoading ? (
             <LoadingSpinner />
           ) : user.loggedIn ? (
-            <Link href='/logout'>
-              <a>Logout</a>
-            </Link>
+            <LogoutButton />
           ) : (
             <Link href='/login'>
-              <a>Login</a>
+              <a className='text-lg bg-black text-white font-light'>Login</a>
             </Link>
           )}
         </div>
