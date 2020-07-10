@@ -2,6 +2,7 @@ import '../styles/index.css';
 
 import Head from 'next/head';
 import SimpleReactLightbox from 'simple-react-lightbox';
+import UserContext from '../utilities/context/UserContext';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -28,9 +29,11 @@ function MyApp({ Component, pageProps }) {
         <link rel='manifest' href='manifest.json' />
       </Head>
       {/* Wrap this with Firebase Provider later if needed */}
-      <SimpleReactLightbox>
-        <Component {...pageProps} />
-      </SimpleReactLightbox>
+      <UserContext>
+        <SimpleReactLightbox>
+          <Component {...pageProps} />
+        </SimpleReactLightbox>
+      </UserContext>
       <noscript>
         <iframe
           src='noscript.html'

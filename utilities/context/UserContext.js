@@ -3,20 +3,11 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import firebase from '../firebaseSetup';
 
-export const FirebaseContext = React.createContext();
+export const UserContext = React.createContext();
 
 const dbh = firebase.firestore();
 
-// let messaging;
-// if (firebase.messaging.isSupported()) {
-//   messaging = firebase.messaging();
-// }
-
-// if (messaging) {
-//   messaging.usePublicVapidKey(process.env.REACT_APP_fcm_key);
-// }
-
-const FirebaseProvider = ({ children }) => {
+const UserProvider = ({ children }) => {
   const initialUserState = {
     id: '',
     loggedIn: false,
@@ -33,45 +24,6 @@ const FirebaseProvider = ({ children }) => {
   const [userValidated, setUserValidated] = useState(false);
   const [messagingToken, setMessagingToken] = useState('');
   const [userData, setUserData] = useState(initialUserState);
-  const [message, setMessage] = useState(null);
-
-  // if (messaging) {
-  //   messaging
-  //     .requestPermission()
-  //     .then(() => {
-  //       return messaging
-  //         .getToken()
-  //         .then((token) => {
-  //           console.log(token);
-  //         })
-  //         .catch((err) => console.log(err));
-  //     })
-  //     .catch((err) => console.log(err));
-
-  //   messaging.onTokenRefresh(() => {
-  //     messaging
-  //       .getToken()
-  //       .then((refreshedToken) => {
-  //         console.log('Token refreshed.');
-  //         console.log(refreshedToken);
-  //         // Indicate that the new Instance ID token has not yet been sent to the
-  //         // app server.
-  //         // setTokenSentToServer(false);
-  //         // Send Instance ID token to app server.
-  //         // sendTokenToServer(refreshedToken);
-  //         // ...
-  //       })
-  //       .catch((err) => {
-  //         console.log('Unable to retrieve refreshed token ', err);
-  //         // showToken('Unable to retrieve refreshed token ', err);
-  //       });
-  //   });
-
-  //   messaging.onMessage(function (payload) {
-  //     console.log('Message received. ', payload);
-  //     setMessage(payload);
-  //   });
-  // }
 
   const verifiedRegister = (email, password, userName) => {
     //  Check if user name is taken.
@@ -247,53 +199,11 @@ const FirebaseProvider = ({ children }) => {
   //   };
   // }, []);
 
-  const uploadUserPhoto = (currentPictureUrl, description, taggedProducts) => {
-    if (currentPictureUrl.length && userData && description.length && taggedProducts.length) {
-      dbh
-        .collection('userPhotos')
-        .doc()
-        .set({
-          url: currentPictureUrl,
-          userId: userData.id,
-          tag: taggedProducts[0].id,
-          description,
-          likes: [],
-          addedOn: new Date(),
-        })
-        .then(() => {
-          onAuthStateChange(setUserData);
-        });
-    }
-  };
-
-  return (
-    <FirebaseContext.Provider
-      value={{
-        firebaseError,
-        setFirebaseError,
-        registerUser,
-        userData,
-        loginUser,
-        dbh,
-        logoutUser,
-        firebase,
-        userLoading,
-        uploadUserPhoto,
-        forgotEmail,
-        verifiedRegister,
-        onAuthStateChange,
-        setUserData,
-        userData,
-        userLoading,
-        name: 'Theran',
-      }}>
-      {children}
-    </FirebaseContext.Provider>
-  );
+  return <UserContext.Provider value={{ userData }}>{children}</UserContext.Provider>;
 };
 
-FirebaseProvider.propTypes = {
+UserProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default FirebaseProvider;
+export default UserProvider;
