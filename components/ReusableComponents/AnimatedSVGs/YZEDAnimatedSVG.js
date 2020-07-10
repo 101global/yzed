@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import ReactVivus from 'react-vivus';
-import svg from '../../public/yzed-logo-outline-gradient.svg';
+import svg from '../../../public/yzed-logo-outline-gradient.svg';
 
 const AnimatedLogo = () => {
   return (

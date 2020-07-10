@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import ReactVivus from 'react-vivus';
-import svg from '../../public/contact-us.svg';
+import svg from '../../../public/contact-us.svg';
 
 const ContactAnimated = () => {
   const [animationOver, setAnimationOver] = useState(false);
