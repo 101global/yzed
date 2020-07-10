@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { SRLWrapper } from 'simple-react-lightbox';
-import ProgressiveImage from '../../ProgressiveImage';
+import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
 
 const images = [
   {

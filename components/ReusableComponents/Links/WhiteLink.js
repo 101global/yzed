@@ -1,25 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
-import theme from '../../utilities/theme';
+import theme from '../../../utilities/theme';
 
-const BlackLink = ({ title, link }) => {
+const WhiteLink = ({ title, link }) => {
   return (
     <>
       <a
         href={link}
         target='_blank'
-        className='black-link block lg:inline m-auto lg:m-0 py-2 bg-black text-white border border-black text-xl text-center rounded-full no-underline tracking-wider font-medium hover:text-black hover:bg-white'
+        className='white-link w-full inline-block py-2 px-4 bg-white text-black border border-white text-base text-center rounded-full no-underline tracking-wider font-medium hover:text-white hover:bg-black '
         rel='noopener noreferrer'>
         {title}
       </a>
       <style jsx>{`
-        a.black-link {
+        a.white-link {
           transition: all 0.4s ease;
           width: 384px;
           max-width: 90%;
+          letter-spacing: 0.3em;
         }
-        a.black-link:hover {
+        a.white-link:hover {
           transition: all 0.4s ease;
         }
       `}</style>
@@ -27,9 +28,9 @@ const BlackLink = ({ title, link }) => {
   );
 };
 
-export default BlackLink;
+export default WhiteLink;
 
-BlackLink.propTypes = {
+WhiteLink.propTypes = {
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
 };

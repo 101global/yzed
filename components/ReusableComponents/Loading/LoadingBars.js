@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import theme from '../../utilities/theme';
+import theme from '../../../utilities/theme';
 
 const LoadingBars = ({ color }) => {
   return (

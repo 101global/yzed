@@ -6,7 +6,7 @@ import LandingContact from './LandingContact';
 import LandingFooter from './LandingFooter';
 import LandingIntroduction from './LandingIntroduction';
 import LandingNavigation from './LandingNavigation';
-import ModelViewerController from '../../reusableStyledComponents/modelViewers/ModelViewerController';
+import ModelViewerController from '../../ReusableComponents/ModelViewers/ModelViewerController';
 import PropTypes from 'prop-types';
 import theme from '../../../utilities/theme';
 

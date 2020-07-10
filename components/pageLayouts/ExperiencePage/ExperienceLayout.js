@@ -4,8 +4,8 @@ import ExperienceChat from './ExperienceChat';
 import ExperienceModelInformation from './ExperienceModelInformation';
 import ExperiencePhotos from './ExperiencePhotos';
 import ExperienceShop from './ExperienceShop';
-import UserNavigation from '../../reusableStyledComponents/navigation/UserNavigation';
-import VideoStream from '../../reusableStyledComponents/VideoStream';
+import UserNavigation from '../../ReusableComponents/Navigation/UserNavigation';
+import VideoStream from '../../ReusableComponents/Video/VideoStream';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
@@ -15,7 +15,7 @@ const ExperienceLayout = () => {
   const ExperienceModel = dynamic(() => import('./ExperienceModel'), {
     ssr: false,
   });
-  console.log(ExperienceModel);
+
   return (
     <>
       <UserNavigation />

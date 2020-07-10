@@ -1,27 +1,43 @@
+import '@google/model-viewer/dist/model-viewer';
+
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
-import DownChevron from '../DownChevron';
 import PropTypes from 'prop-types';
 import darkBackgroundLoading from '../../../public/yzed-loading-dark-background.svg';
+import dynamic from 'next/dynamic';
 import lightBackgroundLoading from '../../../public/yzed-loading-light-background.svg';
+import DownChevron from '../../ReusableComponents/Images/DownChevron';
 
-const AnimatedModelViewer = ({ model, topModelDark }) => {
+const StationaryModelViewer = ({ model, topModelDark }) => {
+  const [loading, setLoading] = useState(false);
+
   const modelRef = useRef(null);
+
+  useEffect(() => {
+    if (modelRef.current) {
+      modelRef.current.addEventListener('error', (error) => {
+        console.log(error);
+      });
+    }
+  }, []);
 
   return (
     <>
       <div className='model-viewer-container'>
         <model-viewer
           ref={modelRef}
-          src={model.animatedGlbFile}
+          src={model.glbFile}
+          ios-src={model.usdzFile}
           alt={model.id}
           loading='lazy'
+          ar-modes='scene-viewer webxr quick-look'
+          ar-scale='fixed'
           auto-rotate
           camera-controls
-          poster={topModelDark ? darkBackgroundLoading : lightBackgroundLoading}
+          ar
           exposure={model.exposure}
-          interaction-policy='allow-when-focused'
-          autoplay>
+          poster={topModelDark ? darkBackgroundLoading : lightBackgroundLoading}
+          interaction-policy='allow-when-focused'>
           <DownChevron topModelDark={topModelDark} />
         </model-viewer>
       </div>
@@ -30,7 +46,7 @@ const AnimatedModelViewer = ({ model, topModelDark }) => {
           height: 100%;
           width: 100%;
         }
-        model-viewer {
+        .model-viewer-container model-viewer {
           margin: 0 auto;
           z-index: 101;
           height: 100%;
@@ -42,9 +58,9 @@ const AnimatedModelViewer = ({ model, topModelDark }) => {
   );
 };
 
-export default AnimatedModelViewer;
+export default StationaryModelViewer;
 
-AnimatedModelViewer.propTypes = {
+StationaryModelViewer.propTypes = {
   model: PropTypes.object.isRequired,
   topModelDark: PropTypes.bool.isRequired,
 };

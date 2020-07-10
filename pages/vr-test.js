@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import VRComponent from '../components/reusableStyledComponents/modelViewers/VR';
+import VRComponent from '../components/ReusableComponents/ModelViewers/VR';
 
 const VRTest = () => {
   return (

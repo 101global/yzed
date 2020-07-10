@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import LandingLayout from './LandingLayout';
-import Layout from '../../Layout';
+import Layout from '../../ReusableComponents/Layouts/MainBodyLayout';
 import PropTypes from 'prop-types';
 
 const LandingDataFetchStrapiApiTest = ({ testApiProduct, exposure }) => {

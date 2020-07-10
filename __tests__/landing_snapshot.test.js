@@ -1,7 +1,7 @@
-jest.mock('../components/reusableStyledComponents/YZEDAnimatedSVG.js', () => () =>
+jest.mock('../components/ReusableComponents/AnimatedSVGs/YZEDAnimatedSVG.js', () => () =>
   'YZED Animated SVG Component'
 );
-jest.mock('../components/reusableStyledComponents/ContactAnimatedSVG.js', () => () =>
+jest.mock('../components/ReusableComponents/AnimatedSVGs/ContactAnimatedSVG.js', () => () =>
   'YZED Animated SVG Component'
 );
 

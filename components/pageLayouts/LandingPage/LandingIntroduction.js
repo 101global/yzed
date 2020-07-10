@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import BlackLink from '../../reusableStyledComponents/BlackLink';
-import ProgressiveImage from '../../ProgressiveImage';
+import BlackLink from '../../ReusableComponents/Links/BlackLink';
+import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
 import PropTypes from 'prop-types';
-import YZEDAnimatedLogo from '../../reusableStyledComponents/YZEDAnimatedSVG';
+import YZEDAnimatedLogo from '../../ReusableComponents/AnimatedSVGs/YZEDAnimatedSVG';
 import theme from '../../../utilities/theme';
 
 const LandingIntroduction = ({ model }) => {

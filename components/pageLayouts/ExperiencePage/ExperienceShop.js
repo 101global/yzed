@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import WhiteLink from '../../reusableStyledComponents/WhiteLink';
+import WhiteLink from '../../ReusableComponents/Links/WhiteLink';
 
 const image = {
   url:

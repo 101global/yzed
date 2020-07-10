@@ -1,11 +1,12 @@
-import BlackLink from '../components/reusableStyledComponents/BlackLink';
 import DesktopNav from '../components/pageLayouts/LandingPage/DesktopNavLinks';
-import DownChevron from '../components/reusableStyledComponents/DownChevron';
-import LoadingBars from '../components/reusableStyledComponents/LoadingBars';
+import DownChevron from '../components/ReusableComponents/Images/DownChevron';
+import LoadingBars from '../components/ReusableComponents/Loading/LoadingBars';
 import MobileNav from '../components/pageLayouts/LandingPage/MobileNavLinks';
+
 import React from 'react';
 import { buttonMock } from '../__mocks__/dataMock';
 import renderer from 'react-test-renderer';
+import BlackLink from '../components/ReusableComponents/Links/BlackLink';
 
 it('renders mobile nav unchanged', () => {
   const tree = renderer.create(<MobileNav openMenu={true} setOpenMenu={() => {}} />).toJSON();

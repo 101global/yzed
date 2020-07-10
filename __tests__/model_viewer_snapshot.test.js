@@ -1,9 +1,9 @@
 jest.mock('../node_modules/@google/model-viewer/dist/model-viewer', () => () => 'Model Viewer');
 
-import AnimatedModelViewer from '../components/reusableStyledComponents/modelViewers/AnimatedModelViewer';
-import ModelViewerController from '../components/reusableStyledComponents/modelViewers/ModelViewerController';
+import AnimatedModelViewer from '../components/ReusableComponents/ModelViewers/AnimatedModelViewer';
+import ModelViewerController from '../components/ReusableComponents/ModelViewers/ModelViewerController';
 import React from 'react';
-import StationaryModelViewer from '../components/reusableStyledComponents/modelViewers/StationaryModelViewer';
+import StationaryModelViewer from '../components/ReusableComponents/ModelViewers/StationaryModelViewer';
 import { model } from '../__mocks__/dataMock';
 import renderer from 'react-test-renderer';
 

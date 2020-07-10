@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import ContactAnimated from '../../reusableStyledComponents/ContactAnimatedSVG';
 import theme from '../../../utilities/theme';
+import ContactAnimated from '../../ReusableComponents/AnimatedSVGs/ContactAnimatedSVG';
 
 const LandingContact = () => {
   return (

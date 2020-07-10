@@ -1,9 +1,10 @@
 import Head from 'next/head';
-import LoadingBars from './reusableStyledComponents/LoadingBars';
+
 import PropTypes from 'prop-types';
-import firebase from '../utilities/firebaseSetup';
-import theme from '../utilities/theme';
+import firebase from '../../../utilities/firebaseSetup';
+import theme from '../../../utilities/theme';
 import { useEffect } from 'react';
+import LoadingBars from '../../ReusableComponents/Loading/LoadingBars';
 
 const BodyLayout = ({ title, children }) => {
   return (

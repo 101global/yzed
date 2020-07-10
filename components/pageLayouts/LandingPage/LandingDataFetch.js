@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import LandingLayout from './LandingLayout';
-import Layout from '../../Layout';
+import Layout from '../../ReusableComponents/Layouts/MainBodyLayout';
 import PropTypes from 'prop-types';
 
 const LandingDataFetch = ({ product, exposure }) => {
@@ -24,7 +24,9 @@ const LandingDataFetch = ({ product, exposure }) => {
   }, []);
 
   return (
-    <Layout title={`YZED${mainProduct.brandName === undefined ? '.me' : ` x ${mainProduct.brandName}`}`} loading={!mainProduct || loading || !product}>
+    <Layout
+      title={`YZED${mainProduct.brandName === undefined ? '.me' : ` x ${mainProduct.brandName}`}`}
+      loading={!mainProduct || loading || !product}>
       <LandingLayout model={mainProduct} />
     </Layout>
   );
