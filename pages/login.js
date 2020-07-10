@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import { UserContext } from '../utilities/context/UserContext';
+import UserNavigation from '../components/ReusableComponents/Navigation/UserNavigation';
 
 const login = () => {
   const [username, setUsername] = useState('');
@@ -8,29 +9,40 @@ const login = () => {
   const { user, requestLogin } = useContext(UserContext);
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        requestLogin(username, password);
-      }}
-      className='bg-black flex flex-col justify-center items-center'>
-      <input
-        className='text-white bg-black border-aqua border'
-        onChange={(event) => {
-          setUsername(event.target.value);
+    <>
+      <UserNavigation />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          requestLogin(username, password);
         }}
-      />
-      <input
-        className='text-white bg-black border-aqua border'
-        type='password'
-        onChange={(event) => {
-          setPassword(event.target.value);
-        }}
-      />
-      <button className='text-white' type='submit'>
-        Login
-      </button>
-    </form>
+        className='bg-black flex flex-col justify-center items-center'>
+        <input
+          placeholder='Email'
+          type='text'
+          className='text-white bg-black border-purple border'
+          onChange={(event) => {
+            setUsername(event.target.value);
+          }}
+        />
+        <input
+          placeholder='Password'
+          className='text-white bg-black border-aqua border'
+          type='password'
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+        />
+        <button className='text-white' type='submit'>
+          Login
+        </button>
+      </form>
+      <style jsx>{`
+        form {
+          padding: 100px 0;
+        }
+      `}</style>
+    </>
   );
 };
 
