@@ -14,8 +14,8 @@ const UserNavigation = () => {
           </a>
         </Link>
         <div className='links-container'>
-          <Link href='/signin'>
-            <a>Sign In</a>
+          <Link href='/login'>
+            <a>Login</a>
           </Link>
         </div>
       </div>
