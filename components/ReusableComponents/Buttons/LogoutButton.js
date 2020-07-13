@@ -8,7 +8,7 @@ const LogoutButton = () => {
   return (
     <>
       <button
-        className='text-lg bg-black text-white font-light'
+        className='text-sm bg-black text-white font-hairline'
         onClick={() => {
           if (window.confirm('Are you sure you want to logout?')) {
             requestLogout();

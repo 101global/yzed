@@ -22,7 +22,13 @@ const UserNavigation = () => {
           {userLoading ? (
             <LoadingSpinner />
           ) : user.loggedIn ? (
-            <LogoutButton />
+            <div className='user-nav grid grid-cols-userNav gap-4 items-center'>
+              <img src={user.profilePicture} />
+              <div className='user-info'>
+                <p>{user.username.toUpperCase()}</p>
+                <LogoutButton />
+              </div>
+            </div>
           ) : (
             <Link href='/login'>
               <a className='text-lg bg-black text-white font-light'>Login</a>
@@ -39,8 +45,14 @@ const UserNavigation = () => {
         img.yzed-icon {
           height: 26px;
         }
+        p {
+          color: ${theme.colors.white};
+        }
         .links-container a {
           color: ${theme.colors.white};
+        }
+        .user-nav img {
+          height: 40px;
         }
       `}</style>
     </>

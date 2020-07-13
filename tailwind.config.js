@@ -15,6 +15,7 @@ module.exports = {
         experience: '1fr 2fr 1fr',
         chat: '40px 1fr',
         comment: '1fr 40px',
+        userNav: '40px 1fr',
       },
     },
     colors: {
