@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import FormError from '../components/ReusableComponents/Errors/FormError';
+import LoadingSpinner from '../components/ReusableComponents/Loading/LoadingSpinner';
 import { UserContext } from '../utilities/context/UserContext';
 import UserNavigation from '../components/ReusableComponents/Navigation/UserNavigation';
-import LoadingSpinner from '../components/ReusableComponents/Loading/LoadingSpinner';
 import { useRouter } from 'next/router';
-import FormError from '../components/ReusableComponents/Errors/FormError';
 
 const login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const { user, userError, requestLogin } = useContext(UserContext);
 
   const router = useRouter();
@@ -29,18 +30,20 @@ const login = () => {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          await requestLogin(username, password, pushLoggedIn);
+          await requestLogin(email, password, pushLoggedIn);
         }}
         className='bg-black flex flex-col justify-center items-center'>
         <input
+          value={email}
           placeholder='Email'
-          type='text'
+          type='email'
           className='text-white bg-black border-purple border'
           onChange={(event) => {
-            setUsername(event.target.value);
+            setEmail(event.target.value);
           }}
         />
         <input
+          value={password}
           placeholder='Password'
           className='text-white bg-black border-aqua border'
           type='password'
