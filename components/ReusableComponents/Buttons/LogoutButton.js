@@ -4,7 +4,7 @@ import theme from '../../../utilities/theme';
 
 const LogoutButton = () => {
   const { requestLogout } = useContext(UserContext);
-  console.log(requestLogout)
+
   return (
     <>
       <button

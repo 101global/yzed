@@ -26,17 +26,6 @@ const UserProvider = ({ children }) => {
 
   const router = useRouter();
 
-  const getUserData = async (userId) => {
-    await dbh
-      .collection('users')
-      .doc(userId)
-      .get()
-      .then(async (doc) => {
-        const user = await { ...doc.data() };
-        return user;
-      });
-  };
-
   function onAuthStateChange(callback) {
     setUserLoading(true);
     firebase.auth().onAuthStateChanged(async (user) => {
