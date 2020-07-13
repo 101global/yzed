@@ -103,11 +103,11 @@ const UserProvider = ({ children }) => {
   }, []);
 
   const requestEmailSignup = useCallback((username, password, redirectPath) => {
-    signup(username, password, redirectPath);
+    emailSignup(username, password, redirectPath);
   });
 
   const requestEmailLogin = useCallback((username, password, redirectPath) => {
-    login(username, password, redirectPath);
+    emailLogin(username, password, redirectPath);
   });
 
   const requestLogout = useCallback(() => {
@@ -116,7 +116,14 @@ const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ user, userLoading, userError, requestEmailSignup, requestEmailLogin, requestLogout }}>
+      value={{
+        user,
+        userLoading,
+        userError,
+        requestEmailSignup,
+        requestEmailLogin,
+        requestLogout,
+      }}>
       {children}
     </UserContext.Provider>
   );
