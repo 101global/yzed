@@ -18,11 +18,7 @@ const login = () => {
     router.push('/experience/1');
   };
 
-  useEffect(() => {
-    if (user.loggedIn) {
-      router.push('/experience/1');
-    }
-  }, [user]);
+  useEffect(() => {}, [user]);
 
   return (
     <>

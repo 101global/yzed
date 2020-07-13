@@ -30,21 +30,22 @@ const UserProvider = ({ children }) => {
     setUserLoading(true);
     firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
-        console.log('The user is logged in');
         await dbh
           .collection('users')
           .doc(user.uid)
           .get()
           .then(async (doc) => {
+            const { username, profilePicture } = doc.data();
             callback({
               loggedIn: true,
               email: user.email,
               isVerified: user.emailVerified,
-              username: doc.data().username,
-              profilePicture: doc.data().profilePicture,
+              username,
+              profilePicture,
             });
-          });
-        setUserLoading(false);
+            setUserLoading(false);
+          })
+          .catch((err) => setUserError(err.message));
       } else {
         console.log('The user is not logged in');
         callback({ loggedIn: false, email: '' });
@@ -68,9 +69,11 @@ const UserProvider = ({ children }) => {
               profilePicture: defaultIcon,
             })
             .then(() => {
-              router.push(redirectPath);
+              //  TODO: Redirect goes here
             })
-            .catch((err) => setUserError(err.message));
+            .catch((err) => {
+              setUserError(err.message);
+            });
         }
       })
       .catch((err) => setUserError(err.message));
@@ -80,8 +83,12 @@ const UserProvider = ({ children }) => {
     await firebase
       .auth()
       .signInWithEmailAndPassword(username, password)
-      .then(() => router.push(redirectPath))
-      .catch((err) => setUserError(err.message));
+      .then(() => {
+        //  TODO: Redirect goes here
+      })
+      .catch((err) => {
+        setUserError(err.message);
+      });
   };
 
   const logout = () => {
@@ -95,12 +102,12 @@ const UserProvider = ({ children }) => {
     };
   }, []);
 
-  const requestSignup = useCallback((username, password, redirectCallback) => {
-    signup(username, password, redirectCallback);
+  const requestSignup = useCallback((username, password, redirectPath) => {
+    signup(username, password, redirectPath);
   });
 
-  const requestLogin = useCallback((username, password, redirectCallback) => {
-    login(username, password, redirectCallback);
+  const requestLogin = useCallback((username, password, redirectPath) => {
+    login(username, password, redirectPath);
   });
 
   const requestLogout = useCallback(() => {
