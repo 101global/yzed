@@ -10,13 +10,9 @@ const login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { user, userError, requestLogin } = useContext(UserContext);
+  const { user, userError, requestEmailLogin } = useContext(UserContext);
 
   const router = useRouter();
-
-  const pushLoggedIn = () => {
-    router.push('/experience/1');
-  };
 
   useEffect(() => {}, [user]);
 
@@ -26,7 +22,7 @@ const login = () => {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          await requestLogin(email, password, pushLoggedIn);
+          await requestEmailLogin(email, password, pushLoggedIn);
         }}
         className='bg-black flex flex-col justify-center items-center'>
         <input

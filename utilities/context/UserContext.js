@@ -21,12 +21,12 @@ const initialUserState = {
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({ loggedIn: false });
-  const [userLoading, setUserLoading] = useState(false);
+  const [userLoading, setUserLoading] = useState(true);
   const [userError, setUserError] = useState(null);
 
   const router = useRouter();
 
-  function onAuthStateChange(callback) {
+  const onAuthStateChange = (callback) => {
     setUserLoading(true);
     firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
@@ -52,9 +52,9 @@ const UserProvider = ({ children }) => {
         setUserLoading(false);
       }
     });
-  }
+  };
 
-  const signup = async (email, password, username, redirectPath) => {
+  const emailSignup = async (email, password, username, redirectPath) => {
     await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -69,7 +69,7 @@ const UserProvider = ({ children }) => {
               profilePicture: defaultIcon,
             })
             .then(() => {
-              //  TODO: Redirect goes here
+              router.back();
             })
             .catch((err) => {
               setUserError(err.message);
@@ -79,12 +79,12 @@ const UserProvider = ({ children }) => {
       .catch((err) => setUserError(err.message));
   };
 
-  const login = async (username, password, redirectPath) => {
+  const emailLogin = async (username, password, redirectPath) => {
     await firebase
       .auth()
       .signInWithEmailAndPassword(username, password)
       .then(() => {
-        //  TODO: Redirect goes here
+        router.back();
       })
       .catch((err) => {
         setUserError(err.message);
@@ -102,11 +102,11 @@ const UserProvider = ({ children }) => {
     };
   }, []);
 
-  const requestSignup = useCallback((username, password, redirectPath) => {
+  const requestEmailSignup = useCallback((username, password, redirectPath) => {
     signup(username, password, redirectPath);
   });
 
-  const requestLogin = useCallback((username, password, redirectPath) => {
+  const requestEmailLogin = useCallback((username, password, redirectPath) => {
     login(username, password, redirectPath);
   });
 
@@ -116,7 +116,7 @@ const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ user, userLoading, userError, requestSignup, requestLogin, requestLogout }}>
+      value={{ user, userLoading, userError, requestEmailSignup, requestEmailLogin, requestLogout }}>
       {children}
     </UserContext.Provider>
   );

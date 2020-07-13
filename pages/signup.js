@@ -12,7 +12,7 @@ const signup = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
-  const { user, userError, requestSignup } = useContext(UserContext);
+  const { user, userError, requestEmailSignup } = useContext(UserContext);
 
   const router = useRouter();
 
@@ -30,7 +30,7 @@ const signup = () => {
           e.preventDefault();
           console.log('CLICK');
           if (password === confirmPassword) {
-            await requestSignup(email, password, username, '/experience/1');
+            await requestEmailSignup(email, password, username, '/experience/1');
           } else {
             setError('Passwords do not match.');
           }
