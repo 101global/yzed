@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import firebase from '../firebaseSetup';
 import { useRouter } from 'next/router';
 import { signupStates } from '../enums';
+import cookie from 'js-cookie';
 
 export const UserContext = React.createContext();
 
@@ -21,6 +22,7 @@ const initialUserState = {
   username: '',
   profilePicture: defaultIcon,
 };
+const tokenName = 'firebaseToken';
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({ loggedIn: false });
@@ -45,6 +47,9 @@ const UserProvider = ({ children }) => {
     setUserLoading(true);
     firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
+        const token = await user.getIdToken();
+        console.log(token);
+        cookie.set(tokenName, token, { expires: 7 });
         await dbh
           .collection('users')
           .doc(user.uid)

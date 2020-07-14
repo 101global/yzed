@@ -1,10 +1,15 @@
 import '../styles/index.css';
-
+import { useState } from 'react';
 import Head from 'next/head';
 import SimpleReactLightbox from 'simple-react-lightbox';
 import UserContext from '../utilities/context/UserContext';
+import App from 'next/app';
+import cookies from 'next-cookies';
+import fetch from 'isomorphic-unfetch';
+function MyApp({ Component, pageProps, user }) {
+  const [userData, setUserData] = useState(user);
+  console.log(user);
 
-function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -31,7 +36,7 @@ function MyApp({ Component, pageProps }) {
       {/* Wrap this with Firebase Provider later if needed */}
       <UserContext>
         <SimpleReactLightbox>
-          <Component {...pageProps} />
+          <Component {...pageProps} user={user} userData={userData} />
         </SimpleReactLightbox>
       </UserContext>
       <noscript>
@@ -55,11 +60,28 @@ function MyApp({ Component, pageProps }) {
 // perform automatic static optimization, causing every page in your app to
 // be server-side rendered.
 //
-// MyApp.getInitialProps = async (appContext) => {
-//   // calls page's `getInitialProps` and fills `appProps.pageProps`
-//   const appProps = await App.getInitialProps(appContext);
-//
-//   return { ...appProps }
-// }
+MyApp.getInitialProps = async (appContext) => {
+  const { ctx } = appContext;
+  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  const appProps = await App.getInitialProps(appContext);
+
+  if (typeof window === 'undefined') {
+    const { firebaseToken } = cookies(ctx);
+
+    if (firebaseToken) {
+      try {
+        const headers = {
+          'Context-Type': 'application/json',
+          Authorization: JSON.stringify({ token: firebaseToken }),
+        };
+        const result = await fetch('http://localhost:3000/api/validate', { headers }).then((res) =>
+          res.json()
+        );
+        return { ...result, ...appProps };
+      } catch (e) {}
+    }
+  }
+  return { ...appProps };
+};
 
 export default MyApp;
