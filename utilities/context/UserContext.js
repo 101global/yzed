@@ -10,7 +10,10 @@ export const UserContext = React.createContext();
 
 const dbh = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+const fbProvider = new firebase.auth.FacebookAuthProvider();
+
+fbProvider.addScope('email');
 
 const defaultIcon =
   'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/account-icon.svg';
@@ -37,7 +40,7 @@ const UserProvider = ({ children }) => {
     await dbh
       .collection('users')
       .doc(userID)
-      .set({ email, username, profilePicture, emailVerified })
+      .set({ email, username, profilePicture, emailVerified, roles: ['USER'] })
       .then((result) => router.reload())
       .catch((err) => console.log(err));
   };
@@ -85,7 +88,7 @@ const UserProvider = ({ children }) => {
   const googleSignup = () => {
     firebase
       .auth()
-      .signInWithPopup(provider)
+      .signInWithPopup(googleProvider)
       .then(async (result) => {
         const userID = result.user.uid;
         const email = result.user.email;
@@ -93,8 +96,27 @@ const UserProvider = ({ children }) => {
         const profilePicture = result.additionalUserInfo.profile.picture;
         await createUserDB(userID, email, username, profilePicture, true);
       })
-      .catch((error) => {
-        setUserError(error.message);
+      .catch((err) => {
+        setUserError(err.message);
+      });
+  };
+
+  const fbSignup = () => {
+    console.log(fbProvider);
+    firebase
+      .auth()
+      .signInWithPopup(fbProvider)
+      .then(async (result) => {
+        console.log(result);
+        const userID = result.user.uid;
+        const email = result.user.email;
+        const username = result.additionalUserInfo.profile.first_name;
+        const profilePicture = result.additionalUserInfo.profile.picture.data.url;
+        console.log(userID, email, username, profilePicture);
+        await createUserDB(userID, email, username, profilePicture, true);
+      })
+      .catch((err) => {
+        setUserError(err.message);
       });
   };
 
@@ -134,6 +156,10 @@ const UserProvider = ({ children }) => {
     googleSignup();
   });
 
+  const requestFbSignup = useCallback(() => {
+    fbSignup();
+  });
+
   const requestEmailLogin = useCallback((username, password, redirectPath) => {
     emailLogin(username, password, redirectPath);
   });
@@ -150,6 +176,7 @@ const UserProvider = ({ children }) => {
         userError,
         requestEmailSignup,
         requestGoogleSignup,
+        requestFbSignup,
         requestEmailLogin,
         requestLogout,
         signupStatus,

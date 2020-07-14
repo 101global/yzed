@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../../../utilities/context/UserContext';
 
-const GoogleSignUp = () => {
+const GoogleSignup = () => {
   const { requestGoogleSignup } = useContext(UserContext);
   return (
     <div>
@@ -10,4 +10,4 @@ const GoogleSignUp = () => {
   );
 };
 
-export default GoogleSignUp;
+export default GoogleSignup;

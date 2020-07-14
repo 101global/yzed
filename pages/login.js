@@ -23,7 +23,7 @@ const login = ({ user }) => {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          await requestEmailLogin(email, password, pushLoggedIn);
+          await requestEmailLogin(email, password);
         }}
         className='bg-black flex flex-col justify-center items-center'>
         <input

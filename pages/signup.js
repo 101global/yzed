@@ -5,8 +5,9 @@ import LoadingSpinner from '../components/ReusableComponents/Loading/LoadingSpin
 import { UserContext } from '../utilities/context/UserContext';
 import UserNavigation from '../components/ReusableComponents/Navigation/UserNavigation';
 import { useRouter } from 'next/router';
-import GoogleSignUp from '../components/ReusableComponents/Buttons/GoogleSignUp';
+import GoogleSignup from '../components/ReusableComponents/Buttons/GoogleSignup';
 import { signupStates } from '../utilities/enums';
+import FacebookSignup from '../components/ReusableComponents/Buttons/FBSignup';
 
 const signup = ({ user }) => {
   const [email, setEmail] = useState('');
@@ -84,7 +85,8 @@ const signup = ({ user }) => {
               Sign Up
             </button>
           </form>
-          <GoogleSignUp />
+          <GoogleSignup />
+          <FacebookSignup />
         </>
       )}
       {signupStatus === signupStates.googleNoUsername && (
