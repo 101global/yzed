@@ -7,8 +7,8 @@ import theme from '../../../utilities/theme';
 import LoadingSpinner from '../Loading/LoadingSpinner';
 import LogoutButton from '../Buttons/LogoutButton';
 
-const UserNavigation = () => {
-  const { user, userLoading } = useContext(UserContext);
+const UserNavigation = ({ user }) => {
+  console.log(user);
   return (
     <>
       <div className='navigation-container w-full fixed flex flex-row justify-between items-center top-0 left-0'>
@@ -19,9 +19,7 @@ const UserNavigation = () => {
         </Link>
 
         <div className='links-container'>
-          {userLoading ? (
-            <LoadingSpinner />
-          ) : user.loggedIn ? (
+          {user ? (
             <div className='user-nav grid grid-cols-userNav gap-4 items-center'>
               <img src={user.profilePicture} />
               <div className='user-info'>

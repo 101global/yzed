@@ -36,8 +36,9 @@ const validate = async (token) => {
       uid: user.uid,
       email: user.email,
       profilePicture: userData.profilePicture,
-      username: userData.profilePicture,
+      username: userData.username,
       emailVerified: user.email_verified,
+      loggedIn: true,
     },
   };
   return result;

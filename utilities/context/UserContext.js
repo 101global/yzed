@@ -67,6 +67,7 @@ const UserProvider = ({ children }) => {
           })
           .catch((err) => setUserError(err.message));
       } else {
+        cookie.remove(tokenName);
         console.log('The user is not logged in');
         callback({ loggedIn: false, email: '' });
         setUserLoading(false);
