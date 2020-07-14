@@ -45,7 +45,6 @@ const validate = async (token) => {
 };
 
 export default async (req, res) => {
-  console.log('VALIDATING TOKEN');
   try {
     const { token } = JSON.parse(req.headers.authorization || '{}');
     if (!token) {
@@ -55,10 +54,8 @@ export default async (req, res) => {
       });
     }
     const result = await validate(token);
-    console.log('RESULT', result);
     return res.status(200).send(result);
   } catch (err) {
-    console.log(err);
     return res.status(err.code).send({
       errorCode: err.code,
       message: err.message,

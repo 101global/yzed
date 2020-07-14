@@ -5,3 +5,5 @@ export const signupStates = {
   facebookNoUsername: 'NO FACEBOOK USERNAME',
   complete: 'COMPLETE',
 };
+
+export const userTypes = ['ADMIN', 'BRAND', 'USER'];

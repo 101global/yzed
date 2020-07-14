@@ -8,7 +8,6 @@ import cookies from 'next-cookies';
 import fetch from 'isomorphic-unfetch';
 function MyApp({ Component, pageProps, user }) {
   const [userData, setUserData] = useState(user);
-  console.log(user);
 
   return (
     <>
@@ -64,7 +63,6 @@ MyApp.getInitialProps = async (appContext) => {
   const { ctx } = appContext;
   // calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(appContext);
-
   if (typeof window === 'undefined') {
     const { firebaseToken } = cookies(ctx);
 

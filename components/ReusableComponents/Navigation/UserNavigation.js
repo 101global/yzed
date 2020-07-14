@@ -8,7 +8,6 @@ import LoadingSpinner from '../Loading/LoadingSpinner';
 import LogoutButton from '../Buttons/LogoutButton';
 
 const UserNavigation = ({ user }) => {
-  console.log(user);
   return (
     <>
       <div className='navigation-container w-full fixed flex flex-row justify-between items-center top-0 left-0'>

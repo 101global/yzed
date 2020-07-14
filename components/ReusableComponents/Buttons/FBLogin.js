@@ -2,15 +2,15 @@ import React, { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../../../utilities/context/UserContext';
 import { FacebookLoginButton } from 'react-social-login-buttons';
 
-const FbSignup = () => {
-  const { requestFbSignup } = useContext(UserContext);
+const FBLogin = () => {
+  const { requestFbLogin } = useContext(UserContext);
   return (
     <FacebookLoginButton
       onClick={() => {
-        requestFbSignup();
+        requestFbLogin();
       }}
     />
   );
 };
 
-export default FbSignup;
+export default FBLogin;

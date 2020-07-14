@@ -1,16 +1,15 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../../../utilities/context/UserContext';
 import { GoogleLoginButton } from 'react-social-login-buttons';
-
-const GoogleSignup = () => {
-  const { requestGoogleSignup } = useContext(UserContext);
+const GoogleLogin = () => {
+  const { requestGoogleLogin } = useContext(UserContext);
   return (
     <GoogleLoginButton
       onClick={() => {
-        requestGoogleSignup();
+        requestGoogleLogin();
       }}
     />
   );
 };
 
-export default GoogleSignup;
+export default GoogleLogin;
