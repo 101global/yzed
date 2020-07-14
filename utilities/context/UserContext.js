@@ -25,6 +25,7 @@ const initialUserState = {
   username: '',
   profilePicture: defaultIcon,
 };
+
 const tokenName = 'firebaseToken';
 
 const UserProvider = ({ children }) => {
@@ -35,13 +36,12 @@ const UserProvider = ({ children }) => {
   const router = useRouter();
 
   const createUserDB = async (userID, email, username, profilePicture, emailVerified) => {
-    console.log('CALLED');
     await dbh
       .collection('users')
       .doc(userID)
       .set({ email, username, profilePicture, emailVerified, roles: ['USER'] })
       .then((result) => router.reload())
-      .catch((err) => console.log(err));
+      .catch((err) => setUserError(err.message));
   };
 
   const onAuthStateChange = (callback) => {
@@ -107,12 +107,10 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithPopup(fbProvider)
       .then(async (result) => {
-        console.log(result);
         const userID = result.user.uid;
         const email = result.user.email;
         const username = result.additionalUserInfo.profile.first_name;
         const profilePicture = result.additionalUserInfo.profile.picture.data.url;
-        console.log(userID, email, username, profilePicture);
         await createUserDB(userID, email, username, profilePicture, true);
       })
       .catch((err) => {
@@ -125,7 +123,7 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithEmailAndPassword(username, password)
       .then(() => {
-        //Router Action Here.
+        router.reload();
       })
       .catch((err) => {
         setUserError(err.message);
