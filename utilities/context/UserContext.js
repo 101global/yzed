@@ -21,17 +21,16 @@ const defaultIcon =
 const initialUserState = {
   loggedIn: false,
   email: '',
-  isVerified: false,
+  emailVerified: false,
   username: '',
   profilePicture: defaultIcon,
 };
 const tokenName = 'firebaseToken';
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({ loggedIn: false });
+  const [user, setUser] = useState(initialUserState);
   const [userLoading, setUserLoading] = useState(false);
-  const [userError, setUserError] = useState('');
-  const [signupStatus, setSignupStatus] = useState(signupStates.none);
+  const [userError, setUserError] = useState(null);
 
   const router = useRouter();
 
@@ -64,7 +63,9 @@ const UserProvider = ({ children }) => {
               profilePicture,
             });
           })
-          .catch((err) => setUserError(err.message));
+          .catch((err) => {
+            setUserError(err.message);
+          });
       } else {
         cookie.remove(tokenName);
         callback({ loggedIn: false, email: '' });
@@ -85,8 +86,8 @@ const UserProvider = ({ children }) => {
       .catch((err) => setUserError(err.message));
   };
 
-  const googleSignup = () => {
-    firebase
+  const googleSignup = async () => {
+    await firebase
       .auth()
       .signInWithPopup(googleProvider)
       .then(async (result) => {
@@ -101,9 +102,8 @@ const UserProvider = ({ children }) => {
       });
   };
 
-  const fbSignup = () => {
-    console.log(fbProvider);
-    firebase
+  const fbSignup = async () => {
+    await firebase
       .auth()
       .signInWithPopup(fbProvider)
       .then(async (result) => {
@@ -126,6 +126,30 @@ const UserProvider = ({ children }) => {
       .signInWithEmailAndPassword(username, password)
       .then(() => {
         //Router Action Here.
+      })
+      .catch((err) => {
+        setUserError(err.message);
+      });
+  };
+
+  const googleLogin = () => {
+    firebase
+      .auth()
+      .signInWithPopup(googleProvider)
+      .then(() => {
+        router.reload();
+      })
+      .catch((err) => {
+        setUserError(err.message);
+      });
+  };
+
+  const fbLogin = () => {
+    firebase
+      .auth()
+      .signInWithPopup(fbProvider)
+      .then(() => {
+        router.reload();
       })
       .catch((err) => {
         setUserError(err.message);
@@ -164,6 +188,14 @@ const UserProvider = ({ children }) => {
     emailLogin(username, password, redirectPath);
   });
 
+  const requestGoogleLogin = useCallback(() => {
+    googleLogin();
+  });
+
+  const requestFbLogin = useCallback(() => {
+    fbLogin();
+  });
+
   const requestLogout = useCallback(() => {
     logout();
   });
@@ -178,8 +210,9 @@ const UserProvider = ({ children }) => {
         requestGoogleSignup,
         requestFbSignup,
         requestEmailLogin,
+        requestGoogleLogin,
+        requestFbLogin,
         requestLogout,
-        signupStatus,
       }}>
       {children}
     </UserContext.Provider>
