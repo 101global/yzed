@@ -8,15 +8,13 @@ import { useRouter } from 'next/router';
 import GoogleSignUp from '../components/ReusableComponents/Buttons/GoogleSignUp';
 import { signupStates } from '../utilities/enums';
 
-const signup = () => {
+const signup = ({ user }) => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
-  const { user, userError, requestEmailSignup, signupStatus, updateUsername } = useContext(
-    UserContext
-  );
+  const { userError, requestEmailSignup, signupStatus, updateUsername } = useContext(UserContext);
   const router = useRouter();
 
   useEffect(() => {
@@ -27,7 +25,7 @@ const signup = () => {
 
   return (
     <>
-      <UserNavigation />
+      <UserNavigation user={user} />
       {signupStatus === signupStates.none && (
         <>
           <form

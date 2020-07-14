@@ -26,29 +26,26 @@ const tokenName = 'firebaseToken';
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({ loggedIn: false });
-  const [userLoading, setUserLoading] = useState(true);
-  const [userError, setUserError] = useState(null);
+  const [userLoading, setUserLoading] = useState(false);
+  const [userError, setUserError] = useState('');
   const [signupStatus, setSignupStatus] = useState(signupStates.none);
 
   const router = useRouter();
 
-  const updateUsername = (username) => {
-    const user = firebase.auth().currentUser;
-    dbh
+  const createUserDB = async (userID, email, username, profilePicture, emailVerified) => {
+    console.log('CALLED');
+    await dbh
       .collection('users')
-      .doc(user.uid)
-      .set({ email: user.email, username, profilePicture: defaultIcon })
-      .then(() => {
-        setSignupStatus(signupStates.complete);
-      });
+      .doc(userID)
+      .set({ email, username, profilePicture, emailVerified })
+      .then((result) => router.reload())
+      .catch((err) => console.log(err));
   };
 
   const onAuthStateChange = (callback) => {
-    setUserLoading(true);
-    firebase.auth().onAuthStateChanged(async (user) => {
+    return firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
         const token = await user.getIdToken();
-        console.log(token);
         cookie.set(tokenName, token, { expires: 7 });
         await dbh
           .collection('users')
@@ -63,14 +60,11 @@ const UserProvider = ({ children }) => {
               username,
               profilePicture,
             });
-            setUserLoading(false);
           })
           .catch((err) => setUserError(err.message));
       } else {
         cookie.remove(tokenName);
-        console.log('The user is not logged in');
         callback({ loggedIn: false, email: '' });
-        setUserLoading(false);
       }
     });
   };
@@ -81,20 +75,8 @@ const UserProvider = ({ children }) => {
       .createUserWithEmailAndPassword(email, password)
       .then(async (user) => {
         if (user) {
-          await dbh
-            .collection('users')
-            .doc(user.user.uid)
-            .set({
-              email,
-              username,
-              profilePicture: defaultIcon,
-            })
-            .then(() => {
-              router.back();
-            })
-            .catch((err) => {
-              setUserError(err.message);
-            });
+          const userID = user.user.uid;
+          await createUserDB(userID, email, username, defaultIcon, false);
         }
       })
       .catch((err) => setUserError(err.message));
@@ -104,10 +86,16 @@ const UserProvider = ({ children }) => {
     firebase
       .auth()
       .signInWithPopup(provider)
-      .then((result) => {
-        setSignupStatus(signupStates.googleNoUsername);
+      .then(async (result) => {
+        const userID = result.user.uid;
+        const email = result.user.email;
+        const username = result.additionalUserInfo.profile.given_name;
+        const profilePicture = result.additionalUserInfo.profile.picture;
+        await createUserDB(userID, email, username, profilePicture, true);
       })
-      .catch((error) => {});
+      .catch((error) => {
+        setUserError(error.message);
+      });
   };
 
   const emailLogin = async (username, password, redirectPath) => {
@@ -115,7 +103,7 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithEmailAndPassword(username, password)
       .then(() => {
-        router.back();
+        //Router Action Here.
       })
       .catch((err) => {
         setUserError(err.message);
@@ -123,7 +111,12 @@ const UserProvider = ({ children }) => {
   };
 
   const logout = () => {
-    firebase.auth().signOut();
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        router.reload();
+      });
   };
 
   useEffect(() => {
@@ -160,7 +153,6 @@ const UserProvider = ({ children }) => {
         requestEmailLogin,
         requestLogout,
         signupStatus,
-        updateUsername,
       }}>
       {children}
     </UserContext.Provider>

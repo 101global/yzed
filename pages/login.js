@@ -6,11 +6,12 @@ import { UserContext } from '../utilities/context/UserContext';
 import UserNavigation from '../components/ReusableComponents/Navigation/UserNavigation';
 import { useRouter } from 'next/router';
 
-const login = () => {
+const login = ({ user }) => {
+  console.log('LOGIN USER', user);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { user, userError, requestEmailLogin } = useContext(UserContext);
+  const { userError, requestEmailLogin } = useContext(UserContext);
 
   const router = useRouter();
 
@@ -18,7 +19,7 @@ const login = () => {
 
   return (
     <>
-      <UserNavigation />
+      <UserNavigation user={user} />
       <form
         onSubmit={async (e) => {
           e.preventDefault();
