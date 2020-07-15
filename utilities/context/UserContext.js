@@ -18,18 +18,9 @@ fbProvider.addScope('email');
 const defaultIcon =
   'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/account-icon.svg';
 
-const initialUserState = {
-  loggedIn: false,
-  email: '',
-  emailVerified: false,
-  username: '',
-  profilePicture: defaultIcon,
-};
-
 const tokenName = 'firebaseToken';
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(initialUserState);
   const [userLoading, setUserLoading] = useState(false);
   const [userError, setUserError] = useState(null);
 
@@ -50,31 +41,13 @@ const UserProvider = ({ children }) => {
       });
   };
 
-  const onAuthStateChange = (callback) => {
+  const onAuthStateChange = () => {
     return firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
         const token = await user.getIdToken();
         cookie.set(tokenName, token, { expires: 7 });
-        await dbh
-          .collection('users')
-          .doc(user.uid)
-          .get()
-          .then(async (doc) => {
-            const { username, profilePicture } = doc.data();
-            callback({
-              loggedIn: true,
-              email: user.email,
-              isVerified: user.emailVerified,
-              username,
-              profilePicture,
-            });
-          })
-          .catch((err) => {
-            setUserError(err.message);
-          });
       } else {
         cookie.remove(tokenName);
-        callback({ loggedIn: false, email: '' });
       }
     });
   };
@@ -142,8 +115,8 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithEmailAndPassword(username, password)
       .then(() => {
-        router.reload();
         setUserLoading(false);
+        router.reload();
       })
       .catch((err) => {
         setUserError(err.message);
@@ -157,8 +130,8 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithPopup(googleProvider)
       .then(() => {
-        router.reload();
         setUserLoading(false);
+        router.reload();
       })
       .catch((err) => {
         setUserError(err.message);
@@ -172,8 +145,8 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithPopup(fbProvider)
       .then(() => {
-        router.reload();
         setUserLoading(false);
+        router.reload();
       })
       .catch((err) => {
         setUserError(err.message);
@@ -191,7 +164,7 @@ const UserProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChange(setUser);
+    const unsubscribe = onAuthStateChange();
     return () => {
       unsubscribe();
     };
@@ -228,7 +201,6 @@ const UserProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
-        user,
         userLoading,
         userError,
         requestEmailSignup,
