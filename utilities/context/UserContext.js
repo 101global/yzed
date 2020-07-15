@@ -33,14 +33,21 @@ const UserProvider = ({ children }) => {
 
   const refreshUserData = () => {
     setUserLoading(false);
-    router.reload();
+    // router.reload();
   };
 
-  const createUserDB = async (userID, email, username, profilePicture, emailVerified) => {
+  const createUserDB = async (
+    userID,
+    email,
+    firstName,
+    lastName,
+    profilePicture,
+    emailVerified
+  ) => {
     await dbh
       .collection('users')
       .doc(userID)
-      .set({ email, username, profilePicture, emailVerified, roles: ['USER'] })
+      .set({ email, firstName, lastName, profilePicture, emailVerified, roles: ['USER'] })
       .then((result) => {
         refreshUserData();
       })
@@ -60,7 +67,7 @@ const UserProvider = ({ children }) => {
     });
   };
 
-  const emailSignup = async (email, password, username, redirectPath) => {
+  const emailSignup = async (email, password, firstName, lastName, redirectPath) => {
     setUserLoading(true);
     await firebase
       .auth()
@@ -68,7 +75,7 @@ const UserProvider = ({ children }) => {
       .then(async (user) => {
         if (user) {
           const userID = user.user.uid;
-          await createUserDB(userID, email, username, defaultIcon, false);
+          await createUserDB(userID, email, firstName, lastName, defaultIcon, false);
         }
       })
       .catch((err) => {
@@ -82,16 +89,16 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithPopup(googleProvider)
       .then(async (result) => {
+        console.log(result);
         const userID = result.user.uid;
         const email = result.user.email;
-        const username = result.additionalUserInfo.profile.given_name;
+        const firstName = result.additionalUserInfo.profile.given_name;
+        const lastName = result.additionalUserInfo.profile.family_name;
         const profilePicture = result.additionalUserInfo.profile.picture;
-        await createUserDB(userID, email, username, profilePicture, true);
+        await createUserDB(userID, email, firstName, lastName, profilePicture, true);
       })
       .catch((err) => {
-        {
-          setError(err.message);
-        }
+        setError(err.message);
       });
   };
 
@@ -103,14 +110,13 @@ const UserProvider = ({ children }) => {
       .then(async (result) => {
         const userID = result.user.uid;
         const email = result.user.email;
-        const username = result.additionalUserInfo.profile.first_name;
+        const firstName = result.additionalUserInfo.profile.first_name;
+        const lastName = result.additionalUserInfo.profile.last_name;
         const profilePicture = result.additionalUserInfo.profile.picture.data.url;
-        await createUserDB(userID, email, username, profilePicture, true);
+        await createUserDB(userID, email, firstName, lastName, profilePicture, true);
       })
       .catch((err) => {
-        {
-          setError(err.message);
-        }
+        setError(err.message);
       });
   };
 
@@ -165,8 +171,8 @@ const UserProvider = ({ children }) => {
     };
   }, []);
 
-  const requestEmailSignup = useCallback((username, password, redirectPath) => {
-    emailSignup(username, password, redirectPath);
+  const requestEmailSignup = useCallback((username, password, firstName, lastName) => {
+    emailSignup(username, password, firstName, lastName);
   });
 
   const requestGoogleSignup = useCallback(() => {
@@ -177,8 +183,8 @@ const UserProvider = ({ children }) => {
     fbSignup();
   });
 
-  const requestEmailLogin = useCallback((username, password, redirectPath) => {
-    emailLogin(username, password, redirectPath);
+  const requestEmailLogin = useCallback((username, password, firstName, lastName) => {
+    emailLogin(username, password, firstName, lastName);
   });
 
   const requestGoogleLogin = useCallback(() => {

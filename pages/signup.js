@@ -12,18 +12,23 @@ import Link from 'next/link';
 
 const signup = ({ user }) => {
   const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
   const { userError, userLoading, requestEmailSignup } = useContext(UserContext);
   const router = useRouter();
 
-  useEffect(() => {
-    // if (user.loggedIn) {
-    //   router.push('/experience/1');
-    // }
-  }, [user]);
+  const strongRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})');
+
+  const checkPasswordStrength = () => {
+    console.log(strongRegex.test(password));
+    if (strongRegex.test(password)) {
+    }
+  };
+
+  useEffect(() => {}, [user]);
 
   return (
     <>
@@ -33,13 +38,14 @@ const signup = ({ user }) => {
           onSubmit={async (e) => {
             e.preventDefault();
             if (password === confirmPassword) {
-              await requestEmailSignup(email, password, username, '/experience/1');
+              await requestEmailSignup(email, password, firstName, lastName);
             } else {
               setError('Passwords do not match.');
             }
           }}
           className='bg-black flex flex-col justify-center items-center'>
           <input
+            name='email'
             required
             value={email}
             placeholder='Email'
@@ -50,31 +56,47 @@ const signup = ({ user }) => {
             }}
           />
           <input
+            name='first name'
             required
-            value={username}
-            placeholder='Username'
+            value={firstName}
+            placeholder='First Name'
             type='text'
             maxLength='18'
             className='login-input border-aqua border'
             onChange={(event) => {
-              setUsername(event.target.value);
+              setFirstName(event.target.value);
             }}
           />
           <input
+            name='last name'
+            required
+            value={lastName}
+            placeholder='Last Name'
+            type='text'
+            maxLength='18'
+            className='login-input border-purple border'
+            onChange={(event) => {
+              setLastName(event.target.value);
+            }}
+          />
+          <input
+            name='password'
             required
             value={password}
             placeholder='Password'
-            className='login-input border-purple border'
+            className='login-input border-aqua border password'
             type='password'
             onChange={(event) => {
+              checkPasswordStrength();
               setPassword(event.target.value);
             }}
           />
           <input
+            name='password confirmation'
             required
             value={confirmPassword}
             placeholder='Confirm Password'
-            className='login-input border-aqua border'
+            className='login-input border-purple border confirm-password'
             type='password'
             onChange={(event) => {
               setConfirmPassword(event.target.value);
@@ -98,6 +120,12 @@ const signup = ({ user }) => {
         form,
         .username {
           padding: 100px 0 0;
+        }
+        .password {
+          color: ${strongRegex.test(password) ? 'LightGreen' : 'Tomato'};
+        }
+        .confirm-password {
+          color: ${password === confirmPassword ? 'LightGreen' : 'Tomato'};
         }
       `}</style>
     </>

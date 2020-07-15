@@ -16,13 +16,12 @@ const UserNavigation = ({ user }) => {
             <img className='yzed-icon' src={YZEDLogo} alt='YZED Logo' />
           </a>
         </Link>
-
         <div className='links-container'>
           {user ? (
             <div className='user-nav grid grid-cols-userNav gap-4 items-center'>
               <img src={user.profilePicture} />
               <div className='user-info'>
-                <p>{user.username.toUpperCase()}</p>
+                <p>{user.firstName}</p>
                 <LogoutButton />
               </div>
             </div>
