@@ -1,10 +1,13 @@
 import * as admin from 'firebase-admin';
 
-const serviceAccount = require('../../../../../../Downloads/yzed-88819-firebase-adminsdk-np4c6-04f889bc2f.json');
-
 const firebaseAdmin = admin.initializeApp(
   {
-    credential: admin.credential.cert(serviceAccount),
+    credential: admin.credential.cert({
+      type: process.env.FIREBASE_type,
+      project_id: process.env.FIREBASE_project_id,
+      private_key: process.env.FIREBASE_private_key,
+      client_email: process.env.FIREBASE_client_email,
+    }),
     databaseURL: 'https://yzed-88819.firebaseio.com',
   },
   `${Math.random().toString()}`
@@ -23,8 +26,6 @@ const validate = async (token) => {
     .then((doc) => {
       if (doc.exists) {
         userData = { ...doc.data() };
-      } else {
-        console.log('No such document!');
       }
     })
     .catch(function (error) {

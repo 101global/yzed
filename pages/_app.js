@@ -6,6 +6,8 @@ import UserContext from '../utilities/context/UserContext';
 import App from 'next/app';
 import cookies from 'next-cookies';
 import fetch from 'isomorphic-unfetch';
+import { server } from '../config/index';
+
 function MyApp({ Component, pageProps, user }) {
   const [userData, setUserData] = useState(user);
 
@@ -72,9 +74,7 @@ MyApp.getInitialProps = async (appContext) => {
           'Context-Type': 'application/json',
           Authorization: JSON.stringify({ token: firebaseToken }),
         };
-        const result = await fetch('http://localhost:3000/api/validate', { headers }).then((res) =>
-          res.json()
-        );
+        const result = await fetch(`${server}/api/validate`, { headers }).then((res) => res.json());
         return { ...result, ...appProps };
       } catch (e) {}
     }
