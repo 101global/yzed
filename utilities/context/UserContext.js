@@ -7,6 +7,7 @@ import { signupStates } from '../enums';
 import cookie from 'js-cookie';
 import { defaultIcon, tokenName } from '../constants';
 import { fbData, googleData } from '../dataHelpers';
+import { server } from '../../config/index';
 
 export const UserContext = React.createContext();
 
@@ -181,6 +182,25 @@ const UserProvider = ({ children }) => {
       });
   };
 
+  const requestForgottenPasswordEmail = (email, callback) => {
+    var actionCodeSettings = {
+      // After password reset, the user will be give the ability to go back
+      // to this page.
+      url: `${server}/login`,
+      handleCodeInApp: true,
+    };
+    firebase
+      .auth()
+      .sendPasswordResetEmail(email, actionCodeSettings)
+      .then(() => {
+        callback(true);
+      })
+      .catch((err) => {
+        console.log(err.message);
+        setError(err.message);
+      });
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChange();
     return () => {
@@ -228,6 +248,7 @@ const UserProvider = ({ children }) => {
         requestGoogleLogin,
         requestFbLogin,
         requestLogout,
+        requestForgottenPasswordEmail,
       }}>
       {children}
     </UserContext.Provider>

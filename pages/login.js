@@ -22,7 +22,7 @@ const login = ({ user }) => {
   return (
     <>
       <UserNavigation user={user} />
-      <div className='min-h-screen grid grid-cols-1 bg-black justify-center items-center px-64'>
+      <div className='min-h-screen flex flex-col bg-black justify-center items-center px-64'>
         <form
           onSubmit={async (e) => {
             e.preventDefault();
@@ -50,6 +50,9 @@ const login = ({ user }) => {
           <button className='black-button hover:text-black hover:bg-white' type='submit'>
             {userLoading ? 'Logging In' : 'Log In'}
           </button>
+          <Link href='/request/password'>
+            <a className='text-center text-white mt-8'>Forgot Password?</a>
+          </Link>
         </form>
         <div>
           <GoogleLogin />

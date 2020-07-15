@@ -33,7 +33,7 @@ const signup = ({ user }) => {
   return (
     <>
       <UserNavigation user={user} />
-      <div className='min-h-screen grid grid-cols-1 bg-black justify-center items-center px-64'>
+      <div className='min-h-screen flex flex-col bg-black justify-center items-center px-64'>
         <form
           onSubmit={async (e) => {
             e.preventDefault();
