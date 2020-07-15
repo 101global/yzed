@@ -26,18 +26,26 @@ const UserProvider = ({ children }) => {
 
   const router = useRouter();
 
+  const setError = (error) => {
+    setUserError(error);
+    setUserLoading(false);
+  };
+
+  const refreshUserData = () => {
+    setUserLoading(false);
+    router.reload();
+  };
+
   const createUserDB = async (userID, email, username, profilePicture, emailVerified) => {
     await dbh
       .collection('users')
       .doc(userID)
       .set({ email, username, profilePicture, emailVerified, roles: ['USER'] })
       .then((result) => {
-        setUserLoading(false);
-        router.reload();
+        refreshUserData();
       })
       .catch((err) => {
-        setUserLoading(false);
-        setUserError(err.message);
+        setError(err.message);
       });
   };
 
@@ -64,8 +72,7 @@ const UserProvider = ({ children }) => {
         }
       })
       .catch((err) => {
-        setUserError(err.message);
-        setUserLoading(false);
+        setError(err.message);
       });
   };
 
@@ -83,8 +90,7 @@ const UserProvider = ({ children }) => {
       })
       .catch((err) => {
         {
-          setUserError(err.message);
-          setUserLoading(false);
+          setError(err.message);
         }
       });
   };
@@ -103,8 +109,7 @@ const UserProvider = ({ children }) => {
       })
       .catch((err) => {
         {
-          setUserError(err.message);
-          setUserLoading(false);
+          setError(err.message);
         }
       });
   };
@@ -115,43 +120,33 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithEmailAndPassword(username, password)
       .then(() => {
-        setUserLoading(false);
-        router.reload();
+        refreshUserData();
       })
       .catch((err) => {
-        setUserError(err.message);
-        setUserLoading(false);
+        setError(err.message);
+      });
+  };
+
+  const providerLogin = (provider) => {
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then(() => {
+        refreshUserData();
+      })
+      .catch((err) => {
+        setError(err.message);
       });
   };
 
   const googleLogin = () => {
     setUserLoading(true);
-    firebase
-      .auth()
-      .signInWithPopup(googleProvider)
-      .then(() => {
-        setUserLoading(false);
-        router.reload();
-      })
-      .catch((err) => {
-        setUserError(err.message);
-        setUserLoading(false);
-      });
+    providerLogin(googleProvider);
   };
 
   const fbLogin = () => {
     setUserLoading(true);
-    firebase
-      .auth()
-      .signInWithPopup(fbProvider)
-      .then(() => {
-        setUserLoading(false);
-        router.reload();
-      })
-      .catch((err) => {
-        setUserError(err.message);
-        setUserLoading(false);
-      });
+    providerLogin(fbProvider);
   };
 
   const logout = () => {
