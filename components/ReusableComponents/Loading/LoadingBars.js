@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import theme from '../../../utilities/theme';
 
-const LoadingBars = ({ color }) => {
+const LoadingBars = ({ color, text }) => {
   return (
     <>
       <div className='spinner-container flex min-h-screen flex-col items-center justify-center bg-black'>
@@ -11,7 +11,7 @@ const LoadingBars = ({ color }) => {
           <div></div>
           <div></div>
         </div>
-        <h1 className='text-3xl font-semibold'>Loading...</h1>
+        {text && <h1 className='text-3xl font-semibold'>{text}</h1>}
       </div>
       <style jsx>
         {`
@@ -72,4 +72,5 @@ export default LoadingBars;
 
 LoadingBars.propTypes = {
   color: PropTypes.string,
+  text: PropTypes.string,
 };

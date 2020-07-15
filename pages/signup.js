@@ -16,7 +16,7 @@ const signup = ({ user }) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState(null);
-  const { userError, requestEmailSignup, signupStatus, updateUsername } = useContext(UserContext);
+  const { userError, userLoading, requestEmailSignup } = useContext(UserContext);
   const router = useRouter();
 
   useEffect(() => {
@@ -81,14 +81,15 @@ const signup = ({ user }) => {
             }}
           />
           <button className='black-button hover:text-black hover:bg-white' type='submit'>
-            Sign Up
+            {userLoading ? 'Signing Up' : 'Sign Up'}
           </button>
         </form>
-        {(userError || error) && <FormError message={userError || error} />}
         <div>
           <GoogleSignup />
           <FacebookSignup />
         </div>
+        {userLoading && <LoadingSpinner text='Signing Up New User' color='white' />}
+        {(userError || error) && <FormError message={userError || error} />}
         <Link href='/login'>
           <a className='text-center text-white'>Already a member?</a>
         </Link>
@@ -96,7 +97,7 @@ const signup = ({ user }) => {
       <style jsx>{`
         form,
         .username {
-          padding: 100px 0;
+          padding: 100px 0 0;
         }
       `}</style>
     </>

@@ -14,7 +14,7 @@ const login = ({ user }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { userError, requestEmailLogin } = useContext(UserContext);
+  const { userError, requestEmailLogin, userLoading } = useContext(UserContext);
 
   const router = useRouter();
 
@@ -49,21 +49,24 @@ const login = ({ user }) => {
             }}
           />
           <button className='black-button hover:text-black hover:bg-white' type='submit'>
-            Login
+            {userLoading ? 'Logging In' : 'Log In'}
           </button>
         </form>
         <div>
           <GoogleLogin />
           <FBLogin />
         </div>
+        <div className='mx-auto'>
+          {userLoading && <LoadingSpinner color='white' text='Checking User Credentials' />}
+        </div>
+        {userError && <FormError message={userError} />}
         <Link href='/signup'>
           <a className='text-center text-white'>Not yet a member?</a>
         </Link>
       </div>
-      {userError && <FormError message={userError} />}
       <style jsx>{`
         form {
-          padding: 100px 0;
+          padding: 100px 0 0;
         }
       `}</style>
     </>

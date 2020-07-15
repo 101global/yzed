@@ -40,8 +40,14 @@ const UserProvider = ({ children }) => {
       .collection('users')
       .doc(userID)
       .set({ email, username, profilePicture, emailVerified, roles: ['USER'] })
-      .then((result) => router.reload())
-      .catch((err) => setUserError(err.message));
+      .then((result) => {
+        setUserLoading(false);
+        router.reload();
+      })
+      .catch((err) => {
+        setUserLoading(false);
+        setUserError(err.message);
+      });
   };
 
   const onAuthStateChange = (callback) => {
@@ -74,6 +80,7 @@ const UserProvider = ({ children }) => {
   };
 
   const emailSignup = async (email, password, username, redirectPath) => {
+    setUserLoading(true);
     await firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -83,10 +90,14 @@ const UserProvider = ({ children }) => {
           await createUserDB(userID, email, username, defaultIcon, false);
         }
       })
-      .catch((err) => setUserError(err.message));
+      .catch((err) => {
+        setUserError(err.message);
+        setUserLoading(false);
+      });
   };
 
   const googleSignup = async () => {
+    setUserLoading(true);
     await firebase
       .auth()
       .signInWithPopup(googleProvider)
@@ -98,11 +109,15 @@ const UserProvider = ({ children }) => {
         await createUserDB(userID, email, username, profilePicture, true);
       })
       .catch((err) => {
-        setUserError(err.message);
+        {
+          setUserError(err.message);
+          setUserLoading(false);
+        }
       });
   };
 
   const fbSignup = async () => {
+    setUserLoading(true);
     await firebase
       .auth()
       .signInWithPopup(fbProvider)
@@ -114,43 +129,55 @@ const UserProvider = ({ children }) => {
         await createUserDB(userID, email, username, profilePicture, true);
       })
       .catch((err) => {
-        setUserError(err.message);
+        {
+          setUserError(err.message);
+          setUserLoading(false);
+        }
       });
   };
 
   const emailLogin = async (username, password, redirectPath) => {
+    setUserLoading(true);
     await firebase
       .auth()
       .signInWithEmailAndPassword(username, password)
       .then(() => {
         router.reload();
+        setUserLoading(false);
       })
       .catch((err) => {
         setUserError(err.message);
+        setUserLoading(false);
       });
   };
 
   const googleLogin = () => {
+    setUserLoading(true);
     firebase
       .auth()
       .signInWithPopup(googleProvider)
       .then(() => {
         router.reload();
+        setUserLoading(false);
       })
       .catch((err) => {
         setUserError(err.message);
+        setUserLoading(false);
       });
   };
 
   const fbLogin = () => {
+    setUserLoading(true);
     firebase
       .auth()
       .signInWithPopup(fbProvider)
       .then(() => {
         router.reload();
+        setUserLoading(false);
       })
       .catch((err) => {
         setUserError(err.message);
+        setUserLoading(false);
       });
   };
 

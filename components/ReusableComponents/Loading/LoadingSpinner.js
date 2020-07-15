@@ -2,19 +2,23 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import theme from '../../../utilities/theme';
 
-const LoadingSpinner = ({ color }) => {
+const LoadingSpinner = ({ color, text }) => {
   return (
     <>
-      <div className='spinner-container flex-col items-center justify-center'>
+      <div className='spinner-container flex flex-col items-center justify-center'>
         <div className='lds-ellipsis'>
           <div></div>
           <div></div>
           <div></div>
           <div></div>
         </div>
+        {text && <h1 className='text-3xl font-light tracking-widest'>{text}</h1>}
       </div>
       <style jsx>
         {`
+          h1 {
+            color: ${color ?? '#fff'};
+          }
           .lds-ellipsis {
             display: inline-block;
             position: relative;
@@ -80,4 +84,5 @@ export default LoadingSpinner;
 
 LoadingSpinner.propTypes = {
   color: PropTypes.string,
+  text: PropTypes.string,
 };

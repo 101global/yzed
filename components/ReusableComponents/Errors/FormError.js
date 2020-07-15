@@ -13,7 +13,8 @@ const FormError = ({ message }) => {
       <style jsx>
         {`
           .error-message-wrapper {
-            max-width: 250px;
+            margin: 0 auto;
+            max-width: 300px;
             padding: 1rem;
             position: relative;
             background: linear-gradient(to bottom, ${theme.colors.aqua}, ${theme.colors.purple});
