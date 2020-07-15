@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { signupStates } from '../enums';
 import cookie from 'js-cookie';
 import { defaultIcon, tokenName } from '../constants';
-import { fbData, googleData } from '../data_helpers';
+import { fbData, googleData } from '../dataHelpers';
 
 export const UserContext = React.createContext();
 
