@@ -5,6 +5,8 @@ import firebase from '../firebaseSetup';
 import { useRouter } from 'next/router';
 import { signupStates } from '../enums';
 import cookie from 'js-cookie';
+import { defaultIcon, tokenName } from '../constants';
+import { fbData, googleData } from '../data_helpers';
 
 export const UserContext = React.createContext();
 
@@ -14,11 +16,6 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 const fbProvider = new firebase.auth.FacebookAuthProvider();
 
 fbProvider.addScope('email');
-
-const defaultIcon =
-  'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/account-icon.svg';
-
-const tokenName = 'firebaseToken';
 
 const UserProvider = ({ children }) => {
   const [userLoading, setUserLoading] = useState(false);
@@ -31,9 +28,13 @@ const UserProvider = ({ children }) => {
     setUserLoading(false);
   };
 
-  const refreshUserData = () => {
+  const refreshUserData = (route) => {
     setUserLoading(false);
-    // router.reload();
+    if (route) {
+      router.push(route);
+    } else {
+      router.reload();
+    }
   };
 
   const createUserDB = async (
@@ -48,6 +49,19 @@ const UserProvider = ({ children }) => {
       .collection('users')
       .doc(userID)
       .set({ email, firstName, lastName, profilePicture, emailVerified, roles: ['USER'] })
+      .then((result) => {
+        refreshUserData();
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+  };
+
+  const updateUserDB = async (userID, email, firstName, lastName, profilePicture) => {
+    await dbh
+      .collection('users')
+      .doc(userID)
+      .update({ email, firstName, lastName, profilePicture })
       .then((result) => {
         refreshUserData();
       })
@@ -89,12 +103,8 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithPopup(googleProvider)
       .then(async (result) => {
-        console.log(result);
-        const userID = result.user.uid;
-        const email = result.user.email;
-        const firstName = result.additionalUserInfo.profile.given_name;
-        const lastName = result.additionalUserInfo.profile.family_name;
-        const profilePicture = result.additionalUserInfo.profile.picture;
+        const data = googleData(result);
+        const { userID, email, firstName, lastName, profilePicture } = data;
         await createUserDB(userID, email, firstName, lastName, profilePicture, true);
       })
       .catch((err) => {
@@ -108,11 +118,9 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithPopup(fbProvider)
       .then(async (result) => {
-        const userID = result.user.uid;
-        const email = result.user.email;
-        const firstName = result.additionalUserInfo.profile.first_name;
-        const lastName = result.additionalUserInfo.profile.last_name;
-        const profilePicture = result.additionalUserInfo.profile.picture.data.url;
+        const data = fbData(result);
+        const { userID, email, firstName, lastName, profilePicture } = data;
+        data.url;
         await createUserDB(userID, email, firstName, lastName, profilePicture, true);
       })
       .catch((err) => {
@@ -133,26 +141,35 @@ const UserProvider = ({ children }) => {
       });
   };
 
-  const providerLogin = (provider) => {
+  const googleLogin = () => {
+    setUserLoading(true);
     firebase
       .auth()
-      .signInWithPopup(provider)
-      .then(() => {
-        refreshUserData();
+      .signInWithPopup(googleProvider)
+      .then(async (result) => {
+        const data = googleData(result);
+        const { userID, email, firstName, lastName, profilePicture } = data;
+        await updateUserDB(userID, email, firstName, lastName, profilePicture);
       })
       .catch((err) => {
         setError(err.message);
       });
   };
 
-  const googleLogin = () => {
-    setUserLoading(true);
-    providerLogin(googleProvider);
-  };
-
   const fbLogin = () => {
     setUserLoading(true);
-    providerLogin(fbProvider);
+    firebase
+      .auth()
+      .signInWithPopup(fbProvider)
+      .then(async (result) => {
+        const data = fbData(result);
+        const { userID, email, firstName, lastName, profilePicture } = data;
+        data.url;
+        await updateUserDB(userID, email, firstName, lastName, profilePicture);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
   };
 
   const logout = () => {

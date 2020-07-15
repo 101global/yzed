@@ -1,22 +1,7 @@
-import * as admin from 'firebase-admin';
-
-const firebaseAdmin = admin.initializeApp(
-  {
-    credential: admin.credential.cert({
-      type: process.env.FIREBASE_type,
-      project_id: process.env.FIREBASE_project_id,
-      private_key: process.env.FIREBASE_private_key,
-      client_email: process.env.FIREBASE_client_email,
-    }),
-    databaseURL: 'https://yzed-88819.firebaseio.com',
-  },
-  `${Math.random().toString()}`
-);
+import { firebaseAdmin } from '../../utilities/firebaseAdminSetup';
 
 const validate = async (token) => {
   const decodedToken = await firebaseAdmin.auth().verifyIdToken(token, true);
-  console.log(decodedToken);
-  console.log('VALID TOKEN');
   let userData;
   await firebaseAdmin
     .firestore()
@@ -28,7 +13,7 @@ const validate = async (token) => {
         userData = { ...doc.data() };
       }
     })
-    .catch(function (error) {
+    .catch((error) => {
       console.log('Error getting document:', error);
     });
   const user = await firebaseAdmin.auth().getUser(decodedToken.uid);

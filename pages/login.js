@@ -10,7 +10,6 @@ import FBLogin from '../components/ReusableComponents/Buttons/FBLogin';
 import Link from 'next/link';
 
 const login = ({ user }) => {
-  console.log('LOGIN USER', user);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
