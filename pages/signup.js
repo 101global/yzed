@@ -9,6 +9,7 @@ import { signupStates } from '../utilities/enums';
 import FacebookSignup from '../components/ReusableComponents/Buttons/FBSignup';
 import FormError from '../components/ReusableComponents/Errors/FormError';
 import Link from 'next/link';
+import { checkPasswordStrength } from '../utilities/validation';
 
 const signup = ({ user }) => {
   const [email, setEmail] = useState('');
@@ -21,12 +22,6 @@ const signup = ({ user }) => {
   const router = useRouter();
 
   const strongRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})');
-
-  const checkPasswordStrength = () => {
-    console.log(strongRegex.test(password));
-    if (strongRegex.test(password)) {
-    }
-  };
 
   useEffect(() => {}, [user]);
 
@@ -87,7 +82,7 @@ const signup = ({ user }) => {
             className='login-input border-aqua border password'
             type='password'
             onChange={(event) => {
-              checkPasswordStrength();
+              checkPasswordStrength(event.target.value);
               setPassword(event.target.value);
             }}
           />

@@ -5,7 +5,7 @@ import theme from '../../../utilities/theme';
 const LoadingBars = ({ color, text }) => {
   return (
     <>
-      <div className='spinner-container flex min-h-screen flex-col items-center justify-center bg-black'>
+      <div className='spinner-container flex flex-col items-center justify-center bg-black'>
         <div className='lds-facebook'>
           <div></div>
           <div></div>

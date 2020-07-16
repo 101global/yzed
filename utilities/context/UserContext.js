@@ -129,13 +129,13 @@ const UserProvider = ({ children }) => {
       });
   };
 
-  const emailLogin = async (username, password, redirectPath) => {
+  const emailLogin = async (email, password, redirectPath) => {
     setUserLoading(true);
     await firebase
       .auth()
-      .signInWithEmailAndPassword(username, password)
+      .signInWithEmailAndPassword(email, password)
       .then(() => {
-        refreshUserData();
+        refreshUserData('/experience/1');
       })
       .catch((err) => {
         setError(err.message);
@@ -201,6 +201,39 @@ const UserProvider = ({ children }) => {
       });
   };
 
+  const resetPassword = (password, oobCode, callback) => {
+    firebase
+      .auth()
+      .verifyPasswordResetCode(oobCode)
+      .then(function (email) {
+        console.log(email);
+        var accountEmail = email;
+        console.log(accountEmail);
+        firebase
+          .auth()
+          .confirmPasswordReset(oobCode, password)
+          .then(function (resp) {
+            console.log(resp);
+            callback(true);
+            cookie.remove(tokenName);
+            setTimeout(() => {
+              emailLogin(accountEmail, password);
+            }, 2000);
+          })
+          .catch(function (error) {
+            console.log(error.message);
+            setError(
+              'Something went wrong. This link may have been used already. Resend link to reset password.'
+            );
+          });
+      })
+      .catch(function (error) {
+        setError(
+          'Something went wrong. This link may have been used already. Resend link to reset password.'
+        );
+      });
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChange();
     return () => {
@@ -220,8 +253,8 @@ const UserProvider = ({ children }) => {
     fbSignup();
   });
 
-  const requestEmailLogin = useCallback((username, password, firstName, lastName) => {
-    emailLogin(username, password, firstName, lastName);
+  const requestEmailLogin = useCallback((email, password) => {
+    emailLogin(email, password);
   });
 
   const requestGoogleLogin = useCallback(() => {
@@ -249,6 +282,7 @@ const UserProvider = ({ children }) => {
         requestFbLogin,
         requestLogout,
         requestForgottenPasswordEmail,
+        resetPassword,
       }}>
       {children}
     </UserContext.Provider>
