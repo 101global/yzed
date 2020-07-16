@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { useRouter } from 'next/router';
-import { checkPasswordStrength, strongRegex } from '../../utilities/validation';
+import { strongRegex } from '../../utilities/validation';
 import { UserContext } from '../../utilities/context/UserContext';
 import LoadingBars from '../../components/ReusableComponents/Loading/LoadingBars';
 import LoadingSpinner from '../../components/ReusableComponents/Loading/LoadingSpinner';

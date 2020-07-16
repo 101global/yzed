@@ -63,4 +63,5 @@ export default FormError;
 FormError.propTypes = {
   message: PropTypes.string.isRequired,
   localErrorCallback: PropTypes.func,
+  isClosable: PropTypes.bool,
 };

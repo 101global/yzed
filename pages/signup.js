@@ -9,7 +9,7 @@ import { signupStates } from '../utilities/enums';
 import FacebookSignup from '../components/ReusableComponents/Buttons/FBSignup';
 import FormError from '../components/ReusableComponents/Errors/FormError';
 import Link from 'next/link';
-import { checkPasswordStrength } from '../utilities/validation';
+import { strongRegex } from '../utilities/validation';
 
 const signup = ({ user }) => {
   const [email, setEmail] = useState('');
@@ -21,10 +21,6 @@ const signup = ({ user }) => {
   const { userError, userLoading, requestEmailSignup } = useContext(UserContext);
   const router = useRouter();
 
-  const strongRegex = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})');
-
-  useEffect(() => {}, [user]);
-
   return (
     <>
       <UserNavigation user={user} />
@@ -32,10 +28,10 @@ const signup = ({ user }) => {
         <form
           onSubmit={async (e) => {
             e.preventDefault();
-            if (password === confirmPassword) {
+            if (password === confirmPassword && strongRegex.test(password)) {
               await requestEmailSignup(email, password, firstName, lastName);
             } else {
-              setError('Passwords do not match.');
+              setError('Check that password match and match the password criteria.');
             }
           }}
           className='bg-black flex flex-col justify-center items-center'>
