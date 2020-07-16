@@ -5,6 +5,7 @@ import { UserContext } from '../../utilities/context/UserContext';
 import LoadingBars from '../../components/ReusableComponents/Loading/LoadingBars';
 import LoadingSpinner from '../../components/ReusableComponents/Loading/LoadingSpinner';
 import FormError from '../../components/ReusableComponents/Errors/FormError';
+import Link from 'next/link';
 
 const resetpw = () => {
   const [password, setPassword] = useState('');
@@ -14,7 +15,7 @@ const resetpw = () => {
   const [error, setError] = useState(null);
   const [validPassword, setValidPassword] = useState(false);
 
-  const { resetPassword, userError } = useContext(UserContext);
+  const { resetPassword, userError, setUserError } = useContext(UserContext);
 
   const router = useRouter();
 
@@ -28,6 +29,18 @@ const resetpw = () => {
             text='Password has been successfully reset. Logging you in now.  You will be redirected shortly.'
             color='white'
           />
+        ) : userError ? (
+          <>
+            <FormError message={userError} />
+            <Link href='/request/password'>
+              <a
+                onClick={() => {
+                  setUserError(null);
+                }}>
+                Resend Password Reset Email
+              </a>
+            </Link>
+          </>
         ) : (
           <>
             <h1>Reset Password</h1>
@@ -70,7 +83,7 @@ const resetpw = () => {
               </button>
             </form>
             {loading && <LoadingSpinner text='Resetting Password' color='white' />}
-            {(userError || error) && <FormError message={userError || error} />}
+            {error && <FormError message={error} />}
           </>
         )}
       </div>

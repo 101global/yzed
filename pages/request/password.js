@@ -6,7 +6,7 @@ const password = () => {
   const [email, setEmail] = useState('');
   const { requestForgottenPasswordEmail, userError } = useContext(UserContext);
   const [success, setSuccess] = useState(false);
-  console.log(userError);
+
   return (
     <>
       <div className='min-h-screen flex flex-col bg-black justify-center items-center px-64 text-white'>

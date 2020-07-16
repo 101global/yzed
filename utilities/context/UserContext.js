@@ -283,6 +283,7 @@ const UserProvider = ({ children }) => {
         requestLogout,
         requestForgottenPasswordEmail,
         resetPassword,
+        setUserError,
       }}>
       {children}
     </UserContext.Provider>
