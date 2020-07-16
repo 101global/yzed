@@ -1,29 +1,57 @@
+import PropTypes from 'prop-types';
 import React, { useEffect, useContext, useState } from 'react';
 import theme from '../../../utilities/theme';
+import { UserContext } from '../../../utilities/context/UserContext';
 
-const FormError = ({ message }) => {
+const FormError = ({ message, localErrorCallback, canClose = true }) => {
+  const { setUserError } = useContext(UserContext);
+
+  const closeErrors = () => {
+    setUserError(null);
+    if (localErrorCallback) {
+      localErrorCallback(null);
+    }
+  };
   return (
     <>
-      <div className='error-message-wrapper'>
-        <div className='error-message'>
-          <h3>Oops! Something went wrong.</h3>
-          <p>{message}</p>
+      <div className='mt-4'>
+        <div className='error-message-wrapper my-0 mx-auto p-1 relative text-center'>
+          <div className='error-message p-8'>
+            {canClose && (
+              <button
+                aria-label='close error'
+                onClick={() => {
+                  closeErrors();
+                }}>
+                X
+              </button>
+            )}
+            <div className='placeholder' />
+            <h3 className='font-light text-lg'>Oops!</h3>
+            <p className='font-light text-base'>{message}</p>
+          </div>
         </div>
       </div>
       <style jsx>
         {`
           .error-message-wrapper {
-            margin: 0 auto;
-            max-width: 300px;
-            padding: 1rem;
-            position: relative;
+            max-width: 400px;
             background: linear-gradient(to bottom, ${theme.colors.aqua}, ${theme.colors.purple});
-            padding: 4px;
           }
           .error-message {
             background: ${theme.colors.black};
             color: ${theme.colors.white};
-            padding: 2rem;
+          }
+          .error-message p {
+            padding-top: 20px;
+          }
+          button {
+            background: -webkit-linear-gradient(${theme.colors.aqua}, ${theme.colors.purple});
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: absolute;
+            top: 8px;
+            right: 10px;
           }
         `}
       </style>
@@ -32,3 +60,7 @@ const FormError = ({ message }) => {
 };
 
 export default FormError;
+FormError.propTypes = {
+  message: PropTypes.string.isRequired,
+  localErrorCallback: PropTypes.func,
+};

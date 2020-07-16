@@ -31,7 +31,7 @@ const resetpw = () => {
           />
         ) : userError ? (
           <>
-            <FormError message={userError} />
+            <FormError message={userError} localErrorCallback={setError} canClose={false} />
             <Link href='/request/password'>
               <a
                 onClick={() => {
@@ -83,7 +83,7 @@ const resetpw = () => {
               </button>
             </form>
             {loading && <LoadingSpinner text='Resetting Password' color='white' />}
-            {error && <FormError message={error} />}
+            {error && <FormError message={error} localErrorCallback={setError} />}
           </>
         )}
       </div>
