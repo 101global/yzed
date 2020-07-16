@@ -49,7 +49,7 @@ const UserProvider = ({ children }) => {
     await dbh
       .collection('users')
       .doc(userID)
-      .set({ email, firstName, lastName, profilePicture, emailVerified, roles: ['USER'] })
+      .set({ email, firstName, lastName, profilePicture, emailVerified, role: 'USER' })
       .then((result) => {
         refreshUserData();
       })

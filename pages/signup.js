@@ -78,7 +78,6 @@ const signup = ({ user }) => {
             className='login-input border-aqua border password'
             type='password'
             onChange={(event) => {
-              checkPasswordStrength(event.target.value);
               setPassword(event.target.value);
             }}
           />

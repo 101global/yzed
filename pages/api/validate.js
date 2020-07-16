@@ -17,6 +17,7 @@ const validate = async (token) => {
       console.log('Error getting document:', error);
     });
   const user = await firebaseAdmin.auth().getUser(decodedToken.uid);
+  console.log(user);
   const result = {
     user: {
       uid: user.uid,
@@ -24,10 +25,12 @@ const validate = async (token) => {
       profilePicture: userData.profilePicture,
       firstName: userData.firstName,
       lastName: userData.lastName,
-      emailVerified: user.email_verified,
+      emailVerified: user.emailVerified,
+      role: userData.role,
       loggedIn: true,
     },
   };
+  console.log('RESULT', result);
   return result;
 };
 

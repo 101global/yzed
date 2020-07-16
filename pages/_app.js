@@ -10,7 +10,7 @@ import { server } from '../config/index';
 
 function MyApp({ Component, pageProps, user }) {
   const [userData, setUserData] = useState(user);
-
+  console.log(user);
   return (
     <>
       <Head>

@@ -32,7 +32,6 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           loading='lazy'
           ar-modes='scene-viewer webxr quick-look'
           ar-scale='fixed'
-          auto-rotate
           camera-controls
           ar
           exposure={model.exposure}

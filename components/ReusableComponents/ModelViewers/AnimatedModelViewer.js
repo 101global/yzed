@@ -16,7 +16,6 @@ const AnimatedModelViewer = ({ model, topModelDark }) => {
           src={model.animatedGlbFile}
           alt={model.id}
           loading='lazy'
-          auto-rotate
           camera-controls
           poster={topModelDark ? darkBackgroundLoading : lightBackgroundLoading}
           exposure={model.exposure}
