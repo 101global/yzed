@@ -14,7 +14,6 @@ const AuthorizationCheck = ({ user, children, permissions, verifiedEmailRequired
   const permissionCheck = async () => {
     const hasPermission = await permissions.some((permission) => permission === user.role);
     if (!hasPermission) {
-      
       router.push('/unauthorized');
     } else {
       setLoading(false);
@@ -28,7 +27,7 @@ const AuthorizationCheck = ({ user, children, permissions, verifiedEmailRequired
     } else {
       if (verifiedEmailRequired) {
         if (!user.emailVerified) {
-          router.push('/request/email');
+          router.push('/signup/confirm');
         } else {
           permissionCheck();
         }

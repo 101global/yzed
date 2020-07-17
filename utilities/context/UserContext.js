@@ -51,7 +51,8 @@ const UserProvider = ({ children }) => {
       .doc(userID)
       .set({ email, firstName, lastName, profilePicture, emailVerified, role: 'USER' })
       .then((result) => {
-        refreshUserData();
+        // refreshUserData();
+        setUserLoading(false);
       })
       .catch((err) => {
         setError(err.message);
@@ -81,11 +82,18 @@ const UserProvider = ({ children }) => {
           const userID = user.user.uid;
           const emailVerified = user.user.emailVerified;
           await createUserDB(userID, email, firstName, lastName, defaultIcon, emailVerified);
-          if (user.emailVerified) {
-            router.push('/signup/success');
-          } else {
-            router.push('/signup/confirm');
-          }
+          const currentUser = await firebase.auth().currentUser;
+          console.log(currentUser);
+          currentUser
+            .sendEmailVerification()
+            .then((resp) => {
+              console.log('EMAIL SENT');
+              console.log(resp);
+              // router.reload()
+            })
+            .catch((err) => {
+              setError(err.message);
+            });
         }
       })
       .catch((err) => {
@@ -237,7 +245,6 @@ const UserProvider = ({ children }) => {
       .currentUser.sendEmailVerification(actionCodeSettings)
       .then((resp) => {
         console.log(resp);
-        callback(false);
       })
       .catch((err) => {
         setError(err.message);

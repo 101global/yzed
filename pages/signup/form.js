@@ -21,6 +21,16 @@ const signup = ({ user }) => {
   const { userError, userLoading, requestEmailSignup } = useContext(UserContext);
   const router = useRouter();
 
+  useEffect(() => {
+    if (user) {
+      if (user.emailVerified) {
+        router.push('/experience/1');
+      } else {
+        router.push('/signup/confirm');
+      }
+    }
+  }, []);
+  
   return (
     <>
       <UserNavigation user={user} />

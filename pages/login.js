@@ -17,7 +17,15 @@ const login = ({ user }) => {
 
   const router = useRouter();
 
-  useEffect(() => {}, [user]);
+  useEffect(() => {
+    if (user) {
+      if (user.emailVerified) {
+        router.push('/experience/1');
+      } else {
+        router.push('/signup/confirm');
+      }
+    }
+  }, []);
 
   return (
     <>
