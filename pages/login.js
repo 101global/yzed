@@ -62,7 +62,7 @@ const login = ({ user }) => {
           {userLoading && <LoadingSpinner color='white' text='Checking User Credentials' />}
         </div>
         {userError && <FormError message={userError} />}
-        <Link href='/signup'>
+        <Link href='/signup/form'>
           <a className='text-center text-white'>Not yet a member?</a>
         </Link>
       </div>

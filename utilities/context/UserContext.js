@@ -71,17 +71,6 @@ const UserProvider = ({ children }) => {
       });
   };
 
-  const onAuthStateChange = () => {
-    return firebase.auth().onAuthStateChanged(async (user) => {
-      if (user) {
-        const token = await user.getIdToken();
-        cookie.set(tokenName, token, { expires: 7 });
-      } else {
-        cookie.remove(tokenName);
-      }
-    });
-  };
-
   const emailSignup = async (email, password, firstName, lastName, redirectPath) => {
     setUserLoading(true);
     await firebase
@@ -90,7 +79,13 @@ const UserProvider = ({ children }) => {
       .then(async (user) => {
         if (user) {
           const userID = user.user.uid;
-          await createUserDB(userID, email, firstName, lastName, defaultIcon, false);
+          const emailVerified = user.user.emailVerified;
+          await createUserDB(userID, email, firstName, lastName, defaultIcon, emailVerified);
+          if (user.emailVerified) {
+            router.push('/signup/success');
+          } else {
+            router.push('/signup/confirm');
+          }
         }
       })
       .catch((err) => {
@@ -183,7 +178,7 @@ const UserProvider = ({ children }) => {
   };
 
   const requestForgottenPasswordEmail = (email, callback) => {
-    var actionCodeSettings = {
+    const actionCodeSettings = {
       // After password reset, the user will be give the ability to go back
       // to this page.
       url: `${server}/login`,
@@ -205,23 +200,19 @@ const UserProvider = ({ children }) => {
     firebase
       .auth()
       .verifyPasswordResetCode(oobCode)
-      .then(function (email) {
-        console.log(email);
-        var accountEmail = email;
-        console.log(accountEmail);
+      .then((email) => {
         firebase
           .auth()
           .confirmPasswordReset(oobCode, password)
-          .then(function (resp) {
-            console.log(resp);
+          .then((resp) => {
             callback(true);
             cookie.remove(tokenName);
             setTimeout(() => {
-              emailLogin(accountEmail, password);
-            }, 2000);
+              emailLogin(email, password);
+            }, 1000);
           })
-          .catch(function (error) {
-            console.log(error.message);
+          .catch((err) => {
+            console.log(err.message);
             setError(
               'Something went wrong. This link may have been used already. Resend link to reset password.'
             );
@@ -232,6 +223,55 @@ const UserProvider = ({ children }) => {
           'Something went wrong. This link may have been used already. Resend link to reset password.'
         );
       });
+  };
+
+  const requestEmailVerification = (callback) => {
+    const actionCodeSettings = {
+      // After password reset, the user will be give the ability to go back
+      // to this page.
+      url: `${server}/login`,
+      handleCodeInApp: true,
+    };
+    firebase
+      .auth()
+      .currentUser.sendEmailVerification(actionCodeSettings)
+      .then((resp) => {
+        console.log(resp);
+        callback(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
+  };
+
+  const confirmEmailVerification = (oobCode, callback) => {
+    firebase
+      .auth()
+      .applyActionCode(oobCode)
+      .then((resp) => {
+        callback(false);
+        // Email address has been verified.
+        // TODO: Display a confirmation message to the user.
+        // You could also provide the user with a link back to the app.
+        // TODO: If a continue URL is available, display a button which on
+        // click redirects the user back to the app via continueUrl with
+        // additional state determined from that URL's parameters.
+      })
+      .catch((err) => {
+        callback(false);
+        setError(err.message);
+      });
+  };
+
+  const onAuthStateChange = () => {
+    return firebase.auth().onAuthStateChanged(async (user) => {
+      if (user) {
+        const token = await user.getIdToken();
+        cookie.set(tokenName, token, { expires: 14 });
+      } else {
+        cookie.remove(tokenName);
+      }
+    });
   };
 
   useEffect(() => {
@@ -282,8 +322,10 @@ const UserProvider = ({ children }) => {
         requestFbLogin,
         requestLogout,
         requestForgottenPasswordEmail,
+        requestEmailVerification,
         resetPassword,
         setUserError,
+        confirmEmailVerification,
       }}>
       {children}
     </UserContext.Provider>
