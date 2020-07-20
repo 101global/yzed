@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
-
-import PropTypes from 'prop-types';
-import firebase from '../firebaseSetup';
-import { useRouter } from 'next/router';
-import { signupStates } from '../enums';
-import cookie from 'js-cookie';
 import { defaultIcon, tokenName } from '../constants';
 import { fbData, googleData } from '../dataHelpers';
+
+import PropTypes from 'prop-types';
+import cookie from 'js-cookie';
+import firebase from '../firebaseSetup';
 import { server } from '../../config/index';
+import { signupStates } from '../enums';
+import { useRouter } from 'next/router';
 
 export const UserContext = React.createContext();
 
@@ -44,14 +44,15 @@ const UserProvider = ({ children }) => {
     firstName,
     lastName,
     profilePicture,
-    emailVerified
+    emailVerified,
+    route
   ) => {
     await dbh
       .collection('users')
       .doc(userID)
       .set({ email, firstName, lastName, profilePicture, emailVerified, role: 'USER' })
       .then((result) => {
-        // refreshUserData();
+        refreshUserData(route);
         setUserLoading(false);
       })
       .catch((err) => {
@@ -81,15 +82,20 @@ const UserProvider = ({ children }) => {
         if (user) {
           const userID = user.user.uid;
           const emailVerified = user.user.emailVerified;
-          await createUserDB(userID, email, firstName, lastName, defaultIcon, emailVerified);
           const currentUser = await firebase.auth().currentUser;
           console.log(currentUser);
-          currentUser
+          await currentUser
             .sendEmailVerification()
-            .then((resp) => {
-              console.log('EMAIL SENT');
-              console.log(resp);
-              // router.reload()
+            .then(async (resp) => {
+              await createUserDB(
+                userID,
+                email,
+                firstName,
+                lastName,
+                defaultIcon,
+                emailVerified,
+                '/signup/confirm'
+              );
             })
             .catch((err) => {
               setError(err.message);
@@ -109,7 +115,15 @@ const UserProvider = ({ children }) => {
       .then(async (result) => {
         const data = googleData(result);
         const { userID, email, firstName, lastName, profilePicture } = data;
-        await createUserDB(userID, email, firstName, lastName, profilePicture, true);
+        await createUserDB(
+          userID,
+          email,
+          firstName,
+          lastName,
+          profilePicture,
+          true,
+          '/signup/success'
+        );
       })
       .catch((err) => {
         setError(err.message);
@@ -125,7 +139,15 @@ const UserProvider = ({ children }) => {
         const data = fbData(result);
         const { userID, email, firstName, lastName, profilePicture } = data;
         data.url;
-        await createUserDB(userID, email, firstName, lastName, profilePicture, true);
+        await createUserDB(
+          userID,
+          email,
+          firstName,
+          lastName,
+          profilePicture,
+          true,
+          '/signup/success'
+        );
       })
       .catch((err) => {
         setError(err.message);

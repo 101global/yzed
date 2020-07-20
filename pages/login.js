@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import FBLogin from '../components/ReusableComponents/Buttons/FBLogin';
 import FormError from '../components/ReusableComponents/Errors/FormError';
+import GoogleLogin from '../components/ReusableComponents/Buttons/GoogleLogin';
+import Link from 'next/link';
 import LoadingSpinner from '../components/ReusableComponents/Loading/LoadingSpinner';
 import { UserContext } from '../utilities/context/UserContext';
 import UserNavigation from '../components/ReusableComponents/Navigation/UserNavigation';
 import { useRouter } from 'next/router';
-import GoogleLogin from '../components/ReusableComponents/Buttons/GoogleLogin';
-import FBLogin from '../components/ReusableComponents/Buttons/FBLogin';
-import Link from 'next/link';
 
 const login = ({ user }) => {
   const [email, setEmail] = useState('');
@@ -19,11 +19,7 @@ const login = ({ user }) => {
 
   useEffect(() => {
     if (user) {
-      if (user.emailVerified) {
-        router.push('/experience/1');
-      } else {
-        router.push('/signup/confirm');
-      }
+      router.push('/experience/1');
     }
   }, []);
 

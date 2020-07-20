@@ -1,9 +1,10 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
+import FormError from '../../components/ReusableComponents/Errors/FormError';
 import Link from 'next/link';
 import LoadingBars from '../../components/ReusableComponents/Loading/LoadingBars';
-import { useRouter } from 'next/router';
 import { UserContext } from '../../utilities/context/UserContext';
-import FormError from '../../components/ReusableComponents/Errors/FormError';
+import { useRouter } from 'next/router';
 
 const success = ({ user }) => {
   console.log(user);
@@ -34,7 +35,7 @@ const success = ({ user }) => {
         </>
       ) : (
         <>
-          <h1>You have successfully finished the signup and verification process.</h1>
+          <h1>You have successfully finished the signup and verification process.  Continue using YZED.</h1>
           <Link href='/'>
             <a>Go Home</a>
           </Link>

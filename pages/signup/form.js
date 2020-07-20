@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import FacebookSignup from '../../components/ReusableComponents/Buttons/FBSignup';
+import FormError from '../../components/ReusableComponents/Errors/FormError';
+import GoogleSignup from '../../components/ReusableComponents/Buttons/GoogleSignup';
+import Link from 'next/link';
 import LoadingSpinner from '../../components/ReusableComponents/Loading/LoadingSpinner';
 import { UserContext } from '../../utilities/context/UserContext';
 import UserNavigation from '../../components/ReusableComponents/Navigation/UserNavigation';
-import { useRouter } from 'next/router';
-import GoogleSignup from '../../components/ReusableComponents/Buttons/GoogleSignup';
 import { signupStates } from '../../utilities/enums';
-import FacebookSignup from '../../components/ReusableComponents/Buttons/FBSignup';
-import FormError from '../../components/ReusableComponents/Errors/FormError';
-import Link from 'next/link';
 import { strongRegex } from '../../utilities/validation';
+import { useRouter } from 'next/router';
 
 const signup = ({ user }) => {
   const [email, setEmail] = useState('');
@@ -22,15 +22,9 @@ const signup = ({ user }) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (user) {
-      if (user.emailVerified) {
-        router.push('/experience/1');
-      } else {
-        router.push('/signup/confirm');
-      }
-    }
+    
   }, []);
-  
+
   return (
     <>
       <UserNavigation user={user} />
