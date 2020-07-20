@@ -15,28 +15,29 @@ const success = ({ user }) => {
   const { confirmEmailVerification, userError } = useContext(UserContext);
 
   useEffect(() => {
-    confirmEmailVerification(oobCode, setLoading);
+    if (oobCode) {
+      confirmEmailVerification(oobCode, setLoading);
+    } else {
+      setLoading(false);
+    }
   }, []);
 
   if (loading)
     return (
       <div className='min-h-screen flex flex-col bg-black justify-center items-center px-64'>
-        <LoadingBars text='Checking for valid email address...' />
+        <LoadingBars text='Verifying User Credentials...' />
       </div>
     );
   return (
     <div className='min-h-screen flex flex-col bg-black justify-center items-center px-64 text-white'>
       {userError ? (
-        <>
-          <FormError message={userError} canClose={false} />
-          <Link href='/'>
-            <a>Go Home</a>
-          </Link>
-        </>
+        <FormError error={userError} />
       ) : (
         <>
-          <h1>You have successfully finished the signup and verification process.  Continue using YZED.</h1>
-          <Link href='/'>
+          <h1>
+            You have successfully finished the signup and verification process. Continue using YZED.
+          </h1>
+          <Link href='/experience/1'>
             <a>Go Home</a>
           </Link>
           <Link href='/profile'>

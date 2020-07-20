@@ -22,7 +22,9 @@ const signup = ({ user }) => {
   const router = useRouter();
 
   useEffect(() => {
-    
+    if (user) {
+      router.push('/signup/success');
+    }
   }, []);
 
   return (

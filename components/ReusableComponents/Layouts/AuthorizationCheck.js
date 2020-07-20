@@ -1,10 +1,16 @@
-import PropTypes from 'prop-types';
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
 import Link from 'next/link';
 import LoadingBars from '../Loading/LoadingBars';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
-const AuthorizationCheck = ({ user, children, permissions, verifiedEmailRequired = true }) => {
+const AuthorizationCheck = ({
+  user,
+  children,
+  permissions = ['USER'],
+  verifiedEmailRequired = false,
+}) => {
   const [isAuthorized, setIsAuthorized] = useState(true);
   const [isEmailVerified, setIsEmailVerified] = useState(true);
   const [loading, setLoading] = useState(true);
@@ -21,7 +27,6 @@ const AuthorizationCheck = ({ user, children, permissions, verifiedEmailRequired
   };
 
   const checkAuthorizedUser = async () => {
-    console.log('EMAIL', verifiedEmailRequired);
     if (!user) {
       router.push('/login');
     } else {
@@ -56,4 +61,6 @@ export default AuthorizationCheck;
 AuthorizationCheck.propTypes = {
   user: PropTypes.object,
   children: PropTypes.node.isRequired,
+  permissions: PropTypes.array.isRequired,
+  verifiedEmailRequired: PropTypes.bool,
 };

@@ -1,11 +1,12 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { useRouter } from 'next/router';
-import { strongRegex } from '../../utilities/validation';
-import { UserContext } from '../../utilities/context/UserContext';
-import LoadingBars from '../../components/ReusableComponents/Loading/LoadingBars';
-import LoadingSpinner from '../../components/ReusableComponents/Loading/LoadingSpinner';
+import React, { useContext, useEffect, useState } from 'react';
+
 import FormError from '../../components/ReusableComponents/Errors/FormError';
 import Link from 'next/link';
+import LoadingBars from '../../components/ReusableComponents/Loading/LoadingBars';
+import LoadingSpinner from '../../components/ReusableComponents/Loading/LoadingSpinner';
+import { UserContext } from '../../utilities/context/UserContext';
+import { strongRegex } from '../../utilities/validation';
+import { useRouter } from 'next/router';
 
 const resetpw = () => {
   const [password, setPassword] = useState('');

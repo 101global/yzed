@@ -30,12 +30,13 @@ const UserProvider = ({ children }) => {
   };
 
   const refreshUserData = (route) => {
-    setUserLoading(false);
-    if (route) {
-      router.push(route);
-    } else {
-      router.reload();
-    }
+    setTimeout(() => {
+      if (route) {
+        router.push(route);
+      } else {
+        router.reload();
+      }
+    }, 2000);
   };
 
   const createUserDB = async (
@@ -53,7 +54,6 @@ const UserProvider = ({ children }) => {
       .set({ email, firstName, lastName, profilePicture, emailVerified, role: 'USER' })
       .then((result) => {
         refreshUserData(route);
-        setUserLoading(false);
       })
       .catch((err) => {
         setError(err.message);

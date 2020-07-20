@@ -1,16 +1,15 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { useRouter } from 'next/router';
-import { UserContext } from '../../utilities/context/UserContext';
-import LoadingBars from '../../components/ReusableComponents/Loading/LoadingBars';
+import React, { useContext, useEffect, useState } from 'react';
+
 import FormError from '../../components/ReusableComponents/Errors/FormError';
 import Link from 'next/link';
+import LoadingBars from '../../components/ReusableComponents/Loading/LoadingBars';
+import { UserContext } from '../../utilities/context/UserContext';
 import firebase from '../../utilities/firebaseSetup';
+import { useRouter } from 'next/router';
 
 const confirm = ({ user }) => {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
-
-  const { requestEmailVerification, setUserError, userError } = useContext(UserContext);
 
   const sendEmailVerification = () => {
     if (user) {
@@ -36,47 +35,16 @@ const confirm = ({ user }) => {
     <div
       div
       className='min-h-screen flex flex-col bg-black justify-center items-center px-64 text-white'>
-      <h1 className='text-2xl font-light text-center'>Verification Email</h1>
-      {userError ? (
-        <div>
-          <FormError message={userError} canClose={false} />
-          <Link href='/login'>
-            <a>Login</a>
-          </Link>
-        </div>
-      ) : (
-        <div>
-          <p className='text-base font-light text-center mt-8'>
-            In order to continue you need to verify your email address.
-          </p>
-          {user ? (
-            <>
-              <p className='text-base font-light text-center'>
-                When you signed up an email was sent to the address you registered with. Check that
-                you have received it and follow the link. After you verify your email address you
-                may close this tab.
-              </p>
-              <p className='text-base font-light text-center  mt-16'>
-                If you did not receive the verification email click below to send it again.
-              </p>
-              <button
-                onClick={() => {
-                  requestEmailVerification();
-                }}
-                className='block mx-auto border'>
-                Click here to resend email confirmation.
-              </button>
-            </>
-          ) : (
-            <>
-              <p>You need to log in first.</p>
-              <Link href='/login'>
-                <a>Login</a>
-              </Link>
-            </>
-          )}
-        </div>
-      )}
+      <h1 className='text-2xl font-light text-center'>Welcome to YZED</h1>
+      <p>
+        A verification email has been sent to the address that you registered with. Please follow
+        the link in the email to complete the verification process. You will not be able to access
+        certain features until you have confirmed a valid email address. You may close this tab if
+        you have confirmed your address using the email link.
+      </p>
+      <Link href='/experience/1'>
+        <a>Go Home</a>
+      </Link>
     </div>
   );
 };
