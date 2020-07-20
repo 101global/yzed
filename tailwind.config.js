@@ -1,5 +1,10 @@
 module.exports = {
-  purge: ['./components/**/*.js', './pages/**/*.js'],
+  purge: [
+    './components/**/*.js',
+    './pages/**/*.js',
+    './node_modules/tailwindcss-dark-mode/prefers-dark.js',
+  ],
+  whitelist: ['mode-dark'],
   theme: {
     extend: {
       padding: {
@@ -29,6 +34,10 @@ module.exports = {
       purple: '#a891d9',
     },
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    backgroundColor: ['dark', 'dark-hover', 'dark-group-hover', 'dark-even', 'dark-odd'],
+    borderColor: ['dark', 'dark-disabled', 'dark-focus', 'dark-focus-within'],
+    textColor: ['dark', 'dark-hover', 'dark-active', 'dark-placeholder'],
+  },
+  plugins: [require('tailwindcss-dark-mode')()],
 };

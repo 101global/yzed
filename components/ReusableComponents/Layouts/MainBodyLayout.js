@@ -16,6 +16,7 @@ const BodyLayout = ({ title, children }) => {
       <style jsx global>{`
         html,
         body {
+          
           font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
           scroll-behavior: smooth;

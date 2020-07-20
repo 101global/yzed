@@ -7,6 +7,7 @@ import App from 'next/app';
 import cookies from 'next-cookies';
 import fetch from 'isomorphic-unfetch';
 import { server } from '../config/index';
+import ThemeContext from '../utilities/context/ThemeContext';
 
 function MyApp({ Component, pageProps, user }) {
   const [userData, setUserData] = useState(user);
@@ -35,11 +36,13 @@ function MyApp({ Component, pageProps, user }) {
         <link rel='manifest' href='manifest.json' />
       </Head>
       {/* Wrap this with Firebase Provider later if needed */}
-      <UserContext>
-        <SimpleReactLightbox>
-          <Component {...pageProps} user={user} userData={userData} />
-        </SimpleReactLightbox>
-      </UserContext>
+      <ThemeContext>
+        <UserContext>
+          <SimpleReactLightbox>
+            <Component {...pageProps} user={user} userData={userData} />
+          </SimpleReactLightbox>
+        </UserContext>
+      </ThemeContext>
       <noscript>
         <iframe
           src='noscript.html'
