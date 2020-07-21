@@ -6,6 +6,7 @@
   var storageKey = 'darkMode';
   var classNameDark = 'dark-mode';
   var classNameLight = 'light-mode';
+  var wrapper = document.getElementById('#dark-mode-wrapper');
 
   function setClassOnDocumentBody(darkMode) {
     document.body.classList.add(darkMode ? classNameDark : classNameLight);

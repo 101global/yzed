@@ -8,10 +8,8 @@ export const ThemeContext = React.createContext();
 
 const ThemeProvider = ({ children }) => {
   const darkMode = useDarkMode();
-  console.log(darkMode);
-  const toggleDarkMode = () => {
-    console.log("CLICK")
-    darkMode.toggle();
+
+  const toggleDarkMode = () => {    darkMode.toggle();
   };
   return (
     <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>{children}</ThemeContext.Provider>

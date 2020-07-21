@@ -1,13 +1,16 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
 import { ThemeContext } from '../utilities/context/ThemeContext';
+import UserLayout from '../components/ReusableComponents/Layouts/UserLayout';
 
 const darktest = () => {
   const [toggle, setToggle] = useState(false);
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
-  console.log(darkMode);
+  console.log(darkMode.value);
+
   return (
-    <>
-      <div className='my-test'>
+    <UserLayout>
+      <div className='pt-20'>
         <h1 className=''>Text Goes Here</h1>
         <button
           onClick={() => {
@@ -16,17 +19,7 @@ const darktest = () => {
           Toggle
         </button>
       </div>
-      <style jsx global>{`
-        .dark-mode .my-test {
-          background: green;
-          color: yellow;
-        }
-        .light-mode .my-test {
-          background: blue;
-          color: red;
-        }
-      `}</style>
-    </>
+    </UserLayout>
   );
 };
 

@@ -32,4 +32,12 @@
   @apply min-h-screen flex flex-col bg-black justify-center items-center px-64;
 }
 
+.dark-mode {
+  @apply bg-black text-white;
+}
+
+.light-mode {
+  @apply bg-white text-black;
+}
+
 @tailwind utilities;

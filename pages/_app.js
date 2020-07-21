@@ -70,7 +70,6 @@ MyApp.getInitialProps = async (appContext) => {
   const appProps = await App.getInitialProps(appContext);
   if (typeof window === 'undefined') {
     const { firebaseToken } = cookies(ctx);
-
     if (firebaseToken) {
       try {
         const headers = {
@@ -79,7 +78,10 @@ MyApp.getInitialProps = async (appContext) => {
         };
         const result = await fetch(`${server}/api/validate`, { headers }).then((res) => res.json());
         return { ...result, ...appProps };
-      } catch (e) {}
+      } catch (e) {
+        console.log(e);
+        cookie.remove(firebaseToken);
+      }
     }
   }
   return { ...appProps };
