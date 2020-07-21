@@ -6,6 +6,7 @@ module.exports = {
       padding: {
         dsk: '10%',
         nav: '4.7rem',
+        navHeight: '86px',
       },
       zIndex: {
         tenThous: '10000',
@@ -18,18 +19,26 @@ module.exports = {
         comment: '1fr 40px',
         userNav: '40px 1fr',
       },
+      linearGradients: {
+        leftToRight: 'linear-gradient(to-right, #a891d9, #75cedb)',
+      },
+      lineHeights: {
+        standard: '1.5',
+      },
     },
     colors: {
-      transparentBlack: '#0d0d0df6',
-      white: '#fff',
-      black: '#0d0d0d',
-      grey: '#7c7c7c',
+      black: '#272727',
       mediumGrey: '#8b8b8b',
+      grey: '#7c7c7c',
       lightGrey: '#eaeaea',
+      vanillaGrey: '#f7f6f3',
+      white: '#fff',
       aquaLight: '#B5EAE8',
       aqua: '#75cedb',
       purple: '#a891d9',
-      purpleTransparent: '#A495D54C',
+      transparentBlack: '#0d0d0df6',
+      transparentWhite: '#ffffffcc'
+      transparentPurple: '#A495D54C',
     },
   },
   variants: {},
