@@ -7,14 +7,21 @@ import theme from '../../../utilities/theme';
 
 const ToggleDarkModeButton = () => {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
+
   return (
     <>
       <div className='toggle-container'>
         <input
           className='toggle'
           type='checkbox'
-          checked={!darkMode.value}
-          onChange={() => toggleDarkMode()}
+          defaultChecked={darkMode.value}
+          onClick={() => {
+            if (darkMode.value) {
+              darkMode.disable();
+            } else {
+              darkMode.enable();
+            }
+          }}
         />
         <MoonIcon styleClass='toggle-icon moon' fill={theme.colors.white} />
         <SunIcon styleClass='toggle-icon sun' fill={theme.colors.black} />
@@ -37,14 +44,14 @@ const ToggleDarkModeButton = () => {
           display: inline-block;
           position: relative;
           margin: 0;
-          border: 1px solid #eaeaea;
+          border: 1px solid ${theme.colors.lightGrey};
           transition: all 0.3s ease;
         }
         .toggle:after {
           content: '';
           position: absolute;
           top: 2px;
-          left: 3px;
+          right: 3px;
           width: 24px;
           height: 24px;
           z-index: 100;
@@ -53,7 +60,7 @@ const ToggleDarkModeButton = () => {
           transition: all 0.3s cubic-bezier(0.5, 0.1, 0.75, 1.35);
         }
         .toggle:checked:after {
-          transform: translateX(48px);
+          transform: translateX(-48px);
         }
       `}</style>
       <style jsx global>{`
@@ -92,7 +99,7 @@ const ToggleDarkModeButton = () => {
           border: 1px solid ${theme.colors.aqua};
         }
         .dark-mode .toggle:after {
-          background: ${theme.colors.purpleTransparent};
+          background: ${theme.colors.transparentPurple};
           border: 1px solid ${theme.colors.white};
         }
       `}</style>

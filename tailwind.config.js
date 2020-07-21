@@ -37,7 +37,7 @@ module.exports = {
       aqua: '#75cedb',
       purple: '#a891d9',
       transparentBlack: '#0d0d0df6',
-      transparentWhite: '#ffffffcc'
+      transparentWhite: '#ffffffcc',
       transparentPurple: '#A495D54C',
     },
   },
