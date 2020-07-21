@@ -16,8 +16,8 @@ const ToggleDarkModeButton = () => {
           checked={!darkMode.value}
           onChange={() => toggleDarkMode()}
         />
-        <MoonIcon styleClass='toggle-icon moon' fill={darkMode.value ? 'white' : 'black'} />
-        <SunIcon styleClass='toggle-icon sun' fill={darkMode.value ? 'black' : 'black'} />
+        <MoonIcon styleClass='toggle-icon moon' fill={theme.colors.white} />
+        <SunIcon styleClass='toggle-icon sun' fill={theme.colors.black} />
       </div>
       <style jsx>{`
         .toggle-container {
@@ -36,11 +36,9 @@ const ToggleDarkModeButton = () => {
           border-radius: 16px;
           display: inline-block;
           position: relative;
-
           margin: 0;
           border: 1px solid #eaeaea;
           transition: all 0.3s ease;
-          background: ${!darkMode.value ? theme.colors.white : '#c4c4c4'};
         }
         .toggle:after {
           content: '';
@@ -51,12 +49,9 @@ const ToggleDarkModeButton = () => {
           height: 24px;
           z-index: 100;
           border-radius: 50%;
-          background: ${darkMode.value ? theme.colors.purple : theme.colors.aqua};
-          border: 1px solid #75cedb;
           box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
           transition: all 0.3s cubic-bezier(0.5, 0.1, 0.75, 1.35);
         }
-
         .toggle:checked:after {
           transform: translateX(48px);
         }
@@ -70,15 +65,35 @@ const ToggleDarkModeButton = () => {
           position: absolute;
           top: 3px;
           left: 4px;
-          opacity: ${darkMode.value ? 0 : 1};
           transition: all 0.3s ease;
         }
         .moon {
           position: absolute;
           top: 3px;
           right: 4px;
-          opacity: ${!darkMode.value ? 0 : 1};
           transition: all 0.3s ease;
+        }
+        .dark-mode .sun,
+        .light-mode .moon {
+          opacity: 0;
+        }
+        .dark-mode .moon,
+        .light-mode .sun {
+          opacity: 1;
+        }
+        .light-mode .toggle {
+          background: ${theme.colors.white};
+        }
+        .dark-mode .toggle {
+          background: #272727;
+        }
+        .light-mode .toggle:after {
+          background: ${theme.colors.aquaLight};
+          border: 1px solid ${theme.colors.aqua};
+        }
+        .dark-mode .toggle:after {
+          background: ${theme.colors.purpleTransparent};
+          border: 1px solid ${theme.colors.white};
         }
       `}</style>
     </>

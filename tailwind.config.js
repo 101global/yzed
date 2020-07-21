@@ -26,11 +26,10 @@ module.exports = {
       grey: '#7c7c7c',
       mediumGrey: '#8b8b8b',
       lightGrey: '#eaeaea',
-      aquaLight: #B5EAE8,
+      aquaLight: '#B5EAE8',
       aqua: '#75cedb',
       purple: '#a891d9',
-      purpleTransparent: 'rgba(164,149,213,0.3)'
-
+      purpleTransparent: '#A495D54C',
     },
   },
   variants: {},
