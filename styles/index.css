@@ -33,7 +33,7 @@
 }
 
 .landing-title {
-  @apply text-4xl;
+  @apply text-5xl font-bold;
 }
 
 .dark-mode {
