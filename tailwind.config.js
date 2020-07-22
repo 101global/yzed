@@ -27,7 +27,6 @@ module.exports = {
       },
     },
     colors: {
-      backgroundBlack: '#0d0d0d',
       black: '#272727',
       mediumGrey: '#8b8b8b',
       grey: '#7c7c7c',
@@ -37,7 +36,7 @@ module.exports = {
       aquaLight: '#b5eae8',
       aqua: '#75cedb',
       purple: '#a891d9',
-      transparentBlack: '#0d0d0df6',
+      transparentBlack: '#272727f6',
       transparentWhite: '#ffffffcc',
       transparentPurple: '#A495D54C',
     },

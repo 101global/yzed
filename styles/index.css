@@ -33,11 +33,11 @@
 }
 
 .dark-mode {
-  @apply bg-backgroundBlack text-white;
+  @apply bg-black text-white;
 }
 
 .light-mode {
-  @apply bg-white text-backgroundBlack;
+  @apply bg-white text-black;
 }
 
 @tailwind utilities;

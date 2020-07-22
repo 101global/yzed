@@ -43,16 +43,16 @@ const NavigationBar = ({ user, isLandingMenu = false }) => {
       `}</style>
       <style jsx global>{`
         .dark-mode .navigation-container {
-          background: ${theme.colors.transparentBlack};
+          background: ${theme.colors.black};
         }
         .light-mode .navigation-container {
           background: ${theme.colors.transparentWhite};
         }
         .light-mode .logo-link svg path {
-          fill: ${theme.colors.backgroundBlack};
+          fill: ${theme.colors.black};
         }
         .light-mode .nav-scroll-link {
-          color: ${theme.colors.backgroundBlack};
+          color: ${theme.colors.black};
         }
         .nav-scroll-link:hover {
           background: -webkit-linear-gradient(left, ${theme.colors.aqua}, ${theme.colors.purple});
