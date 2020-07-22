@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import LandingLayout from '../components/ReusableComponents/Layouts/LandingLayout';
 import { ThemeContext } from '../utilities/context/ThemeContext';
-import UserLayout from '../components/ReusableComponents/Layouts/UserLayout';
 import ToggleDarkMode from '../components/ReusableComponents/Buttons/ToggleDarkMode';
 
 const darktest = () => {
@@ -10,12 +10,12 @@ const darktest = () => {
   console.log(darkMode.value);
 
   return (
-    <UserLayout>
+    <LandingLayout>
       <div className='pt-20'>
         <h1 className=''>Text Goes Here</h1>
         <ToggleDarkMode />
       </div>
-    </UserLayout>
+    </LandingLayout>
   );
 };
 

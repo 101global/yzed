@@ -1,17 +1,18 @@
 const theme = {
   colors: {
+    backgroundBlack: '#0d0d0d',
     black: '#272727',
     mediumGrey: '#8b8b8b',
     grey: '#7c7c7c',
     lightGrey: '#eaeaea',
     vanillaGrey: '#f7f6f3',
     white: '#fff',
-    aquaLight: '#B5EAE8',
+    aquaLight: '#b5eae8',
     aqua: '#75cedb',
     purple: '#a891d9',
     transparentBlack: '#0d0d0df6',
     transparentWhite: '#ffffffcc',
-    transparentPurple: '#A495D54C',
+    transparentPurple: '#a495d54c',
   },
   fonts: { main: "'Work Sans', sans-serif;" },
   fontSizes: {

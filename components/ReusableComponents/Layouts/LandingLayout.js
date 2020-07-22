@@ -3,14 +3,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../../utilities/context/ThemeContext';
 import UserNavigation from '../Navigation/NavigationBar';
 
-const UserLayout = ({ user, children }) => {
+const LandingLayout = ({ user, children }) => {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   return (
     <div>
-      <UserNavigation user={user} />
+      <UserNavigation user={user} isLandingMenu={true} />
       <div>{children}</div>
     </div>
   );
 };
 
-export default UserLayout;
+export default LandingLayout;

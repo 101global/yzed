@@ -38,7 +38,7 @@ const ToggleDarkModeButton = () => {
           -webkit-tap-highlight-color: transparent;
         }
         .toggle {
-          height: 31px;
+          height: 29px;
           width: 80px;
           border-radius: 16px;
           display: inline-block;
@@ -46,14 +46,15 @@ const ToggleDarkModeButton = () => {
           margin: 0;
           border: 1px solid ${theme.colors.lightGrey};
           transition: all 0.3s ease;
+          margin-top: 5px;
         }
         .toggle:after {
           content: '';
           position: absolute;
           top: 2px;
           right: 3px;
-          width: 24px;
-          height: 24px;
+          width: 22px;
+          height: 22px;
           z-index: 100;
           border-radius: 50%;
           box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
@@ -65,18 +66,18 @@ const ToggleDarkModeButton = () => {
       `}</style>
       <style jsx global>{`
         .toggle-icon {
-          height: 24px;
-          width: 24px;
+          height: 22px;
+          width: 22px;
         }
         .sun {
           position: absolute;
-          top: 3px;
+          top: 8px;
           left: 4px;
           transition: all 0.3s ease;
         }
         .moon {
           position: absolute;
-          top: 3px;
+          top: 8px;
           right: 4px;
           transition: all 0.3s ease;
         }
