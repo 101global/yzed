@@ -25,17 +25,17 @@ const BrandContent = ({ model }) => {
           <ProgressiveImage
             preview={images[0].image}
             image={images[0].image}
-            styleClass='first mt-6'
+            styleClass='first mt-8'
           />
           <ProgressiveImage
             preview={images[1].image}
             image={images[1].image}
-            styleClass='second mt-6'
+            styleClass='second mt-8'
           />
           <ProgressiveImage
             preview={images[2].image}
             image={images[2].image}
-            styleClass='third mt-6'
+            styleClass='third mt-8'
           />
         </div>
         <div>
@@ -53,12 +53,12 @@ const BrandContent = ({ model }) => {
           <ProgressiveImage
             preview={images[3].image}
             image={images[3].image}
-            styleClass='first mt-6'
+            styleClass='first mt-8'
           />
           <ProgressiveImage
             preview={images[4].image}
             image={images[4].image}
-            styleClass='second mt-6'
+            styleClass='second mt-8'
           />
         </div>
         <div>
