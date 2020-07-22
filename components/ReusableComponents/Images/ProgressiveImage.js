@@ -22,17 +22,19 @@ const ProgressiveImage = ({ preview, image, alt, styleClass }) => {
   }, [preview]);
 
   return (
-    <img
-      style={{
-        filter: `${loading ? 'blur(30px)' : ''}`,
-        transition: '1s filter linear',
-        background: 'grey',
-        overflow: 'hidden',
-      }}
-      src={currentImage}
-      alt={alt}
-      className={styleClass}
-    />
+    <div className='overflow-hidden'>
+      <img
+        style={{
+          filter: `${loading ? 'blur(30px)' : ''}`,
+          transition: '1s filter linear',
+          background: 'grey',
+          overflow: 'hidden',
+        }}
+        src={currentImage}
+        alt={alt}
+        className={styleClass}
+      />
+    </div>
   );
 };
 
