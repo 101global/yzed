@@ -78,7 +78,7 @@ const BrandModelControls = ({ model }) => {
       </div>
       <style jsx>{`
         .viewer-container {
-          width: calc(50% - 150px - 1rem);
+          width: calc(50% - 150px - 2rem);
           height: 70vh;
         }
         .play-pause {
@@ -86,7 +86,6 @@ const BrandModelControls = ({ model }) => {
           z-index: 700;
         }
         .show-hide {
-          top: 20px;
           z-index: 700;
         }
       `}</style>

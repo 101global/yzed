@@ -7,10 +7,11 @@ import darkBackgroundLoading from '../../../public/yzed-loading-dark-background.
 import dynamic from 'next/dynamic';
 import lightBackgroundLoading from '../../../public/yzed-loading-light-background.svg';
 import DownChevron from '../../ReusableComponents/Images/DownChevron';
+import { ThemeContext } from '../../../utilities/context/ThemeContext';
 
 const StationaryModelViewer = ({ model, topModelDark }) => {
   const [loading, setLoading] = useState(false);
-
+  const { darkMode } = useContext(ThemeContext);
   const modelRef = useRef(null);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           camera-controls
           ar
           exposure={model.exposure}
-          poster={topModelDark ? darkBackgroundLoading : lightBackgroundLoading}
+          poster={topModelDark || darkMode.value ? darkBackgroundLoading : lightBackgroundLoading}
           interaction-policy='allow-when-focused'>
           <DownChevron topModelDark={topModelDark} />
         </model-viewer>

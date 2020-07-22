@@ -4,10 +4,11 @@ import DownChevron from '../../ReusableComponents/Images/DownChevron';
 import PropTypes from 'prop-types';
 import darkBackgroundLoading from '../../../public/yzed-loading-dark-background.svg';
 import lightBackgroundLoading from '../../../public/yzed-loading-light-background.svg';
+import { ThemeContext } from '../../../utilities/context/ThemeContext';
 
 const AnimatedModelViewer = ({ model, topModelDark }) => {
   const modelRef = useRef(null);
-
+  const { darkMode } = useContext(ThemeContext);
   return (
     <>
       <div className='model-viewer-container'>
@@ -17,7 +18,7 @@ const AnimatedModelViewer = ({ model, topModelDark }) => {
           alt={model.id}
           loading='lazy'
           camera-controls
-          poster={topModelDark ? darkBackgroundLoading : lightBackgroundLoading}
+          poster={topModelDark || darkMode.value ? darkBackgroundLoading : lightBackgroundLoading}
           exposure={model.exposure}
           interaction-policy='allow-when-focused'
           autoplay>

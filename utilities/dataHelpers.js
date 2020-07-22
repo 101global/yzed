@@ -15,3 +15,16 @@ export const googleData = (result) => {
   const profilePicture = result.additionalUserInfo.profile.picture;
   return { userID, email, firstName, lastName, profilePicture };
 };
+
+export const imagesNames = (brandName) => {
+  const imageBaseUrl = 'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/';
+  let images = [];
+  for (let i = 1; i < 6; i++) {
+    images.push({
+      id: `${brandName} Photo ${i}`,
+      image: `${imageBaseUrl}${brandName}_image${i}.jpg`,
+      thumbnail: `${imageBaseUrl}${brandName}_image${i}_thumb.jpg`,
+    });
+  }
+  return images;
+};

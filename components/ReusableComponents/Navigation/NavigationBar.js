@@ -34,7 +34,7 @@ const NavigationBar = ({ user, isLandingMenu = false }) => {
           color: ${theme.colors.white};
         }
         .links-container {
-          width: 40%;
+          width: calc(50% - 0.5rem);
         }
         .user-nav img {
           height: 40px;
@@ -43,7 +43,7 @@ const NavigationBar = ({ user, isLandingMenu = false }) => {
       `}</style>
       <style jsx global>{`
         .dark-mode .navigation-container {
-          background: ${theme.colors.black};
+          background: ${theme.colors.transparentBlack};
         }
         .light-mode .navigation-container {
           background: ${theme.colors.transparentWhite};
