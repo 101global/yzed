@@ -27,59 +27,58 @@ const BrandModelControls = ({ model }) => {
 
   return (
     <>
-      <div>
-        <div className='viewer-container relative'>
+      <div className='viewer-container relative'>
+        <button
+          className='show-hide absolute'
+          onClick={() => {
+            if (modelState === 'IMAGE') {
+              setModelState('STILL');
+            } else {
+              setModelState('IMAGE');
+            }
+          }}>
+          {modelState === 'IMAGE' ? (
+            <div className='flex flex-row justify-center items-center'>
+              <ExpandIcon styleClass='control-icon expand' />
+              <p className='ml-2 font-light text-sm tracking-wide'>Show 3D</p>
+            </div>
+          ) : (
+            <HideIcon styleClass='control-icon hide' />
+          )}
+        </button>
+        {modelState === 'STILL' && <StationaryModelViewer model={model} />}
+        {modelState === 'IMAGE' && <h2>Image</h2>}
+        {modelState === 'WALK' && <AnimatedModelViewer model={model} />}
+        {modelState !== 'IMAGE' && (
           <button
-            className='show-hide absolute'
+            className='play-pause absolute'
             onClick={() => {
-              if (modelState === 'IMAGE') {
+              if (modelState === 'STILL') {
+                setModelState('WALK');
+              }
+              if (modelState === 'WALK') {
                 setModelState('STILL');
-              } else {
-                setModelState('IMAGE');
               }
             }}>
-            {modelState === 'IMAGE' ? (
+            {modelState === 'WALK' ? (
               <div className='flex flex-row justify-center items-center'>
-                <ExpandIcon styleClass='control-icon expand' />
-                <p className='ml-2 font-light text-sm tracking-wide'>Show 3D</p>
+                <PauseIcon styleClass='control-icon pause' />
+                <p className='ml-2 font-light text-sm tracking-wide'>Stationary</p>
               </div>
             ) : (
-              <HideIcon styleClass='control-icon hide' />
+              <div className='flex flex-row justify-center items-center'>
+                <PlayIcon styleClass='control-icon play' />
+                <p className='ml-2 font-light text-sm tracking-wide'>Walking</p>
+              </div>
             )}
           </button>
-          {modelState === 'STILL' && <StationaryModelViewer model={model} />}
-          {modelState === 'IMAGE' && <h2>Image</h2>}
-          {modelState === 'WALK' && <AnimatedModelViewer model={model} />}
-          {modelState !== 'IMAGE' && (
-            <button
-              className='play-pause absolute'
-              onClick={() => {
-                if (modelState === 'STILL') {
-                  setModelState('WALK');
-                }
-                if (modelState === 'WALK') {
-                  setModelState('STILL');
-                }
-              }}>
-              {modelState === 'WALK' ? (
-                <div className='flex flex-row justify-center items-center'>
-                  <PauseIcon styleClass='control-icon pause' />
-                  <p className='ml-2 font-light text-sm tracking-wide'>Stationary</p>
-                </div>
-              ) : (
-                <div className='flex flex-row justify-center items-center'>
-                  <PlayIcon styleClass='control-icon play' />
-                  <p className='ml-2 font-light text-sm tracking-wide'>Walking</p>
-                </div>
-              )}
-            </button>
-          )}
-        </div>
+        )}
       </div>
       <style jsx>{`
         .viewer-container {
-          width: calc(50% - 150px - 2rem);
+          width: calc(50vw - 150px - 2rem);
           height: 70vh;
+          margin-right: 0px;
         }
         .play-pause {
           transform: translateY(-100%);

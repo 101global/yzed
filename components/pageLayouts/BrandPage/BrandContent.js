@@ -5,7 +5,7 @@ import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
 const BrandContent = ({ model }) => {
   console.log(model);
   const images = imagesNames(model.imageSlug);
-  console.log(images[0]);
+  console.log(images[1]);
   return (
     <>
       <div>
@@ -23,8 +23,8 @@ const BrandContent = ({ model }) => {
         </div>
         <div>
           <ProgressiveImage preview={images[0].image} image={images[0].image} />
-          <ProgressiveImage preview={images[0].image} image={images[0].image} />
-          <ProgressiveImage preview={images[0].image} image={images[0].image} />
+          <ProgressiveImage preview={images[1].image} image={images[1].image} />
+          <ProgressiveImage preview={images[2].image} image={images[2].image} />
         </div>
         <div>
           <h2>“The desire to make fashion more accessible to people.”</h2>
@@ -38,8 +38,8 @@ const BrandContent = ({ model }) => {
           </p>
         </div>
         <div>
-          <ProgressiveImage preview={images[0].image} image={images[0].image} />
-          <ProgressiveImage preview={images[0].image} image={images[0].image} />
+          <ProgressiveImage preview={images[3].image} image={images[3].image} />
+          <ProgressiveImage preview={images[4].image} image={images[4].image} />
         </div>
         <div>
           <h2>Let’s Work Together!</h2>

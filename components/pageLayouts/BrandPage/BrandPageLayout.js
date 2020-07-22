@@ -25,8 +25,8 @@ const BrandPageLayout = ({ model }) => {
           padding-top: 200px;
         }
         .model-viewer-container {
-          max-height: calc(100vh);
-          width: calc(100%);
+          width: calc(50vw - 150px - 2rem);
+          margin-right: 0px;
         }
       `}</style>
     </>
