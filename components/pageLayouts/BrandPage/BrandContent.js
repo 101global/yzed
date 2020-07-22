@@ -21,10 +21,22 @@ const BrandContent = ({ model }) => {
             <a>MANIFESTO</a>
           </Link>
         </div>
-        <div>
-          <ProgressiveImage preview={images[0].image} image={images[0].image} />
-          <ProgressiveImage preview={images[1].image} image={images[1].image} />
-          <ProgressiveImage preview={images[2].image} image={images[2].image} />
+        <div className='top-images'>
+          <ProgressiveImage
+            preview={images[0].image}
+            image={images[0].image}
+            styleClass='first mt-6'
+          />
+          <ProgressiveImage
+            preview={images[1].image}
+            image={images[1].image}
+            styleClass='second mt-6'
+          />
+          <ProgressiveImage
+            preview={images[2].image}
+            image={images[2].image}
+            styleClass='third mt-6'
+          />
         </div>
         <div>
           <h2>“The desire to make fashion more accessible to people.”</h2>
@@ -37,9 +49,17 @@ const BrandContent = ({ model }) => {
             self-expression leads our decisions.
           </p>
         </div>
-        <div>
-          <ProgressiveImage preview={images[3].image} image={images[3].image} />
-          <ProgressiveImage preview={images[4].image} image={images[4].image} />
+        <div className='bottom-images'>
+          <ProgressiveImage
+            preview={images[3].image}
+            image={images[3].image}
+            styleClass='first mt-6'
+          />
+          <ProgressiveImage
+            preview={images[4].image}
+            image={images[4].image}
+            styleClass='second mt-6'
+          />
         </div>
         <div>
           <h2>Let’s Work Together!</h2>
@@ -66,7 +86,21 @@ const BrandContent = ({ model }) => {
         </div>
       </div>
       <style jsx>{``}</style>
-      <style jsx global>{``}</style>
+      <style jsx global>{`
+        .top-images .second {
+          width: 70%;
+          margin-left: 30%;
+        }
+        .top-images .third {
+          width: 60%;
+        }
+        .bottom-images .first {
+          width: 80%;
+        }
+        .bottom-images .second {
+          width: 60%;
+        }
+      `}</style>
     </>
   );
 };
