@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
 
-const ProgressiveImage = ({ preview, image, alt }) => {
+const ProgressiveImage = ({ preview, image, alt, styleClass }) => {
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
 
@@ -27,14 +27,11 @@ const ProgressiveImage = ({ preview, image, alt }) => {
         filter: `${loading ? 'blur(30px)' : ''}`,
         transition: '1s filter linear',
         background: 'grey',
-        height: '1500px',
-        width: '3000px',
-        maxWidth: '100%',
-        height: 'auto',
         overflow: 'hidden',
       }}
       src={currentImage}
       alt={alt}
+      className={styleClass}
     />
   );
 };
