@@ -32,6 +32,10 @@
   @apply min-h-screen flex flex-col bg-black justify-center items-center px-64;
 }
 
+.landing-title {
+  @apply text-4xl;
+}
+
 .dark-mode {
   @apply bg-black text-white;
 }

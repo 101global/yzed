@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from 'react';
 import { imagesNames } from '../../../utilities/dataHelpers';
 import Link from 'next/link';
 import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
+import theme from '../../../utilities/theme';
 const BrandContent = ({ model }) => {
   console.log(model);
   const images = imagesNames(model.imageSlug);
@@ -10,7 +11,7 @@ const BrandContent = ({ model }) => {
     <>
       <div>
         <div>
-          <h2>Where Democratic Fashion catalyzes self-discovery.</h2>
+          <h2 className='landing-title'>Where Democratic Fashion catalyzes self-discovery.</h2>
           <p>
             Democratic Fashion is a practice that minimizes the gap between a designers’ work and
             the mass market, while considering fair economic and social trade off. YZED is built
@@ -39,7 +40,7 @@ const BrandContent = ({ model }) => {
           />
         </div>
         <div>
-          <h2>“The desire to make fashion more accessible to people.”</h2>
+          <h2 className='landing-title'>“The desire to make fashion more accessible to people.”</h2>
           <p>
             We are an international team of five, based in Seoul, South Korea. we became united by
             the desire to make fashion more accessible to people, which has continued to be our
@@ -62,7 +63,7 @@ const BrandContent = ({ model }) => {
           />
         </div>
         <div>
-          <h2>Let’s Work Together!</h2>
+          <h2 className='landing-title'>Let’s Work Together!</h2>
           <p>
             Dive into a mixed-reality world with a team of professionals in 3D & graphic design,
             UI/UX, trend forecasting, as well as front and back-end programming. YZED is turning
@@ -99,6 +100,12 @@ const BrandContent = ({ model }) => {
         }
         .bottom-images .second {
           width: 60%;
+        }
+        .landing-title {
+          width: 80%;
+          background: -webkit-linear-gradient(right, ${theme.colors.aqua}, ${theme.colors.purple});
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       `}</style>
     </>
