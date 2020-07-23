@@ -9,7 +9,7 @@ import theme from '../../../utilities/theme';
 
 const BrandModelControls = ({ model }) => {
   console.log(model);
-  const [modelState, setModelState] = useState('IMAGE');
+  const [modelState, setModelState] = useState('STILL');
 
   const StationaryModelViewer = dynamic(
     () => import('../../ReusableComponents/ModelViewers/StationaryModelViewer.js'),

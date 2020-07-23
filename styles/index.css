@@ -33,7 +33,11 @@
 }
 
 .landing-title {
-  @apply text-5xl font-bold;
+  @apply text-5xl font-bold my-16 w-100per;
+}
+
+.paragraph-text {
+  @apply font-light text-lg leading-normal;
 }
 
 .dark-mode {
