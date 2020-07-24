@@ -23,9 +23,9 @@ const BrandContent = ({ model }) => {
             our manifesto.;
           </p>
           <Link href='/manifesto'>
-            <div className='flex'>
+            <div className='flex flex-row justify-start mt-4'>
               <DownloadIcon fill={theme.colors.black} />
-              <a>MANIFESTO</a>
+              <a className='ml-2'>MANIFESTO</a>
             </div>
           </Link>
         </div>
