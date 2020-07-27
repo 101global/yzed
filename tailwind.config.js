@@ -29,9 +29,7 @@ module.exports = {
       linearGradients: {
         leftToRight: 'linear-gradient(to-right, #a891d9, #75cedb)',
       },
-      lineHeights: {
-        standard: '1.5',
-      },
+  
       margin: {
         '10per': '10%',
         '15per': '15%',
