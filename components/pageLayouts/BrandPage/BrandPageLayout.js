@@ -10,9 +10,9 @@ const BrandPageLayout = ({ model }) => {
   return (
     <>
       <NavigationBar isLandingMenu={true} />
-      <div className='main-page-container flex flex-col lg:grid lg:grid-cols-2 lg:gap-4 min-h-screen px-4 lg:px-dsk'>
+      <div className='main-page-container py-navHeight lg:pt-48 flex flex-col lg:grid lg:grid-cols-2 lg:gap-4 min-h-screen px-4 lg:px-dsk'>
         <div>
-          <div className='model-viewer-container fixed'>
+          <div className='model-viewer-container lg:fixed'>
             <BrandModelControls model={model} />
           </div>
         </div>
@@ -20,15 +20,7 @@ const BrandPageLayout = ({ model }) => {
           <BrandContent model={model} />
         </div>
       </div>
-      <style jsx>{`
-        .main-page-container {
-          padding-top: 200px;
-        }
-        .model-viewer-container {
-          width: calc(50vw - 150px - 2rem);
-          margin-right: 0px;
-        }
-      `}</style>
+      <style jsx>{``}</style>
     </>
   );
 };

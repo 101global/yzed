@@ -29,7 +29,9 @@ module.exports = {
       linearGradients: {
         leftToRight: 'linear-gradient(to-right, #a891d9, #75cedb)',
       },
-  
+      lineHeights: {
+        standard: '1.5',
+      },
       margin: {
         '10per': '10%',
         '15per': '15%',
@@ -57,6 +59,7 @@ module.exports = {
         '80per': '80%',
         '90per': '90%',
         '100per': '100%',
+        floatScroll: 'calc(50vw - 150px - 2rem)',
       },
       zIndex: {
         tenThous: '10000',

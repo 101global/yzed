@@ -12,7 +12,7 @@ const BrandContent = ({ model }) => {
   return (
     <>
       <Element name='Introduction'>
-        <div className='pb-16 -mt-16'>
+        <div className='pb-16 -mt-20'>
           <h2 className='landing-title lg:w-80per'>
             Where Democratic Fashion catalyzes self-discovery.
           </h2>

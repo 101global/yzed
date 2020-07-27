@@ -27,7 +27,7 @@ const BrandModelControls = ({ model }) => {
 
   return (
     <>
-      <div className='viewer-container relative'>
+      <div className='viewer-container relative w-full lg:w-floatScroll'>
         <button
           className='show-hide absolute'
           onClick={() => {
@@ -76,7 +76,6 @@ const BrandModelControls = ({ model }) => {
       </div>
       <style jsx>{`
         .viewer-container {
-          width: calc(50vw - 150px - 2rem);
           height: 70vh;
           margin-right: 0px;
         }
