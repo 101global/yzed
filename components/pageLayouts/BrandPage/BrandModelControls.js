@@ -85,6 +85,11 @@ const BrandModelControls = ({ model }) => {
         .show-hide {
           z-index: 700;
         }
+        @media (max-width: 1024px) {
+          .viewer-container {
+            height: 80vh;
+          }
+        }
       `}</style>
       <style jsx global>{`
         .dark-mode svg.control-icon path {
