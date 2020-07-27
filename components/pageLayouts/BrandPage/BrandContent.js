@@ -20,7 +20,7 @@ const BrandContent = ({ model }) => {
             Democratic Fashion is a practice that minimizes the gap between a designers’ work and
             the mass market, while considering fair economic and social trade off. YZED is built
             upon the five most important factors of this practice, which you can read more about in
-            our manifesto.;
+            our manifesto.
           </p>
           <Link href='/manifesto'>
             <div className='manifesto-link flex flex-row justify-start mt-8 text-2xl items-center'>
