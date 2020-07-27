@@ -23,8 +23,8 @@ const BrandContent = ({ model }) => {
             our manifesto.;
           </p>
           <Link href='/manifesto'>
-            <div className='flex flex-row justify-start mt-4'>
-              <DownloadIcon fill={theme.colors.black} />
+            <div className='manifesto-link flex flex-row justify-start mt-8 text-2xl items-center'>
+              <DownloadIcon styleClass='download-manifesto-svg' />
               <a className='ml-2'>MANIFESTO</a>
             </div>
           </Link>
@@ -109,6 +109,27 @@ const BrandContent = ({ model }) => {
           background: -webkit-linear-gradient(right, ${theme.colors.aqua}, ${theme.colors.purple});
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+        }
+        .dark-mode .download-manifesto-svg stop:first-child,
+        .dark-mode .download-manifesto-svg stop:last-child {
+          stop-color: ${theme.colors.white};
+        }
+
+        .light-mode .download-manifesto-svg stop:first-child,
+        .light-mode .download-manifesto-svg stop:last-child {
+          stop-color: ${theme.colors.black};
+        }
+        .manifesto-link:hover .download-manifesto-svg stop:first-child {
+          stop-color: ${theme.colors.aqua};
+        }
+        .manifesto-link:hover .download-manifesto-svg stop:last-child {
+          stop-color: ${theme.colors.purple};
+        }
+        .manifesto-link:hover {
+          background: -webkit-linear-gradient(top, ${theme.colors.aqua}, ${theme.colors.purple});
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          cursor: pointer;
         }
       `}</style>
     </>

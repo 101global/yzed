@@ -27,7 +27,7 @@ const BrandModelControls = ({ model }) => {
 
   return (
     <>
-      <div className='viewer-container relative w-full lg:w-floatScroll'>
+      <div className='viewer-container relative w-full mr-0 lg:w-floatScroll'>
         <button
           className='show-hide absolute'
           onClick={() => {
@@ -77,7 +77,6 @@ const BrandModelControls = ({ model }) => {
       <style jsx>{`
         .viewer-container {
           height: 70vh;
-          margin-right: 0px;
         }
         .play-pause {
           transform: translateY(-100%);

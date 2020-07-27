@@ -1,8 +1,14 @@
 import React, { useEffect, useContext, useState } from 'react';
 
-const DownloadIcon = ({ fill }) => {
+const DownloadIcon = ({ fill, styleClass }) => {
   return (
-    <svg width='23' height='19' viewBox='0 0 23 19' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <svg
+      width='23'
+      height='19'
+      viewBox='0 0 23 19'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      className={styleClass}>
       <path
         d='M22.4 18.26H0V13.99H2V16.26H20.4V13.99H22.4V18.26Z'
         fill={fill ?? 'url(#paint1_linear)'}
