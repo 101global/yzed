@@ -6,10 +6,11 @@ import PauseIcon from '../../ReusableComponents/Icons/Pause';
 import PlayIcon from '../../ReusableComponents/Icons/Play';
 import dynamic from 'next/dynamic';
 import theme from '../../../utilities/theme';
+import Slider from '../../ReusableComponents/Images/VerticalSlider';
 
 const BrandModelControls = ({ model }) => {
   console.log(model);
-  const [modelState, setModelState] = useState('STILL');
+  const [modelState, setModelState] = useState('IMAGE');
 
   const StationaryModelViewer = dynamic(
     () => import('../../ReusableComponents/ModelViewers/StationaryModelViewer.js'),
@@ -27,7 +28,7 @@ const BrandModelControls = ({ model }) => {
 
   return (
     <>
-      <div className='viewer-container relative w-full mr-0 lg:w-floatScroll'>
+      <div className='viewer-container relative w-full mr-0 lg:w-floatScroll h-vh80 lg:h-vh70'>
         <button
           className='show-hide absolute'
           onClick={() => {
@@ -47,7 +48,7 @@ const BrandModelControls = ({ model }) => {
           )}
         </button>
         {modelState === 'STILL' && <StationaryModelViewer model={model} />}
-        {modelState === 'IMAGE' && <h2>Image</h2>}
+        {modelState === 'IMAGE' && <Slider model={model} />}
         {modelState === 'WALK' && <AnimatedModelViewer model={model} />}
         {modelState !== 'IMAGE' && (
           <button
@@ -84,11 +85,6 @@ const BrandModelControls = ({ model }) => {
         }
         .show-hide {
           z-index: 700;
-        }
-        @media (max-width: 1024px) {
-          .viewer-container {
-            height: 80vh;
-          }
         }
       `}</style>
       <style jsx global>{`

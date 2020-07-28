@@ -8,7 +8,7 @@ import cookies from 'next-cookies';
 import fetch from 'isomorphic-unfetch';
 import { server } from '../config/index';
 import ThemeContext from '../utilities/context/ThemeContext';
-
+import 'keen-slider/keen-slider.min.css';
 function MyApp({ Component, pageProps, user }) {
   const [userData, setUserData] = useState(user);
   console.log(user);
