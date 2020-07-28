@@ -94,7 +94,7 @@ const BrandContent = ({ model }) => {
           </div>
         </div>
         <div className='py-24'>
-          <h3>Contact</h3>
+          <h3 className='font-semibold text-xl'>Contact</h3>
           <a className='block font-light text-lg' href='mailto:yzed@101.global'>
             yzed@101.global
           </a>
