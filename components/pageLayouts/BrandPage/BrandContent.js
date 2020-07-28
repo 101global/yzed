@@ -95,8 +95,12 @@ const BrandContent = ({ model }) => {
         </div>
         <div className='py-24'>
           <h3>Contact</h3>
-          <a href='mailto:yzed@101.global'>yzed@101.global</a>
-          <a href='tel:+82 02  6248  2130'>+82 02 6248 2130</a>
+          <a className='block font-light text-lg' href='mailto:yzed@101.global'>
+            yzed@101.global
+          </a>
+          <a className='block font-light text-lg' href='tel:+82 02  6248  2130'>
+            +82 02 6248 2130
+          </a>
           <p className='paragraph-text'>
             22-18, Bongeunsa-ro 26-gil, Gangnam-gu,
             <br />

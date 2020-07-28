@@ -38,7 +38,7 @@ const ToggleDarkModeButton = () => {
           -webkit-tap-highlight-color: transparent;
         }
         .toggle {
-          height: 29px;
+          height: 28px;
           width: 80px;
           border-radius: 16px;
           display: inline-block;
@@ -52,7 +52,7 @@ const ToggleDarkModeButton = () => {
           content: '';
           position: absolute;
           top: 2px;
-          right: 3px;
+          right: 2px;
           width: 22px;
           height: 22px;
           z-index: 100;
@@ -61,7 +61,7 @@ const ToggleDarkModeButton = () => {
           transition: all 0.3s cubic-bezier(0.5, 0.1, 0.75, 1.35);
         }
         .toggle:checked:after {
-          transform: translateX(-48px);
+          transform: translateX(-50px);
         }
       `}</style>
       <style jsx global>{`

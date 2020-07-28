@@ -13,7 +13,7 @@ import theme from '../../../utilities/theme';
 const NavigationBar = ({ user, isLandingMenu = false }) => {
   return (
     <>
-      <div className='navigation-container w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk'>
+      <nav className='navigation-container w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk'>
         <Link href='/'>
           <a aria-label='YZED Home' className='logo-link'>
             <Logo styleClass='logo-svg' />
@@ -22,7 +22,7 @@ const NavigationBar = ({ user, isLandingMenu = false }) => {
         <div className='links-container w-full flex flex-row'>
           {isLandingMenu ? <LandingLinks /> : <NavigationLinks user={user} />}
         </div>
-      </div>
+      </nav>
       <style jsx>{`
         .navigation-container {
           height: 86px;
