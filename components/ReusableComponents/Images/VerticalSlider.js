@@ -40,7 +40,7 @@ const Slider = ({ model }) => {
       if (!pause && slider) {
         slider.next();
       }
-    }, 4000);
+    }, 5000);
     return () => {
       clearInterval(timer.current);
     };
