@@ -9,11 +9,14 @@ const Slider = ({ model }) => {
   const images = imagesNames(model.imageSlug);
   const [opacities, setOpacities] = React.useState([]);
   const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [pause, setPause] = React.useState(false);
+  const timer = React.useRef();
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
     },
+    autoplay: true,
     slides: images.length,
     loop: true,
     duration: 3000,
@@ -22,6 +25,26 @@ const Slider = ({ model }) => {
       setOpacities(new_opacities);
     },
   });
+
+  React.useEffect(() => {
+    sliderRef.current.addEventListener('mouseover', () => {
+      setPause(true);
+    });
+    sliderRef.current.addEventListener('mouseout', () => {
+      setPause(false);
+    });
+  }, [sliderRef]);
+
+  React.useEffect(() => {
+    timer.current = setInterval(() => {
+      if (!pause && slider) {
+        slider.next();
+      }
+    }, 4000);
+    return () => {
+      clearInterval(timer.current);
+    };
+  }, [pause, slider]);
 
   return (
     <>
@@ -51,7 +74,7 @@ const Slider = ({ model }) => {
             </div>
           ))}
         </div>
-        {slider && (
+        {/* {slider && (
           <>
             <ArrowLeft
               onClick={(e) => e.stopPropagation() || slider.prev()}
@@ -63,7 +86,7 @@ const Slider = ({ model }) => {
               disabled={currentSlide === slider.details().size - 1}
             />
           </>
-        )}
+        )} */}
       </div>
       <style jsx global>{`
         .fader__slide {
