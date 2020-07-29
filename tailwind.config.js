@@ -1,12 +1,16 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   purge: ['./components/**/*.js', './pages/**/*.js'],
   whitelist: ['mode-dark'],
   theme: {
+    fill: (theme) => ({ black: theme('colors.black'), white: theme('colors.white') }),
     extend: {
       padding: {
         dsk: '10%',
         nav: '4.7rem',
         navHeight: '86px',
+
         '10per': '10%',
         '15per': '15%',
         '20per': '20%',
@@ -37,6 +41,8 @@ module.exports = {
         '80vh': '80vh',
         '90vh': '90vh',
         '100vh': '100vh',
+        desktopNav: '86px',
+        desktopFooter: '60px',
       },
       linearGradients: {
         leftToRight: 'linear-gradient(to-right, #a891d9, #75cedb)',
@@ -94,6 +100,25 @@ module.exports = {
       transparentPurple: '#A495D54C',
     },
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'dark', 'dark:hover', 'dark:focus'],
+    borderColor: ['responsive', 'hover', 'focus', 'dark', 'dark:hover', 'dark:focus'],
+    textColor: [
+      'responsive',
+      'hover',
+      'focus',
+      'group-hover',
+      'dark',
+      'dark:hover',
+      'dark:focus',
+      'dark:group-hover',
+      'focus-within',
+      'dark:focus-within',
+      'dark:active',
+      'dark:disabled',
+    ],
+    borderStyle: ['responsive', 'dark'],
+    fill: ['responsive', 'hover', 'focus', 'dark', 'dark:hover', 'dark:focus'],
+  },
+  plugins: [require('@danestves/tailwindcss-darkmode')()],
 };

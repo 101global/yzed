@@ -40,25 +40,25 @@ exports[`renders animated model viewer unchanged 1`] = `
 
 exports[`renders model viewer controller unchanged 1`] = `
 <div
-  className="jsx-3551498935 jsx-3808981773 viewer-container flex justify-between items-center"
+  className="jsx-2866622310 jsx-3808981773 viewer-container flex justify-between items-center"
 >
   <div
-    className="jsx-3551498935 jsx-3808981773 model-viewer-container"
+    className="jsx-2866622310 jsx-3808981773 model-viewer-container"
   />
   <div
-    className="jsx-3551498935 jsx-3808981773 controls"
+    className="jsx-2866622310 jsx-3808981773 controls"
   >
     <div
-      className="jsx-3551498935 jsx-3808981773 toggle-animated-buttons"
+      className="jsx-2866622310 jsx-3808981773 toggle-animated-buttons"
     >
       <div
-        className="react-switch-selector-wrapper css-ptz1ma"
+        className="react-switch-selector-wrapper css-yp4xe5"
       >
         <div
           className="react-switch-selector-option css-15e01fz"
         >
           <label
-            className="react-switch-selector-option-label css-1i2bepu"
+            className="react-switch-selector-option-label css-14spvco"
             fontSize={14}
             selected={true}
           >
@@ -93,10 +93,10 @@ exports[`renders model viewer controller unchanged 1`] = `
       </div>
     </div>
     <div
-      className="jsx-3551498935 jsx-3808981773 toggle-light-buttons"
+      className="jsx-2866622310 jsx-3808981773 toggle-light-buttons"
     >
       <div
-        className="react-switch-selector-wrapper css-1hiuixs"
+        className="react-switch-selector-wrapper css-1te2sdl"
       >
         <div
           className="react-switch-selector-option css-15e01fz"
@@ -120,7 +120,7 @@ exports[`renders model viewer controller unchanged 1`] = `
           className="react-switch-selector-option css-15e01fz"
         >
           <label
-            className="react-switch-selector-option-label css-1i2bepu"
+            className="react-switch-selector-option-label css-14spvco"
             fontSize={14}
             selected={true}
           >

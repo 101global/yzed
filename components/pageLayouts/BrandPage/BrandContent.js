@@ -22,12 +22,13 @@ const BrandContent = ({ model }) => {
             upon the five most important factors of this practice, which you can read more about in
             our manifesto.
           </p>
-          <Link href='/manifesto'>
-            <div className='manifesto-link flex flex-row justify-start mt-8 text-2xl items-center'>
-              <DownloadIcon styleClass='download-manifesto-svg' />
-              <a className='ml-2'>MANIFESTO</a>
-            </div>
-          </Link>
+          <a
+            className='manifesto-link flex flex-row justify-start mt-8 text-2xl items-center btn-red'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <DownloadIcon styleClass='download-manifesto-svg mr-2' />
+            MANIFESTO
+          </a>
         </div>
         <div className='top-images py-16'>
           <ProgressiveImage

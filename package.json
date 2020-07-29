@@ -45,6 +45,7 @@
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
+    "@danestves/tailwindcss-darkmode": "^1.1.5",
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "@testing-library/jest-dom": "^5.1.0",
     "@testing-library/react": "^9.4.0",

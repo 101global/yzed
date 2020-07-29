@@ -6,13 +6,13 @@ import theme from '../../../utilities/theme';
 const Footer = () => {
   return (
     <>
-      <footer className='footer px:4 lg:px-10per flex flex-row items-center'>
+      <footer className='footer mt-8 px:4 lg:px-10per flex flex-row items-center bg-black dark:bg-white h-desktopFooter'>
         <Link href='/'>
           <a>
-            <YZED styleClass='yzed-footer-logo' />
+            <YZED styleClass='yzed-footer-logo fill-white dark:fill-black' />
           </a>
         </Link>
-        <p className='text-base text-light'>
+        <p className='text-base text-light text-white dark:text-black'>
           - All rights reserved for{' '}
           <Link href='https://www.101.global/?lang=en'>
             <a>101Global</a>
@@ -24,7 +24,7 @@ const Footer = () => {
         </p>
       </footer>
       <style jsx>{`
-        footer {
+        .footer {
           height: 60px;
         }
       `}</style>
@@ -32,20 +32,6 @@ const Footer = () => {
         .yzed-footer-logo {
           height: 16px;
           margin-top: -2px;
-        }
-        .light-mode svg.yzed-footer-logo path {
-          fill: ${theme.colors.white};
-        }
-        .dark-mode svg.yzed-footer-logo path {
-          fill: ${theme.colors.black};
-        }
-        .light-mode .footer {
-          background: ${theme.colors.black};
-          color: ${theme.colors.white};
-        }
-        .dark-mode .footer {
-          background: ${theme.colors.white};
-          color: ${theme.colors.black};
         }
       `}</style>
     </>
