@@ -4,7 +4,7 @@ import ExperienceChat from './ExperienceChat';
 import ExperienceModelInformation from './ExperienceModelInformation';
 import ExperiencePhotos from './ExperiencePhotos';
 import ExperienceShop from './ExperienceShop';
-import UserNavigation from '../../ReusableComponents/Navigation/UserNavigation';
+import UserNavigation from '../../ReusableComponents/Navigation/NavigationBar';
 import VideoStream from '../../ReusableComponents/Video/VideoStream';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
