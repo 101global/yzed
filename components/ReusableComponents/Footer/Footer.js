@@ -15,19 +15,15 @@ const Footer = () => {
         <p className='text-base text-light text-white dark:text-black'>
           - All rights reserved for{' '}
           <Link href='https://www.101.global/?lang=en'>
-            <a>101Global</a>
+            <a className='hover:gradient-blue-top'>101Global</a>
           </Link>{' '}
           and{' '}
           <Link href='https://www.hanwha.com/en.html'>
-            <a>Hanwha</a>
+            <a className='hover:gradient-blue-top'>Hanwha</a>
           </Link>
         </p>
       </footer>
-      <style jsx>{`
-        .footer {
-          height: 60px;
-        }
-      `}</style>
+      <style jsx>{``}</style>
       <style jsx global>{`
         .yzed-footer-logo {
           height: 16px;

@@ -12,6 +12,7 @@ const LandingLinks = () => {
         spy={true}
         smooth={true}
         duration={500}
+        offset={-200}
         className='nav-scroll-link lg:inline-block dark:text-white hover:gradient-blue-left'
         activeClass='active'>
         Introduction
@@ -21,6 +22,7 @@ const LandingLinks = () => {
         spy={true}
         smooth={true}
         duration={500}
+        offset={-120}
         className='nav-scroll-link lg:inline-block dark:text-white hover:gradient-blue-left'
         activeClass='active'>
         About Us
@@ -30,6 +32,7 @@ const LandingLinks = () => {
         spy={true}
         smooth={true}
         duration={500}
+        offset={-50}
         className='nav-scroll-link lg:inline-block dark:text-white hover:gradient-blue-left'
         activeClass='active'>
         Contact

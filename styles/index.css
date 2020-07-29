@@ -49,7 +49,7 @@
 }
 
 .nav-scroll-link {
-  @apply inline-block hiddent font-light tracking-wider text-black;
+  @apply inline-block hidden font-medium tracking-wider text-black cursor-pointer;
 }
 
 @variants hover, focus {
