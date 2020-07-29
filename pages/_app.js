@@ -29,9 +29,17 @@ function MyApp({ Component, pageProps, user }) {
         <meta property='og:url' content='https:/yzed.me' />
         <meta property='og:title' content='YZED: A unique AR experience' />
         <meta property='og:description' content='YZED: Check out unique 3D and AR fashion.' />
+        <meta
+          property='og:image'
+          content='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/yzed-email-logo.jpg'
+        />
         <meta property='twitter:card' content='summary_large_image' />
         <meta property='twitter:url' content='https://yzed.me' />
         <meta property='twitter:title' content='YZED: A unique AR experience' />
+        <meta
+          property='twitter:image'
+          content='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/yzed-email-logo.jpg'
+        />
         <meta property='twitter:description' content='YZED: Check out unique 3D and AR fashion.' />
         <link rel='manifest' href='manifest.json' />
       </Head>
