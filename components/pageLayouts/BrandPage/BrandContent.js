@@ -13,7 +13,7 @@ const BrandContent = ({ model }) => {
     <>
       <Element name='Introduction'>
         <div className='pb-16 -mt-20'>
-          <h2 className='landing-title lg:w-80per'>
+          <h2 className='landing-title gradient-blue-right lg:w-80per'>
             Where Democratic Fashion catalyzes self-discovery.
           </h2>
           <p className='paragraph-text'>
@@ -23,10 +23,10 @@ const BrandContent = ({ model }) => {
             our manifesto.
           </p>
           <a
-            className='manifesto-link flex flex-row justify-start mt-8 text-2xl items-center btn-red'
+            className='manifesto-link flex flex-row justify-start mt-8 text-2xl items-center hover:gradient-blue-top cursor-pointer'
             target='_blank'
             rel='noopener noreferrer'>
-            <DownloadIcon styleClass='download-manifesto-svg mr-2' />
+            <DownloadIcon styleClass='download-manifesto-svg mr-2 ' />
             MANIFESTO
           </a>
         </div>
@@ -50,7 +50,7 @@ const BrandContent = ({ model }) => {
       </Element>
       <Element name='Introduction'>
         <div>
-          <h2 className='landing-title lg:w-80per'>
+          <h2 className='landing-title gradient-blue-right lg:w-80per'>
             “The desire to make fashion more accessible to people.”
           </h2>
           <p className='paragraph-text'>
@@ -77,7 +77,7 @@ const BrandContent = ({ model }) => {
       </Element>
       <Element name='Introduction'>
         <div className='py-16'>
-          <h2 className='landing-title lg:w-80per'>Let’s Work Together!</h2>
+          <h2 className='landing-title gradient-blue-right lg:w-80per'>Let’s Work Together!</h2>
           <p className='paragraph-text'>
             Dive into a mixed-reality world with a team of professionals in 3D & graphic design,
             UI/UX, trend forecasting, as well as front and back-end programming. YZED is turning
@@ -88,18 +88,23 @@ const BrandContent = ({ model }) => {
             <p className='paragraph-text'>Interested in working with us?</p>
             <p className='paragraph-text'>
               Please contact us at{' '}
-              <a className='font-bold' href='mailto:yzed@101.global'>
+              <a className='font-bold hover:gradient-blue-top' href='mailto:yzed@101.global'>
                 yzed@101.global
               </a>
             </p>
           </div>
         </div>
-        <div className='py-24'>
+        <div className='py-48'>
           <h3 className='font-semibold text-xl'>Contact</h3>
-          <a className='block font-light text-lg' href='mailto:yzed@101.global'>
+          <a
+            className='block font-light text-lg hover:gradient-blue-top'
+            href='mailto:yzed@101.global'>
             yzed@101.global
           </a>
-          <a className='block font-light text-lg' href='tel:+82 02  6248  2130'>
+
+          <a
+            className='block font-light text-lg hover:gradient-blue-top'
+            href='tel:+82 02  6248  2130'>
             +82 02 6248 2130
           </a>
           <p className='paragraph-text'>
@@ -110,16 +115,10 @@ const BrandContent = ({ model }) => {
         </div>
       </Element>
       <style jsx global>{`
-        .landing-title {
-          background: -webkit-linear-gradient(right, ${theme.colors.aqua}, ${theme.colors.purple});
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
         .dark-mode .download-manifesto-svg stop:first-child,
         .dark-mode .download-manifesto-svg stop:last-child {
           stop-color: ${theme.colors.white};
         }
-
         .light-mode .download-manifesto-svg stop:first-child,
         .light-mode .download-manifesto-svg stop:last-child {
           stop-color: ${theme.colors.black};
@@ -129,12 +128,6 @@ const BrandContent = ({ model }) => {
         }
         .manifesto-link:hover .download-manifesto-svg stop:last-child {
           stop-color: ${theme.colors.purple};
-        }
-        .manifesto-link:hover {
-          background: -webkit-linear-gradient(top, ${theme.colors.aqua}, ${theme.colors.purple});
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          cursor: pointer;
         }
       `}</style>
     </>

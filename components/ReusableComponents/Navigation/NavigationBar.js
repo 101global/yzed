@@ -13,7 +13,7 @@ import theme from '../../../utilities/theme';
 const NavigationBar = ({ user, isLandingMenu = false }) => {
   return (
     <>
-      <nav className='navigation-container w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk'>
+      <nav className='navigation-container w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk bg-transparentWhite dark:bg-transparentBlack'>
         <Link href='/'>
           <a aria-label='YZED Home' className='logo-link'>
             <Logo styleClass='logo-svg' />
@@ -42,23 +42,8 @@ const NavigationBar = ({ user, isLandingMenu = false }) => {
         }
       `}</style>
       <style jsx global>{`
-        .dark-mode .navigation-container {
-          background: ${theme.colors.transparentBlack};
-        }
-        .light-mode .navigation-container {
-          background: ${theme.colors.transparentWhite};
-        }
         .light-mode .logo-link svg path {
           fill: ${theme.colors.black};
-        }
-        .light-mode .nav-scroll-link {
-          color: ${theme.colors.black};
-        }
-        .nav-scroll-link:hover {
-          background: -webkit-linear-gradient(left, ${theme.colors.aqua}, ${theme.colors.purple});
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          cursor: pointer;
         }
       `}</style>
     </>

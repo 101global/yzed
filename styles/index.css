@@ -48,4 +48,31 @@
   @apply bg-white text-black;
 }
 
+.nav-scroll-link {
+  @apply inline-block hiddent font-light tracking-wider text-black;
+}
+
+@variants hover, focus {
+  .gradient-blue-top {
+    background: -webkit-linear-gradient(top, theme('colors.aqua'), theme('colors.purple'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-blue-right {
+    background: -webkit-linear-gradient(right, theme('colors.aqua'), theme('colors.purple'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-blue-bottom {
+    background: -webkit-linear-gradient(bottom, theme('colors.aqua'), theme('colors.purple'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gradient-blue-left {
+    background: -webkit-linear-gradient(left, theme('colors.aqua'), theme('colors.purple'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 @tailwind utilities;

@@ -120,5 +120,5 @@ module.exports = {
     borderStyle: ['responsive', 'dark'],
     fill: ['responsive', 'hover', 'focus', 'dark', 'dark:hover', 'dark:focus'],
   },
-  plugins: [require('@danestves/tailwindcss-darkmode')()],
+  plugins: [require('@danestves/tailwindcss-darkmode')(),],
 };

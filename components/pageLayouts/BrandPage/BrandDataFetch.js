@@ -19,7 +19,6 @@ const BrandDataFetch = ({ product, exposure }) => {
       animatedGlbFile: product.fields.animatedGlbFile.stringValue,
       exposure: exposure ?? 0.5,
     };
-    console.log(modelData);
     setModel(modelData);
     setLoading(false);
   }, []);
