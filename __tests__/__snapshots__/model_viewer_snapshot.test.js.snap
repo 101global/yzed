@@ -5,7 +5,6 @@ exports[`renders animated model viewer unchanged 1`] = `
   className="jsx-1120965399 model-viewer-container"
 >
   <model-viewer
-    auto-rotate={true}
     autoplay={true}
     camera-controls={true}
     className="jsx-1120965399"
@@ -148,7 +147,6 @@ exports[`renders stationary model viewer unchanged 1`] = `
     ar={true}
     ar-modes="scene-viewer webxr quick-look"
     ar-scale="fixed"
-    auto-rotate={true}
     camera-controls={true}
     className="jsx-731752813"
     exposure={1}
