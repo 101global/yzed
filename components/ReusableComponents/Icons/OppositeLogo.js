@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 
-const YZED = ({ fill, styleClass }) => {
+const LogoOpposite = ({ styleClass }) => {
   return (
     <svg
       width='156'
@@ -18,4 +18,4 @@ const YZED = ({ fill, styleClass }) => {
   );
 };
 
-export default YZED;
+export default LogoOpposite;

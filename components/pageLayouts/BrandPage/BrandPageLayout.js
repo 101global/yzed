@@ -5,7 +5,6 @@ import NavigationBar from '../../ReusableComponents/Navigation/NavigationBar';
 import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
 import BrandContent from './BrandContent';
 import Footer from '../../ReusableComponents/Footer/Footer';
-
 const BrandPageLayout = ({ model }) => {
   console.log(model);
   return (

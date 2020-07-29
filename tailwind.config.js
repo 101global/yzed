@@ -43,6 +43,8 @@ module.exports = {
         '100vh': '100vh',
         desktopNav: '86px',
         desktopFooter: '60px',
+        navLogo: '26px',
+        footerLogo: '16px',
       },
       linearGradients: {
         leftToRight: 'linear-gradient(to-right, #a891d9, #75cedb)',
@@ -120,5 +122,5 @@ module.exports = {
     borderStyle: ['responsive', 'dark'],
     fill: ['responsive', 'hover', 'focus', 'dark', 'dark:hover', 'dark:focus'],
   },
-  plugins: [require('@danestves/tailwindcss-darkmode')(),],
+  plugins: [require('@danestves/tailwindcss-darkmode')()],
 };
