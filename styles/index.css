@@ -33,7 +33,7 @@
 }
 
 .landing-title {
-  @apply text-5xl font-bold my-16 w-100per;
+  @apply text-3xl font-bold my-16 w-100per;
 }
 
 .paragraph-text {

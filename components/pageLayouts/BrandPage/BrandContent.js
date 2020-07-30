@@ -13,7 +13,7 @@ const BrandContent = ({ model }) => {
     <>
       <Element name='introduction'>
         <div className='pb-16 -mt-20'>
-          <h2 className='landing-title gradient-blue-right lg:w-80per'>
+          <h2 className='landing-title lg:text-4xl gradient-blue-right lg:w-80per'>
             Where Democratic Fashion catalyzes self-discovery.
           </h2>
           <p className='paragraph-text'>
@@ -50,7 +50,7 @@ const BrandContent = ({ model }) => {
       </Element>
       <Element name='about'>
         <div>
-          <h2 className='landing-title gradient-blue-right lg:w-80per'>
+          <h2 className='landing-title lg:text-4xl gradient-blue-right lg:w-80per'>
             “The desire to make fashion more accessible to people.”
           </h2>
           <p className='paragraph-text'>
@@ -77,7 +77,9 @@ const BrandContent = ({ model }) => {
       </Element>
       <Element name='contact'>
         <div className='py-16'>
-          <h2 className='landing-title gradient-blue-right lg:w-80per'>Let’s Work Together!</h2>
+          <h2 className='landing-title lg:text-4xl gradient-blue-right lg:w-80per'>
+            Let’s Work Together!
+          </h2>
           <p className='paragraph-text'>
             Dive into a mixed-reality world with a team of professionals in 3D & graphic design,
             UI/UX, trend forecasting, as well as front and back-end programming. YZED is turning

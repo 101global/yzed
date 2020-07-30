@@ -98,7 +98,7 @@ module.exports = {
       aqua: '#75cedb',
       purple: '#a891d9',
       transparentBlack: '#272727f6',
-      transparentWhite: '#ffffffcc',
+      transparentWhite: '#fffffff6',
       transparentPurple: '#A495D54C',
     },
   },

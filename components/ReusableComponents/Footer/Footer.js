@@ -23,13 +23,6 @@ const Footer = () => {
           </Link>
         </p>
       </footer>
-      <style jsx>{``}</style>
-      <style jsx global>{`
-        .yzed-footer-logo {
-          height: 16px;
-          margin-top: -2px;
-        }
-      `}</style>
     </>
   );
 };
