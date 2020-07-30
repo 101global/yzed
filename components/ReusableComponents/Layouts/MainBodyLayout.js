@@ -1,10 +1,9 @@
 import Head from 'next/head';
-
+import LoadingBars from '../../ReusableComponents/Loading/LoadingBars';
 import PropTypes from 'prop-types';
 import firebase from '../../../utilities/firebaseSetup';
 import theme from '../../../utilities/theme';
 import { useEffect } from 'react';
-import LoadingBars from '../../ReusableComponents/Loading/LoadingBars';
 
 const BodyLayout = ({ title, children }) => {
   return (
@@ -12,7 +11,7 @@ const BodyLayout = ({ title, children }) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className='full-screen overflow-hidden p-0 m-0 subpixel-antialiased'>{children}</div>
+      <div className='full-screen p-0 m-0 subpixel-antialiased'>{children}</div>
       <style jsx global>{`
         html,
         body {

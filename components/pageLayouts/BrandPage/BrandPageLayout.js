@@ -11,8 +11,8 @@ const BrandPageLayout = ({ model }) => {
     <>
       <NavigationBar isLandingMenu={true} />
       <div className='main-page-container py-navHeight lg:pt-48 flex flex-col lg:grid lg:grid-cols-2 lg:gap-4 min-h-screen px-4 lg:px-dsk'>
-        <div>
-          <div className='model-viewer-controls-container lg:fixed lg:w-floatScroll mb-12 lg:mb-0'>
+        <div className='container flex justify-around items-start'>
+          <div className='model-viewer-controls-container lg:w-floatScroll mb-12 lg:mb-0'>
             <BrandModelControls model={model} />
           </div>
         </div>
@@ -21,6 +21,12 @@ const BrandPageLayout = ({ model }) => {
         </div>
       </div>
       <Footer />
+      <style jsx>{`
+        .model-viewer-controls-container {
+          position: -webkit-sticky;
+          position: sticky;
+          top: 12rem;
+      `}</style>
     </>
   );
 };
