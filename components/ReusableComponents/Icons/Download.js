@@ -25,8 +25,8 @@ const DownloadIcon = ({ fill, styleClass }) => {
           x2='11.2'
           y2='18.26'
           gradientUnits='userSpaceOnUse'>
-          <stop stop-color='#8BC6D8' />
-          <stop offset='1' stop-color='#A495D5' />
+          <stop stopColor='#8BC6D8' />
+          <stop offset='1' stopColor='#A495D5' />
         </linearGradient>
         <linearGradient
           id='paint1_linear'
@@ -35,8 +35,8 @@ const DownloadIcon = ({ fill, styleClass }) => {
           x2='11.2'
           y2='14.65'
           gradientUnits='userSpaceOnUse'>
-          <stop stop-color='#8BC6D8' />
-          <stop offset='1' stop-color='#A495D5' />
+          <stop stopColor='#8BC6D8' />
+          <stop offset='1' stopColor='#A495D5' />
         </linearGradient>
       </defs>
     </svg>

@@ -70,7 +70,12 @@ const Slider = ({ model }) => {
               key={idx}
               className='fader__slide w-90per absolute'
               style={{ opacity: opacities[idx] }}>
-              <ProgressiveImage image={image.image} preview={image.thumbnail} styleClass='w-full' />
+              <ProgressiveImage
+                image={image.image}
+                preview={image.thumbnail}
+                styleClass='w-full'
+                alt={image.id}
+              />
             </div>
           ))}
         </div>

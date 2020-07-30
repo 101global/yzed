@@ -10,7 +10,7 @@ const ExpandIcon = ({ styleClass, fill }) => {
       className={styleClass}>
       <path
         d='M39.3347 20C39.3347 30.6783 30.6783 39.3347 20 39.3347C9.32173 39.3347 0.665283 30.6783 0.665283 20C0.665283 9.32173 9.32173 0.665283 20 0.665283C30.6783 0.665283 39.3347 9.32173 39.3347 20Z'
-        stroke-miterlimit='10'
+        strokeMiterlimit='10'
         className='opposite-fill stroke-fill'
       />
       <path d='M20.8265 10.9091H19.1736V29.0909H20.8265V10.9091Z' />

@@ -7,7 +7,6 @@ import NavigationBar from '../../ReusableComponents/Navigation/NavigationBar';
 import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
 
 const BrandPageLayout = ({ model }) => {
-  console.log(model);
   return (
     <>
       <NavigationBar isLandingMenu={true} />

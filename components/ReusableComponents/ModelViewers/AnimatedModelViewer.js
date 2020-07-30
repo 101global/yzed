@@ -46,5 +46,5 @@ export default AnimatedModelViewer;
 
 AnimatedModelViewer.propTypes = {
   model: PropTypes.object.isRequired,
-  topModelDark: PropTypes.bool.isRequired,
+  topModelDark: PropTypes.bool,
 };

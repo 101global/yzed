@@ -1,14 +1,14 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { imagesNames } from '../../../utilities/dataHelpers';
-import Link from 'next/link';
-import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
-import theme from '../../../utilities/theme';
+import React, { useContext, useEffect, useState } from 'react';
+
 import DownloadIcon from '../../ReusableComponents/Icons/Download';
 import { Element } from 'react-scroll';
+import Link from 'next/link';
+import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
+import { imagesNames } from '../../../utilities/dataHelpers';
+import theme from '../../../utilities/theme';
+
 const BrandContent = ({ model }) => {
-  console.log(model);
   const images = imagesNames(model.imageSlug);
-  console.log(images[1]);
   return (
     <>
       <Element name='introduction'>
@@ -35,16 +35,19 @@ const BrandContent = ({ model }) => {
             preview={images[0].image}
             image={images[0].image}
             styleClass='first mt-8'
+            alt={images[0].id}
           />
           <ProgressiveImage
             preview={images[1].image}
             image={images[1].image}
             styleClass='w-70per ml-30per mt-8'
+            alt={images[1].id}
           />
           <ProgressiveImage
             preview={images[2].image}
             image={images[2].image}
             styleClass='w-60per mt-8'
+            alt={images[2].id}
           />
         </div>
       </Element>
@@ -67,11 +70,13 @@ const BrandContent = ({ model }) => {
             preview={images[3].image}
             image={images[3].image}
             styleClass='w-80per mt-8'
+            alt={images[3].id}
           />
           <ProgressiveImage
             preview={images[4].image}
             image={images[4].image}
             styleClass='w-60per mt-8'
+            alt={images[4].id}
           />
         </div>
       </Element>

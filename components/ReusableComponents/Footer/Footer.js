@@ -14,13 +14,21 @@ const Footer = () => {
         </Link>
         <p className='text-base text-light text-white dark:text-black'>
           - All rights reserved for{' '}
-          <Link href='https://www.101.global/?lang=en'>
-            <a className='hover:gradient-blue-top'>101Global</a>
-          </Link>{' '}
+          <a
+            href='https://www.101.global/?lang=en'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:gradient-blue-top'>
+            101Global
+          </a>{' '}
           and{' '}
-          <Link href='https://www.hanwha.com/en.html'>
-            <a className='hover:gradient-blue-top'>Hanwha</a>
-          </Link>
+          <a
+            href='https://www.hanwha.com/en.html'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:gradient-blue-top'>
+            Hanwha
+          </a>
         </p>
       </footer>
     </>
