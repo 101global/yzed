@@ -5,8 +5,7 @@ import ToggleDarkModeButton from '../Buttons/ToggleDarkMode';
 
 const LandingLinks = () => {
   return (
-    <div className='w-full flex flex-row justify-between items-center'>
-      <ToggleDarkModeButton />
+    <>
       <Link
         to='introduction'
         spy={true}
@@ -37,7 +36,7 @@ const LandingLinks = () => {
         activeClass='active'>
         Contact
       </Link>
-    </div>
+    </>
   );
 };
 

@@ -10,7 +10,6 @@ module.exports = {
         dsk: '10%',
         nav: '4.7rem',
         navHeight: '86px',
-
         '10per': '10%',
         '15per': '15%',
         '20per': '20%',
@@ -43,8 +42,10 @@ module.exports = {
         '100vh': '100vh',
         desktopNav: '86px',
         desktopFooter: '60px',
-        navLogo: '26px',
-        footerLogo: '16px',
+        desktopNavLogo: '26px',
+        mobileNavLogo: '16px',
+        desktopFooterLogo: '16px',
+        mobileFooterLogo: '16px',
       },
       linearGradients: {
         leftToRight: 'linear-gradient(to-right, #a891d9, #75cedb)',
@@ -80,6 +81,7 @@ module.exports = {
         '90per': '90%',
         '100per': '100%',
         floatScroll: 'calc(50vw - 150px - 2rem)',
+        mobileNavLogo: '100px',
       },
       zIndex: {
         tenThous: '10000',

@@ -3,8 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 const Logo = ({styleClass}) => {
   return (
     <svg
-      width='156'
-      height='26'
       viewBox='0 0 156 26'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

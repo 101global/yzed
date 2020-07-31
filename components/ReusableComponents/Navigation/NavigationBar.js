@@ -9,19 +9,28 @@ import NavigationLinks from './NavigationLinks';
 import { UserContext } from '../../../utilities/context/UserContext';
 import YZEDLogo from '../../../public/yzed_logo_white.svg';
 import theme from '../../../utilities/theme';
+import NavigationButtonLayout from './NavigationButtonLayout';
+
+import MobileNav from './MobileNav';
 
 const NavigationBar = ({ user, isLandingMenu = false }) => {
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
-      <nav className='w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk bg-transparentWhite dark:bg-transparentBlack h-desktopNav'>
-        <Link href='/'>
-          <a aria-label='YZED Home' className='logo-link'>
-            <Logo styleClass='fill-black dark:fill-white h-navLogo' />
-          </a>
-        </Link>
-        <div className='links-container w-full flex flex-row'>
-          {isLandingMenu ? <LandingLinks /> : <NavigationLinks user={user} />}
+      <nav className='relative'>
+        <div className='w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk bg-transparentWhite dark:bg-transparentBlack h-desktopNav z-tenThous'>
+          <Link href='/'>
+            <a aria-label='YZED Home' className='logo-link'>
+              <Logo styleClass='logo-link fill-black dark:fill-white h-mobileNavLogo w-mobileNavLogo lg:h-desktopNavLogo w-full' />
+            </a>
+          </Link>
+          <div className='links-container w-full flex flex-row'>
+            <NavigationButtonLayout openMenu={openMenu} setOpenMenu={setOpenMenu}>
+              {isLandingMenu ? <LandingLinks /> : <NavigationLinks user={user} />}
+            </NavigationButtonLayout>
+          </div>
         </div>
+        <MobileNav openMenu={openMenu} />
       </nav>
       <style jsx>{`
         .links-container {

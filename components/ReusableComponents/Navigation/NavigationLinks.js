@@ -7,7 +7,6 @@ import ToggleDarkModeButton from '../Buttons/ToggleDarkMode';
 const NavigationLinks = ({ user }) => {
   return (
     <div>
-      <ToggleDarkModeButton />
       {user ? (
         <div className='user-nav grid grid-cols-userNav gap-4 items-center'>
           <img src={user.profilePicture} />
