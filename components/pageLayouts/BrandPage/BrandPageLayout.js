@@ -10,9 +10,9 @@ const BrandPageLayout = ({ model }) => {
   return (
     <>
       <NavigationBar isLandingMenu={true} />
-      <div className='main-page-container py-navHeight lg:pt-48 flex flex-col lg:grid lg:grid-cols-2 lg:gap-4 min-h-screen px-4 lg:px-dsk'>
+      <div className='main-page-container py-navHeight lg:pt-48 lg:pb-0  flex flex-col lg:grid lg:grid-cols-2 lg:gap-4 min-h-screen px-4 lg:px-dsk'>
         <div className='container flex justify-around items-start'>
-          <div className='model-viewer-controls-container lg:w-floatScroll mb-12 lg:mb-0'>
+          <div className='model-viewer-controls-container w-full lg:w-floatScroll mb-12 lg:mb-0'>
             <BrandModelControls model={model} />
           </div>
         </div>
