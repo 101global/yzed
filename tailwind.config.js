@@ -43,10 +43,11 @@ module.exports = {
         desktopNav: '86px',
         mobileNav: '60px',
         desktopFooter: '60px',
+        mobileFooter: '30px',
         desktopNavLogo: '26px',
         mobileNavLogo: '16px',
         desktopFooterLogo: '16px',
-        mobileFooterLogo: '16px',
+        mobileFooterLogo: '10px',
       },
       linearGradients: {
         leftToRight: 'linear-gradient(to-right, #a891d9, #75cedb)',

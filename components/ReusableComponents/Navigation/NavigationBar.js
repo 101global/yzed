@@ -25,9 +25,7 @@ const NavigationBar = ({ user, isLandingMenu = true }) => {
           </Link>
           <div className='links-container w-full flex flex-row'>
             <NavigationButtonLayout openMenu={openMenu} setOpenMenu={setOpenMenu}>
-              <div className='hidden lg:block'>
-                {isLandingMenu ? <LandingLinks /> : <NavigationLinks user={user} />}
-              </div>
+              {isLandingMenu ? <LandingLinks /> : <NavigationLinks user={user} />}
             </NavigationButtonLayout>
           </div>
         </div>

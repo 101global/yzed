@@ -7,13 +7,13 @@ import theme from '../../../utilities/theme';
 const Footer = () => {
   return (
     <>
-      <footer className='footer mt-8 px:4 lg:px-10per flex flex-row items-center bg-black dark:bg-white h-desktopFooter'>
+      <footer className='footer mt-8 lg:px-10per flex flex-row items-center bg-black dark:bg-white h-mobileFooter lg:h-desktopFooter justify-center lg:justify-start'>
         <Link href='/'>
-          <a aria-label='home'>
-            <OppositeLogo styleClass='fill-white dark:fill-black h-footerLogo -mt-1' />
+          <a aria-label='home' className='yzed-home-footer-link inline-block'>
+            <OppositeLogo styleClass='fill-white dark:fill-black h-mobileFooterLogo lg:h-desktopFooterLogo -mt-1 mr-2' />
           </a>
         </Link>
-        <p className='text-base text-light text-white dark:text-black'>
+        <p className='text-xs lg:text-base text-light text-white dark:text-black inline-block'>
           - All rights reserved for{' '}
           <a
             href='https://www.101.global/?lang=en'
@@ -32,6 +32,11 @@ const Footer = () => {
           </a>
         </p>
       </footer>
+      <style jsx>{`
+        .yzed-home-footer-link {
+          text-align: left;
+        }
+      `}</style>
     </>
   );
 };
