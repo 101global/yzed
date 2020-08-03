@@ -37,7 +37,10 @@
 }
 
 .paragraph-text {
-  @apply font-light text-lg leading-normal;
+  @apply font-light text-base leading-normal text-justify;
+}
+.large-paragraph-text {
+  @apply text-xl text-left;
 }
 
 .dark-mode {
