@@ -55,15 +55,19 @@ const MenuButton = ({ openMenu, setOpenMenu, styleClass }) => {
       <style jsx global>{`
         .light-mode .menu-button-icon stop:first-child {
           stop-color: ${openMenu ? theme.colors.purple : theme.colors.black};
+          transition: all 1s;
         }
         .light-mode .menu-button-icon stop:last-child {
           stop-color: ${openMenu ? theme.colors.aqua : theme.colors.black};
+          transition: all 1s;
         }
         .dark-mode .menu-button-icon stop:first-child {
           stop-color: ${openMenu ? theme.colors.purple : theme.colors.white};
+          transition: all 1s;
         }
         .dark-mode .menu-button-icon stop:last-child {
           stop-color: ${openMenu ? theme.colors.aqua : theme.colors.white};
+          transition: all 1s;
         }
       `}</style>
     </>

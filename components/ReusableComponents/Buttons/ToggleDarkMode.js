@@ -63,6 +63,14 @@ const ToggleDarkModeButton = () => {
         .toggle:checked:after {
           transform: translateX(-50px);
         }
+        @media (max-width: 1024px) {
+          .toggle {
+            width: 68px;
+          }
+          .toggle:checked:after {
+            transform: translateX(-39px);
+          }
+        }
       `}</style>
       <style jsx global>{`
         .toggle-icon {
