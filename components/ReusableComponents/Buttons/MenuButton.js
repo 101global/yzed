@@ -1,18 +1,22 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+
 import theme from '../../../utilities/theme';
 
 const MenuButton = ({ openMenu, setOpenMenu, styleClass }) => {
   // TODO: COLOR GRADIENTS FOR MENU WITH LIGHT AND DARK MODE
+
   return (
     <>
       <button
+        aria-label='menu open'
+        className='ml-4 p-2 pr-0'
         onClick={() => {
           setOpenMenu(!openMenu);
         }}>
         <svg
           width='21'
           height='17'
-          className={`menu-button-icon ml-6 ${styleClass}`}
+          className={`menu-button-icon ${styleClass}`}
           viewBox='0 0 21 17'
           xmlns='http://www.w3.org/2000/svg'>
           <path d='M20.505 0H6.96069V2.64224H20.505V0Z' fill='url(#paint0_linear)' />
