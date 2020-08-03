@@ -6,7 +6,7 @@ import ToggleDarkModeButton from '../Buttons/ToggleDarkMode';
 
 const MobileNavigationLinks = ({ user }) => {
   return (
-    <div>
+    <div className='flex flex-col justify-around h-full'>
       {user ? (
         <div className='user-nav grid grid-cols-userNav gap-4 items-center'>
           <img src={user.profilePicture} />
@@ -18,10 +18,10 @@ const MobileNavigationLinks = ({ user }) => {
       ) : (
         <>
           <Link href='/login'>
-            <a className='text-lg font-light'>Login</a>
+            <a className='text-lg font-light block text-center'>Login</a>
           </Link>
           <Link href='/login'>
-            <a className='text-lg font-light'>Login</a>
+            <a className='text-lg font-light block text-center'>Login</a>
           </Link>
         </>
       )}

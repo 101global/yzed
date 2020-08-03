@@ -41,6 +41,7 @@ module.exports = {
         '90vh': '90vh',
         '100vh': '100vh',
         desktopNav: '86px',
+        mobileNav: '60px',
         desktopFooter: '60px',
         desktopNavLogo: '26px',
         mobileNavLogo: '16px',
