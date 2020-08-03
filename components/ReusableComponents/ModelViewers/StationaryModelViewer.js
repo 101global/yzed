@@ -2,12 +2,12 @@ import '@google/model-viewer/dist/model-viewer';
 
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
+import DownChevron from '../../ReusableComponents/Images/DownChevron';
 import PropTypes from 'prop-types';
+import { ThemeContext } from '../../../utilities/context/ThemeContext';
 import darkBackgroundLoading from '../../../public/yzed-loading-dark-background.svg';
 import dynamic from 'next/dynamic';
 import lightBackgroundLoading from '../../../public/yzed-loading-light-background.svg';
-import DownChevron from '../../ReusableComponents/Images/DownChevron';
-import { ThemeContext } from '../../../utilities/context/ThemeContext';
 
 const StationaryModelViewer = ({ model, topModelDark }) => {
   const [loading, setLoading] = useState(false);
@@ -38,7 +38,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           exposure={model.exposure}
           poster={topModelDark || darkMode.value ? darkBackgroundLoading : lightBackgroundLoading}
           interaction-policy='allow-when-focused'>
-          <DownChevron topModelDark={topModelDark} />
+          {/* <DownChevron topModelDark={topModelDark} /> */}
         </model-viewer>
       </div>
       <style jsx global>{`
