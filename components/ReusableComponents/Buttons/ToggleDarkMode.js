@@ -12,6 +12,7 @@ const ToggleDarkModeButton = () => {
     <>
       <div className='toggle-container'>
         <input
+          aria-label='toggle dark mode'
           className='toggle'
           type='checkbox'
           defaultChecked={darkMode.value}

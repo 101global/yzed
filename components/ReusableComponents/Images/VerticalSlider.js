@@ -1,9 +1,8 @@
+import ProgressiveImage from './ProgressiveImage';
 import React from 'react';
-import { useKeenSlider } from 'keen-slider/react';
-
 import { imagesNames } from '../../../utilities/dataHelpers';
 import theme from '../../../utilities/theme';
-import ProgressiveImage from './ProgressiveImage';
+import { useKeenSlider } from 'keen-slider/react';
 
 const Slider = ({ model }) => {
   const images = imagesNames(model.imageSlug);
@@ -54,6 +53,7 @@ const Slider = ({ model }) => {
             {[...Array(slider.details().size).keys()].map((idx) => {
               return (
                 <button
+                  aria-label={`Image ${idx}`}
                   key={idx}
                   onClick={() => {
                     slider.moveToSlideRelative(idx);

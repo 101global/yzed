@@ -1,16 +1,23 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import MobileLandingLinks from './MobileLandingLinks';
+import MobileNavigationLinks from './MobileNavigationLinks';
 import theme from '../../../utilities/theme';
 
-const MobileNav = ({ openMenu }) => {
+const MobileNav = ({ openMenu, isLandingMenu }) => {
   return (
     <>
-      <div className='mobile-nav fixed z-thous w-full b-0 bg-transparentWhite dark:bg-transparentBlack border-lightGrey'>
-        <div className='w-full links grid grid-cols-3 items-center justify-around text-center'>
-          <MobileLandingLinks />
+      {isLandingMenu ? (
+        <div className='mobile-nav fixed z-thous w-full b-0 bg-transparentWhite dark:bg-transparentBlack'>
+          <div className='w-full links grid grid-cols-3 items-center justify-around text-center'>
+            <MobileLandingLinks />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className='mobile-nav fixed z-thous w-full b-0 bg-transparentWhite dark:bg-transparentBlack'>
+          <MobileNavigationLinks />
+        </div>
+      )}
       <style jsx>{`
         .mobile-nav {
           overflow-x: scroll;

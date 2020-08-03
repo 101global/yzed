@@ -23,10 +23,11 @@ const BrandContent = ({ model }) => {
             our manifesto.
           </p>
           <a
+            href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
             className='manifesto-link flex flex-row justify-start mt-8 text-2xl items-center hover:gradient-blue-top cursor-pointer'
             target='_blank'
             rel='noopener noreferrer'>
-            <DownloadIcon styleClass='download-manifesto-svg mr-2 ' />
+            <DownloadIcon styleClass='manifesto-download-icon mr-2' />
             MANIFESTO
           </a>
         </div>
@@ -122,18 +123,18 @@ const BrandContent = ({ model }) => {
         </div>
       </Element>
       <style jsx global>{`
-        .dark-mode .download-manifesto-svg stop:first-child,
-        .dark-mode .download-manifesto-svg stop:last-child {
-          stop-color: ${theme.colors.white};
+        .dark-mode .manifesto-download-icon stop:first-child,
+        .dark-mode .manifesto-download-icon stop:last-child {
+          stop-color: white;
         }
-        .light-mode .download-manifesto-svg stop:first-child,
-        .light-mode .download-manifesto-svg stop:last-child {
-          stop-color: ${theme.colors.black};
+        .light-mode .manifesto-download-icon stop:first-child,
+        .light-mode .manifesto-download-icon stop:last-child {
+          stop-color: black;
         }
-        .manifesto-link:hover .download-manifesto-svg stop:first-child {
+        a.manifesto-link:hover .manifesto-download-icon stop:first-child {
           stop-color: ${theme.colors.aqua};
         }
-        .manifesto-link:hover .download-manifesto-svg stop:last-child {
+        a.manifesto-link:hover .manifesto-download-icon stop:last-child {
           stop-color: ${theme.colors.purple};
         }
       `}</style>

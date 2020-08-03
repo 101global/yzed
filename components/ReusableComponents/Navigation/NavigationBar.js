@@ -5,16 +5,15 @@ import Link from 'next/link';
 import LoadingSpinner from '../Loading/LoadingSpinner';
 import Logo from '../Icons/Logo';
 import LogoutButton from '../Buttons/LogoutButton';
+import MobileNav from './MobileNav';
+import NavigationButtonLayout from './NavigationButtonLayout';
 import NavigationLinks from './NavigationLinks';
 import { UserContext } from '../../../utilities/context/UserContext';
 import YZEDLogo from '../../../public/yzed_logo_white.svg';
 import theme from '../../../utilities/theme';
-import NavigationButtonLayout from './NavigationButtonLayout';
-
-import MobileNav from './MobileNav';
 
 const NavigationBar = ({ user, isLandingMenu = false }) => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(true);
   return (
     <>
       <nav className='relative'>
@@ -26,11 +25,13 @@ const NavigationBar = ({ user, isLandingMenu = false }) => {
           </Link>
           <div className='links-container w-full flex flex-row'>
             <NavigationButtonLayout openMenu={openMenu} setOpenMenu={setOpenMenu}>
-              {isLandingMenu ? <LandingLinks /> : <NavigationLinks user={user} />}
+              <div className='hidden lg:block'>
+                {isLandingMenu ? <LandingLinks /> : <NavigationLinks user={user} />}
+              </div>
             </NavigationButtonLayout>
           </div>
         </div>
-        <MobileNav openMenu={openMenu} />
+        <MobileNav openMenu={openMenu} isLandingMenu={isLandingMenu} />
       </nav>
       <style jsx>{`
         .links-container {
