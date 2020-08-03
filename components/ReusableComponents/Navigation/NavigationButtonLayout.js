@@ -6,7 +6,9 @@ const NavigationButtonLayout = ({ openMenu, setOpenMenu, children }) => {
   return (
     <div className='w-full flex flex-row items-center lg: justify-end lg:justify-between'>
       <ToggleDarkModeButton />
-      <MenuButton openMenu={openMenu} setOpenMenu={setOpenMenu} />
+      <div className='block lg:hidden'>
+        <MenuButton openMenu={openMenu} setOpenMenu={setOpenMenu} />
+      </div>
       <>{children}</>
     </div>
   );

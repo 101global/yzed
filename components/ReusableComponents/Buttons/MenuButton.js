@@ -1,6 +1,8 @@
 import React, { useEffect, useContext, useState } from 'react';
+import theme from '../../../utilities/theme';
 
-const MenuButton = ({ openMenu, setOpenMenu }) => {
+const MenuButton = ({ openMenu, setOpenMenu, styleClass }) => {
+  // TODO: COLOR GRADIENTS FOR MENU WITH LIGHT AND DARK MODE
   return (
     <>
       <button
@@ -10,9 +12,8 @@ const MenuButton = ({ openMenu, setOpenMenu }) => {
         <svg
           width='21'
           height='17'
-          className='ml-6'
+          className={`menu-button-icon ml-6 ${styleClass}`}
           viewBox='0 0 21 17'
-          fill='none'
           xmlns='http://www.w3.org/2000/svg'>
           <path d='M20.505 0H6.96069V2.64224H20.505V0Z' fill='url(#paint0_linear)' />
           <path d='M13.5443 13.3601H0V16.0024H13.5443V13.3601Z' fill='url(#paint1_linear)' />
@@ -51,6 +52,20 @@ const MenuButton = ({ openMenu, setOpenMenu }) => {
           </defs>
         </svg>
       </button>
+      <style jsx global>{`
+        .light-mode .menu-button-icon stop:first-child {
+          stop-color: ${openMenu ? theme.colors.purple : theme.colors.black};
+        }
+        .light-mode .menu-button-icon stop:last-child {
+          stop-color: ${openMenu ? theme.colors.aqua : theme.colors.black};
+        }
+        .dark-mode .menu-button-icon stop:first-child {
+          stop-color: ${openMenu ? theme.colors.purple : theme.colors.white};
+        }
+        .dark-mode .menu-button-icon stop:last-child {
+          stop-color: ${openMenu ? theme.colors.aqua : theme.colors.white};
+        }
+      `}</style>
     </>
   );
 };
