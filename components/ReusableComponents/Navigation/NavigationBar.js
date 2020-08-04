@@ -17,7 +17,7 @@ const NavigationBar = ({ user, isLandingMenu = true }) => {
   return (
     <>
       <nav className='relative'>
-        <div className='w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk bg-transparentWhite dark:bg-transparentBlack h-mobileNav lg:h-desktopNav z-tenThous'>
+        <div className='w-full fixed flex flex-row justify-between items-center top-0 left-0 px-6 lg:px-dsk bg-transparentWhite dark:bg-transparentBlack h-mobileNav lg:h-desktopNav z-tenThous'>
           <Link href='/'>
             <a aria-label='YZED Home' className='logo-link'>
               <Logo styleClass='logo-link fill-black dark:fill-white h-mobileNavLogo w-mobileNavLogo lg:h-desktopNavLogo w-full' />
