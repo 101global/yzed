@@ -6,7 +6,7 @@ import LoadingSpinner from '../Loading/LoadingSpinner';
 import Logo from '../Icons/Logo';
 import LogoutButton from '../Buttons/LogoutButton';
 import MobileNav from './MobileNav';
-import NavigationButtonLayout from './NavigationButtonLayout';
+import NavigationButtonLayout from './NavButtonLayout';
 import NavigationLinks from './NavigationLinks';
 import { UserContext } from '../../../utilities/context/UserContext';
 import YZEDLogo from '../../../public/yzed_logo_white.svg';

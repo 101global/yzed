@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import theme from '../../../utilities/theme';
 
 const DownloadIcon = ({ styleClass, fill }) => {
   return (
@@ -6,7 +7,6 @@ const DownloadIcon = ({ styleClass, fill }) => {
       width='23'
       height='19'
       viewBox='0 0 23 19'
-      fill='#8BC6D8'
       xmlns='http://www.w3.org/2000/svg'
       className={styleClass}>
       <path
@@ -25,8 +25,8 @@ const DownloadIcon = ({ styleClass, fill }) => {
           x2='11.2'
           y2='18.26'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#8BC6D8' />
-          <stop offset='1' stopColor='#A495D5' />
+          <stop stopColor={theme.colors.aqua} />
+          <stop offset='1' stopColor={theme.colors.purple} />
         </linearGradient>
         <linearGradient
           id='download1_linear'
@@ -35,8 +35,8 @@ const DownloadIcon = ({ styleClass, fill }) => {
           x2='11.2'
           y2='14.65'
           gradientUnits='userSpaceOnUse'>
-          <stop stopColor='#8BC6D8' />
-          <stop offset='1' stopColor='#A495D5' />
+          <stop stopColor={theme.colors.aqua} />
+          <stop offset='1' stopColor={theme.colors.purple} />
         </linearGradient>
       </defs>
     </svg>
