@@ -21,14 +21,14 @@ const MobileNav = ({ openMenu, isLandingMenu }) => {
       <style jsx>{`
         .mobile-landing-nav {
           overflow-x: scroll;
-          transition: all 0.5s ease-in-out;
+          transition: all 0.3s ease-in-out;
           top: 59px;
           height: ${openMenu ? '40px' : '0px'};
           overflow: ${openMenu ? 'auto' : 'hidden'};
         }
         .mobile-navigation-nav {
           overflow-x: scroll;
-          transition: all 0.5s ease-in-out;
+          transition: all 0.3s ease-in-out;
           top: 59px;
           height: ${openMenu ? '80px' : '0px'};
           overflow: ${openMenu ? 'auto' : 'hidden'};
