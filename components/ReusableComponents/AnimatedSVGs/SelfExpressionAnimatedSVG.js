@@ -10,7 +10,7 @@ const SelfExpressionIcon = () => {
         option={{
           file: selfExpression,
           animTimingFunction: 'EASE-IN',
-          type: 'sync',
+          type: 'delayed',
           duration: 150,
         }}
       />

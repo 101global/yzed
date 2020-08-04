@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
 
-const ProgressiveImage = ({ preview, image, alt, styleClass }) => {
+const ProgressiveImage = ({ preview, image, alt, imageStyleClass, divStyleClass }) => {
   const [currentImage, setCurrentImage] = useState(preview);
   const [loading, setLoading] = useState(true);
 
@@ -22,17 +22,16 @@ const ProgressiveImage = ({ preview, image, alt, styleClass }) => {
   }, [preview]);
 
   return (
-    <div className='overflow-hidden'>
+    <div className={`overflow-hidden ${divStyleClass}`}>
       <img
         style={{
-          filter: `${loading ? 'blur(30px)' : ''}`,
+          filter: `${loading ? 'blur(20px)' : ''}`,
           transition: '1s filter linear',
           background: 'grey',
-          overflow: 'hidden',
         }}
         src={currentImage}
         alt={alt}
-        className={styleClass}
+        className={`w-full ${imageStyleClass}`}
       />
     </div>
   );

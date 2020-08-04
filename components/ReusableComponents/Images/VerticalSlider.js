@@ -114,13 +114,12 @@ const Slider = ({ model }) => {
           border: none;
           width: 6px;
           height: 28px;
-          background: #7c7c7c;
+          background: ${theme.colors.grey};
           border-radius: 3px;
           margin: 5px;
 
           cursor: pointer;
         }
-
         .dot:focus {
           outline: none;
         }

@@ -29,6 +29,7 @@ const BrandModelControls = ({ model }) => {
     <>
       <div className='viewer-container relative w-full mr-0 lg:w-floatScroll h-vh80 lg:h-vh70'>
         <button
+          aria-label='toggle show model'
           className='show-hide absolute'
           onClick={() => {
             if (modelState === 'IMAGE') {
@@ -51,6 +52,7 @@ const BrandModelControls = ({ model }) => {
         {modelState === 'WALK' && <AnimatedModelViewer model={model} />}
         {modelState !== 'IMAGE' && (
           <button
+            aria-label='toggle model animation'
             className='play-pause absolute'
             onClick={() => {
               if (modelState === 'STILL') {
@@ -97,16 +99,6 @@ const BrandModelControls = ({ model }) => {
         .dark-mode svg.control-icon path.stroke-fill {
           stroke: ${theme.colors.white};
         }
-        .dark-mode svg.control-icon:hover path {
-          fill: ${theme.colors.purple};
-        }
-        .dark-mode svg.control-icon:hover path.opposite-fill {
-          fill: ${theme.colors.black};
-          stroke: ${theme.colors.purple};
-        }
-        .dark-mode svg.control-icon:hover path.stroke-fill {
-          stroke: ${theme.colors.purple};
-        }
         .light-mode svg.control-icon path {
           fill: ${theme.colors.black};
         }
@@ -116,16 +108,6 @@ const BrandModelControls = ({ model }) => {
         }
         .light-mode svg.control-icon path.stroke-fill {
           stroke: ${theme.colors.black};
-        }
-        .light-mode svg.control-icon:hover path {
-          fill: ${theme.colors.aqua};
-        }
-        .light-mode svg.control-icon:hover path.opposite-fill {
-          fill: ${theme.colors.white};
-          stroke: ${theme.colors.aqua};
-        }
-        .light-mode svg.control-icon:hover path.stroke-fill {
-          stroke: ${theme.colors.aqua};
         }
       `}</style>
     </>
