@@ -17,7 +17,8 @@ export const googleData = (result) => {
 };
 
 export const imagesNames = (brandName) => {
-  const imageBaseUrl = 'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/';
+  // USE the below is using AWS S3
+  // const imageBaseUrl = 'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/';
   let images = [];
   for (let i = 1; i < 6; i++) {
     images.push({

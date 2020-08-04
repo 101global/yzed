@@ -14,7 +14,7 @@ const BrandContent = ({ model }) => {
     <>
       <Element name='introduction'>
         <div className='pb-16 -mt-20'>
-          <h2 className='landing-title lg:text-4xl gradient-blue-right lg:w-80per'>
+          <h2 className='inline-block landing-title lg:text-4xl gradient-blue-right lg:w-80per'>
             Where Democratic Fashion catalyzes self-discovery.
           </h2>
           <p className='paragraph-text lg:text-xl lg:text-left'>
@@ -55,7 +55,7 @@ const BrandContent = ({ model }) => {
       </Element>
       <Element name='about'>
         <div>
-          <h2 className='landing-title lg:text-4xl gradient-blue-right lg:w-80per'>
+          <h2 className='inline-block landing-title lg:text-4xl gradient-blue-right lg:w-80per'>
             “The desire to make fashion more accessible to people.”
           </h2>
           <p className='paragraph-text lg:text-xl lg:text-left'>
@@ -87,7 +87,7 @@ const BrandContent = ({ model }) => {
       </Element>
       <Element name='contact'>
         <div className='py-16'>
-          <h2 className='landing-title lg:text-4xl gradient-blue-right lg:w-80per'>
+          <h2 className='inline-block landing-title lg:text-4xl gradient-blue-right lg:w-80per'>
             Let’s Work Together!
           </h2>
           <p className='paragraph-text lg:text-xl lg:text-left'>
