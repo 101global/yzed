@@ -43,7 +43,6 @@ function MyApp({ Component, pageProps, user }) {
         <meta property='twitter:description' content='YZED: Check out unique 3D and AR fashion.' />
         <link rel='manifest' href='manifest.json' />
       </Head>
-      {/* Wrap this with Firebase Provider later if needed */}
       <ThemeContext>
         <UserContext>
           <SimpleReactLightbox>

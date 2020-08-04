@@ -7,7 +7,7 @@ import Link from 'next/link';
 import LoadingBars from '../components/ReusableComponents/Loading/LoadingBars';
 import LoadingSpinner from '../components/ReusableComponents/Loading/LoadingSpinner';
 import { UserContext } from '../utilities/context/UserContext';
-import UserNavigation from '../components/ReusableComponents/Navigation/UserNavigation';
+
 import { useRouter } from 'next/router';
 
 const login = ({ user }) => {
@@ -26,7 +26,7 @@ const login = ({ user }) => {
 
   return (
     <>
-      <UserNavigation user={user} />
+
       {user ? (
         <div className='full-page-centered-content'>
           <LoadingBars text='You are logged in.  Redirecting you home.' />

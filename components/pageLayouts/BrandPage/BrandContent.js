@@ -6,6 +6,7 @@ import Link from 'next/link';
 import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
 import { imagesNames } from '../../../utilities/dataHelpers';
 import theme from '../../../utilities/theme';
+import SelfExpressionIcon from '../../ReusableComponents/Icons/Self';
 
 const BrandContent = ({ model }) => {
   const images = imagesNames(model.imageSlug);
@@ -41,13 +42,13 @@ const BrandContent = ({ model }) => {
           <ProgressiveImage
             preview={images[1].image}
             image={images[1].image}
-            styleClass='w-70per ml-30per mt-8'
+            styleClass='w-full lg:w-70per lg:ml-30per mt-8'
             alt={images[1].id}
           />
           <ProgressiveImage
             preview={images[2].image}
             image={images[2].image}
-            styleClass='w-60per mt-8'
+            styleClass='w-full lg:w-60per mt-8'
             alt={images[2].id}
           />
         </div>
@@ -70,15 +71,18 @@ const BrandContent = ({ model }) => {
           <ProgressiveImage
             preview={images[3].image}
             image={images[3].image}
-            styleClass='w-80per mt-8'
+            styleClass='w-full lg:w-80per mt-8'
             alt={images[3].id}
           />
           <ProgressiveImage
             preview={images[4].image}
             image={images[4].image}
-            styleClass='w-60per mt-8'
+            styleClass='w-full lg:w-60per mt-8'
             alt={images[4].id}
           />
+        </div>
+        <div className='mt-8'>
+          <SelfExpressionIcon />
         </div>
       </Element>
       <Element name='contact'>

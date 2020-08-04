@@ -9,8 +9,7 @@ import theme from '../../../utilities/theme';
 import Slider from '../../ReusableComponents/Images/VerticalSlider';
 
 const BrandModelControls = ({ model }) => {
-  console.log(model);
-  const [modelState, setModelState] = useState('IMAGE');
+  const [modelState, setModelState] = useState('STILL');
 
   const StationaryModelViewer = dynamic(
     () => import('../../ReusableComponents/ModelViewers/StationaryModelViewer.js'),
@@ -98,6 +97,16 @@ const BrandModelControls = ({ model }) => {
         .dark-mode svg.control-icon path.stroke-fill {
           stroke: ${theme.colors.white};
         }
+        .dark-mode svg.control-icon:hover path {
+          fill: ${theme.colors.purple};
+        }
+        .dark-mode svg.control-icon:hover path.opposite-fill {
+          fill: ${theme.colors.black};
+          stroke: ${theme.colors.purple};
+        }
+        .dark-mode svg.control-icon:hover path.stroke-fill {
+          stroke: ${theme.colors.purple};
+        }
         .light-mode svg.control-icon path {
           fill: ${theme.colors.black};
         }
@@ -107,6 +116,16 @@ const BrandModelControls = ({ model }) => {
         }
         .light-mode svg.control-icon path.stroke-fill {
           stroke: ${theme.colors.black};
+        }
+        .light-mode svg.control-icon:hover path {
+          fill: ${theme.colors.aqua};
+        }
+        .light-mode svg.control-icon:hover path.opposite-fill {
+          fill: ${theme.colors.white};
+          stroke: ${theme.colors.aqua};
+        }
+        .light-mode svg.control-icon:hover path.stroke-fill {
+          stroke: ${theme.colors.aqua};
         }
       `}</style>
     </>

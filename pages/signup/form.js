@@ -6,7 +6,7 @@ import GoogleSignup from '../../components/ReusableComponents/Buttons/GoogleSign
 import Link from 'next/link';
 import LoadingSpinner from '../../components/ReusableComponents/Loading/LoadingSpinner';
 import { UserContext } from '../../utilities/context/UserContext';
-import UserNavigation from '../../components/ReusableComponents/Navigation/UserNavigation';
+
 import { signupStates } from '../../utilities/enums';
 import { strongRegex } from '../../utilities/validation';
 import { useRouter } from 'next/router';
@@ -29,7 +29,6 @@ const signup = ({ user }) => {
 
   return (
     <>
-      <UserNavigation user={user} />
       <div className='min-h-screen flex flex-col bg-black justify-center items-center px-64'>
         <form
           onSubmit={async (e) => {

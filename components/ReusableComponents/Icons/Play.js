@@ -12,7 +12,7 @@ const PlayIcon = ({ styleClass, fill, playFill }) => {
       <path
         d='M39.3347 20C39.3347 30.6783 30.6783 39.3347 20 39.3347C9.32173 39.3347 0.665283 30.6783 0.665283 20C0.665283 9.32173 9.32173 0.665283 20 0.665283C30.6783 0.665283 39.3347 9.32173 39.3347 20Z'
         fill={fill ?? 'white'}
-        stroke-miterlimit='10'
+        strokeMiterlimit='10'
         className='opposite-fill'
       />
       <path

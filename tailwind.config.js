@@ -83,6 +83,7 @@ module.exports = {
         '90per': '90%',
         '100per': '100%',
         floatScroll: 'calc(40vw - 2rem)',
+        mobileNavLogo: '100px',
       },
       zIndex: {
         tenThous: '10000',

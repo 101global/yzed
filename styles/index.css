@@ -39,8 +39,9 @@
 .paragraph-text {
   @apply font-light text-base leading-normal text-justify;
 }
+
 .large-paragraph-text {
-  @apply text-xl text-left;
+  @apply text-xl text-grey text-left bg-aqua;
 }
 
 .dark-mode {

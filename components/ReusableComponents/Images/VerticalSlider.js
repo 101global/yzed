@@ -68,7 +68,7 @@ const Slider = ({ model }) => {
           {images.map((image, idx) => (
             <div
               key={idx}
-              className='fader__slide w-90per absolute'
+              className='fader__slide w-90per ml-5per absolute'
               style={{ opacity: opacities[idx] }}>
               <ProgressiveImage
                 image={image.image}
@@ -96,7 +96,7 @@ const Slider = ({ model }) => {
       <style jsx global>{`
         .fader__slide {
           top: 50%;
-          left: 5%;
+          left: 10%;
           transform: translateY(-50%);
         }
         .navigation-wrapper {

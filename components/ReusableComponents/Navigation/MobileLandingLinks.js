@@ -39,7 +39,7 @@ const MobileLandingLinks = () => {
       </Link>
       <style jsx global>{`
         .mobile-nav-scroll-link:not(:last-child) {
-          border-right: 1px solid ${theme.colors.lightGrey};
+          border-right: 1px solid ${theme.colors.grey};
         }
       `}</style>
     </>
