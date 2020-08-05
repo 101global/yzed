@@ -115,7 +115,7 @@ const BrandContent = ({ model }) => {
           </a>
 
           <a
-            className='block font-light text-base lg:text-xl hover:gradient-blue-top'
+            className='block font-light text-base lg:text-xl hover:gradient-blue-top mb-4'
             href='tel:+82 02  6248  2130'>
             +82 02 6248 2130
           </a>

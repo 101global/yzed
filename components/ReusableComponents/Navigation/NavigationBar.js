@@ -13,7 +13,7 @@ import YZEDLogo from '../../../public/yzed_logo_white.svg';
 import theme from '../../../utilities/theme';
 
 const NavigationBar = ({ user, isLandingMenu = true }) => {
-  const [openMenu, setOpenMenu] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
       <nav className='relative'>
