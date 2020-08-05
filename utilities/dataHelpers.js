@@ -16,10 +16,10 @@ export const googleData = (result) => {
   return { userID, email, firstName, lastName, profilePicture };
 };
 
-export const imagesNames = (brandName) => {
+export const imagesNames = (brandName, imageCount) => {
   const imageBaseUrl = 'https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/';
   let images = [];
-  for (let i = 1; i < 6; i++) {
+  for (let i = 1; i < imageCount + 1; i++) {
     images.push({
       id: `${brandName} Photo ${i}`,
       image: `${imageBaseUrl}${brandName}_image${i}.jpg`,

@@ -9,7 +9,9 @@ import theme from '../../../utilities/theme';
 import SelfExpressionIcon from '../../ReusableComponents/AnimatedSVGs/SelfExpressionAnimatedSVG';
 
 const BrandContent = ({ model }) => {
-  const images = imagesNames(model.imageSlug);
+  console.log(model);
+  const images = imagesNames(model.imageSlug, model.imageCount);
+  console.log(images);
   return (
     <>
       <Element name='introduction'>
@@ -45,12 +47,14 @@ const BrandContent = ({ model }) => {
             divStyleClass='w-full lg:w-70per lg:ml-30per mt-8'
             alt={images[1].id}
           />
-          <ProgressiveImage
-            preview={images[2].imageThumb}
-            image={images[2].image}
-            divStyleClass='w-full lg:w-60per mt-8'
-            alt={images[2].id}
-          />
+          {images.length > 4 ? (
+            <ProgressiveImage
+              preview={images[2].imageThumb}
+              image={images[2].image}
+              divStyleClass='w-full lg:w-60per mt-8'
+              alt={images[2].id}
+            />
+          ) : null}
         </div>
       </Element>
       <Element name='about'>
@@ -75,10 +79,10 @@ const BrandContent = ({ model }) => {
             alt={images[3].id}
           />
           <ProgressiveImage
-            preview={images[4].imageThumb}
-            image={images[4].image}
+            preview={images[images.length > 4 ? 4 : 2].imageThumb}
+            image={images[images.length > 4 ? 4 : 2].image}
             divStyleClass='w-full lg:w-60per mt-8'
-            alt={images[4].id}
+            alt={images[images.length > 4 ? 4 : 2].id}
           />
         </div>
         <div className='my-8'>

@@ -18,6 +18,7 @@ const BrandDataFetch = ({ product, exposure }) => {
       imageSlug: product.fields.imageSlug.stringValue,
       animatedGlbFile: product.fields.animatedGlbFile.stringValue,
       exposure: exposure ?? 0.5,
+      imageCount: parseInt(product.fields.imageCount.integerValue),
     };
     setModel(modelData);
     setLoading(false);
