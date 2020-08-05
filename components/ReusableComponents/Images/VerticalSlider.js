@@ -123,8 +123,8 @@ const Slider = ({ model }) => {
             width: 4px;
             height: 16px;
           }
-          .dot:active {
-            height: 30px;
+          .dot.active {
+            height: 34px;
           }
         }
       `}</style>

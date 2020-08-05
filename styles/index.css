@@ -40,10 +40,6 @@
   @apply font-light text-base leading-normal text-justify;
 }
 
-.large-paragraph-text {
-  @apply text-xl text-grey text-left bg-aqua;
-}
-
 .dark-mode {
   @apply bg-black text-white;
 }
@@ -54,6 +50,10 @@
 
 .nav-scroll-link {
   @apply hidden font-medium tracking-wider text-black cursor-pointer;
+}
+
+.mobile-nav-scroll-link {
+  @apply font-medium text-sm tracking-wider text-black cursor-pointer py-2;
 }
 
 @variants hover, focus {
