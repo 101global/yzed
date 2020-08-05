@@ -132,16 +132,16 @@ exports[`renders introduction unchanged 1`] = `
     className="jsx-1337300742 flex flex-col justify-end p-0 lg:pt-16"
   >
     <div
-      className="overflow-hidden"
+      className="overflow-hidden undefined"
     >
       <img
         alt="YZED Detail View 1"
+        className="w-full undefined"
         src="https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/yzed_image_1_mini-compressor.jpg"
         style={
           Object {
-            "background": "grey",
-            "filter": "blur(30px)",
-            "overflow": "hidden",
+            "background": "transparent",
+            "filter": "blur(20px)",
             "transition": "1s filter linear",
           }
         }
@@ -185,16 +185,16 @@ exports[`renders landing about section unchanged 1`] = `
         className="jsx-2873791416 small-image-container relative lg:absolute right-0 lg:w-2/5 mb-8 lg:mb-0"
       >
         <div
-          className="overflow-hidden"
+          className="overflow-hidden undefined"
         >
           <img
             alt="YZED Detail View 3"
+            className="w-full undefined"
             src="https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/yzed_image_3_mini-compressor.jpg"
             style={
               Object {
-                "background": "grey",
-                "filter": "blur(30px)",
-                "overflow": "hidden",
+                "background": "transparent",
+                "filter": "blur(20px)",
                 "transition": "1s filter linear",
               }
             }
@@ -205,16 +205,16 @@ exports[`renders landing about section unchanged 1`] = `
         className="jsx-2873791416 large-image-container lg:w-9/12"
       >
         <div
-          className="overflow-hidden"
+          className="overflow-hidden undefined"
         >
           <img
             alt="YZED Detail View 2"
+            className="w-full undefined"
             src="https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/yzed_image_2_mini-compressor.jpg"
             style={
               Object {
-                "background": "grey",
-                "filter": "blur(30px)",
-                "overflow": "hidden",
+                "background": "transparent",
+                "filter": "blur(20px)",
                 "transition": "1s filter linear",
               }
             }
