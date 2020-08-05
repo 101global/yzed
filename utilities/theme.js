@@ -9,10 +9,10 @@ const theme = {
     white: '#fff',
     aquaLight: '#b5eae8',
     aqua: '#75cedb',
-    purple: '#a891d9',
+    purple: '#a891d5',
     transparentBlack: '#272727f6',
     transparentWhite: '#ffffffcc',
-    transparentPurple: '#a495d54c',
+    transparentPurple: '#a495d572',
   },
   fonts: { main: "'Work Sans', sans-serif;" },
   fontSizes: {

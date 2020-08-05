@@ -119,7 +119,7 @@ const BrandContent = ({ model }) => {
             href='tel:+82 02  6248  2130'>
             +82 02 6248 2130
           </a>
-          <p className='paragraph-text lg:text-xl lg:text-left'>
+          <p className='text-base font-light lg:text-xl lg:text-left'>
             22-18, Bongeunsa-ro 26-gil, Gangnam-gu,
             <br />
             Seoul, Republic of Korea 06126

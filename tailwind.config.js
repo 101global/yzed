@@ -100,10 +100,10 @@ module.exports = {
       white: '#fff',
       aquaLight: '#b5eae8',
       aqua: '#75cedb',
-      purple: '#a891d9',
+      purple: '#a891d5',
       transparentBlack: '#272727f6',
       transparentWhite: '#fffffff6',
-      transparentPurple: '#A495D54C',
+      transparentPurple: '#A495D572',
     },
   },
   variants: {
