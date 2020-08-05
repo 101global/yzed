@@ -1,7 +1,7 @@
-import LandingDataFetch from '../components/pageLayouts/LandingPage/LandingDataFetch';
+import BrandDataFetch from '../components/pageLayouts/BrandPage/BrandDataFetch';
 import fetch from 'node-fetch';
 
-const Misbhv = ({ product }) => <LandingDataFetch product={product} />;
+const Misbhv = ({ product }) => <BrandDataFetch product={product} exposure={1} />;
 
 export async function getServerSideProps() {
   const product = await fetch(

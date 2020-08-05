@@ -71,8 +71,8 @@ const Slider = ({ model }) => {
               className='fader__slide w-90per ml-5per absolute'
               style={{ opacity: opacities[idx] }}>
               <ProgressiveImage
-                image={image.image}
-                preview={image.thumbnail}
+                image={image.carouselImage}
+                preview={image.carouselImageThumb}
                 styleClass='w-full'
                 alt={image.id}
               />

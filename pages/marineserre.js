@@ -1,7 +1,7 @@
-import LandingDataFetch from '../components/pageLayouts/LandingPage/LandingDataFetch';
+import BrandDataFetch from '../components/pageLayouts/BrandPage/BrandDataFetch';
 import fetch from 'node-fetch';
 
-const MarineSerre = ({ product }) => <LandingDataFetch product={product} />;
+const Marine = ({ product }) => <BrandDataFetch product={product} exposure={1} />;
 
 export async function getServerSideProps() {
   const product = await fetch(
@@ -15,4 +15,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default MarineSerre;
+export default Marine;

@@ -34,19 +34,19 @@ const BrandContent = ({ model }) => {
         </div>
         <div className='top-images py-16'>
           <ProgressiveImage
-            preview={images[0].thumbnail}
+            preview={images[0].imageThumb}
             image={images[0].image}
             divStyleClass='first mt-8'
             alt={images[0].id}
           />
           <ProgressiveImage
-            preview={images[1].thumbnail}
+            preview={images[1].imageThumb}
             image={images[1].image}
             divStyleClass='w-full lg:w-70per lg:ml-30per mt-8'
             alt={images[1].id}
           />
           <ProgressiveImage
-            preview={images[2].thumbnail}
+            preview={images[2].imageThumb}
             image={images[2].image}
             divStyleClass='w-full lg:w-60per mt-8'
             alt={images[2].id}
@@ -69,13 +69,13 @@ const BrandContent = ({ model }) => {
         </div>
         <div className='bottom-images py-16'>
           <ProgressiveImage
-            preview={images[3].thumbnail}
+            preview={images[3].imageThumb}
             image={images[3].image}
             divStyleClass='w-full lg:w-80per mt-8'
             alt={images[3].id}
           />
           <ProgressiveImage
-            preview={images[4].thumbnail}
+            preview={images[4].imageThumb}
             image={images[4].image}
             divStyleClass='w-full lg:w-60per mt-8'
             alt={images[4].id}
