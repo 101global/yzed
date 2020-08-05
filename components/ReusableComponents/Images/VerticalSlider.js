@@ -5,7 +5,8 @@ import theme from '../../../utilities/theme';
 import { useKeenSlider } from 'keen-slider/react';
 
 const Slider = ({ model }) => {
-  const images = imagesNames(model.imageSlug);
+  // TODO: Remove slice once all images are properly uploaded
+  const images = imagesNames(model.imageSlug).slice(0, 4);
   const [opacities, setOpacities] = React.useState([]);
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [pause, setPause] = React.useState(false);
