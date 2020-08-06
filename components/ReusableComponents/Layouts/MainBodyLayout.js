@@ -11,7 +11,7 @@ const BodyLayout = ({ title, children }) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className='full-screen p-0 m-0 subpixel-antialiased'>{children}</div>
+      <div className='full-screen subpixel-antialiased'>{children}</div>
       <style jsx global>{`
         html,
         body {
@@ -35,7 +35,6 @@ BodyLayout.propTypes = {
 };
 
 const Layout = ({ children, title, loading }) => {
-
   useEffect(() => {
     if (window) {
       firebase.analytics();

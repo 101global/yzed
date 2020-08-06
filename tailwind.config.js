@@ -48,6 +48,7 @@ module.exports = {
         mobileNavLogo: '16px',
         desktopFooterLogo: '16px',
         mobileFooterLogo: '10px',
+        formButton: '40px',
       },
       linearGradients: {
         leftToRight: 'linear-gradient(to-right, #a891d9, #75cedb)',
@@ -84,6 +85,7 @@ module.exports = {
         '100per': '100%',
         floatScroll: 'calc(40vw - 2rem)',
         mobileNavLogo: '100px',
+        formButton: '240px',
       },
       zIndex: {
         tenThous: '10000',
@@ -104,6 +106,7 @@ module.exports = {
       transparentBlack: '#272727f6',
       transparentWhite: '#fffffff6',
       transparentPurple: '#A495D572',
+      transparent: 'transparent',
     },
   },
   variants: {

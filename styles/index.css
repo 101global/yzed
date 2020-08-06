@@ -28,6 +28,18 @@
   @apply font-medium text-sm tracking-wider text-black cursor-pointer py-2;
 }
 
+.login-input-label {
+  @apply text-grey text-xs text-left w-full;
+}
+
+.login-input {
+  @apply bg-transparent w-full border-0 border-b border-black;
+}
+
+.filled-button-light {
+  @apply bg-black text-white w-full text-center rounded-md h-formButton w-formButton;
+}
+
 @variants hover, focus {
   .gradient-blue-top {
     background: -webkit-linear-gradient(top, theme('colors.aqua'), theme('colors.purple'));
