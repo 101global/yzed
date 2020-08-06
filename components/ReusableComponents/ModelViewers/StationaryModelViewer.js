@@ -2,6 +2,7 @@ import '@google/model-viewer/dist/model-viewer';
 
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
+import ARActivation from '../Buttons/ARActivation';
 import DownChevron from '../../ReusableComponents/Images/DownChevron';
 import PropTypes from 'prop-types';
 import { ThemeContext } from '../../../utilities/context/ThemeContext';
@@ -38,7 +39,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           exposure={model.exposure}
           poster={topModelDark || darkMode.value ? darkBackgroundLoading : lightBackgroundLoading}
           interaction-policy='allow-when-focused'>
-          {/* <DownChevron topModelDark={topModelDark} /> */}
+          <ARActivation />
         </model-viewer>
       </div>
       <style jsx global>{`
