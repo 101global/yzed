@@ -27,7 +27,9 @@ const BrandDataFetch = ({ product, exposure }) => {
   return (
     <Layout
       title={`YZED${
-        model === null || model.brandName === undefined ? '.me' : ` x ${model.brandName}`
+        model === null || model.brandName === undefined || model.brandName === 'YZED'
+          ? '.me'
+          : ` x ${model.brandName}`
       }`}
       loading={!model || loading || !product}>
       <BrandPageLayout model={model} />
