@@ -6,189 +6,189 @@ const ARActivation = () => {
   return (
     <>
       <button slot='ar-button' aria-label='activate ar' className='ar-button'>
-        <div className='flex flex-row justify-center items-center'>
+        <div className='flex flex-row justify-center items-center p-1'>
           <svg
             width='40'
             height='40'
-            viewBox='0 0 30 30'
+            viewBox='0 0 40 40'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'
             className='activate-ar-button'>
             <g clip-path='url(#clip0)'>
               <path
-                d='M29.624 15C29.624 23.0081 23.1322 29.5 15.124 29.5C7.11589 29.5 0.624023 23.0081 0.624023 15C0.624023 6.99187 7.11589 0.5 15.124 0.5C23.1322 0.5 29.624 6.99187 29.624 15Z'
-                className='stroke-main fill-opposite'
+                d='M39.6653 20C39.6653 30.7696 30.9348 39.5 20.1653 39.5C9.39573 39.5 0.665283 30.7696 0.665283 20C0.665283 9.23045 9.39573 0.5 20.1653 0.5C30.9348 0.5 39.6653 9.23045 39.6653 20Z'
+                className='fill-opposite stroke-main'
                 stroke-miterlimit='10'
               />
               <path
-                d='M11.1318 12.9347H8.5918L8.9993 11.7297H11.3493L11.1318 12.9347Z'
+                d='M14.8425 17.2466H11.4558L11.9991 15.6399H15.1325L14.8425 17.2466Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M13.6718 12.9347H11.1318L11.3493 11.7297H13.6993L13.6718 12.9347Z'
+                d='M18.2294 17.2466H14.8428L15.1328 15.6399H18.2661L18.2294 17.2466Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M16.2119 12.9347H13.6719L13.6994 11.7297H16.0494L16.2119 12.9347Z'
+                d='M21.6162 17.2466H18.2295L18.2662 15.6399H21.3995L21.6162 17.2466Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M18.7523 12.9347H16.2123L16.0498 11.7297H18.3998L18.7523 12.9347Z'
+                d='M25.0028 17.2466H21.6161L21.3994 15.6399H24.5327L25.0028 17.2466Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M21.2919 12.9347H18.7519L18.3994 11.7297H20.7494L21.2919 12.9347Z'
+                d='M28.3896 17.2466H25.003L24.533 15.6399H27.6663L28.3896 17.2466Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M10.8772 14.3498H8.11475L8.59225 12.9348H11.1322L10.8772 14.3498Z'
+                d='M14.5029 19.1332H10.8196L11.4562 17.2466H14.8429L14.5029 19.1332Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M13.6399 14.3498H10.8774L11.1324 12.9348H13.6724L13.6399 14.3498Z'
+                d='M18.1865 19.1332H14.5032L14.8432 17.2466H18.2298L18.1865 19.1332Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M16.4026 14.3498H13.6401L13.6726 12.9348H16.2126L16.4026 14.3498Z'
+                d='M21.8701 19.1332H18.1868L18.2301 17.2466H21.6168L21.8701 19.1332Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M19.1644 14.3498H16.4019L16.2119 12.9348H18.7519L19.1644 14.3498Z'
+                d='M25.5526 19.1332H21.8693L21.616 17.2466H25.0026L25.5526 19.1332Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M21.9274 14.3498H19.1649L18.7524 12.9348H21.2924L21.9274 14.3498Z'
+                d='M29.2367 19.1332H25.5534L25.0034 17.2466H28.3901L29.2367 19.1332Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M24.7495 20.6247H5.99951L8.99951 11.7297H20.7495L24.7495 20.6247Z'
+                d='M32.9993 27.4999H7.99927L11.9993 15.6399H27.6659L32.9993 27.4999Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M10.5749 16.0399H7.54736L8.11486 14.3499H10.8774L10.5749 16.0399Z'
+                d='M14.0994 21.3866H10.0627L10.8194 19.1333H14.5027L14.0994 21.3866Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M13.6022 16.0399H10.5747L10.8772 14.3499H13.6397L13.6022 16.0399Z'
+                d='M18.136 21.3866H14.0994L14.5027 19.1333H18.186L18.136 21.3866Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M16.6321 16.0399H13.6021L13.6396 14.3499H16.4021L16.6321 16.0399Z'
+                d='M22.176 21.3866H18.136L18.186 19.1333H21.8693L22.176 21.3866Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M19.6598 16.0399H16.6323L16.4023 14.3499H19.1648L19.6598 16.0399Z'
+                d='M26.2127 21.3866H22.1761L21.8694 19.1333H25.5527L26.2127 21.3866Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M22.6871 16.0399H19.6595L19.1646 14.3499H21.9271L22.6871 16.0399Z'
+                d='M30.2496 21.3866H26.213L25.553 19.1333H29.2363L30.2496 21.3866Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M10.2075 18.0873H6.85498L7.54748 16.0398H10.575L10.2075 18.0873Z'
+                d='M13.6099 24.1167H9.13989L10.0632 21.3867H14.0999L13.6099 24.1167Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M13.5575 18.0873H10.2075L10.575 16.0398H13.6025L13.5575 18.0873Z'
+                d='M18.0763 24.1167H13.6096L14.0996 21.3867H18.1363L18.0763 24.1167Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M16.9071 18.0873H13.5571L13.6021 16.0398H16.6321L16.9071 18.0873Z'
+                d='M22.5431 24.1167H18.0764L18.1364 21.3867H22.1764L22.5431 24.1167Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M20.2573 18.0873H16.9073L16.6323 16.0398H19.6598L20.2573 18.0873Z'
+                d='M27.0098 24.1167H22.5432L22.1765 21.3867H26.2132L27.0098 24.1167Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M23.6102 18.0873H20.2577L19.6602 16.0398H22.6877L23.6102 18.0873Z'
+                d='M31.4798 24.1167H27.0098L26.2131 21.3867H30.2498L31.4798 24.1167Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M9.74951 20.6247H5.99951L6.85451 18.0872H10.207L9.74951 20.6247Z'
+                d='M12.9995 27.4998H7.99951L9.13951 24.1165H13.6095L12.9995 27.4998Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M13.5 20.6247H9.75L10.2075 18.0872H13.5575L13.5 20.6247Z'
+                d='M18.0002 27.4998H13.0002L13.6102 24.1165H18.0769L18.0002 27.4998Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M17.2495 20.6247H13.4995L13.557 18.0872H16.907L17.2495 20.6247Z'
+                d='M22.9998 27.4998H17.9998L18.0764 24.1165H22.5431L22.9998 27.4998Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M20.9997 20.6247H17.2497L16.9072 18.0872H20.2572L20.9997 20.6247Z'
+                d='M27.9999 27.4998H22.9999L22.5432 24.1165H27.0099L27.9999 27.4998Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M24.7498 20.6247H20.9998L20.2573 18.0872H23.6098L24.7498 20.6247Z'
+                d='M32.9998 27.4998H27.9998L27.0098 24.1165H31.4798L32.9998 27.4998Z'
                 className='stroke-main'
                 stroke-width='0.5'
                 stroke-miterlimit='10'
               />
               <path
-                d='M15.1167 17.5074C17.6255 17.5074 19.6592 16.7865 19.6592 15.8974C19.6592 15.0082 17.6255 14.2874 15.1167 14.2874C12.608 14.2874 10.5742 15.0082 10.5742 15.8974C10.5742 16.7865 12.608 17.5074 15.1167 17.5074Z'
+                d='M20.1558 23.3434C23.5008 23.3434 26.2125 22.3823 26.2125 21.1967C26.2125 20.0111 23.5008 19.05 20.1558 19.05C16.8108 19.05 14.0991 20.0111 14.0991 21.1967C14.0991 22.3823 16.8108 23.3434 20.1558 23.3434Z'
                 className='fill-main'
               />
               <path
-                d='M15.1173 14.9998C17.3872 14.9998 19.2273 13.1809 19.2273 10.9373C19.2273 8.6936 17.3872 6.87476 15.1173 6.87476C12.8474 6.87476 11.0073 8.6936 11.0073 10.9373C11.0073 13.1809 12.8474 14.9998 15.1173 14.9998Z'
+                d='M20.1563 19.9998C23.1828 19.9998 25.6363 17.5747 25.6363 14.5832C25.6363 11.5916 23.1828 9.1665 20.1563 9.1665C17.1297 9.1665 14.6763 11.5916 14.6763 14.5832C14.6763 17.5747 17.1297 19.9998 20.1563 19.9998Z'
                 className='fill-opposite stroke-main'
                 stroke-miterlimit='10'
               />
             </g>
             <defs>
               <clipPath id='clip0'>
-                <rect width='30' height='30' className='fill-opposite' fill='pink' />
+                <rect width='40' height='40' className='fill-opposite' />
               </clipPath>
             </defs>
           </svg>
@@ -202,9 +202,6 @@ const ARActivation = () => {
           bottom: 0;
           right: 0;
         }
-        .ar-button svg.activate-ar-button {
-          height: 40px;
-        }
         .dark-mode svg.activate-ar-button .stroke-main {
           stroke: ${theme.colors.white};
         }
@@ -214,9 +211,200 @@ const ARActivation = () => {
         .dark-mode svg.activate-ar-button .fill-opposite {
           fill: ${theme.colors.black};
         }
+        .light-mode svg.activate-ar-button .stroke-main {
+          stroke: ${theme.colors.black};
+        }
+        .light-mode svg.activate-ar-button .fill-main {
+          fill: ${theme.colors.black};
+        }
+        .light-mode svg.activate-ar-button .fill-opposite {
+          fill: ${theme.colors.white};
+        }
       `}</style>
     </>
   );
 };
 
 export default ARActivation;
+
+<svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'>
+  <g clip-path='url(#clip0)'>
+    <path
+      d='M39.6653 20C39.6653 30.7696 30.9348 39.5 20.1653 39.5C9.39573 39.5 0.665283 30.7696 0.665283 20C0.665283 9.23045 9.39573 0.5 20.1653 0.5C30.9348 0.5 39.6653 9.23045 39.6653 20Z'
+      fill='#272727'
+      stroke='white'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M14.8425 17.2466H11.4558L11.9991 15.6399H15.1325L14.8425 17.2466Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M18.2294 17.2466H14.8428L15.1328 15.6399H18.2661L18.2294 17.2466Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M21.6162 17.2466H18.2295L18.2662 15.6399H21.3995L21.6162 17.2466Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M25.0028 17.2466H21.6161L21.3994 15.6399H24.5327L25.0028 17.2466Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M28.3896 17.2466H25.003L24.533 15.6399H27.6663L28.3896 17.2466Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M14.5029 19.1332H10.8196L11.4562 17.2466H14.8429L14.5029 19.1332Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M18.1865 19.1332H14.5032L14.8432 17.2466H18.2298L18.1865 19.1332Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M21.8701 19.1332H18.1868L18.2301 17.2466H21.6168L21.8701 19.1332Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M25.5526 19.1332H21.8693L21.616 17.2466H25.0026L25.5526 19.1332Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M29.2367 19.1332H25.5534L25.0034 17.2466H28.3901L29.2367 19.1332Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M32.9993 27.4999H7.99927L11.9993 15.6399H27.6659L32.9993 27.4999Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M14.0994 21.3866H10.0627L10.8194 19.1333H14.5027L14.0994 21.3866Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M18.136 21.3866H14.0994L14.5027 19.1333H18.186L18.136 21.3866Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M22.176 21.3866H18.136L18.186 19.1333H21.8693L22.176 21.3866Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M26.2127 21.3866H22.1761L21.8694 19.1333H25.5527L26.2127 21.3866Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M30.2496 21.3866H26.213L25.553 19.1333H29.2363L30.2496 21.3866Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M13.6099 24.1167H9.13989L10.0632 21.3867H14.0999L13.6099 24.1167Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M18.0763 24.1167H13.6096L14.0996 21.3867H18.1363L18.0763 24.1167Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M22.5431 24.1167H18.0764L18.1364 21.3867H22.1764L22.5431 24.1167Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M27.0098 24.1167H22.5432L22.1765 21.3867H26.2132L27.0098 24.1167Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M31.4798 24.1167H27.0098L26.2131 21.3867H30.2498L31.4798 24.1167Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M12.9995 27.4998H7.99951L9.13951 24.1165H13.6095L12.9995 27.4998Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M18.0002 27.4998H13.0002L13.6102 24.1165H18.0769L18.0002 27.4998Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M22.9998 27.4998H17.9998L18.0764 24.1165H22.5431L22.9998 27.4998Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M27.9999 27.4998H22.9999L22.5432 24.1165H27.0099L27.9999 27.4998Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M32.9998 27.4998H27.9998L27.0098 24.1165H31.4798L32.9998 27.4998Z'
+      stroke='white'
+      stroke-width='0.5'
+      stroke-miterlimit='10'
+    />
+    <path
+      d='M20.1558 23.3434C23.5008 23.3434 26.2125 22.3823 26.2125 21.1967C26.2125 20.0111 23.5008 19.05 20.1558 19.05C16.8108 19.05 14.0991 20.0111 14.0991 21.1967C14.0991 22.3823 16.8108 23.3434 20.1558 23.3434Z'
+      fill='white'
+    />
+    <path
+      d='M20.1563 19.9998C23.1828 19.9998 25.6363 17.5747 25.6363 14.5832C25.6363 11.5916 23.1828 9.1665 20.1563 9.1665C17.1297 9.1665 14.6763 11.5916 14.6763 14.5832C14.6763 17.5747 17.1297 19.9998 20.1563 19.9998Z'
+      fill='#272727'
+      stroke='white'
+      stroke-miterlimit='10'
+    />
+  </g>
+  <defs>
+    <clipPath id='clip0'>
+      <rect width='40' height='40' fill='white' />
+    </clipPath>
+  </defs>
+</svg>;

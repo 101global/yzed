@@ -4,9 +4,9 @@ import ExpandIcon from '../../ReusableComponents/Icons/Expand';
 import HideIcon from '../../ReusableComponents/Icons/Hide';
 import PauseIcon from '../../ReusableComponents/Icons/Pause';
 import PlayIcon from '../../ReusableComponents/Icons/Play';
+import Slider from '../../ReusableComponents/Images/VerticalSlider';
 import dynamic from 'next/dynamic';
 import theme from '../../../utilities/theme';
-import Slider from '../../ReusableComponents/Images/VerticalSlider';
 
 const BrandModelControls = ({ model }) => {
   const [modelState, setModelState] = useState('STILL');
@@ -29,8 +29,8 @@ const BrandModelControls = ({ model }) => {
     <>
       <div className='viewer-container relative w-full mr-0 lg:w-floatScroll h-vh80 lg:h-vh70'>
         <button
-          aria-label='toggle show model'
-          className='show-hide absolute'
+          aria-label={modelState === 'IMAGE' ? 'show model' : 'hide model'}
+          className='show-hide absolute p-1'
           onClick={() => {
             if (modelState === 'IMAGE') {
               setModelState('STILL');
@@ -52,8 +52,8 @@ const BrandModelControls = ({ model }) => {
         {modelState === 'WALK' && <AnimatedModelViewer model={model} />}
         {modelState !== 'IMAGE' && (
           <button
-            aria-label='toggle model animation'
-            className='play-pause absolute'
+            aria-label={modelState === 'STILL' ? 'show animated model' : 'show stationary model'}
+            className='play-pause absolute p-1'
             onClick={() => {
               if (modelState === 'STILL') {
                 setModelState('WALK');
