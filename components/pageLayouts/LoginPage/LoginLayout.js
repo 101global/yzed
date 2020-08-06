@@ -98,6 +98,10 @@ const LoginLayout = ({ user }) => {
         .grid-cols-1 {
           max-width: 400px;
         }
+        input {
+          border-radius: none;
+          -webkit-appearance: none;
+        }
       `}</style>
     </>
   );
