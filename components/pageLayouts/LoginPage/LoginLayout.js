@@ -99,7 +99,7 @@ const LoginLayout = ({ user }) => {
           max-width: 400px;
         }
         input {
-          border-radius: none;
+          border-radius: 0;
           -webkit-appearance: none;
         }
       `}</style>
