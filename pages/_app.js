@@ -3,13 +3,13 @@ import 'keen-slider/keen-slider.min.css';
 
 import App from 'next/app';
 import Head from 'next/head';
-import SimpleReactLightbox from 'simple-react-lightbox';
 import ThemeContext from '../utilities/context/ThemeContext';
 import UserContext from '../utilities/context/UserContext';
 import cookies from 'next-cookies';
 import fetch from 'isomorphic-unfetch';
 import { server } from '../config/index';
 import { useState } from 'react';
+
 function MyApp({ Component, pageProps, user }) {
   const [userData, setUserData] = useState(user);
 
@@ -46,9 +46,7 @@ function MyApp({ Component, pageProps, user }) {
       </Head>
       <ThemeContext>
         <UserContext>
-          <SimpleReactLightbox>
-            <Component {...pageProps} user={user} userData={userData} />
-          </SimpleReactLightbox>
+          <Component {...pageProps} user={user} userData={userData} />
         </UserContext>
       </ThemeContext>
       <noscript>

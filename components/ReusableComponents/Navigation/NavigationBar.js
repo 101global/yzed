@@ -9,7 +9,6 @@ import MobileNav from './MobileNav';
 import NavigationButtonLayout from './NavButtonLayout';
 import NavigationLinks from './NavigationLinks';
 import { UserContext } from '../../../utilities/context/UserContext';
-import YZEDLogo from '../../../public/yzed_logo_white.svg';
 import theme from '../../../utilities/theme';
 
 const NavigationBar = ({ user, isLandingMenu = true }) => {
