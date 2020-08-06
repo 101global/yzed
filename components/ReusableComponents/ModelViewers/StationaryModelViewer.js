@@ -3,14 +3,13 @@ import '@google/model-viewer/dist/model-viewer';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import ARActivation from '../Buttons/ARActivation';
-import DownChevron from '../../ReusableComponents/Images/DownChevron';
 import PropTypes from 'prop-types';
 import { ThemeContext } from '../../../utilities/context/ThemeContext';
 import darkBackgroundLoading from '../../../public/yzed-loading-dark-background.svg';
 import dynamic from 'next/dynamic';
 import lightBackgroundLoading from '../../../public/yzed-loading-light-background.svg';
 
-const StationaryModelViewer = ({ model, topModelDark }) => {
+const StationaryModelViewer = ({ model }) => {
   const [loading, setLoading] = useState(false);
   const { darkMode } = useContext(ThemeContext);
   const modelRef = useRef(null);
@@ -37,7 +36,7 @@ const StationaryModelViewer = ({ model, topModelDark }) => {
           camera-controls
           ar
           exposure={model.exposure}
-          poster={topModelDark || darkMode.value ? darkBackgroundLoading : lightBackgroundLoading}
+          poster={darkMode.value ? darkBackgroundLoading : lightBackgroundLoading}
           interaction-policy='allow-when-focused'>
           <ARActivation />
         </model-viewer>
@@ -63,5 +62,4 @@ export default StationaryModelViewer;
 
 StationaryModelViewer.propTypes = {
   model: PropTypes.object.isRequired,
-  topModelDark: PropTypes.bool,
 };

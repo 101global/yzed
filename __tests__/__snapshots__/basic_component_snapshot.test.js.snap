@@ -1,70 +1,222 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders black manifesto link unchanged 1`] = `
-<a
-  className="jsx-4218770882 black-link block lg:inline m-auto lg:m-0 py-2 bg-black text-white border border-black text-xl text-center rounded-full no-underline tracking-wider font-medium hover:text-black hover:bg-white"
-  href="https://www.button-link.com/to-the-site"
-  rel="noopener noreferrer"
-  target="_blank"
+exports[`renders AR Button unchanged 1`] = `
+<button
+  aria-label="activate ar"
+  className="jsx-3516056933 ar-button"
+  slot="ar-button"
 >
-  Button Title
-</a>
+  <div
+    className="jsx-3516056933 flex flex-row justify-center items-center p-1"
+  >
+    <svg
+      className="jsx-3516056933 activate-ar-button"
+      fill="none"
+      height="40"
+      viewBox="0 0 40 40"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        className="jsx-3516056933"
+        clip-path="url(#clip0)"
+      >
+        <path
+          className="jsx-3516056933 fill-opposite stroke-main"
+          d="M39.6653 20C39.6653 30.7696 30.9348 39.5 20.1653 39.5C9.39573 39.5 0.665283 30.7696 0.665283 20C0.665283 9.23045 9.39573 0.5 20.1653 0.5C30.9348 0.5 39.6653 9.23045 39.6653 20Z"
+          stroke-miterlimit="10"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M14.8425 17.2466H11.4558L11.9991 15.6399H15.1325L14.8425 17.2466Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M18.2294 17.2466H14.8428L15.1328 15.6399H18.2661L18.2294 17.2466Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M21.6162 17.2466H18.2295L18.2662 15.6399H21.3995L21.6162 17.2466Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M25.0028 17.2466H21.6161L21.3994 15.6399H24.5327L25.0028 17.2466Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M28.3896 17.2466H25.003L24.533 15.6399H27.6663L28.3896 17.2466Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M14.5029 19.1332H10.8196L11.4562 17.2466H14.8429L14.5029 19.1332Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M18.1865 19.1332H14.5032L14.8432 17.2466H18.2298L18.1865 19.1332Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M21.8701 19.1332H18.1868L18.2301 17.2466H21.6168L21.8701 19.1332Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M25.5526 19.1332H21.8693L21.616 17.2466H25.0026L25.5526 19.1332Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M29.2367 19.1332H25.5534L25.0034 17.2466H28.3901L29.2367 19.1332Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M32.9993 27.4999H7.99927L11.9993 15.6399H27.6659L32.9993 27.4999Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M14.0994 21.3866H10.0627L10.8194 19.1333H14.5027L14.0994 21.3866Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M18.136 21.3866H14.0994L14.5027 19.1333H18.186L18.136 21.3866Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M22.176 21.3866H18.136L18.186 19.1333H21.8693L22.176 21.3866Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M26.2127 21.3866H22.1761L21.8694 19.1333H25.5527L26.2127 21.3866Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M30.2496 21.3866H26.213L25.553 19.1333H29.2363L30.2496 21.3866Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M13.6099 24.1167H9.13989L10.0632 21.3867H14.0999L13.6099 24.1167Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M18.0763 24.1167H13.6096L14.0996 21.3867H18.1363L18.0763 24.1167Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M22.5431 24.1167H18.0764L18.1364 21.3867H22.1764L22.5431 24.1167Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M27.0098 24.1167H22.5432L22.1765 21.3867H26.2132L27.0098 24.1167Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M31.4798 24.1167H27.0098L26.2131 21.3867H30.2498L31.4798 24.1167Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M12.9995 27.4998H7.99951L9.13951 24.1165H13.6095L12.9995 27.4998Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M18.0002 27.4998H13.0002L13.6102 24.1165H18.0769L18.0002 27.4998Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M22.9998 27.4998H17.9998L18.0764 24.1165H22.5431L22.9998 27.4998Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M27.9999 27.4998H22.9999L22.5432 24.1165H27.0099L27.9999 27.4998Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 stroke-main"
+          d="M32.9998 27.4998H27.9998L27.0098 24.1165H31.4798L32.9998 27.4998Z"
+          stroke-miterlimit="10"
+          stroke-width="0.5"
+        />
+        <path
+          className="jsx-3516056933 fill-main"
+          d="M20.1558 23.3434C23.5008 23.3434 26.2125 22.3823 26.2125 21.1967C26.2125 20.0111 23.5008 19.05 20.1558 19.05C16.8108 19.05 14.0991 20.0111 14.0991 21.1967C14.0991 22.3823 16.8108 23.3434 20.1558 23.3434Z"
+        />
+        <path
+          className="jsx-3516056933 fill-opposite stroke-main"
+          d="M20.1563 19.9998C23.1828 19.9998 25.6363 17.5747 25.6363 14.5832C25.6363 11.5916 23.1828 9.1665 20.1563 9.1665C17.1297 9.1665 14.6763 11.5916 14.6763 14.5832C14.6763 17.5747 17.1297 19.9998 20.1563 19.9998Z"
+          stroke-miterlimit="10"
+        />
+      </g>
+      <defs
+        className="jsx-3516056933"
+      >
+        <clipPath
+          className="jsx-3516056933"
+          id="clip0"
+        >
+          <rect
+            className="jsx-3516056933 fill-opposite"
+            height="40"
+            width="40"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+    <p
+      className="jsx-3516056933 ml-2 font-light text-sm tracking-wide"
+    >
+      View AR
+    </p>
+  </div>
+</button>
 `;
 
-exports[`renders chevron unchanged 1`] = `
-<svg
-  className="jsx-3413298786 down-chevron model-chevron block"
-  enableBackground="new 0 0 1000 1000"
-  version="1.1"
-  viewBox="0 0 1000 1000"
-  x="0px"
-  xmlns="http://www.w3.org/2000/svg"
-  y="0px"
->
-  <g
-    className="jsx-3413298786"
-  >
-    <path
-      className="jsx-3413298786"
-      d="M500,757.8L10,271.5l29.3-29.3L500,706.6l460.7-464.4l29.3,29.3L500,757.8z"
-      fill="#fff"
-    />
-  </g>
-</svg>
-`;
-
-exports[`renders desktop nav link unchanged 1`] = `
-<div
-  className="desktop-nav hidden lg:flex justify-between w-full"
->
-  <a
-    className="nav-scroll-link hidden lg:inline-block font-light text-white tracking-wider"
-    onClick={[Function]}
-  >
-    3D Model
-  </a>
-  <a
-    className="nav-scroll-link hidden lg:inline-block font-light text-white tracking-wider"
-    onClick={[Function]}
-  >
-    Introduction
-  </a>
-  <a
-    className="nav-scroll-link hidden lg:inline-block font-light text-white tracking-wider"
-    onClick={[Function]}
-  >
-    About Us
-  </a>
-  <a
-    className="nav-scroll-link hidden lg:inline-block font-light text-white tracking-wider"
-    onClick={[Function]}
-  >
-    Contact
-  </a>
-</div>
-`;
-
-exports[`renders loadingSpinner unchanged 1`] = `
+exports[`renders Loading Bars unchanged 1`] = `
 <div
   className="jsx-2898363057 spinner-container flex flex-col items-center justify-center bg-black"
 >
@@ -84,57 +236,116 @@ exports[`renders loadingSpinner unchanged 1`] = `
 </div>
 `;
 
-exports[`renders mobile nav unchanged 1`] = `
+exports[`renders Loading Spinner unchanged 1`] = `
 <div
-  className="jsx-764488899 mobile-nav flex flex-col lg:hidden justify-center w-full bg-transparentBlack fixed top-0 left-0 z-thous"
+  className="jsx-1134652233 spinner-container flex flex-col items-center justify-center"
 >
   <div
-    className="jsx-764488899 link-items-container"
+    className="jsx-1134652233 lds-ellipsis"
   >
-    <a
-      className="nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center"
-      onClick={[Function]}
-    >
-      <p
-        className="jsx-764488899"
-        onClick={[Function]}
-      >
-        3D Model
-      </p>
-    </a>
-    <a
-      className="nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center"
-      onClick={[Function]}
-    >
-      <p
-        className="jsx-764488899"
-        onClick={[Function]}
-      >
-        Introduction
-      </p>
-    </a>
-    <a
-      className="nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center"
-      onClick={[Function]}
-    >
-      <p
-        className="jsx-764488899"
-        onClick={[Function]}
-      >
-        About Us
-      </p>
-    </a>
-    <a
-      className="nav-scroll-link inline-block lg:hidden font-light text-white tracking-wide text-center"
-      onClick={[Function]}
-    >
-      <p
-        className="jsx-764488899"
-        onClick={[Function]}
-      >
-        Contact
-      </p>
-    </a>
+    <div
+      className="jsx-1134652233"
+    />
+    <div
+      className="jsx-1134652233"
+    />
+    <div
+      className="jsx-1134652233"
+    />
+    <div
+      className="jsx-1134652233"
+    />
   </div>
+</div>
+`;
+
+exports[`renders Toggle Dark Mode Button unchanged 1`] = `
+<div
+  className="jsx-2092124997 jsx-996897847 toggle-container"
+>
+  <input
+    aria-label="toggle dark mode"
+    className="jsx-2092124997 jsx-996897847 toggle"
+    onClick={[Function]}
+    type="checkbox"
+  />
+  <svg
+    className="toggle-icon moon"
+    fill="none"
+    height="20"
+    viewBox="0 0 19 20"
+    width="19"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7.81751 1.68458C6.97867 4.74283 7.56411 7.96419 9.42528 10.5244C11.2835 13.0817 14.1612 14.6341 17.333 14.7914C16.7709 15.6244 16.0719 16.3496 15.2534 16.9438C13.7709 18.0215 12.0204 18.5894 10.1942 18.5894C7.20586 18.5894 4.47091 17.0749 2.87771 14.5409C0.626253 10.9613 1.34858 6.18749 4.5612 3.43506C5.51945 2.6137 6.61169 2.02535 7.80586 1.68166C7.81169 1.68458 7.81751 1.68458 7.81751 1.68458ZM7.81751 0.810791C7.73596 0.810791 7.65149 0.822441 7.56702 0.845742C6.29712 1.20982 5.07674 1.84768 3.99324 2.77681C0.454409 5.80885 -0.340737 11.0661 2.14082 15.0127C3.96994 17.9195 7.06023 19.469 10.1971 19.469C12.1311 19.469 14.0855 18.8807 15.769 17.6545C16.701 16.9788 17.4728 16.1632 18.0758 15.2574C18.4515 14.6982 18.0495 13.9467 17.3767 13.9147C14.5952 13.7865 11.8952 12.4409 10.133 10.0147C8.368 7.58555 7.92528 4.60302 8.66217 1.9205C8.81945 1.33506 8.37382 0.810791 7.81751 0.810791Z"
+      fill="#fff"
+    />
+  </svg>
+  <svg
+    className="toggle-icon sun"
+    fill="none"
+    height="21"
+    viewBox="0 0 21 21"
+    width="21"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.263 15.16C7.86298 15.16 5.90869 13.2086 5.90869 10.8057C5.90869 8.40285 7.86298 6.45142 10.263 6.45142C12.663 6.45142 14.6173 8.40571 14.6173 10.8057C14.6173 13.2057 12.663 15.16 10.263 15.16ZM10.263 7.15999C8.25156 7.15999 6.61727 8.79714 6.61727 10.8057C6.61727 12.8143 8.25441 14.4514 10.263 14.4514C12.2716 14.4514 13.9087 12.8143 13.9087 10.8057C13.9087 8.79714 12.2744 7.15999 10.263 7.15999Z"
+      fill="#272727"
+    />
+    <path
+      d="M10.6139 0.805664H9.9082V4.30854H10.6139V0.805664Z"
+      fill="#272727"
+    />
+    <path
+      d="M5.56769 1.96941L4.95654 2.32227L6.70798 5.35575L7.31913 5.00289L5.56769 1.96941Z"
+      fill="#272727"
+    />
+    <path
+      d="M1.77913 5.50164L1.42627 6.11279L4.45975 7.86423L4.81261 7.25308L1.77913 5.50164Z"
+      fill="#272727"
+    />
+    <path
+      d="M3.76507 10.4512H0.262207V11.1569H3.76507V10.4512Z"
+      fill="#272727"
+    />
+    <path
+      d="M4.46073 13.7477L1.42725 15.4995L1.78018 16.1107L4.81366 14.3589L4.46073 13.7477Z"
+      fill="#272727"
+    />
+    <path
+      d="M6.70931 16.2558L4.95752 19.2893L5.56867 19.6422L7.32046 16.6087L6.70931 16.2558Z"
+      fill="#272727"
+    />
+    <path
+      d="M10.6139 17.3027H9.9082V20.8056H10.6139V17.3027Z"
+      fill="#272727"
+    />
+    <path
+      d="M13.8167 16.257L13.2056 16.6099L14.957 19.6433L15.5681 19.2905L13.8167 16.257Z"
+      fill="#272727"
+    />
+    <path
+      d="M16.0667 13.7497L15.7139 14.3608L18.7474 16.1123L19.1002 15.5011L16.0667 13.7497Z"
+      fill="#272727"
+    />
+    <path
+      d="M20.2621 10.4512H16.7593V11.1569H20.2621V10.4512Z"
+      fill="#272727"
+    />
+    <path
+      d="M18.7493 5.49822L15.7158 7.25L16.0687 7.86115L19.1022 6.10937L18.7493 5.49822Z"
+      fill="#272727"
+    />
+    <path
+      d="M14.9578 1.96749L13.2061 5.00098L13.8172 5.35391L15.569 2.32042L14.9578 1.96749Z"
+      fill="#272727"
+    />
+    <path
+      d="M10.2619 14.4516C12.2754 14.4516 13.9077 12.8194 13.9077 10.8059C13.9077 8.7924 12.2754 7.16016 10.2619 7.16016C8.24846 7.16016 6.61621 8.7924 6.61621 10.8059C6.61621 12.8194 8.24846 14.4516 10.2619 14.4516Z"
+      fill="transparent"
+    />
+  </svg>
 </div>
 `;

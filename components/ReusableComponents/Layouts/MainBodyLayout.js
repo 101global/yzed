@@ -35,6 +35,7 @@ BodyLayout.propTypes = {
 };
 
 const Layout = ({ children, title, loading }) => {
+
   useEffect(() => {
     if (window) {
       firebase.analytics();

@@ -1,36 +1,34 @@
-import DesktopNav from '../components/pageLayouts/LandingPage/DesktopNavLinks';
-import DownChevron from '../components/ReusableComponents/Images/DownChevron';
+import ARActivation from '../components/ReusableComponents/Buttons/ARActivation';
 import LoadingBars from '../components/ReusableComponents/Loading/LoadingBars';
-import MobileNav from '../components/pageLayouts/LandingPage/MobileNavLinks';
-
+import LoadingSpinner from '../components/ReusableComponents/Loading/LoadingSpinner';
 import React from 'react';
+import { ThemeContext } from '../utilities/context/ThemeContext';
+import ToggleDarkModeButton from '../components/ReusableComponents/Buttons/ToggleDarkMode';
 import { buttonMock } from '../__mocks__/dataMock';
 import renderer from 'react-test-renderer';
-import BlackLink from '../components/ReusableComponents/Links/BlackLink';
 
-it('renders mobile nav unchanged', () => {
-  const tree = renderer.create(<MobileNav openMenu={true} setOpenMenu={() => {}} />).toJSON();
+it('renders AR Button unchanged', () => {
+  const tree = renderer.create(<ARActivation />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-it('renders desktop nav link unchanged', () => {
-  const tree = renderer.create(<DesktopNav />).toJSON();
+it('renders Loading Bars unchanged', () => {
+  const tree = renderer.create(<LoadingBars />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
-it('renders black manifesto link unchanged', () => {
+it('renders Loading Spinner unchanged', () => {
+  const tree = renderer.create(<LoadingSpinner />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it('renders Toggle Dark Mode Button unchanged', () => {
   const tree = renderer
-    .create(<BlackLink title={buttonMock.title} link={buttonMock.href} />)
+    .create(
+      <ThemeContext.Provider value={{ darkMode: false, toggleDarkMode: buttonMock }}>
+        <ToggleDarkModeButton />
+      </ThemeContext.Provider>
+    )
     .toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-it('renders chevron unchanged', () => {
-  const tree = renderer.create(<DownChevron topModelDark={true} />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-it('renders loadingSpinner unchanged', () => {
-  const tree = renderer.create(<LoadingBars color='#fff' />).toJSON();
   expect(tree).toMatchSnapshot();
 });

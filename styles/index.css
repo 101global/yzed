@@ -4,34 +4,6 @@
 
 @tailwind components;
 
-.full-screen {
-  @apply min-h-screen min-w-full;
-}
-
-.para-standard {
-  @apply text-xl font-light;
-}
-
-.center-flex-col {
-  @apply flex flex-col justify-center w-full relative;
-}
-
-.social-button {
-  @apply w-full bg-black text-white border-white border-2 rounded-lg text-xl px-8 py-2;
-}
-
-.login-input {
-  @apply w-full px-8 py-2 bg-black font-light text-white my-2 rounded-full;
-}
-
-.black-button {
-  @apply w-full px-8 py-2 text-base font-light text-white bg-black border-white border-2 rounded-full tracking-widest my-2;
-}
-
-.full-page-centered-content {
-  @apply min-h-screen flex flex-col bg-black justify-center items-center px-64;
-}
-
 .landing-title {
   @apply text-3xl font-bold my-16;
 }

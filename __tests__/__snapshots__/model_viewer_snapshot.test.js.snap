@@ -17,105 +17,69 @@ exports[`renders animated model viewer unchanged 1`] = `
 </div>
 `;
 
-exports[`renders model viewer controller unchanged 1`] = `
+exports[`renders model viewer controls unchanged 1`] = `
 <div
-  className="jsx-2866622310 jsx-3808981773 viewer-container flex justify-between items-center"
+  className="jsx-2941622375 jsx-1142504009 viewer-container relative w-full mr-0 lg:w-floatScroll h-vh80 lg:h-vh70"
 >
-  <div
-    className="jsx-2866622310 jsx-3808981773 model-viewer-container"
-  />
-  <div
-    className="jsx-2866622310 jsx-3808981773 controls"
+  <button
+    aria-label="hide model"
+    className="jsx-2941622375 jsx-1142504009 show-hide absolute p-1"
+    onClick={[Function]}
+  >
+    <svg
+      className="control-icon hide"
+      fill="none"
+      height="40"
+      viewBox="-2 -2 43 43"
+      width="40"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        className="opposite-fill opposite-stroke"
+        d="M20 39.8347C30.9544 39.8347 39.8347 30.9544 39.8347 20C39.8347 9.04559 30.9544 0.165283 20 0.165283C9.04559 0.165283 0.165283 9.04559 0.165283 20C0.165283 30.9544 9.04559 39.8347 20 39.8347Z"
+        fill="transparent"
+        stroke-width="1.5"
+        strokeMiterlimit="10"
+      />
+      <path
+        d="M29.091 19.1736H10.9092V20.8265H29.091V19.1736Z"
+      />
+    </svg>
+  </button>
+  <button
+    aria-label="show animated model"
+    className="jsx-2941622375 jsx-1142504009 play-pause absolute p-1"
+    onClick={[Function]}
   >
     <div
-      className="jsx-2866622310 jsx-3808981773 toggle-animated-buttons"
+      className="jsx-2941622375 jsx-1142504009 flex flex-row justify-center items-center"
     >
-      <div
-        className="react-switch-selector-wrapper css-yp4xe5"
+      <svg
+        className="control-icon play"
+        fill="none"
+        height="40"
+        viewBox="0 0 40 40"
+        width="40"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <div
-          className="react-switch-selector-option css-15e01fz"
-        >
-          <label
-            className="react-switch-selector-option-label css-14spvco"
-            fontSize={14}
-            selected={true}
-          >
-            <input
-              checked={true}
-              className="css-18exkk3"
-              id="rss-option-0"
-              onChange={[Function]}
-              type="radio"
-            />
-            Stationary
-          </label>
-        </div>
-        <div
-          className="react-switch-selector-option css-15e01fz"
-        >
-          <label
-            className="react-switch-selector-option-label css-1nq8m5d"
-            fontSize={14}
-            selected={false}
-          >
-            <input
-              checked={false}
-              className="css-18exkk3"
-              id="rss-option-1"
-              onChange={[Function]}
-              type="radio"
-            />
-            Walking
-          </label>
-        </div>
-      </div>
-    </div>
-    <div
-      className="jsx-2866622310 jsx-3808981773 toggle-light-buttons"
-    >
-      <div
-        className="react-switch-selector-wrapper css-1te2sdl"
+        <path
+          className="opposite-fill"
+          d="M39.3347 20C39.3347 30.6783 30.6783 39.3347 20 39.3347C9.32173 39.3347 0.665283 30.6783 0.665283 20C0.665283 9.32173 9.32173 0.665283 20 0.665283C30.6783 0.665283 39.3347 9.32173 39.3347 20Z"
+          fill="white"
+          strokeMiterlimit="10"
+        />
+        <path
+          d="M16.033 11.719L27.9338 20.314L16.033 28.9091V11.719Z"
+          fill="#272727"
+        />
+      </svg>
+      <p
+        className="jsx-2941622375 jsx-1142504009 ml-2 font-light text-sm tracking-wide"
       >
-        <div
-          className="react-switch-selector-option css-15e01fz"
-        >
-          <label
-            className="react-switch-selector-option-label css-1nq8m5d"
-            fontSize={14}
-            selected={false}
-          >
-            <input
-              checked={false}
-              className="css-18exkk3"
-              id="rss-option-0"
-              onChange={[Function]}
-              type="radio"
-            />
-            Light
-          </label>
-        </div>
-        <div
-          className="react-switch-selector-option css-15e01fz"
-        >
-          <label
-            className="react-switch-selector-option-label css-14spvco"
-            fontSize={14}
-            selected={true}
-          >
-            <input
-              checked={true}
-              className="css-18exkk3"
-              id="rss-option-1"
-              onChange={[Function]}
-              type="radio"
-            />
-            Dark
-          </label>
-        </div>
-      </div>
+        Walking
+      </p>
     </div>
-  </div>
+  </button>
 </div>
 `;
 
@@ -135,6 +99,220 @@ exports[`renders stationary model viewer unchanged 1`] = `
     loading="lazy"
     poster="File Sub Mock"
     src="https://www.testYZEDfile.com/glbFile.glb"
-  />
+  >
+    <button
+      aria-label="activate ar"
+      className="jsx-3516056933 ar-button"
+      slot="ar-button"
+    >
+      <div
+        className="jsx-3516056933 flex flex-row justify-center items-center p-1"
+      >
+        <svg
+          className="jsx-3516056933 activate-ar-button"
+          fill="none"
+          height="40"
+          viewBox="0 0 40 40"
+          width="40"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            className="jsx-3516056933"
+            clip-path="url(#clip0)"
+          >
+            <path
+              className="jsx-3516056933 fill-opposite stroke-main"
+              d="M39.6653 20C39.6653 30.7696 30.9348 39.5 20.1653 39.5C9.39573 39.5 0.665283 30.7696 0.665283 20C0.665283 9.23045 9.39573 0.5 20.1653 0.5C30.9348 0.5 39.6653 9.23045 39.6653 20Z"
+              stroke-miterlimit="10"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M14.8425 17.2466H11.4558L11.9991 15.6399H15.1325L14.8425 17.2466Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M18.2294 17.2466H14.8428L15.1328 15.6399H18.2661L18.2294 17.2466Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M21.6162 17.2466H18.2295L18.2662 15.6399H21.3995L21.6162 17.2466Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M25.0028 17.2466H21.6161L21.3994 15.6399H24.5327L25.0028 17.2466Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M28.3896 17.2466H25.003L24.533 15.6399H27.6663L28.3896 17.2466Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M14.5029 19.1332H10.8196L11.4562 17.2466H14.8429L14.5029 19.1332Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M18.1865 19.1332H14.5032L14.8432 17.2466H18.2298L18.1865 19.1332Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M21.8701 19.1332H18.1868L18.2301 17.2466H21.6168L21.8701 19.1332Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M25.5526 19.1332H21.8693L21.616 17.2466H25.0026L25.5526 19.1332Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M29.2367 19.1332H25.5534L25.0034 17.2466H28.3901L29.2367 19.1332Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M32.9993 27.4999H7.99927L11.9993 15.6399H27.6659L32.9993 27.4999Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M14.0994 21.3866H10.0627L10.8194 19.1333H14.5027L14.0994 21.3866Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M18.136 21.3866H14.0994L14.5027 19.1333H18.186L18.136 21.3866Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M22.176 21.3866H18.136L18.186 19.1333H21.8693L22.176 21.3866Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M26.2127 21.3866H22.1761L21.8694 19.1333H25.5527L26.2127 21.3866Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M30.2496 21.3866H26.213L25.553 19.1333H29.2363L30.2496 21.3866Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M13.6099 24.1167H9.13989L10.0632 21.3867H14.0999L13.6099 24.1167Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M18.0763 24.1167H13.6096L14.0996 21.3867H18.1363L18.0763 24.1167Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M22.5431 24.1167H18.0764L18.1364 21.3867H22.1764L22.5431 24.1167Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M27.0098 24.1167H22.5432L22.1765 21.3867H26.2132L27.0098 24.1167Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M31.4798 24.1167H27.0098L26.2131 21.3867H30.2498L31.4798 24.1167Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M12.9995 27.4998H7.99951L9.13951 24.1165H13.6095L12.9995 27.4998Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M18.0002 27.4998H13.0002L13.6102 24.1165H18.0769L18.0002 27.4998Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M22.9998 27.4998H17.9998L18.0764 24.1165H22.5431L22.9998 27.4998Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M27.9999 27.4998H22.9999L22.5432 24.1165H27.0099L27.9999 27.4998Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 stroke-main"
+              d="M32.9998 27.4998H27.9998L27.0098 24.1165H31.4798L32.9998 27.4998Z"
+              stroke-miterlimit="10"
+              stroke-width="0.5"
+            />
+            <path
+              className="jsx-3516056933 fill-main"
+              d="M20.1558 23.3434C23.5008 23.3434 26.2125 22.3823 26.2125 21.1967C26.2125 20.0111 23.5008 19.05 20.1558 19.05C16.8108 19.05 14.0991 20.0111 14.0991 21.1967C14.0991 22.3823 16.8108 23.3434 20.1558 23.3434Z"
+            />
+            <path
+              className="jsx-3516056933 fill-opposite stroke-main"
+              d="M20.1563 19.9998C23.1828 19.9998 25.6363 17.5747 25.6363 14.5832C25.6363 11.5916 23.1828 9.1665 20.1563 9.1665C17.1297 9.1665 14.6763 11.5916 14.6763 14.5832C14.6763 17.5747 17.1297 19.9998 20.1563 19.9998Z"
+              stroke-miterlimit="10"
+            />
+          </g>
+          <defs
+            className="jsx-3516056933"
+          >
+            <clipPath
+              className="jsx-3516056933"
+              id="clip0"
+            >
+              <rect
+                className="jsx-3516056933 fill-opposite"
+                height="40"
+                width="40"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+        <p
+          className="jsx-3516056933 ml-2 font-light text-sm tracking-wide"
+        >
+          View AR
+        </p>
+      </div>
+    </button>
+  </model-viewer>
 </div>
 `;

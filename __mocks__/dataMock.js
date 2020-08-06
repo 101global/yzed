@@ -6,6 +6,7 @@ export const model = {
   usdzFile: 'https://www.testYZEDfile.com/usdzFile.usdz',
   animatedGlbFile: 'https://www.testYZEDfile.com/animatedGlbFile.glb',
   exposure: 1,
+  imageCount: 5,
 };
 
 export const buttonMock = {
