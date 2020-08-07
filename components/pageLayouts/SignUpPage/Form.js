@@ -180,12 +180,6 @@ const SignupForm = ({ user }) => {
         </div>
       </div>
       <style jsx>{`
-        .password {
-          color: ${strongRegex.test(password) ? 'LightGreen' : 'Tomato'};
-        }
-        .confirm-password {
-          color: ${password === confirmPassword ? 'LightGreen' : 'Tomato'};
-        }
         .filled-button-light:disabled {
           background: ${theme.colors.mediumGrey};
           color: ${theme.colors.white};
