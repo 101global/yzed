@@ -5,24 +5,31 @@ import FormError from '../../ReusableComponents/Errors/FormError';
 import GoogleLogin from '../../ReusableComponents/Buttons/GoogleLogin';
 import Link from 'next/link';
 import LoadingBars from '../../ReusableComponents/Loading/LoadingBars';
-import LoadingSpinner from '../../ReusableComponents/Loading/LoadingSpinner';
+
 import { UserContext } from '../../../utilities/context/UserContext';
 import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
 import theme from '../../../utilities/theme';
 import { useRouter } from 'next/router';
+import LoadingButtonDots from '../../ReusableComponents/Loading/LoadingButtonDots';
 
 const LoginLayout = ({ user }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { userError, requestEmailLogin, userLoading } = useContext(UserContext);
+  const {
+    userError,
+    requestEmailLogin,
+    userLoading,
+    requestFbLogin,
+    requestGoogleLogin,
+  } = useContext(UserContext);
 
   const router = useRouter();
 
   useEffect(() => {
-    if (user) {
-      router.push('/');
-    }
+    // if (user) {
+    //   router.push('/');
+    // }
   }, []);
 
   return (
@@ -33,17 +40,19 @@ const LoginLayout = ({ user }) => {
         </div>
       ) : (
         <UserFormLayout>
-          <div className='grid grid-cols-1 mx-auto'>
+          <div className='grid grid-cols-1 mx-auto w-full'>
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
                 await requestEmailLogin(email, password);
               }}
-              className='flex flex-col justify-start items-center'>
-              <label htmlFor='email' className='login-input-label'>
+              className='flex flex-col justify-start items-center mx-auto'>
+              <label htmlFor='email' className='login-input-label dark:text-lightGrey'>
                 Email
               </label>
               <input
+                required
+                id='email'
                 name='email'
                 value={email}
                 type='email'
@@ -52,10 +61,12 @@ const LoginLayout = ({ user }) => {
                   setEmail(event.target.value);
                 }}
               />
-              <label htmlFor='password' className='login-input-label'>
+              <label htmlFor='password' className='login-input-label dark:text-lightGrey'>
                 Password
               </label>
               <input
+                required
+                id='password'
                 name='password'
                 value={password}
                 className='login-input dark:border-white mb-16'
@@ -65,28 +76,35 @@ const LoginLayout = ({ user }) => {
                 }}
               />
               <button
-                disabled={!email.length}
+                disabled={!email.length || !password.length}
                 className='filled-button-light dark:bg-white dark:text-black relative'
-                type='submit'>
-                {userLoading ? 'Logging In' : 'Log In'}
+                type='submit'
+                required>
+                {userLoading ? <LoadingButtonDots /> : 'Log In'}
               </button>
               <Link href='/request/password'>
-                <a className='w-full block text-xs font-semibold text-left mb-20 mt-4'>
+                <a className='w-full block text-xs font-semibold text-left mb-20 mt-2'>
                   Forgot your password?
                 </a>
               </Link>
             </form>
-            <div>
-              <GoogleLogin />
-              <FBLogin />
+            <div className='pb-12'>
+              <GoogleLogin loginFunction={requestGoogleLogin} />
+              <FBLogin loginFunction={requestFbLogin} />
             </div>
-            <div className='mx-auto'>
-              {userLoading && <LoadingSpinner color='white' text='Checking User Credentials' />}
-            </div>
+
             {userError && <FormError message={userError} />}
-            <Link href='/signup/form'>
-              <a className='text-center text-white'>Not yet a member?</a>
-            </Link>
+            <div className='y-12 pt-8 border-t-2 border-lightGrey'>
+              <p className='text-center text-sm'>I'm a new user!</p>
+              <Link href='/signup/form'>
+                <a className='mx-auto border-black dark:border-white border flex items-center justify-center rounded-md h-formButton w-formButton text-black dark:text-white bg-transparent text-center text-sm my-4'>
+                  Create Account
+                </a>
+              </Link>
+              <p className='text-center text-xxs text-mediumGrey dark:text-lightGrey'>
+                Creating an account is fast, easy, and free.
+              </p>
+            </div>
           </div>
         </UserFormLayout>
       )}
@@ -101,6 +119,9 @@ const LoginLayout = ({ user }) => {
         input {
           border-radius: 0;
           -webkit-appearance: none;
+        }
+        form {
+          max-width: 240px;
         }
       `}</style>
     </>

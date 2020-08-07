@@ -6,6 +6,9 @@ module.exports = {
   theme: {
     fill: (theme) => ({ black: theme('colors.black'), white: theme('colors.white') }),
     extend: {
+      fontSize: {
+        xxs: '0.6rem',
+      },
       padding: {
         dsk: '10%',
         nav: '4.7rem',
