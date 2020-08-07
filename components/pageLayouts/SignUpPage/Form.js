@@ -17,6 +17,7 @@ import GoogleLogin from '../../ReusableComponents/Buttons/GoogleLogin';
 import FBLogin from '../../ReusableComponents/Buttons/FBLogin';
 import InlineFormError from '../../ReusableComponents/Errors/InlineFormError';
 import Popover, { ArrowContainer } from 'react-tiny-popover';
+import Tooltip from '../../ReusableComponents/Other/Tooltip';
 const SignupForm = ({ user }) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [email, setEmail] = useState('');
@@ -103,38 +104,10 @@ const SignupForm = ({ user }) => {
           />
           <label htmlFor='password' className='login-input-label dark:text-lightGrey relative'>
             Password
-            <Popover
-              isOpen={isPopoverOpen}
-              position={'left'} // preferred position
-              content={({ position, targetRect, popoverRect }) => (
-                <ArrowContainer // if you'd like an arrow, you can import the ArrowContainer!
-                  position={position}
-                  targetRect={targetRect}
-                  popoverRect={popoverRect}
-                  arrowColor={theme.colors.black}
-                  arrowSize={10}
-                  arrowStyle={{ opacity: 0.95 }}>
-                  <div
-                    style={{
-                      opacity: 0.95,
-                      maxWidth: '200px',
-                    }}
-                    className='bg-black dark:bg-white text-white dark:text-black p-2 text-light'
-                    onClick={() => setIsPopoverOpen(!isPopoverOpen)}>
-                    Password must contain at least one lowercase letter, one uppercase letter, one
-                    number, and one symbol.
-                  </div>
-                </ArrowContainer>
-              )}
-              // content={
-              //   <p className='help-tip-content bg-aquaLight'>
-              //     Password must contain at least one lowercase letter, one uppercase letter, one
-              //     number, and one symbol.
-              //   </p>
-              // }>
-            >
-              <div className='help-tip' onClick={() => setIsPopoverOpen(!isPopoverOpen)}></div>
-            </Popover>
+            <Tooltip
+              message='Password must contain at least one lowercase letter, one uppercase letter, one
+                    number, and one symbol.'
+            />
           </label>
           <div className='password-message w-full text-left'>
             {password ? (
@@ -238,27 +211,6 @@ const SignupForm = ({ user }) => {
         }
         .password-message {
           min-height: 0.8rem;
-        }
-        .help-tip {
-          position: absolute;
-          top: 0px;
-          right: 0px;
-          text-align: center;
-          background-color: ${theme.colors.mediumGrey};
-          border-radius: 50%;
-          width: 1rem;
-          height: 1rem;
-          font-size: 0.75rem;
-          line-height: 1rem;
-          cursor: default;
-        }
-
-        .help-tip:before {
-          content: '?';
-          font-weight: bold;
-          color: #fff;
-        }
-        .help-tip-content {
         }
       `}</style>
     </UserFormLayout>
