@@ -11,23 +11,15 @@ const Tooltip = ({ message }) => {
         isOpen={isPopoverOpen}
         position={'left'} // preferred position
         content={({ position, targetRect, popoverRect }) => (
-          <ArrowContainer // if you'd like an arrow, you can import the ArrowContainer!
-            position={position}
-            targetRect={targetRect}
-            popoverRect={popoverRect}
-            arrowColor={darkMode ? theme.colors.white : theme.colors.black}
-            arrowSize={10}
-            arrowStyle={{ opacity: 0.95 }}>
-            <div
-              style={{
-                opacity: 0.95,
-                maxWidth: '200px',
-              }}
-              className='bg-black dark:bg-white text-white dark:text-black p-2 text-light'
-              onClick={() => setIsPopoverOpen(!isPopoverOpen)}>
-              {message}
-            </div>
-          </ArrowContainer>
+          <div
+            style={{
+              opacity: 0.95,
+              maxWidth: '200px',
+            }}
+            className='bg-black dark:bg-white text-white dark:text-black p-2 text-light'
+            onClick={() => setIsPopoverOpen(!isPopoverOpen)}>
+            {message}
+          </div>
         )}>
         <div className='help-tip' onClick={() => setIsPopoverOpen(!isPopoverOpen)}></div>
       </Popover>
