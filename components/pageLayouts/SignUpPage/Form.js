@@ -43,12 +43,10 @@ const SignupForm = ({ user }) => {
     <UserFormLayout>
       <div className='grid grid-cols-1 mx-auto w-full'>
         <form
-          onSubmit={async (e) => {
+          onSubmit={(e) => {
             e.preventDefault();
             if (password === confirmPassword && strongRegex.test(password)) {
-              await requestEmailSignup(email, password, firstName, lastName);
-            } else {
-              setError('Check that password match and match the password criteria.');
+              requestEmailSignup(email, password, firstName, lastName);
             }
           }}
           className='flex flex-col justify-center items-center mx-auto'>
