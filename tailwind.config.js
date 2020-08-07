@@ -110,6 +110,7 @@ module.exports = {
       transparentWhite: '#fffffff6',
       transparentPurple: '#A495D572',
       transparent: 'transparent',
+      danger: '#E74C3C',
     },
   },
   variants: {

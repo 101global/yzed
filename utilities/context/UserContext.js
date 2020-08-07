@@ -163,7 +163,8 @@ const UserProvider = ({ children }) => {
         refreshUserData('/experience/1');
       })
       .catch((err) => {
-        setError(err.message);
+        console.log(err);
+        setError(err);
       });
   };
 

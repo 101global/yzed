@@ -11,6 +11,7 @@ import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
 import theme from '../../../utilities/theme';
 import { useRouter } from 'next/router';
 import LoadingButtonDots from '../../ReusableComponents/Loading/LoadingButtonDots';
+import InlineFormError from '../../ReusableComponents/Errors/InlineFormError';
 
 const LoginLayout = ({ user }) => {
   const [email, setEmail] = useState('');
@@ -50,6 +51,11 @@ const LoginLayout = ({ user }) => {
               <label htmlFor='email' className='login-input-label dark:text-lightGrey'>
                 Email
               </label>
+              <InlineFormError
+                error={userError}
+                code='auth/user-not-found'
+                message='Email not found! Please check again.'
+              />
               <input
                 required
                 id='email'
@@ -64,6 +70,11 @@ const LoginLayout = ({ user }) => {
               <label htmlFor='password' className='login-input-label dark:text-lightGrey'>
                 Password
               </label>
+              <InlineFormError
+                error={userError}
+                code='auth/wrong-password'
+                message='Password is incorrect. Please check again.'
+              />
               <input
                 required
                 id='password'
@@ -92,8 +103,6 @@ const LoginLayout = ({ user }) => {
               <GoogleLogin loginFunction={requestGoogleLogin} />
               <FBLogin loginFunction={requestFbLogin} />
             </div>
-
-            {userError && <FormError message={userError} />}
             <div className='y-12 pt-8 border-t-2 border-lightGrey'>
               <p className='text-center text-sm'>I'm a new user!</p>
               <Link href='/signup/form'>
