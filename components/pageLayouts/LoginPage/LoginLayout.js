@@ -48,6 +48,9 @@ const LoginLayout = ({ user }) => {
                 await requestEmailLogin(email, password);
               }}
               className='flex flex-col justify-start items-center mx-auto'>
+              <label htmlFor='email' className='login-input-label dark:text-lightGrey'>
+                Email
+              </label>
               <InlineFormError
                 error={userError}
                 code='auth/user-not-found'
