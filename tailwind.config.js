@@ -111,6 +111,7 @@ module.exports = {
       transparentPurple: '#A495D572',
       transparent: 'transparent',
       danger: '#E74C3C',
+      success: '#2ECC71',
     },
   },
   variants: {

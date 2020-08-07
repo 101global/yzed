@@ -103,7 +103,8 @@ const UserProvider = ({ children }) => {
         }
       })
       .catch((err) => {
-        setError(err.message);
+        console.log(err);
+        setError(err);
       });
   };
 

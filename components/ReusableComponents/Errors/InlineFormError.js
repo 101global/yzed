@@ -8,7 +8,7 @@ const InlineFormError = ({ error, code, message }) => {
       </div>
       <style jsx>{`
         .error-message {
-          min-height: 0.7rem;
+          min-height: 0.8rem;
         }
       `}</style>
     </>

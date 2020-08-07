@@ -48,13 +48,10 @@ const LoginLayout = ({ user }) => {
                 await requestEmailLogin(email, password);
               }}
               className='flex flex-col justify-start items-center mx-auto'>
-              <label htmlFor='email' className='login-input-label dark:text-lightGrey'>
-                Email
-              </label>
               <InlineFormError
                 error={userError}
                 code='auth/user-not-found'
-                message='Email not found! Please check again.'
+                message='Email not found. Please check again.'
               />
               <input
                 required
@@ -91,7 +88,7 @@ const LoginLayout = ({ user }) => {
                 className='filled-button-light dark:bg-white dark:text-black relative'
                 type='submit'
                 required>
-                {userLoading ? <LoadingButtonDots /> : 'Log In'}
+                {userLoading ? <LoadingButtonDots /> : 'LOG IN'}
               </button>
               <Link href='/request/password'>
                 <a className='w-full block text-xs font-semibold text-left mb-20 mt-2'>
@@ -99,11 +96,11 @@ const LoginLayout = ({ user }) => {
                 </a>
               </Link>
             </form>
-            <div className='pb-12'>
+            <div className='py-12'>
               <GoogleLogin loginFunction={requestGoogleLogin} />
               <FBLogin loginFunction={requestFbLogin} />
             </div>
-            <div className='y-12 pt-8 border-t-2 border-lightGrey'>
+            <div className='py-12 pt-8 border-t-2 border-lightGrey'>
               <p className='text-center text-sm'>I'm a new user!</p>
               <Link href='/signup/form'>
                 <a className='mx-auto border-black dark:border-white border flex items-center justify-center rounded-md h-formButton w-formButton text-black dark:text-white bg-transparent text-center text-sm my-4'>
