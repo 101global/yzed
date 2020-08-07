@@ -1,5 +1,6 @@
 import '../styles/index.css';
 import 'keen-slider/keen-slider.min.css';
+import 'react-hint/css/index.css';
 
 import App from 'next/app';
 import Head from 'next/head';

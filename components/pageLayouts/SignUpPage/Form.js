@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import FormError from '../../ReusableComponents/Errors/FormError';
 
 import Link from 'next/link';
-import ReactTooltip from 'react-tooltip';
+
 import { useRouter } from 'next/router';
 import LoginLayout from '../LoginPage/LoginLayout';
 import LoadingSpinner from '../../ReusableComponents/Loading/LoadingSpinner';
@@ -16,8 +16,9 @@ import theme from '../../../utilities/theme';
 import GoogleLogin from '../../ReusableComponents/Buttons/GoogleLogin';
 import FBLogin from '../../ReusableComponents/Buttons/FBLogin';
 import InlineFormError from '../../ReusableComponents/Errors/InlineFormError';
-
+import Popover, { ArrowContainer } from 'react-tiny-popover';
 const SignupForm = ({ user }) => {
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -101,11 +102,39 @@ const SignupForm = ({ user }) => {
             }}
           />
           <label htmlFor='password' className='login-input-label dark:text-lightGrey relative'>
-            Password{' '}
-            <div
-              className='help-tip bg-aqua'
-              data-tip='Password must contain at least one uppercase letter, lowercase letter, one number, and one symbol.'></div>
-            <ReactTooltip />
+            Password
+            <Popover
+              isOpen={isPopoverOpen}
+              position={'left'} // preferred position
+              content={({ position, targetRect, popoverRect }) => (
+                <ArrowContainer // if you'd like an arrow, you can import the ArrowContainer!
+                  position={position}
+                  targetRect={targetRect}
+                  popoverRect={popoverRect}
+                  arrowColor={theme.colors.black}
+                  arrowSize={10}
+                  arrowStyle={{ opacity: 0.95 }}>
+                  <div
+                    style={{
+                      opacity: 0.95,
+                      maxWidth: '200px',
+                    }}
+                    className='bg-black dark:bg-white text-white dark:text-black p-2 text-light'
+                    onClick={() => setIsPopoverOpen(!isPopoverOpen)}>
+                    Password must contain at least one lowercase letter, one uppercase letter, one
+                    number, and one symbol.
+                  </div>
+                </ArrowContainer>
+              )}
+              // content={
+              //   <p className='help-tip-content bg-aquaLight'>
+              //     Password must contain at least one lowercase letter, one uppercase letter, one
+              //     number, and one symbol.
+              //   </p>
+              // }>
+            >
+              <div className='help-tip' onClick={() => setIsPopoverOpen(!isPopoverOpen)}></div>
+            </Popover>
           </label>
           <div className='password-message w-full text-left'>
             {password ? (
@@ -228,6 +257,8 @@ const SignupForm = ({ user }) => {
           content: '?';
           font-weight: bold;
           color: #fff;
+        }
+        .help-tip-content {
         }
       `}</style>
     </UserFormLayout>
