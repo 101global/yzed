@@ -28,7 +28,7 @@ const success = ({ user }) => {
 
   if (loading)
     return (
-      <div className='min-h-screen flex flex-col justify-center items-center px-64'>
+      <div className='min-h-screen flex flex-col justify-center items-center'>
         <LoadingBars text='Verifying User Credentials...' />
       </div>
     );

@@ -5,28 +5,34 @@ import theme from '../../../utilities/theme';
 const LoadingFillIcon = () => {
   return (
     <>
-      <div className='box'>
-        <svg
-          viewBox='0 0 156 26'
-          height='200'
-          width='300'
-          xmlns='http://www.w3.org/2000/svg'
-          className='hello'>
-          <defs>
-            <clipPath id='myClip'>
-              <path d='M35.5944 19.4567L53.9629 6.54333H38.8463L40.5161 0H70.266L68.8598 6.54333L50.755 19.4567H67.0581L65.3004 26H34.2761L35.5944 19.4567Z' />
-              <path d='M38.2751 0H25.839L17.3579 12.5233L14.3258 0H1.93365L7.47055 19.4567H1.75788L0.175903 26H9.5359C19.4672 26 25.3996 17.7667 25.3996 17.7667L38.2751 0Z' />
-              <path d='M107.091 0H127.393C136.357 0 140.268 3.42333 138.335 13C136.401 22.1433 130.908 26 122.163 26H101.642L107.091 0ZM113.419 19.4567H119.395C124.141 19.4567 126.558 17.1167 127.437 13C128.272 8.88333 126.865 6.54333 122.119 6.54333H116.143L113.419 19.4567Z' />
-              <path d='M74.924 0H102.96L101.642 6.32667H84.0203L83.2733 9.83667H99.6203L98.302 16.1633H81.955L81.2079 19.6733H98.8293L97.511 26H69.475L74.924 0Z' />
-              <path d='M150.639 26C153.576 26 155.956 23.6525 155.956 20.7566C155.956 17.8608 153.576 15.5133 150.639 15.5133C147.702 15.5133 145.322 17.8608 145.322 20.7566C145.322 23.6525 147.702 26 150.639 26Z' />
-            </clipPath>
-          </defs>
-        </svg>
+      <div className='bg-transparentBlack min-h-screen min-w-full flex justify-center items-center'>
+        <div className='box'>
+          <svg
+            width='250'
+            height='42'
+            viewBox='0 0 250 42'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'>
+            <defs>
+              <clipPath id='myClip'>
+                <path
+                  d='M57.0424 31.1806L86.479 10.4861H62.2536L64.9297 0H112.606L110.352 10.4861L81.3382 31.1806H107.465L104.648 41.6667H54.9297L57.0424 31.1806Z'
+                  stroke='white'
+                  strokeWidth='1.5'
+                />
+                <path d='M61.3381 0H41.4085L27.817 20.0694L22.9578 0H3.09864L11.9719 31.1806H2.81695L0.281738 41.6667H15.2817C31.1972 41.6667 40.7043 28.4722 40.7043 28.4722L61.3381 0Z' />
+                <path d='M171.62 0H204.155C218.521 0 224.789 5.48611 221.69 20.8333C218.591 35.4861 209.789 41.6667 195.775 41.6667H162.887L171.62 0ZM181.76 31.1806H191.338C198.944 31.1806 202.817 27.4306 204.225 20.8333C205.563 14.2361 203.31 10.4861 195.704 10.4861H186.127L181.76 31.1806Z' />
+                <path d='M120.071 0H165L162.888 10.1389H134.648L133.451 15.7639H159.648L157.536 25.9028H131.338L130.141 31.5278H158.381L156.268 41.6667H111.338L120.071 0Z' />
+                <path d='M241.408 41.6666C246.114 41.6666 249.929 37.9046 249.929 33.2639C249.929 28.6231 246.114 24.8611 241.408 24.8611C236.702 24.8611 232.887 28.6231 232.887 33.2639C232.887 37.9046 236.702 41.6666 241.408 41.6666Z' />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
       </div>
       <style jsx>{`
         .box {
-          width: 100%;
-          height: 200px;
+          width: 250px;
+          height: 50px;
           line-height: 200px;
           text-align: center;
           font-size: 25px;
@@ -34,24 +40,23 @@ const LoadingFillIcon = () => {
           text-transform: uppercase;
           position: relative;
           clip-path: url('#myClip');
-          overflow: hidden;
-        }
-        .box svg {
         }
         .box:before {
           content: '';
           position: absolute;
           width: 400px;
           height: 200px;
+          background: ${theme.colors.transparentWhite};
           background: linear-gradient(
-            ${theme.colors.aqua},
-            ${theme.colors.purple},
-            ${theme.colors.aqua},
-            ${theme.colors.purple}
+            ${theme.colors.transparentWhite},
+            ${theme.colors.transparentWhite} 25%,
+            ${theme.colors.aqua} 25%,
+            ${theme.colors.aqua} 50%,
+            ${theme.colors.purple} 50%,
+            ${theme.colors.purple} 100%
           );
-          left: 50%;
           transform: translateX(-50%);
-          animation: fill 2s ease-in-out infinite;
+          animation: fill 3s ease-in-out infinite;
           z-index: -1;
         }
         @keyframes fill {

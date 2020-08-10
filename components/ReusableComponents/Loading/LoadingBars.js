@@ -11,7 +11,7 @@ const LoadingBars = ({ color, text }) => {
           <div></div>
           <div></div>
         </div>
-        {text && <h1 className='text-3xl font-semibold'>{text}</h1>}
+        {text && <h1 className='lg:text-xl font-semibold'>{text}</h1>}
       </div>
       <style jsx>
         {`
