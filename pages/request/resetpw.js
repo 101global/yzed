@@ -128,10 +128,6 @@ const resetpw = () => {
         .password-message {
           min-height: 0.8rem;
         }
-        .flex {
-          width: 240px;
-          min-height: calc(100vh - 8rem - 86px);
-        }
         .filled-button-light:disabled {
           opacity: 0.7;
         }

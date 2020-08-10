@@ -51,8 +51,8 @@ const SignupForm = ({ user }) => {
               requestEmailSignup(email, password, firstName, lastName);
             }
           }}
-          className='flex flex-col justify-center items-center mx-auto'>
-          <label className='login-input-label dark:text-lightGrey'>Name</label>
+          className='flex flex-col justify-center items-center mx-auto mb-20'>
+          <label className='login-input-label dark:text-lightGrey pb-4'>Name</label>
           <div className='grid grid-cols-2 gap-4'>
             <input
               aria-label='First Name'
@@ -146,7 +146,7 @@ const SignupForm = ({ user }) => {
             name='password confirmation'
             required
             value={confirmPassword}
-            className='login-input dark:border-white mb-8'
+            className='login-input dark:border-white mb-16'
             type='password'
             onChange={(event) => {
               setConfirmPassword(event.target.value);
@@ -166,11 +166,11 @@ const SignupForm = ({ user }) => {
             {userLoading ? 'SIGNING UP' : 'SIGN UP'}
           </button>
         </form>
-        <div className='py-12'>
+        <div className='pb-12'>
           <GoogleLogin />
           <FBLogin />
         </div>
-        <div className='y-12 pt-8 border-t-2 border-lightGrey'>
+        <div className='py-12 pt-8 border-t-2 border-lightGrey'>
           <p className='text-center text-sm'>Already a member?</p>
           <Link href='/login'>
             <a className='mx-auto border-black dark:border-white border flex items-center justify-center rounded-md h-formButton w-formButton text-black dark:text-white bg-transparent text-center text-sm my-4'>

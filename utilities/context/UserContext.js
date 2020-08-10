@@ -210,6 +210,7 @@ const UserProvider = ({ children }) => {
   };
 
   const requestForgottenPasswordEmail = (email, callback) => {
+    setUserLoading(true);
     const actionCodeSettings = {
       // After password reset, the user will be give the ability to go back
       // to this page.
@@ -221,10 +222,12 @@ const UserProvider = ({ children }) => {
       .sendPasswordResetEmail(email, actionCodeSettings)
       .then(() => {
         callback(true);
+        setUserLoading(false);
       })
       .catch((err) => {
-        console.log(err.message);
-        setError(err.message);
+        console.log(err);
+        setError(err);
+        setUserLoading(false);
       });
   };
 

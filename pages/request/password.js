@@ -2,6 +2,8 @@ import React, { useEffect, useContext, useState } from 'react';
 import { UserContext } from '../../utilities/context/UserContext';
 import FormError from '../../components/ReusableComponents/Errors/FormError';
 import UserFormLayout from '../../components/ReusableComponents/Layouts/UserFormLayout';
+import LoadingFillIcon from '../../components/ReusableComponents/Loading/LoadingFillIcon';
+import InlineFormError from '../../components/ReusableComponents/Errors/InlineFormError';
 
 const password = () => {
   const [email, setEmail] = useState('');
@@ -40,6 +42,11 @@ const password = () => {
                   className='login-input-label dark:text-lightGrey relative text-left'>
                   Email
                 </label>
+                <InlineFormError
+                  error={userError}
+                  code='auth/user-not-found'
+                  message='No account found for that email'
+                />
                 <input
                   aria-label='email'
                   placeholder='Email Address'
@@ -47,7 +54,7 @@ const password = () => {
                   type='email'
                   value={email}
                   required
-                  className='login-input mb-12'
+                  className='login-input dark:border-white mb-12'
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <button
@@ -60,15 +67,16 @@ const password = () => {
               </form>
             </>
           )}
+          {userLoading ? <LoadingFillIcon /> : null}
         </div>
       </UserFormLayout>
       <style jsx>{`
         .filled-button-light:disabled {
           opacity: 0.7;
         }
-        .flex {
-          min-height: 600px;
-          max-width: 240px;
+        input {
+          border-radius: 0;
+          -webkit-appearance: none;
         }
       `}</style>
     </>

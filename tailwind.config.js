@@ -73,6 +73,9 @@ module.exports = {
         '90per': '90%',
         '100per': '100%',
       },
+      minHeight: {
+        formArea: 'calc(100vh - 8rem - 86px)',
+      },
       width: {
         '10per': '10%',
         '15per': '15%',
@@ -89,6 +92,7 @@ module.exports = {
         floatScroll: 'calc(40vw - 2rem)',
         mobileNavLogo: '100px',
         formButton: '240px',
+        formArea: '240px',
       },
       zIndex: {
         tenThous: '10000',

@@ -101,7 +101,7 @@ const LoginLayout = ({ user }) => {
                 </a>
               </Link>
             </form>
-            <div className='py-12'>
+            <div className='pb-12'>
               <GoogleLogin loginFunction={requestGoogleLogin} />
               <FBLogin loginFunction={requestFbLogin} />
             </div>
@@ -124,16 +124,11 @@ const LoginLayout = ({ user }) => {
         .filled-button-light:disabled {
           opacity: 0.7;
         }
-        .grid-cols-1 {
-          max-width: 400px;
-        }
         input {
           border-radius: 0;
           -webkit-appearance: none;
         }
-        form {
-          max-width: 240px;
-        }
+
       `}</style>
     </>
   );

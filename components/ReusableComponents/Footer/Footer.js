@@ -7,7 +7,7 @@ import theme from '../../../utilities/theme';
 const Footer = () => {
   return (
     <>
-      <footer className='footer mt-8 lg:px-10per flex flex-row items-center bg-black dark:bg-white h-mobileFooter lg:h-desktopFooter justify-center lg:justify-start'>
+      <footer className='footer lg:px-10per flex flex-row items-center bg-black dark:bg-white h-mobileFooter lg:h-desktopFooter justify-center lg:justify-start'>
         <Link href='/'>
           <a aria-label='home' className='yzed-home-footer-link inline-block'>
             <OppositeLogo styleClass='fill-white dark:fill-black h-mobileFooterLogo lg:h-desktopFooterLogo -mt-1 mr-2' />
