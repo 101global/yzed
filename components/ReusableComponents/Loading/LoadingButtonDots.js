@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 const LoadingButtonDots = () => {
   return (
@@ -15,7 +15,7 @@ const LoadingButtonDots = () => {
             display: inline-block;
             position: relative;
             width: 80px;
-            height: 75px;
+            height: 40px;
           }
           .lds-ellipsis div {
             position: absolute;

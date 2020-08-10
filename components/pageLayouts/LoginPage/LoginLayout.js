@@ -90,7 +90,7 @@ const LoginLayout = ({ user }) => {
                 className='filled-button-light dark:bg-white dark:text-black relative'
                 type='submit'
                 required>
-                {userLoading ? <LoadingButtonDots /> : 'LOG IN'}
+                {userLoading ? 'LOGGING IN' : 'LOG IN'}
               </button>
               <Link href='/request/password'>
                 <a className='w-full block text-xs font-semibold text-left mb-20 mt-2'>

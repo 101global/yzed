@@ -5,7 +5,7 @@ import theme from '../../../utilities/theme';
 const LoadingBars = ({ color, text }) => {
   return (
     <>
-      <div className='spinner-container flex flex-col items-center justify-center bg-black'>
+      <div className='spinner-container flex flex-col items-center justify-center'>
         <div className='lds-facebook'>
           <div></div>
           <div></div>
@@ -30,7 +30,6 @@ const LoadingBars = ({ color, text }) => {
             position: absolute;
             left: 8px;
             width: 16px;
-            background: ${color ?? theme.colors.white};
             animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
           }
           .lds-facebook div:nth-child(1) {
@@ -46,7 +45,6 @@ const LoadingBars = ({ color, text }) => {
             animation-delay: 0;
           }
           h1 {
-            color: ${color ?? theme.colors.white};
             font-family: ${theme.fonts.main};
             font-weight: 300;
             display: block;
@@ -64,6 +62,14 @@ const LoadingBars = ({ color, text }) => {
           }
         `}
       </style>
+      <style jsx global>{`
+        .dark-mode .lds-facebook div {
+          background: ${theme.colors.white};
+        }
+        .light-mode .lds-facebook div {
+          background: ${theme.colors.black};
+        }
+      `}</style>
     </>
   );
 };

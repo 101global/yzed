@@ -19,7 +19,7 @@ const fbProvider = new firebase.auth.FacebookAuthProvider();
 fbProvider.addScope('email');
 
 const UserProvider = ({ children }) => {
-  const [userLoading, setUserLoading] = useState(false);
+  const [userLoading, setUserLoading] = useState(true);
   const [userError, setUserError] = useState(null);
 
   const router = useRouter();

@@ -7,6 +7,7 @@ import GoogleLogin from '../../ReusableComponents/Buttons/GoogleLogin';
 import InlineFormError from '../../ReusableComponents/Errors/InlineFormError';
 import Link from 'next/link';
 import LoadingButtonDots from '../../ReusableComponents/Loading/LoadingButtonDots';
+import LoadingFillIcon from '../../ReusableComponents/Loading/LoadingFillIcon';
 import LoadingSpinner from '../../ReusableComponents/Loading/LoadingSpinner';
 import LoginLayout from '../LoginPage/LoginLayout';
 import Tooltip from '../../ReusableComponents/Other/Tooltip';
@@ -169,6 +170,7 @@ const SignupForm = ({ user }) => {
           <GoogleLogin />
           <FBLogin />
         </div>
+
         <div className='y-12 pt-8 border-t-2 border-lightGrey'>
           <p className='text-center text-sm'>Already a member?</p>
           <Link href='/login'>
