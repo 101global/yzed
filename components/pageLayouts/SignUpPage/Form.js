@@ -160,17 +160,16 @@ const SignupForm = ({ user }) => {
               !password.length ||
               password !== confirmPassword
             }
-            className='filled-button-light dark:bg-white dark:text-black relative disabled:bg-grey'
+            className='filled-button-light dark:bg-white dark:text-black relative'
             type='submit'
             required>
-            {userLoading ? <LoadingButtonDots /> : 'SIGN UP'}
+            {userLoading ? 'SIGNING UP' : 'SIGN UP'}
           </button>
         </form>
         <div className='py-12'>
           <GoogleLogin />
           <FBLogin />
         </div>
-
         <div className='y-12 pt-8 border-t-2 border-lightGrey'>
           <p className='text-center text-sm'>Already a member?</p>
           <Link href='/login'>

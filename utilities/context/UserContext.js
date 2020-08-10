@@ -19,7 +19,7 @@ const fbProvider = new firebase.auth.FacebookAuthProvider();
 fbProvider.addScope('email');
 
 const UserProvider = ({ children }) => {
-  const [userLoading, setUserLoading] = useState(true);
+  const [userLoading, setUserLoading] = useState(false);
   const [userError, setUserError] = useState(null);
 
   const router = useRouter();
@@ -245,15 +245,11 @@ const UserProvider = ({ children }) => {
           })
           .catch((err) => {
             console.log(err.message);
-            setError(
-              'Something went wrong. This link may have been used already. Resend link to reset password.'
-            );
+            setError(error);
           });
       })
       .catch(function (error) {
-        setError(
-          'Something went wrong. This link may have been used already. Resend link to reset password.'
-        );
+        setError(error);
       });
   };
 

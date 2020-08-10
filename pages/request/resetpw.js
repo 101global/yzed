@@ -7,6 +7,9 @@ import LoadingSpinner from '../../components/ReusableComponents/Loading/LoadingS
 import { UserContext } from '../../utilities/context/UserContext';
 import { strongRegex } from '../../utilities/validation';
 import { useRouter } from 'next/router';
+import Tooltip from '../../components/ReusableComponents/Other/Tooltip';
+import UserFormLayout from '../../components/ReusableComponents/Layouts/UserFormLayout';
+import SquareFilledLink from '../../components/ReusableComponents/Links/SquareFilledLink';
 
 const resetpw = () => {
   const [password, setPassword] = useState('');
@@ -16,15 +19,15 @@ const resetpw = () => {
   const [error, setError] = useState(null);
   const [validPassword, setValidPassword] = useState(false);
 
-  const { resetPassword, userError, setUserError } = useContext(UserContext);
+  const { resetPassword, userError, setUserError, userLoading } = useContext(UserContext);
 
   const router = useRouter();
 
   const { oobCode } = router.query;
 
   return (
-    <>
-      <div className='min-h-screen flex flex-col bg-black justify-center items-center px-64 text-white'>
+    <UserFormLayout>
+      <div className='flex flex-col justify-start items-center mx-auto'>
         {success ? (
           <LoadingBars
             text='Password has been successfully reset. Logging you in now.  You will be redirected shortly.'
@@ -32,19 +35,16 @@ const resetpw = () => {
           />
         ) : userError ? (
           <>
-            <FormError message={userError} localErrorCallback={setError} canClose={false} />
-            <Link href='/request/password'>
-              <a
-                onClick={() => {
-                  setUserError(null);
-                }}>
-                Resend Password Reset Email
-              </a>
-            </Link>
+            <h1 className='text-xl lg:text-2x pb-8 text-center'>Oops! Something went wrong.</h1>
+            <p className='text-xs lg:text-base pb-16 text-center'>{userError.message}</p>
+            <SquareFilledLink href='/request/password' text='RESEND EMAIL' />
           </>
         ) : (
           <>
-            <h1>Reset Password</h1>
+            <h1 className='text-xl lg:text-2x pb-8 text-center'>RESET PASSWORD</h1>
+            <p className='text-xs lg:text-base pb-16 text-center'>
+              Welcome back! only one step left. Enter your new password and enjoy YZED once more!
+            </p>
             <form
               onSubmit={(e) => {
                 setLoading(true);
@@ -57,50 +57,86 @@ const resetpw = () => {
                   setLoading(false);
                 }
               }}>
+              <label
+                htmlFor='password'
+                className='login-input-label dark:text-lightGrey relative w-full block'>
+                Password
+                <Tooltip
+                  message='Password must contain at least one lowercase letter, one uppercase letter, one
+                    number, and one symbol.'
+                />
+              </label>
+              <div className='password-message w-full text-left'>
+                {password ? (
+                  strongRegex.test(password) ? (
+                    <p className='text-xxs text-success'>Password Strength OK.</p>
+                  ) : (
+                    <p className='text-xxs text-danger'>Password is not strong enough.</p>
+                  )
+                ) : null}
+              </div>
               <input
+                id='password'
                 name='password'
                 required
                 value={password}
-                placeholder='Password'
-                className='login-input border-aqua border password'
+                className='login-input dark:border-white mb-8'
                 type='password'
                 onChange={(event) => {
                   setPassword(event.target.value);
                 }}
               />
+              <label htmlFor='confirmPassword' className='login-input-label dark:text-lightGrey'>
+                Confirm Password
+              </label>
+              <div className='password-message w-full text-left'>
+                {confirmPassword ? (
+                  password === confirmPassword ? (
+                    <p className='text-xxs text-success'>Passwords Match.</p>
+                  ) : (
+                    <p className='text-xxs text-danger'>Passwords Do Not Match</p>
+                  )
+                ) : null}
+              </div>
               <input
+                id='confirmPassword'
                 name='password confirmation'
                 required
                 value={confirmPassword}
-                placeholder='Confirm Password'
-                className='login-input border-purple border confirm-password'
+                className='login-input dark:border-white mb-16'
                 type='password'
                 onChange={(event) => {
                   setConfirmPassword(event.target.value);
                 }}
               />
-              <button className='black-button hover:text-black hover:bg-white'>
-                Reset Password
+              <button
+                disabled={!password || password !== confirmPassword}
+                className='filled-button-light dark:bg-white dark:text-black relative'
+                type='submit'
+                required>
+                {userLoading ? 'RESETTING PASSWORD' : 'RESET PASSWORD'}
               </button>
             </form>
-            {loading && <LoadingSpinner text='Resetting Password' color='white' />}
-            {error && <FormError message={error} localErrorCallback={setError} />}
+
+            {userError && (
+              <p className='text-xs lg:text-base pt-8 text-center'>{userError.error}</p>
+            )}
           </>
         )}
       </div>
       <style jsx>{`
-        form,
-        .username {
-          padding: 100px 0 0;
+        .password-message {
+          min-height: 0.8rem;
         }
-        .password {
-          color: ${strongRegex.test(password) ? 'LightGreen' : 'Tomato'};
+        .flex {
+          width: 240px;
+          min-height: calc(100vh - 8rem - 86px);
         }
-        .confirm-password {
-          color: ${password === confirmPassword ? 'LightGreen' : 'Tomato'};
+        .filled-button-light:disabled {
+          opacity: 0.7;
         }
       `}</style>
-    </>
+    </UserFormLayout>
   );
 };
 
