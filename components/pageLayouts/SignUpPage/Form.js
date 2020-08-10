@@ -1,23 +1,22 @@
+import Popover, { ArrowContainer } from 'react-tiny-popover';
 import React, { useContext, useEffect, useState } from 'react';
 
+import FBLogin from '../../ReusableComponents/Buttons/FBLogin';
 import FormError from '../../ReusableComponents/Errors/FormError';
-
+import GoogleLogin from '../../ReusableComponents/Buttons/GoogleLogin';
+import InlineFormError from '../../ReusableComponents/Errors/InlineFormError';
 import Link from 'next/link';
-
-import { useRouter } from 'next/router';
-import LoginLayout from '../LoginPage/LoginLayout';
+import LoadingButtonDots from '../../ReusableComponents/Loading/LoadingButtonDots';
 import LoadingSpinner from '../../ReusableComponents/Loading/LoadingSpinner';
+import LoginLayout from '../LoginPage/LoginLayout';
+import Tooltip from '../../ReusableComponents/Other/Tooltip';
 import { UserContext } from '../../../utilities/context/UserContext';
+import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
 import { signupStates } from '../../../utilities/enums';
 import { strongRegex } from '../../../utilities/validation';
-import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
-import LoadingButtonDots from '../../ReusableComponents/Loading/LoadingButtonDots';
 import theme from '../../../utilities/theme';
-import GoogleLogin from '../../ReusableComponents/Buttons/GoogleLogin';
-import FBLogin from '../../ReusableComponents/Buttons/FBLogin';
-import InlineFormError from '../../ReusableComponents/Errors/InlineFormError';
-import Popover, { ArrowContainer } from 'react-tiny-popover';
-import Tooltip from '../../ReusableComponents/Other/Tooltip';
+import { useRouter } from 'next/router';
+
 const SignupForm = ({ user }) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [email, setEmail] = useState('');
@@ -181,8 +180,7 @@ const SignupForm = ({ user }) => {
       </div>
       <style jsx>{`
         .filled-button-light:disabled {
-          background: ${theme.colors.mediumGrey};
-          color: ${theme.colors.white};
+          opacity: 0.7;
         }
         .grid-cols-1 {
           max-width: 400px;

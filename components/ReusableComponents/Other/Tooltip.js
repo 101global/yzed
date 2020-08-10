@@ -1,7 +1,8 @@
-import React, { useEffect, useContext, useState } from 'react';
+import Popover, { ArrowContainer } from 'react-tiny-popover';
+import React, { useContext, useEffect, useState } from 'react';
+
 import { ThemeContext } from '../../../utilities/context/ThemeContext';
 import theme from '../../../utilities/theme';
-import Popover, { ArrowContainer } from 'react-tiny-popover';
 const Tooltip = ({ message }) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const { darkMode } = useContext(ThemeContext);
@@ -37,7 +38,6 @@ const Tooltip = ({ message }) => {
           line-height: 1rem;
           cursor: default;
         }
-
         .help-tip:before {
           content: '?';
           font-weight: bold;

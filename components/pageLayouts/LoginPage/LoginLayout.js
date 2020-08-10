@@ -3,15 +3,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import FBLogin from '../../ReusableComponents/Buttons/FBLogin';
 import FormError from '../../ReusableComponents/Errors/FormError';
 import GoogleLogin from '../../ReusableComponents/Buttons/GoogleLogin';
+import InlineFormError from '../../ReusableComponents/Errors/InlineFormError';
 import Link from 'next/link';
 import LoadingBars from '../../ReusableComponents/Loading/LoadingBars';
-
+import LoadingButtonDots from '../../ReusableComponents/Loading/LoadingButtonDots';
 import { UserContext } from '../../../utilities/context/UserContext';
 import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
 import theme from '../../../utilities/theme';
 import { useRouter } from 'next/router';
-import LoadingButtonDots from '../../ReusableComponents/Loading/LoadingButtonDots';
-import InlineFormError from '../../ReusableComponents/Errors/InlineFormError';
 
 const LoginLayout = ({ user }) => {
   const [email, setEmail] = useState('');
@@ -119,8 +118,7 @@ const LoginLayout = ({ user }) => {
       )}
       <style jsx>{`
         .filled-button-light:disabled {
-          background: ${theme.colors.mediumGrey};
-          color: ${theme.colors.white};
+          opacity: 0.7;
         }
         .grid-cols-1 {
           max-width: 400px;
