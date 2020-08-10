@@ -52,6 +52,7 @@ const StationaryModelViewer = ({ model }) => {
           height: 100%;
           width: 100%;
           --poster-color: transparent;
+          --progress-mask: transparent;
         }
       `}</style>
     </>
