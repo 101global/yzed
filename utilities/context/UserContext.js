@@ -161,7 +161,7 @@ const UserProvider = ({ children }) => {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        refreshUserData('/experience/1');
+        refreshUserData('/');
       })
       .catch((err) => {
         console.log(err);

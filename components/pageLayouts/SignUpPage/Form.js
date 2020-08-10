@@ -178,6 +178,7 @@ const SignupForm = ({ user }) => {
             </a>
           </Link>
         </div>
+        {userLoading ? <LoadingFillIcon /> : null}
       </div>
       <style jsx>{`
         .filled-button-light:disabled {

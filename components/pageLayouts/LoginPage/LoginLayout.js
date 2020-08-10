@@ -11,6 +11,7 @@ import { UserContext } from '../../../utilities/context/UserContext';
 import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
 import theme from '../../../utilities/theme';
 import { useRouter } from 'next/router';
+import LoadingFillIcon from '../../ReusableComponents/Loading/LoadingFillIcon';
 
 const LoginLayout = ({ user }) => {
   const [email, setEmail] = useState('');
@@ -27,17 +28,19 @@ const LoginLayout = ({ user }) => {
   const router = useRouter();
 
   useEffect(() => {
-    // if (user) {
-    //   router.push('/');
-    // }
+    if (user) {
+      router.push('/');
+    }
   }, []);
 
   return (
     <>
       {user ? (
-        <div className='full-page-centered-content'>
-          <LoadingBars text='You are logged in.  Redirecting you home.' />
-        </div>
+        <UserFormLayout>
+          <div className='full-page-centered-content'>
+            <LoadingBars text='You are logged in.  Redirecting you home.' />
+          </div>
+        </UserFormLayout>
       ) : (
         <UserFormLayout>
           <div className='grid grid-cols-1 mx-auto w-full'>
@@ -114,6 +117,7 @@ const LoginLayout = ({ user }) => {
               </p>
             </div>
           </div>
+          {userLoading ? <LoadingFillIcon /> : null}
         </UserFormLayout>
       )}
       <style jsx>{`
