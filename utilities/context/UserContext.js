@@ -39,19 +39,18 @@ const UserProvider = ({ children }) => {
     }, 2000);
   };
 
-  const createUserDB = async (
-    userID,
-    email,
-    firstName,
-    lastName,
-    profilePicture,
-    emailVerified,
-    route
-  ) => {
+  const createUserDB = async (userID, email, firstName, lastName, emailVerified, route) => {
     await dbh
       .collection('users')
       .doc(userID)
-      .set({ email, firstName, lastName, profilePicture, emailVerified, role: 'USER' })
+      .set({
+        email,
+        firstName,
+        lastName,
+        profilePicture: firstName.slice(0, 1),
+        emailVerified,
+        role: 'USER',
+      })
       .then((result) => {
         refreshUserData(route);
       })
@@ -92,7 +91,6 @@ const UserProvider = ({ children }) => {
                 email,
                 firstName,
                 lastName,
-                defaultIcon,
                 emailVerified,
                 '/signup/confirm'
               );
