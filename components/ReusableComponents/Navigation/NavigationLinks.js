@@ -43,8 +43,8 @@ const NavigationLinks = ({ user }) => {
         }
         .user-info img,
         .user-icon {
-          width: 28px;
-          height: 28px;
+          width: 26px;
+          height: 26px;
           border-radius: 50%;
         }
       `}</style>

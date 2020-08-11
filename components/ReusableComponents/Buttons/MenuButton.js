@@ -9,7 +9,7 @@ const MenuButton = ({ openMenu, setOpenMenu, styleClass }) => {
     <>
       <button
         aria-label='menu open'
-        className='p-2 pr-0'
+        className='py-2 pr-0'
         onClick={() => {
           setOpenMenu(!openMenu);
         }}>
