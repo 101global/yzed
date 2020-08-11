@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Footer from '../../components/ReusableComponents/Footer/Footer';
 import Link from 'next/link';
 import LoadingBars from '../../components/ReusableComponents/Loading/LoadingBars';
+import LogoutButton from '../../components/ReusableComponents/Buttons/LogoutButton';
 import SquareEmptyLink from '../../components/ReusableComponents/Links/SquareEmptyLink';
 import UserFormLayout from '../../components/ReusableComponents/Layouts/UserFormLayout';
 import VerifyEmail from '../../components/ReusableComponents/Buttons/VerifyEmail';
@@ -10,7 +11,6 @@ import theme from '../../utilities/theme';
 import { useRouter } from 'next/router';
 
 const profile = ({ user }) => {
-  console.log('USSERRREREREWERW', user.profilePicture);
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -43,14 +43,14 @@ const profile = ({ user }) => {
             <h1 className='letter-icon'>{user.profilePicture}</h1>
           )}
           <div className='mt-8 mb-12'>
-            <p className='font-semibold text-lg'>
+            <p className='font-semibold text-base lg:text-lg'>
               {user.firstName} {user.lastName}
             </p>
-            <p className='font-light text-base'>{user.email}</p>
+            <p className='font-light text-sm lg:text-base'>{user.email}</p>
           </div>
-
           <SquareEmptyLink href='/profile/edit' text='EDIT PROFILE' styleClass='mb-12' />
           {user.emailVerified ? <VerifyEmail user={user} /> : null}
+          <LogoutButton />
         </div>
       </UserFormLayout>
       <style jsx>{`

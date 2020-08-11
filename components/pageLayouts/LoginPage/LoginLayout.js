@@ -37,9 +37,7 @@ const LoginLayout = ({ user }) => {
     <>
       {user ? (
         <UserFormLayout>
-          <div className='full-page-centered-content'>
-            <LoadingBars text='You are logged in.  Redirecting you home.' />
-          </div>
+          <LoadingBars text='You are logged in.  Redirecting you home.' />
         </UserFormLayout>
       ) : (
         <UserFormLayout>
@@ -49,7 +47,7 @@ const LoginLayout = ({ user }) => {
                 e.preventDefault();
                 await requestEmailLogin(email, password);
               }}
-              className='flex flex-col justify-start items-center mx-auto'>
+              className='flex flex-col justify-start items-center mx-auto w-formArea'>
               <label htmlFor='email' className='login-input-label dark:text-lightGrey'>
                 Email
               </label>
@@ -128,7 +126,6 @@ const LoginLayout = ({ user }) => {
           border-radius: 0;
           -webkit-appearance: none;
         }
-
       `}</style>
     </>
   );

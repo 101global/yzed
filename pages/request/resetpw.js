@@ -61,10 +61,7 @@ const resetpw = () => {
                 htmlFor='password'
                 className='login-input-label dark:text-lightGrey relative w-full block'>
                 Password
-                <Tooltip
-                  message='Password must contain at least one lowercase letter, one uppercase letter, one
-                    number, and one symbol.'
-                />
+                <Tooltip message='Password must be between 8-32 characters, contain at least one lowercase letter, one uppercase letter, one number, and one symbol.' />
               </label>
               <div className='password-message w-full text-left'>
                 {password ? (

@@ -52,7 +52,7 @@ const SignupForm = ({ user }) => {
               requestEmailSignup(email, password, firstName, lastName);
             }
           }}
-          className='flex flex-col justify-center items-center mx-auto mb-20'>
+          className='flex flex-col justify-center items-center mx-auto mb-20 w-formArea'>
           <label className='login-input-label dark:text-lightGrey pb-4'>Name</label>
           <div className='grid grid-cols-2 gap-4'>
             <input
@@ -105,10 +105,7 @@ const SignupForm = ({ user }) => {
           />
           <label htmlFor='password' className='login-input-label dark:text-lightGrey relative'>
             Password
-            <Tooltip
-              message='Password must contain at least one lowercase letter, one uppercase letter, one
-                    number, and one symbol.'
-            />
+            <Tooltip message='Password must be between 8-32 characters, contain at least one lowercase letter, one uppercase letter, one number, and one symbol.' />
           </label>
           <div className='password-message w-full text-left'>
             {password ? (
@@ -172,7 +169,7 @@ const SignupForm = ({ user }) => {
           <FBLogin />
         </div>
         <div className='py-12 pt-8 border-t-2 border-lightGrey'>
-          <p className='text-center text-sm'>Already a member?</p>
+          <p className='text-center text-sm mb-4'>Already a member?</p>
           <SquareEmptyLink href='/login' text='LOGIN NOW' />
         </div>
         {userLoading ? <LoadingFillIcon /> : null}
@@ -180,12 +177,6 @@ const SignupForm = ({ user }) => {
       <style jsx>{`
         .filled-button-light:disabled {
           opacity: 0.7;
-        }
-        .grid-cols-1 {
-          max-width: 400px;
-        }
-        form {
-          max-width: 240px;
         }
         .password-message {
           min-height: 0.8rem;

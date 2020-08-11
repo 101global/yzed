@@ -6,15 +6,17 @@ const VerifyEmail = ({ user }) => {
   const [emailSent, setEmailSent] = useState(false);
   const { requestEmailVerification } = useContext(UserContext);
   return (
-    <div className='py-12 pt-8 border-t-2 border-lightGrey'>
+    <div className='py-12 pt-8 border-t-2 border-lightGrey w-full'>
       {emailSent ? (
-        <p className='text-center text-sm mb-4'>
+        <p className='text-center text-sm mb-4 w-formArea'>
           An email has been sent to {user.email}. Please follow the instructions to verify your
           email address.
         </p>
       ) : (
         <>
-          <p className='text-center text-sm mb-4'>OOPS! You still didn’t verify your email!</p>
+          <p className='text-center text-sm lg:text-base mb-4 w-formArea mx-auto'>
+            OOPS! You still didn’t verify your email address!
+          </p>
           <button
             onClick={() => {
               requestEmailVerification();
