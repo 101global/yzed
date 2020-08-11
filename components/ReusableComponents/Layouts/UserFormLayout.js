@@ -10,7 +10,7 @@ const UserFormLayout = ({ children, title }) => {
       <MainBodyLayout title={title}>
         <div className='min-h-screen flex flex-col justify-between'>
           <Logo styleClass='h-desktopNavLogo mx-auto my-16' />
-          <div className='min-h-formArea w-full mx-auto'>{children}</div>
+          <div className='min-h-formAreaMobile lg:min-h-formArea w-full mx-auto'>{children}</div>
           <Footer />
         </div>
       </MainBodyLayout>

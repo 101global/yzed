@@ -46,8 +46,8 @@ const profile = ({ user }) => {
   return (
     <>
       <MainBodyLayout>
-        <NavigationBar user={user} isLandingMenu={false} />
-        <div className='profile-container text-center pt-20 flex flex-col justify-between'>
+        <div className='profile-container text-center pt-20 flex flex-col justify-between min-h-screen'>
+          <NavigationBar user={user} isLandingMenu={false} />
           <div className='mt-8 mb-12'>
             {user.profilePicture.length > 1 ? (
               <img
@@ -65,7 +65,7 @@ const profile = ({ user }) => {
             <SquareEmptyLink href='/profile/edit' text='EDIT PROFILE' styleClass='mb-12' />
           </div>
           {!user.emailVerified ? <VerifyEmail user={user} /> : null}
-          <div className='bg-lightGrey pb-48 dark:bg-darkGrey'>
+          <div className='bg-lightGrey pb-40 dark:bg-darkGrey'>
             <button
               onClick={() => {
                 setOpenChangePassword(!openChangePassword);
@@ -114,8 +114,8 @@ const profile = ({ user }) => {
               Log Out
             </button>
           </div>
+          <Footer />
         </div>
-        <Footer />
       </MainBodyLayout>
       <style jsx>{`
         .letter-icon {
@@ -127,9 +127,9 @@ const profile = ({ user }) => {
           color: ${theme.colors.white};
         }
         .profile-container {
-          min-height: calc(100vh - 60px);
           width: 450px;
           max-width: 100%;
+          top: 86px;
           margin: 0 auto;
         }
         .profile-image,

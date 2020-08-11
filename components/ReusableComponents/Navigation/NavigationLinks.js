@@ -38,13 +38,13 @@ const NavigationLinks = ({ user }) => {
           align-items: center;
           color: ${theme.colors.white};
           font-size: 18px;
-          width: 25px;
-          height: 25px;
+
           background: ${theme.colors.purple};
-          border-radius: 50%;
         }
-        .user-info img {
-          height: 25px;
+        .user-info img,
+        .user-icon {
+          width: 28px;
+          height: 28px;
           border-radius: 50%;
         }
       `}</style>

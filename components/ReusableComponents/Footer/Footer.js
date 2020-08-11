@@ -7,7 +7,7 @@ import theme from '../../../utilities/theme';
 const Footer = () => {
   return (
     <>
-      <footer className='footer lg:px-10per flex flex-row items-center bg-black dark:bg-white h-mobileFooter lg:h-desktopFooter justify-center lg:justify-start'>
+      <div className='footer lg:px-10per flex flex-row items-center bg-black dark:bg-white h-mobileFooter lg:h-desktopFooter justify-center lg:justify-start'>
         <Link href='/'>
           <a aria-label='home' className='yzed-home-footer-link inline-block'>
             <OppositeLogo styleClass='fill-white dark:fill-black h-mobileFooterLogo lg:h-desktopFooterLogo -mt-1 mr-2' />
@@ -31,7 +31,7 @@ const Footer = () => {
             Hanwha
           </a>
         </p>
-      </footer>
+      </div>
       <style jsx>{`
         .yzed-home-footer-link {
           text-align: left;

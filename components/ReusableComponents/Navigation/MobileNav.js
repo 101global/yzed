@@ -19,17 +19,11 @@ const MobileNav = ({ openMenu, isLandingMenu }) => {
         </div>
       )}
       <style jsx>{`
-        .mobile-landing-nav {
+        .mobile-landing-nav,
+        .mobile-navigation-nav {
           transition: all 0.3s ease-in-out;
           top: 59px;
           height: ${openMenu ? '40px' : '0px'};
-          overflow: ${openMenu ? 'auto' : 'hidden'};
-        }
-        .mobile-navigation-nav {
-          overflow-x: scroll;
-          transition: all 0.3s ease-in-out;
-          top: 59px;
-          height: ${openMenu ? '80px' : '0px'};
           overflow: ${openMenu ? 'auto' : 'hidden'};
         }
       `}</style>
