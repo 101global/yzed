@@ -17,6 +17,7 @@ import UpdatePassword from '../../components/pageLayouts/ProfilePage/UpdatePassw
 
 const profile = ({ user }) => {
   const [openChangePassword, setOpenChangePassword] = useState(false);
+  const [openTerms, setOpenTerms] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const router = useRouter();
@@ -67,14 +68,13 @@ const profile = ({ user }) => {
               }}
               className='mt-4 py-2 w-formArea mx-auto flex flex-row justify-between items-center'>
               Change Password
-              <div
-                className={
+              <ChevronRight
+                styleClass={
                   openChangePassword
                     ? 'transform rotate-90 transition-all duration-500'
                     : 'transform rotate-0 transition-all duration-500'
-                }>
-                <ChevronRight />
-              </div>
+                }
+              />
             </button>
             <Accordion open={openChangePassword}>
               {!user.emailVerified ? (
@@ -84,12 +84,23 @@ const profile = ({ user }) => {
               )}
             </Accordion>
             <div className='border-t-2 border-b-2 border-borderGrey dark:border-mediumGrey'>
-              <Link href='/terms'>
-                <a className='py-2 w-formArea mx-auto flex flex-row justify-between items-center'>
-                  Terms of Use
-                  <ChevronRight />
-                </a>
-              </Link>
+              <button
+                onClick={() => {
+                  setOpenTerms(!openTerms);
+                }}
+                className='py-2 w-formArea mx-auto flex flex-row justify-between items-center'>
+                Terms of Use
+                <ChevronRight
+                  styleClass={
+                    openTerms
+                      ? 'transform rotate-90 transition-all duration-500'
+                      : 'transform rotate-0 transition-all duration-500'
+                  }
+                />
+              </button>
+              <Accordion open={openTerms}>
+                <p>Here are the user terms.</p>
+              </Accordion>
             </div>
             <button
               onClick={() => {
