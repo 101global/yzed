@@ -14,11 +14,13 @@ import { UserContext } from '../../utilities/context/UserContext';
 import ChevronRight from '../../components/ReusableComponents/Icons/ChevronRight';
 import Accordion from '../../components/ReusableComponents/Other/Accordion';
 import UpdatePassword from '../../components/pageLayouts/ProfilePage/UpdatePassword';
+import NavigationBar from '../../components/ReusableComponents/Navigation/NavigationBar';
 
 const profile = ({ user }) => {
   const [openChangePassword, setOpenChangePassword] = useState(false);
   const [openTerms, setOpenTerms] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [editProfile, setEditProfile] = useState(false);
 
   const router = useRouter();
   console.log(router.query.id);
@@ -44,10 +46,12 @@ const profile = ({ user }) => {
   return (
     <>
       <MainBodyLayout>
+        <NavigationBar user={user} isLandingMenu={false} />
         <div className='profile-container text-center pt-20 flex flex-col justify-between'>
           <div className='mt-8 mb-12'>
             {user.profilePicture.length > 1 ? (
               <img
+                className='profile-image'
                 src={user.profilePicture}
                 alt={`${user.firstName} ${user.lastName} Profile Picture`}
               />
