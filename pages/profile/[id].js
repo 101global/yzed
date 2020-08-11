@@ -124,16 +124,19 @@ const profile = ({ user }) => {
           align-items: center;
           font-size: 80px;
           background: ${theme.colors.purple};
-          height: 120px;
-          width: 120px;
-          border-radius: 50%;
           color: ${theme.colors.white};
-          margin: 0 auto;
         }
         .profile-container {
           min-height: calc(100vh - 60px);
           width: 450px;
           max-width: 100%;
+          margin: 0 auto;
+        }
+        .profile-image,
+        .letter-icon {
+          height: 120px;
+          width: 120px;
+          border-radius: 50%;
           margin: 0 auto;
         }
       `}</style>

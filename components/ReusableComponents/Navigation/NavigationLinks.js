@@ -13,7 +13,11 @@ const NavigationLinks = ({ user }) => {
           <div className=''>
             <div className='user-info'>
               {user.profilePicture.length > 1 ? (
-                <img src={user.profilePicture} />
+                <img
+                  src={user.profilePicture}
+                  alt={`${user.firstName} ${user.lastName} profile picture`}
+                  className='mx-4 lg:mr-0 lg:ml-4'
+                />
               ) : (
                 <Link href={`/profile/${user.uid}`}>
                   <a className='user-icon mx-4 lg:mr-0 lg:ml-4'>{user.firstName.slice(0, 1)}</a>
@@ -37,6 +41,10 @@ const NavigationLinks = ({ user }) => {
           width: 25px;
           height: 25px;
           background: ${theme.colors.purple};
+          border-radius: 50%;
+        }
+        .user-info img {
+          height: 25px;
           border-radius: 50%;
         }
       `}</style>
