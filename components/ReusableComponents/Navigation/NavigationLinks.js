@@ -12,17 +12,19 @@ const NavigationLinks = ({ user }) => {
         {user ? (
           <div className=''>
             <div className='user-info'>
-              {user.profilePicture.length > 1 ? (
-                <img
-                  src={user.profilePicture}
-                  alt={`${user.firstName} ${user.lastName} profile picture`}
-                  className='mx-4 lg:mr-0 lg:ml-4'
-                />
-              ) : (
-                <Link href={`/profile/${user.uid}`}>
+              <Link href={`/profile/${user.uid}`}>
+                {user.profilePicture.length > 1 ? (
+                  <a>
+                    <img
+                      src={user.profilePicture}
+                      alt={`${user.firstName} ${user.lastName} profile picture`}
+                      className='mx-4 lg:mr-0 lg:ml-4'
+                    />
+                  </a>
+                ) : (
                   <a className='user-icon mx-4 lg:mr-0 lg:ml-4'>{user.firstName.slice(0, 1)}</a>
-                </Link>
-              )}
+                )}
+              </Link>
             </div>
           </div>
         ) : (

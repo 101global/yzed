@@ -46,73 +46,75 @@ const profile = ({ user }) => {
   return (
     <>
       <MainBodyLayout>
-        <div className='profile-container text-center pt-20 flex flex-col justify-between min-h-screen'>
+        <div className='text-center w-screen pt-20 flex flex-col justify-between min-h-screen'>
           <NavigationBar user={user} isLandingMenu={false} />
-          <div className='mt-8 mb-12'>
-            {user.profilePicture.length > 1 ? (
-              <img
-                className='profile-image'
-                src={user.profilePicture}
-                alt={`${user.firstName} ${user.lastName} Profile Picture`}
-              />
-            ) : (
-              <h1 className='letter-icon'>{user.profilePicture}</h1>
-            )}
-            <p className='font-semibold text-base lg:text-lg mt-8'>
-              {user.firstName} {user.lastName}
-            </p>
-            <p className='font-light text-sm lg:text-base mb-12'>{user.email}</p>
-            <SquareEmptyLink href='/profile/edit' text='EDIT PROFILE' styleClass='mb-12' />
-          </div>
-          {!user.emailVerified ? <VerifyEmail user={user} /> : null}
-          <div className='bg-lightGrey pb-40 dark:bg-darkGrey'>
-            <button
-              onClick={() => {
-                setOpenChangePassword(!openChangePassword);
-              }}
-              className='mt-4 py-2 w-formArea mx-auto flex flex-row justify-between items-center'>
-              Change Password
-              <ChevronRight
-                styleClass={
-                  openChangePassword
-                    ? 'transform rotate-90 transition-all duration-500'
-                    : 'transform rotate-0 transition-all duration-500'
-                }
-              />
-            </button>
-            <Accordion open={openChangePassword}>
-              {!user.emailVerified ? (
-                <p>You need to verify your email address first.</p>
+          <div className='profile-container'>
+            <div className='mt-8 mb-12'>
+              {user.profilePicture.length > 1 ? (
+                <img
+                  className='profile-image'
+                  src={user.profilePicture}
+                  alt={`${user.firstName} ${user.lastName} Profile Picture`}
+                />
               ) : (
-                <UpdatePassword />
+                <h1 className='letter-icon'>{user.profilePicture}</h1>
               )}
-            </Accordion>
-            <div className='border-t-2 border-b-2 border-borderGrey dark:border-mediumGrey'>
+              <p className='font-semibold text-base lg:text-lg mt-8'>
+                {user.firstName} {user.lastName}
+              </p>
+              <p className='font-light text-sm lg:text-base mb-12'>{user.email}</p>
+              <SquareEmptyLink href='/profile/edit' text='EDIT PROFILE' styleClass='mb-12' />
+            </div>
+            {!user.emailVerified ? <VerifyEmail user={user} /> : null}
+            <div className='bg-lightGrey pt-4 pb-48 lg:pb-56 dark:bg-darkGrey'>
               <button
                 onClick={() => {
-                  setOpenTerms(!openTerms);
+                  setOpenChangePassword(!openChangePassword);
                 }}
-                className='py-2 w-formArea mx-auto flex flex-row justify-between items-center'>
-                Terms of Use
+                className='mt-4 py-2 w-formArea mx-auto flex flex-row justify-between items-center'>
+                Change Password
                 <ChevronRight
                   styleClass={
-                    openTerms
+                    openChangePassword
                       ? 'transform rotate-90 transition-all duration-500'
                       : 'transform rotate-0 transition-all duration-500'
                   }
                 />
               </button>
-              <Accordion open={openTerms}>
-                <p>Here are the user terms.</p>
+              <Accordion open={openChangePassword}>
+                {!user.emailVerified ? (
+                  <p>You need to verify your email address first.</p>
+                ) : (
+                  <UpdatePassword />
+                )}
               </Accordion>
+              <div className='border-t-2 border-b-2 border-borderGrey dark:border-mediumGrey'>
+                <button
+                  onClick={() => {
+                    setOpenTerms(!openTerms);
+                  }}
+                  className='py-2 w-formArea mx-auto flex flex-row justify-between items-center'>
+                  Terms of Use
+                  <ChevronRight
+                    styleClass={
+                      openTerms
+                        ? 'transform rotate-90 transition-all duration-500'
+                        : 'transform rotate-0 transition-all duration-500'
+                    }
+                  />
+                </button>
+                <Accordion open={openTerms}>
+                  <p>Here are the user terms.</p>
+                </Accordion>
+              </div>
+              <button
+                onClick={() => {
+                  requestLogout();
+                }}
+                className='text-light block py-2 w-formArea mx-auto text-left'>
+                Log Out
+              </button>
             </div>
-            <button
-              onClick={() => {
-                requestLogout();
-              }}
-              className='text-light block py-2 w-formArea mx-auto text-left'>
-              Log Out
-            </button>
           </div>
           <Footer />
         </div>
