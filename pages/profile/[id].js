@@ -13,6 +13,7 @@ import { useRouter } from 'next/router';
 import { UserContext } from '../../utilities/context/UserContext';
 import ChevronRight from '../../components/ReusableComponents/Icons/ChevronRight';
 import Accordion from '../../components/ReusableComponents/Other/Accordion';
+import UpdatePassword from '../../components/pageLayouts/ProfilePage/UpdatePassword';
 
 const profile = ({ user }) => {
   const [openChangePassword, setOpenChangePassword] = useState(false);
@@ -79,7 +80,7 @@ const profile = ({ user }) => {
               {!user.emailVerified ? (
                 <p>You need to verify your email address first.</p>
               ) : (
-                <p>Update Password</p>
+                <UpdatePassword />
               )}
             </Accordion>
             <div className='border-t-2 border-b-2 border-borderGrey'>
