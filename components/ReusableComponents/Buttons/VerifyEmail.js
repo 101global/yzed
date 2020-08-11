@@ -22,11 +22,16 @@ const VerifyEmail = ({ user }) => {
               requestEmailVerification();
               setEmailSent(true);
             }}
-            className='mx-auto flex items-center justify-center rounded-md h-formButton w-formButton text-white bg-aqua text-center text-sm'>
+            className='mx-auto flex items-center justify-center rounded-md h-formButton text-white bg-aqua text-center text-sm'>
             VERIFY EMAIL
           </button>
         </>
       )}
+      <style jsx>{`
+        .h-formButton {
+          width: 184px;
+        }
+      `}</style>
     </div>
   );
 };

@@ -199,12 +199,14 @@ const UserProvider = ({ children }) => {
   };
 
   const logout = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        router.reload();
-      });
+    if (window.confirm('Are you sure you want to log out?')) {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          router.reload();
+        });
+    }
   };
 
   const requestForgottenPasswordEmail = (email, callback) => {

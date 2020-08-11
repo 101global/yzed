@@ -10,6 +10,9 @@ const InlineFormError = ({ error, code, message }) => {
         .error-message {
           min-height: 0.8rem;
         }
+        .error-message p {
+          line-height: 0.8rem;
+        }
       `}</style>
     </>
   );

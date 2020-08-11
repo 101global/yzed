@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import Tooltip from '../../components/ReusableComponents/Other/Tooltip';
 import UserFormLayout from '../../components/ReusableComponents/Layouts/UserFormLayout';
 import SquareFilledLink from '../../components/ReusableComponents/Links/SquareFilledLink';
+import LoadingFillIcon from '../../components/ReusableComponents/Loading/LoadingFillIcon';
 
 const resetpw = () => {
   const [password, setPassword] = useState('');
@@ -26,7 +27,7 @@ const resetpw = () => {
   const { oobCode } = router.query;
 
   return (
-    <UserFormLayout>
+    <UserFormLayout title='YZED - Reset Password'>
       <div className='flex flex-col justify-start items-center mx-auto'>
         {success ? (
           <LoadingBars
@@ -114,10 +115,10 @@ const resetpw = () => {
                 {userLoading ? 'RESETTING PASSWORD' : 'RESET PASSWORD'}
               </button>
             </form>
-
             {userError && (
               <p className='text-xs lg:text-base pt-8 text-center'>{userError.error}</p>
             )}
+            {userLoading ? <LoadingFillIcon /> : null}
           </>
         )}
       </div>
