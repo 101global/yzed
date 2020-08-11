@@ -53,7 +53,7 @@ const success = ({ user }) => {
                   fashion experience!
                 </p>
                 <SquareFilledLink href='/' text='GO HOME' styleClass='mt-16' />
-                <Link href='profile'>
+                <Link href={`/profile/${user.uid}`}>
                   <a className='text-left text-xs w-full inline-block'>Go to profile</a>
                 </Link>
               </div>

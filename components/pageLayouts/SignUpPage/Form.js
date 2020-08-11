@@ -10,6 +10,7 @@ import LoadingButtonDots from '../../ReusableComponents/Loading/LoadingButtonDot
 import LoadingFillIcon from '../../ReusableComponents/Loading/LoadingFillIcon';
 import LoadingSpinner from '../../ReusableComponents/Loading/LoadingSpinner';
 import LoginLayout from '../LoginPage/LoginLayout';
+import SquareEmptyLink from '../../ReusableComponents/Links/SquareEmptyLink';
 import Tooltip from '../../ReusableComponents/Other/Tooltip';
 import { UserContext } from '../../../utilities/context/UserContext';
 import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
@@ -172,11 +173,7 @@ const SignupForm = ({ user }) => {
         </div>
         <div className='py-12 pt-8 border-t-2 border-lightGrey'>
           <p className='text-center text-sm'>Already a member?</p>
-          <Link href='/login'>
-            <a className='mx-auto border-black dark:border-white border flex items-center justify-center rounded-md h-formButton w-formButton text-black dark:text-white bg-transparent text-center text-sm my-4'>
-              Login to Account
-            </a>
-          </Link>
+          <SquareEmptyLink href='/login' text='LOGIN NOW' />
         </div>
         {userLoading ? <LoadingFillIcon /> : null}
       </div>
@@ -187,30 +184,30 @@ const SignupForm = ({ user }) => {
         .grid-cols-1 {
           max-width: 400px;
         }
-        input {
-          border-radius: 0;
-          -webkit-appearance: none;
-        }
         form {
           max-width: 240px;
         }
+        .password-message {
+          min-height: 0.8rem;
+        }
+      `}</style>
+      <style jsx global>{`
         ::placeholder {
           /* Chrome, Firefox, Opera, Safari 10.1+ */
           color: ${theme.colors.mediumGrey};
           opacity: 1; /* Firefox */
         }
-
         :-ms-input-placeholder {
           /* Internet Explorer 10-11 */
           color: ${theme.colors.mediumGrey};
         }
-
         ::-ms-input-placeholder {
           /* Microsoft Edge */
           color: ${theme.colors.mediumGrey};
         }
-        .password-message {
-          min-height: 0.8rem;
+        input {
+          border-radius: 0;
+          -webkit-appearance: none;
         }
       `}</style>
     </UserFormLayout>

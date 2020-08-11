@@ -27,7 +27,7 @@ const password = () => {
               <h1 className='text-xl lg:text-2x pb-8 text-center'>
                 Did you forget your password? Don't worry!
               </h1>
-              <p className='text-xs lg:text-sm pb-8 text-center'>
+              <p className='text-xs lg:text-sm pb-12 text-center'>
                 Enter the email address for your account. If an account associated with the entered
                 email address exists,you will shortly receive an email with directions to reset your
                 password.
