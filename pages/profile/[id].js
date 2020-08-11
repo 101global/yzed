@@ -20,11 +20,11 @@ const profile = ({ user }) => {
   const [loading, setLoading] = useState(true);
 
   const router = useRouter();
-
+  console.log(router.query.id);
   const { requestLogout } = useContext(UserContext);
 
   useEffect(() => {
-    if (!user) {
+    if (!user || user.uid !== router.query.id) {
       router.push('/login');
     } else {
       setLoading(false);
@@ -43,7 +43,7 @@ const profile = ({ user }) => {
   return (
     <>
       <MainBodyLayout>
-        <div className='profile-container text-center pt-20 grid grid-rows-2'>
+        <div className='profile-container text-center pt-20 flex flex-col justify-between'>
           <div className='mt-8 mb-12'>
             {user.profilePicture.length > 1 ? (
               <img
@@ -56,11 +56,11 @@ const profile = ({ user }) => {
             <p className='font-semibold text-base lg:text-lg mt-8'>
               {user.firstName} {user.lastName}
             </p>
-            <p className='font-light text-sm lg:text-base'>{user.email}</p>
+            <p className='font-light text-sm lg:text-base mb-12'>{user.email}</p>
+            <SquareEmptyLink href='/profile/edit' text='EDIT PROFILE' styleClass='mb-12' />
           </div>
-          <SquareEmptyLink href='/profile/edit' text='EDIT PROFILE' styleClass='mb-12' />
           {!user.emailVerified ? <VerifyEmail user={user} /> : null}
-          <div className='bg-lightGrey pb-64'>
+          <div className='bg-lightGrey pb-48 dark:bg-darkGrey'>
             <button
               onClick={() => {
                 setOpenChangePassword(!openChangePassword);
@@ -83,7 +83,7 @@ const profile = ({ user }) => {
                 <UpdatePassword />
               )}
             </Accordion>
-            <div className='border-t-2 border-b-2 border-borderGrey'>
+            <div className='border-t-2 border-b-2 border-borderGrey dark:border-mediumGrey'>
               <Link href='/terms'>
                 <a className='py-2 w-formArea mx-auto flex flex-row justify-between items-center'>
                   Terms of Use

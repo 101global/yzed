@@ -2,11 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import Link from 'next/link';
 
-import LoadingSpinner from '../../ReusableComponents/Loading/LoadingSpinner';
-
 import { strongRegex } from '../../../utilities/validation';
 
-import { useRouter } from 'next/router';
 import Tooltip from '../../ReusableComponents/Other/Tooltip';
 import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
 
@@ -17,12 +14,11 @@ import { UserContext } from '../../../utilities/context/UserContext';
 const UpdatePassword = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(null);
   const [validPassword, setValidPassword] = useState(false);
 
-  const { resetPassword, userError, setUserError, userLoading } = useContext(UserContext);
+  const { userError, setUserError, userLoading, updatePassword } = useContext(UserContext);
 
   return (
     <>
@@ -39,14 +35,9 @@ const UpdatePassword = () => {
             <form
               className='w-formArea'
               onSubmit={(e) => {
-                setLoading(true);
                 e.preventDefault();
                 if (strongRegex.test(password) && password === confirmPassword) {
-                  console.log(password);
-                  resetPassword(password, oobCode, setSuccess);
-                } else {
-                  setError('Check that password is valid.');
-                  setLoading(false);
+                  updatePassword(password, setSuccess);
                 }
               }}>
               <label
@@ -111,6 +102,7 @@ const UpdatePassword = () => {
             {userError && (
               <p className='text-xs lg:text-base pt-8 text-center'>{userError.error}</p>
             )}
+            {userLoading ? <LoadingFillIcon /> : null}
           </>
         )}
       </div>

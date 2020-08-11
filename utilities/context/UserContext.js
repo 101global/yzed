@@ -256,6 +256,21 @@ const UserProvider = ({ children }) => {
       });
   };
 
+  const updatePassword = (password, successCallback) => {
+    setUserLoading(true);
+    const user = firebase.auth().currentUser;
+    user
+      .updatePassword(password)
+      .then(() => {
+        successCallback(true);
+        setUserLoading(false);
+      })
+      .catch((err) => {
+        setUserError(err);
+        setUserLoading(false);
+      });
+  };
+
   const requestEmailVerification = (callback) => {
     const actionCodeSettings = {
       // After password reset, the user will be give the ability to go back
@@ -356,6 +371,7 @@ const UserProvider = ({ children }) => {
         resetPassword,
         setUserError,
         confirmEmailVerification,
+        updatePassword,
       }}>
       {children}
     </UserContext.Provider>
