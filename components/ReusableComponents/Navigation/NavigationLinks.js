@@ -29,7 +29,7 @@ const NavigationLinks = ({ user }) => {
           </div>
         ) : (
           <Link href='/login'>
-            <a className='text-lg font-light'>Login</a>
+            <a className='text-lg font-normal ml-4'>Login</a>
           </Link>
         )}
       </div>

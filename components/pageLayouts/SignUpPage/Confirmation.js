@@ -9,7 +9,6 @@ import { UserContext } from '../../../utilities/context/UserContext';
 import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
 import firebase from '../../../utilities/firebaseSetup';
 import { useRouter } from 'next/router';
-import LoadingBars from '../../ReusableComponents/Loading/LoadingBars';
 
 const SignupConfirmation = ({ user }) => {
   const [loading, setLoading] = useState(true);
