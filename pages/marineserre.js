@@ -1,7 +1,7 @@
 import BrandDataFetch from '../components/pageLayouts/BrandPage/BrandDataFetch';
 import fetch from 'node-fetch';
 
-const Marine = ({ product }) => <BrandDataFetch product={product} exposure={1} />;
+const Marine = ({ product, user }) => <BrandDataFetch product={product} exposure={1} user={user} />;
 
 export async function getServerSideProps() {
   const product = await fetch(

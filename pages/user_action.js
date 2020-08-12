@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import LoadingBars from '../components/ReusableComponents/Loading/LoadingBars';
 
-const userAction = () => {
+const userAction = ({ user }) => {
   const router = useRouter();
   console.log(router.query);
   const { query } = router;

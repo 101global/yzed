@@ -4,7 +4,7 @@ import BrandPageLayout from './BrandPageLayout';
 import Layout from '../../ReusableComponents/Layouts/MainBodyLayout';
 import PropTypes from 'prop-types';
 
-const BrandDataFetch = ({ product, exposure }) => {
+const BrandDataFetch = ({ product, exposure, user }) => {
   const [loading, setLoading] = useState(false);
   const [model, setModel] = useState(null);
 
@@ -32,7 +32,7 @@ const BrandDataFetch = ({ product, exposure }) => {
           : ` x ${model.brandName}`
       }`}
       loading={!model || loading || !product}>
-      <BrandPageLayout model={model} />
+      <BrandPageLayout model={model} user={user} />
     </Layout>
   );
 };

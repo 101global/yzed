@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import Link from 'next/link';
 
-const unauthorized = () => {
+const unauthorized = ({ user }) => {
   return (
     <div>
       <h1>Stop! You shouldn't be here.</h1>
