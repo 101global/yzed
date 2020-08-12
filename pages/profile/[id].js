@@ -23,7 +23,7 @@ const profile = ({ user }) => {
   const [editProfile, setEditProfile] = useState(false);
 
   const router = useRouter();
-  console.log(router.query.id);
+
   const { requestLogout } = useContext(UserContext);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const profile = ({ user }) => {
 
   if (loading || !user) {
     return (
-      <UserFormLayout>
+      <UserFormLayout title='YZED - Profile'>
         <div>
           <LoadingBars text='Getting user information...' />
         </div>
@@ -45,7 +45,7 @@ const profile = ({ user }) => {
   }
   return (
     <>
-      <MainBodyLayout>
+      <MainBodyLayout title='YZED - Profile'>
         <div className='text-center w-screen flex flex-col justify-between min-h-screen'>
           <NavigationBar user={user} isLandingMenu={false} />
           <main className='profile-container min-h-contentAreaMobile lg:min-h-contentArea flex flex-col justify-between pt-mobileNav lg:pt-desktopNav'>

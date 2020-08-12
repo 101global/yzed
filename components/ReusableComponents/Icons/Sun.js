@@ -3,14 +3,12 @@ import React, { useContext, useEffect, useState } from 'react';
 const SunIcon = ({ styleClass, fill }) => {
   return (
     <svg
-      role='img'
       width='21'
       height='21'
       viewBox='0 0 21 21'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
       className={styleClass}>
-      <title>light mode</title>
       <path
         d='M10.263 15.16C7.86298 15.16 5.90869 13.2086 5.90869 10.8057C5.90869 8.40285 7.86298 6.45142 10.263 6.45142C12.663 6.45142 14.6173 8.40571 14.6173 10.8057C14.6173 13.2057 12.663 15.16 10.263 15.16ZM10.263 7.15999C8.25156 7.15999 6.61727 8.79714 6.61727 10.8057C6.61727 12.8143 8.25441 14.4514 10.263 14.4514C12.2716 14.4514 13.9087 12.8143 13.9087 10.8057C13.9087 8.79714 12.2744 7.15999 10.263 7.15999Z'
         fill={fill ?? 'white'}

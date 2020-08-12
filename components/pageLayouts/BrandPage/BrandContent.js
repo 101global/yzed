@@ -9,9 +9,8 @@ import { imagesNames } from '../../../utilities/dataHelpers';
 import theme from '../../../utilities/theme';
 
 const BrandContent = ({ model }) => {
-  console.log(model);
   const images = imagesNames(model.imageSlug, model.imageCount);
-  console.log(images);
+
   return (
     <>
       <Element name='introduction'>
