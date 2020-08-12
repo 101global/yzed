@@ -80,7 +80,7 @@ module.exports = {
       minHeight: {
         formArea: 'calc(100vh - 8rem - 86px)',
         formAreaMobile: 'calc(100vh - 8rem - 64px)',
-        contentArea: 'calc(100vh - 140px)',
+        contentArea: 'calc(100vh - 60px)',
         contentAreaMobile: 'calc(100vh - 30px)',
       },
       width: {

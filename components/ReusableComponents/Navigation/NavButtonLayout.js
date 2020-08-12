@@ -11,7 +11,7 @@ const NavigationButtonLayout = ({ openMenu, setOpenMenu, children, isLandingMenu
       }`}>
       <ToggleDarkModeButton />
       <>{children}</>
-      <div className='lg:hidden flex items-center'>
+      <div className={`lg:hidden flex items-center ${isLandingMenu ? 'ml-4 lg:ml-0' : null}`}>
         <MenuButton openMenu={openMenu} setOpenMenu={setOpenMenu} />
       </div>
     </div>

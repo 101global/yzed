@@ -23,7 +23,7 @@ const MobileNav = ({ openMenu, isLandingMenu }) => {
         .mobile-navigation-nav {
           transition: all 0.3s ease-in-out;
           top: 59px;
-          height: ${openMenu ? '40px' : '0px'};
+          max-height: ${openMenu ? '400px' : '0px'};
           overflow: ${openMenu ? 'auto' : 'hidden'};
         }
       `}</style>
