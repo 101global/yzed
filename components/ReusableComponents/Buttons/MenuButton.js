@@ -3,13 +3,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import theme from '../../../utilities/theme';
 
 const MenuButton = ({ openMenu, setOpenMenu, styleClass }) => {
-  // TODO: COLOR GRADIENTS FOR MENU WITH LIGHT AND DARK MODE
-
   return (
     <>
       <button
         aria-label='menu open'
-        className='py-2 pr-0'
+        className=''
         onClick={() => {
           setOpenMenu(!openMenu);
         }}>
@@ -17,7 +15,7 @@ const MenuButton = ({ openMenu, setOpenMenu, styleClass }) => {
           role='img'
           width='21'
           height='17'
-          className={`menu-button-icon ${styleClass} ml-4`}
+          className={`menu-button-icon ${styleClass}`}
           viewBox='0 0 21 17'
           xmlns='http://www.w3.org/2000/svg'>
           <title>toggle menu</title>

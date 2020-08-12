@@ -7,7 +7,7 @@ const NavigationButtonLayout = ({ openMenu, setOpenMenu, children, isLandingMenu
   return (
     <div
       className={`w-full flex flex-row items-center ${
-        isLandingMenu ? 'justify-end lg:justify-between' : 'justify-end'
+        isLandingMenu ? 'justify-end lg:justify-between' : 'justify-between lg:justify-end'
       }`}>
       <ToggleDarkModeButton />
       <>{children}</>

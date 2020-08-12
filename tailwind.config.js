@@ -25,6 +25,8 @@ module.exports = {
         '80per': '80%',
         '90per': '90%',
         '100per': '100%',
+        desktopNav: '86px',
+        mobileNav: '60px',
       },
       gridTemplateColumns: {
         experience: '1fr 2fr 1fr',
@@ -72,12 +74,14 @@ module.exports = {
         '80per': '80%',
         '90per': '90%',
         '100per': '100%',
+        desktopNav: '86px',
+        mobileNav: '60px',
       },
       minHeight: {
         formArea: 'calc(100vh - 8rem - 86px)',
         formAreaMobile: 'calc(100vh - 8rem - 64px)',
         contentArea: 'calc(100vh - 140px)',
-        contentAreaMobile: 'calc(100vh - 90px)',
+        contentAreaMobile: 'calc(100vh - 30px)',
       },
       width: {
         '10per': '10%',

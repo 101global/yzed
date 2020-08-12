@@ -46,9 +46,9 @@ const profile = ({ user }) => {
   return (
     <>
       <MainBodyLayout>
-        <div className='text-center w-screen pt-20 flex flex-col justify-between min-h-screen'>
+        <div className='text-center w-screen flex flex-col justify-between min-h-screen'>
           <NavigationBar user={user} isLandingMenu={false} />
-          <main className='profile-container min-h-contentAreaMobile lg:min-h-contentArea flex flex-col justify-between'>
+          <main className='profile-container min-h-contentAreaMobile lg:min-h-contentArea flex flex-col justify-between pt-mobileNav lg:pt-desktopNav'>
             <section className='mt-8 mb-12'>
               {user.profilePicture.length > 1 ? (
                 <img
@@ -66,7 +66,7 @@ const profile = ({ user }) => {
               <SquareEmptyLink href='/profile/edit' text='EDIT PROFILE' styleClass='mb-12' />
             </section>
             {!user.emailVerified ? <VerifyEmail user={user} /> : null}
-            <section className='bg-lightGrey pt-4 pb-48 dark:bg-darkGrey'>
+            <section className='bg-lightGrey pt-4 pb-32 dark:bg-darkGrey'>
               <button
                 onClick={() => {
                   setOpenChangePassword(!openChangePassword);

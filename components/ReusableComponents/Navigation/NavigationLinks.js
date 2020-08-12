@@ -18,11 +18,11 @@ const NavigationLinks = ({ user }) => {
                     <img
                       src={user.profilePicture}
                       alt={`${user.firstName} ${user.lastName} profile picture`}
-                      className='mx-4 lg:mr-0 lg:ml-4'
+                      className='lg:mr-0 lg:ml-4'
                     />
                   </a>
                 ) : (
-                  <a className='user-icon mx-4 lg:mr-0 lg:ml-4'>{user.firstName.slice(0, 1)}</a>
+                  <a className='user-icon lg:mr-0 lg:ml-4'>{user.firstName.slice(0, 1)}</a>
                 )}
               </Link>
             </div>

@@ -29,8 +29,10 @@ const ToggleDarkModeButton = () => {
       </div>
       <style jsx>{`
         .toggle-container {
-          display: inline-block;
+          display: flex;
           position: relative;
+          justify-content: center;
+          align-items: center;
         }
         input[type='checkbox'] {
           -webkit-appearance: none;
@@ -47,7 +49,6 @@ const ToggleDarkModeButton = () => {
           margin: 0;
           border: 1px solid ${theme.colors.lightGrey};
           transition: all 0.5s ease;
-          margin-top: 5px;
         }
         .toggle:after {
           content: '';
@@ -80,13 +81,13 @@ const ToggleDarkModeButton = () => {
         }
         .sun {
           position: absolute;
-          top: 8px;
+          top: 2px;
           left: 4px;
           transition: all 0.3s ease;
         }
         .moon {
           position: absolute;
-          top: 8px;
+          top: 2px;
           right: 4px;
           transition: all 0.3s ease;
         }
