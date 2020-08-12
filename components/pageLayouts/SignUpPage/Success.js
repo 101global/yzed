@@ -13,55 +13,74 @@ const SignupSuccess = ({ user }) => {
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { oobCode } = router.query;
-  console.log(oobCode);
   const { confirmEmailVerification, userError } = useContext(UserContext);
 
   useEffect(() => {
     if (oobCode) {
       confirmEmailVerification(oobCode, setLoading);
     } else {
-      if (user) {
-        setLoading(false);
-      }
+      setLoading(false);
     }
   }, []);
 
   if (loading)
     return (
-      <div className='min-h-screen flex flex-col justify-center items-center'>
+      <UserFormLayout>
         <LoadingBars text='Verifying User Credentials...' />
-      </div>
+      </UserFormLayout>
     );
   return (
     <>
       <UserFormLayout>
-        <div className='flex flex-col h-full justify-between items-center'>
-          {userError ? (
-            <>
-              <h1 className='text-xl lg:text-2xl px-8 text-center'>Oops. Something went wrong.</h1>
-              <p className='text-xs lg:text-base text-center py-8'>{userError.message}</p>
+        {!oobCode ? (
+          <>
+            <div className='pb-16 text-center mx-auto'>
+              <h1 className='text-xl px-8 text-center'>
+                Now you are in the YZED crew!
+              </h1>
+              <p className='text-xs lg:text-base text-center py-8'>
+                We promise to you that we will present to you an extraordinary and gorgeous AR
+                fashion experience!
+              </p>
               <SquareFilledLink href='/' text='GO HOME' styleClass='mt-16' />
-            </>
-          ) : (
-            <>
-              <div className='pb-16 text-center'>
+              {user ? (
+                <Link href={`/profile/${user.uid}`}>
+                  <a className='text-left text-xs w-full inline-block'>Go to profile</a>
+                </Link>
+              ) : null}
+            </div>
+          </>
+        ) : (
+          <div className='flex flex-col h-full justify-between items-center'>
+            {userError ? (
+              <>
                 <h1 className='text-xl lg:text-2xl px-8 text-center'>
-                  Now you are in the YZED crew!
+                  Oops. Something went wrong.
                 </h1>
-                <p className='text-xs lg:text-base text-center py-8'>
-                  We promise to you that we will present to you an extraordinary and gorgeous AR
-                  fashion experience!
-                </p>
+                <p className='text-xs lg:text-base text-center py-8'>{userError.message}</p>
                 <SquareFilledLink href='/' text='GO HOME' styleClass='mt-16' />
-                {user ? (
-                  <Link href={`/profile/${user.uid}`}>
-                    <a className='text-left text-xs w-full inline-block'>Go to profile</a>
-                  </Link>
-                ) : null}
-              </div>
-            </>
-          )}
-        </div>
+              </>
+            ) : (
+              <>
+                <div className='pb-16 text-center'>
+                  <h1 className='text-xl lg:text-2xl px-8 text-center'>
+                    Now you are in the YZED crew!
+                  </h1>
+                  <p className='text-xs lg:text-base text-center py-8'>
+                    We promise to you that we will present to you an extraordinary and gorgeous AR
+                    fashion experience!
+                  </p>
+                  <SquareFilledLink href='/' text='GO HOME' styleClass='mt-16' />
+                  {user ? (
+                    <Link href={`/profile/${user.uid}`}>
+                      <a className='text-left text-xs w-full inline-block'>Go to profile</a>
+                    </Link>
+                  ) : null}
+                </div>
+              </>
+            )}
+          </div>
+        )}
       </UserFormLayout>
       <style jsx>{`
         .text-center {

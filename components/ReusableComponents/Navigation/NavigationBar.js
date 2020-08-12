@@ -10,9 +10,20 @@ import NavigationButtonLayout from './NavButtonLayout';
 import NavigationLinks from './NavigationLinks';
 import { UserContext } from '../../../utilities/context/UserContext';
 import theme from '../../../utilities/theme';
+import { useRouter } from 'next/router';
 
-const NavigationBar = ({ user, isLandingMenu = true }) => {
+const NavigationBar = ({ user }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [isLandingMenu, setIsLandingMenu] = useState(false);
+  const router = useRouter();
+  console.log(router.route);
+
+  useEffect(() => {
+    if (router.route === '/') {
+      setIsLandingMenu(true);
+    }
+  }, []);
+  
   return (
     <>
       <header className='relative'>
@@ -24,11 +35,10 @@ const NavigationBar = ({ user, isLandingMenu = true }) => {
           </Link>
           <nav className='links-container w-full flex flex-row'>
             <NavigationButtonLayout
+              user={user}
               openMenu={openMenu}
               setOpenMenu={setOpenMenu}
-              isLandingMenu={isLandingMenu}>
-              {isLandingMenu ? <LandingLinks /> : <NavigationLinks user={user} />}
-            </NavigationButtonLayout>
+              isLandingMenu={isLandingMenu}></NavigationButtonLayout>
           </nav>
         </div>
         <MobileNav openMenu={openMenu} isLandingMenu={isLandingMenu} />

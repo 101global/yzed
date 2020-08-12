@@ -5,34 +5,31 @@ import LogoutButton from '../Buttons/LogoutButton';
 import ToggleDarkModeButton from '../Buttons/ToggleDarkMode';
 import theme from '../../../utilities/theme';
 
-const NavigationLinks = ({ user }) => {
+const NavigationLinks = ({ user, isLandingMenu }) => {
   return (
     <>
-      <div>
-        {user ? (
-          <div className=''>
-            <div className='user-info'>
-              <Link href={`/profile/${user.uid}`}>
-                {user.profilePicture.length > 1 ? (
-                  <a>
-                    <img
-                      src={user.profilePicture}
-                      alt={`${user.firstName} ${user.lastName} profile picture`}
-                      className='lg:mr-0 lg:ml-4'
-                    />
-                  </a>
-                ) : (
-                  <a className='user-icon lg:mr-0 lg:ml-4'>{user.firstName.slice(0, 1)}</a>
-                )}
-              </Link>
-            </div>
-          </div>
-        ) : (
-          <Link href='/login'>
-            <a className='text-lg font-normal ml-4'>Login</a>
-          </Link>
-        )}
-      </div>
+      {user ? (
+        <Link href={`/profile/${user.uid}`}>
+          {user.profilePicture.length > 1 ? (
+            <a
+              aria-label={`${user.firstName} ${user.lastName} profile`}
+              className={!isLandingMenu ? 'lg:ml-4' : null}>
+              <img
+                src={user.profilePicture}
+                alt={`${user.firstName} ${user.lastName} profile picture`}
+              />
+            </a>
+          ) : (
+            <a className={`user-icon ${isLandingMenu ? 'ml-4' : null}`}>
+              {user.firstName.slice(0, 1)}
+            </a>
+          )}
+        </Link>
+      ) : (
+        <Link href='/login'>
+          <a className='text-lg font-normal'>Login</a>
+        </Link>
+      )}
       <style jsx>{`
         .user-icon {
           display: flex;
@@ -40,10 +37,9 @@ const NavigationLinks = ({ user }) => {
           align-items: center;
           color: ${theme.colors.white};
           font-size: 18px;
-
           background: ${theme.colors.purple};
         }
-        .user-info img,
+        img,
         .user-icon {
           width: 26px;
           height: 26px;

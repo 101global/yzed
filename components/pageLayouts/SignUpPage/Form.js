@@ -26,20 +26,14 @@ const SignupForm = ({ user }) => {
   const [lastName, setLastName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState(null);
-  const {
-    userError,
-    userLoading,
-    requestEmailSignup,
-    requestGoogleSignup,
-    requestFbSignup,
-  } = useContext(UserContext);
+
+  const { userError, userLoading, requestEmailLogin } = useContext(UserContext);
   const router = useRouter();
 
   useEffect(() => {
-    if (user) {
-      router.push('/signup/success');
-    }
+    // if (user) {
+    //   router.push('/signup/success');
+    // }
   }, []);
 
   return (
@@ -164,9 +158,14 @@ const SignupForm = ({ user }) => {
             {userLoading ? 'SIGNING UP' : 'SIGN UP'}
           </button>
         </form>
-        <div className='pb-12'>
+        <div className='pb-12 w-formArea mx-auto'>
           <GoogleLogin />
           <FBLogin />
+          <InlineFormError
+            error={userError}
+            code='auth/account-exists-with-different-credential'
+            message='You already have an account with this email address. Try another login method.'
+          />
         </div>
         <div className='py-12 pt-8 border-t-2 border-lightGrey'>
           <p className='text-center text-sm mb-4'>Already a member?</p>

@@ -36,11 +36,11 @@ const LoginLayout = ({ user }) => {
   return (
     <>
       {user ? (
-        <UserFormLayout title="YZED - Login">
+        <UserFormLayout title='YZED - Login'>
           <LoadingBars text='You are logged in.  Redirecting you home.' />
         </UserFormLayout>
       ) : (
-        <UserFormLayout title="YZED - Login">
+        <UserFormLayout title='YZED - Login'>
           <div className='grid grid-cols-1 mx-auto w-full'>
             <form
               onSubmit={async (e) => {
@@ -99,9 +99,14 @@ const LoginLayout = ({ user }) => {
                 </a>
               </Link>
             </form>
-            <div className='pb-12'>
-              <GoogleLogin loginFunction={requestGoogleLogin} />
-              <FBLogin loginFunction={requestFbLogin} />
+            <div className='pb-12 w-formArea mx-auto'>
+              <GoogleLogin />
+              <FBLogin />
+              <InlineFormError
+                error={userError}
+                code='auth/account-exists-with-different-credential'
+                message='You already have an account with this email address. Try another login method.'
+              />
             </div>
             <div className='py-12 pt-8 border-t-2 border-lightGrey'>
               <p className='text-center text-sm'>I'm a new user!</p>

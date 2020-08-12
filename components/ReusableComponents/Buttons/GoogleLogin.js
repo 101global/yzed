@@ -5,14 +5,14 @@ import GoogleIcon from '../../../public/icons/icon_google.png';
 import { UserContext } from '../../../utilities/context/UserContext';
 import theme from '../../../utilities/theme';
 
-const FBLogin = ({ loginFunction }) => {
+const GoogleLogin = () => {
   const { requestGoogleLogin } = useContext(UserContext);
   return (
     <>
       <button
         className='h-formButton w-formButton flex items-center justify-center text-sm text-white rounded-md mx-auto mb-4'
         onClick={() => {
-          loginFunction();
+          requestGoogleLogin();
         }}>
         <img src={GoogleIcon} alt='facebook icon' className='button-icon mr-4' />
         <p>Log in with Google</p>
@@ -44,4 +44,4 @@ const FBLogin = ({ loginFunction }) => {
   );
 };
 
-export default FBLogin;
+export default GoogleLogin;

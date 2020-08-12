@@ -20,7 +20,7 @@ fbProvider.addScope('email');
 
 const UserProvider = ({ children }) => {
   const [userLoading, setUserLoading] = useState(false);
-  const [userError, setUserError] = useState(null);
+  const [userError, setUserError] = useState({ code: '', message: '' });
 
   const router = useRouter();
 
@@ -39,7 +39,15 @@ const UserProvider = ({ children }) => {
     }, 2000);
   };
 
-  const createUserDB = async (userID, email, firstName, lastName, emailVerified, route) => {
+  const createUserDB = async (
+    userID,
+    email,
+    firstName,
+    lastName,
+    profilePicture,
+    emailVerified,
+    route
+  ) => {
     await dbh
       .collection('users')
       .doc(userID)
@@ -47,7 +55,7 @@ const UserProvider = ({ children }) => {
         email,
         firstName,
         lastName,
-        profilePicture: firstName.slice(0, 1),
+        profilePicture,
         emailVerified,
         role: 'USER',
       })
@@ -65,7 +73,7 @@ const UserProvider = ({ children }) => {
       .doc(userID)
       .update({ email, firstName, lastName, profilePicture })
       .then((result) => {
-        refreshUserData();
+        refreshUserData('/');
       })
       .catch((err) => {
         setError(err.message);
@@ -91,6 +99,7 @@ const UserProvider = ({ children }) => {
                 email,
                 firstName,
                 lastName,
+                firstName.slice(0, 1),
                 emailVerified,
                 '/signup/confirm'
               );
@@ -106,30 +115,45 @@ const UserProvider = ({ children }) => {
       });
   };
 
-  const googleSignup = async () => {
+  const googleLogin = async () => {
     setUserLoading(true);
     await firebase
       .auth()
       .signInWithPopup(googleProvider)
       .then(async (result) => {
-        const data = googleData(result);
+        const data = await googleData(result);
         const { userID, email, firstName, lastName, profilePicture } = data;
-        await createUserDB(
-          userID,
-          email,
-          firstName,
-          lastName,
-          profilePicture,
-          true,
-          '/signup/success'
-        );
+        dbh
+          .collection('users')
+          .doc(userID)
+          .get()
+          .then(async (doc) => {
+            if (doc.exists) {
+              await updateUserDB(userID, email, firstName, lastName, profilePicture);
+            } else {
+              await createUserDB(
+                userID,
+                email,
+                firstName,
+                lastName,
+                profilePicture,
+                true,
+                '/signup/success'
+              );
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            setError(err);
+          });
       })
       .catch((err) => {
-        setError(err.message);
+        console.log(err);
+        setError(err);
       });
   };
 
-  const fbSignup = async () => {
+  const fbLogin = async () => {
     setUserLoading(true);
     await firebase
       .auth()
@@ -138,18 +162,30 @@ const UserProvider = ({ children }) => {
         const data = fbData(result);
         const { userID, email, firstName, lastName, profilePicture } = data;
         data.url;
-        await createUserDB(
-          userID,
-          email,
-          firstName,
-          lastName,
-          profilePicture,
-          true,
-          '/signup/success'
-        );
+        dbh
+          .collection('users')
+          .doc(userID)
+          .get()
+          .then(async (doc) => {
+            if (doc.exists) {
+              await updateUserDB(userID, email, firstName, lastName, profilePicture);
+            } else {
+              await createUserDB(
+                userID,
+                email,
+                firstName,
+                lastName,
+                profilePicture,
+                true,
+                '/signup/success'
+              );
+            }
+          })
+          .catch((err) => setError(err));
       })
       .catch((err) => {
-        setError(err.message);
+        console.log(err);
+        setError(err);
       });
   };
 
@@ -164,37 +200,6 @@ const UserProvider = ({ children }) => {
       .catch((err) => {
         console.log(err);
         setError(err);
-      });
-  };
-
-  const googleLogin = () => {
-    setUserLoading(true);
-    firebase
-      .auth()
-      .signInWithPopup(googleProvider)
-      .then(async (result) => {
-        const data = googleData(result);
-        const { userID, email, firstName, lastName, profilePicture } = data;
-        await updateUserDB(userID, email, firstName, lastName, profilePicture);
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
-  };
-
-  const fbLogin = () => {
-    setUserLoading(true);
-    firebase
-      .auth()
-      .signInWithPopup(fbProvider)
-      .then(async (result) => {
-        const data = fbData(result);
-        const { userID, email, firstName, lastName, profilePicture } = data;
-        data.url;
-        await updateUserDB(userID, email, firstName, lastName, profilePicture);
-      })
-      .catch((err) => {
-        setError(err.message);
       });
   };
 
@@ -330,14 +335,6 @@ const UserProvider = ({ children }) => {
     emailSignup(username, password, firstName, lastName);
   });
 
-  const requestGoogleSignup = useCallback(() => {
-    googleSignup();
-  });
-
-  const requestFbSignup = useCallback(() => {
-    fbSignup();
-  });
-
   const requestEmailLogin = useCallback((email, password) => {
     emailLogin(email, password);
   });
@@ -360,8 +357,6 @@ const UserProvider = ({ children }) => {
         userLoading,
         userError,
         requestEmailSignup,
-        requestGoogleSignup,
-        requestFbSignup,
         requestEmailLogin,
         requestGoogleLogin,
         requestFbLogin,
