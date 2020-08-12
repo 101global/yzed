@@ -15,6 +15,7 @@ import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
 import VerifyEmail from '../../ReusableComponents/Buttons/VerifyEmail';
 import theme from '../../../utilities/theme';
 import { useRouter } from 'next/router';
+import { userTerms } from '../../../utilities/constants';
 
 const ProfileContent = ({ user }) => {
   const [openChangePassword, setOpenChangePassword] = useState(false);
@@ -23,8 +24,6 @@ const ProfileContent = ({ user }) => {
   const [editProfile, setEditProfile] = useState(false);
 
   const router = useRouter();
-
-  const { requestLogout } = useContext(UserContext);
 
   useEffect(() => {
     if (!user || user.uid !== router.query.id) {
@@ -64,6 +63,9 @@ const ProfileContent = ({ user }) => {
               </p>
               <p className='font-light text-sm lg:text-base mb-12'>{user.email}</p>
               <SquareEmptyLink href='/profile/edit' text='EDIT PROFILE' styleClass='mb-12' />
+              <div className='text-right w-formArea mx-auto py-8'>
+                <LogoutButton />
+              </div>
             </section>
             {!user.emailVerified ? <VerifyEmail user={user} /> : null}
             <section className='bg-lightGrey pt-4 pb-32 dark:bg-darkGrey'>
@@ -104,16 +106,13 @@ const ProfileContent = ({ user }) => {
                   />
                 </button>
                 <Accordion open={openTerms}>
-                  <p>Here are the user terms.</p>
+                  {userTerms.map((term) => (
+                    <p className='text-justify text-xxs font-hairline p-4 w-formArea mx-auto'>
+                      {term}
+                    </p>
+                  ))}
                 </Accordion>
               </div>
-              <button
-                onClick={() => {
-                  requestLogout();
-                }}
-                className='text-light block py-2 w-formArea mx-auto text-left'>
-                Log Out
-              </button>
             </section>
           </main>
           <Footer />

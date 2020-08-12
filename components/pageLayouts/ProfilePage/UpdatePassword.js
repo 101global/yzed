@@ -24,7 +24,10 @@ const UpdatePassword = () => {
     <>
       <div className='flex flex-col justify-start items-center mx-auto p-4 py-8'>
         {success ? (
-          <p>Password had been updated</p>
+          <>
+            <h3 className='text-black dark:text-white text-lg'>Success!</h3>
+            <p className='text-black dark:text-white text-sm'>Password had been updated</p>
+          </>
         ) : userError ? (
           <>
             <h1 className='text-xl lg:text-2x pb-8 text-center'>Oops! Something went wrong.</h1>
