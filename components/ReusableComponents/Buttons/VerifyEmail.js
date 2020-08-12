@@ -9,13 +9,13 @@ const VerifyEmail = ({ user }) => {
     <>
       <section className='py-12 pt-8 border-t-2 border-lightGrey w-full'>
         {emailSent ? (
-          <p className='text-center text-sm mb-4 w-formArea'>
+          <p className='text-center text-sm mb-4 w-formArea mx-auto'>
             An email has been sent to {user.email}. Please follow the instructions to verify your
             email address.
           </p>
         ) : (
           <>
-            <p className='text-center text-sm lg:text-base mb-4 w-formArea mx-auto'>
+            <p className='text-center text-sm mb-4 w-formArea mx-auto'>
               OOPS! You still didn’t verify your email address!
             </p>
             <button

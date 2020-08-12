@@ -24,6 +24,7 @@ const ProfileContent = ({ user }) => {
   const [editProfile, setEditProfile] = useState(false);
 
   const router = useRouter();
+  console.log(user);
 
   useEffect(() => {
     if (!user || user.uid !== router.query.id) {
@@ -67,7 +68,7 @@ const ProfileContent = ({ user }) => {
                 <LogoutButton />
               </div>
             </section>
-            {!user.emailVerified ? <VerifyEmail user={user} /> : null}
+            {user.emailVerified === false ? <VerifyEmail user={user} /> : null}
             <section className='bg-lightGrey pt-4 pb-32 dark:bg-darkGrey'>
               <button
                 onClick={() => {

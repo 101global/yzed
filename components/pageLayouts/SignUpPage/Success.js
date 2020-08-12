@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 
 const SignupSuccess = ({ user }) => {
   console.log(user);
+  const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { oobCode } = router.query;
@@ -17,9 +18,10 @@ const SignupSuccess = ({ user }) => {
 
   useEffect(() => {
     if (oobCode) {
-      confirmEmailVerification(oobCode, setLoading);
+      confirmEmailVerification(oobCode, setLoading, setSuccess);
     } else {
       setLoading(false);
+      setSuccess(true);
     }
   }, []);
 
@@ -35,9 +37,7 @@ const SignupSuccess = ({ user }) => {
         {!oobCode ? (
           <>
             <div className='pb-16 text-center mx-auto'>
-              <h1 className='text-xl px-8 text-center'>
-                Now you are in the YZED crew!
-              </h1>
+              <h1 className='text-xl px-8 text-center'>Now you are in the YZED crew!</h1>
               <p className='text-xs lg:text-base text-center py-8'>
                 We promise to you that we will present to you an extraordinary and gorgeous AR
                 fashion experience!
@@ -51,16 +51,8 @@ const SignupSuccess = ({ user }) => {
             </div>
           </>
         ) : (
-          <div className='flex flex-col h-full justify-between items-center'>
-            {userError ? (
-              <>
-                <h1 className='text-xl lg:text-2xl px-8 text-center'>
-                  Oops. Something went wrong.
-                </h1>
-                <p className='text-xs lg:text-base text-center py-8'>{userError.message}</p>
-                <SquareFilledLink href='/' text='GO HOME' styleClass='mt-16' />
-              </>
-            ) : (
+          <div className='flex flex-col h-full justify-start items-center'>
+            {success ? (
               <>
                 <div className='pb-16 text-center'>
                   <h1 className='text-xl lg:text-2xl px-8 text-center'>
@@ -77,6 +69,14 @@ const SignupSuccess = ({ user }) => {
                     </Link>
                   ) : null}
                 </div>
+              </>
+            ) : (
+              <>
+                <h1 className='text-xl lg:text-2xl px-8 text-center'>
+                  Oops. Something went wrong.
+                </h1>
+                <p className='text-xs lg:text-base text-center py-8'>{userError.message}</p>
+                <SquareFilledLink href='/' text='GO HOME' styleClass='mt-16' />
               </>
             )}
           </div>

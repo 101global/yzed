@@ -294,12 +294,14 @@ const UserProvider = ({ children }) => {
       });
   };
 
-  const confirmEmailVerification = (oobCode, callback) => {
+  const confirmEmailVerification = (oobCode, callback, successCallback) => {
     firebase
       .auth()
       .applyActionCode(oobCode)
       .then((resp) => {
+        console.log(resp);
         callback(false);
+        successCallback(true);
         // Email address has been verified.
         // TODO: Display a confirmation message to the user.
         // You could also provide the user with a link back to the app.
@@ -308,8 +310,9 @@ const UserProvider = ({ children }) => {
         // additional state determined from that URL's parameters.
       })
       .catch((err) => {
+        console.log(err);
         callback(false);
-        setError(err.message);
+        setError(err);
       });
   };
 

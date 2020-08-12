@@ -20,7 +20,7 @@ const NavigationLinks = ({ user, isLandingMenu }) => {
               />
             </a>
           ) : (
-            <a className={`user-icon ${isLandingMenu ? 'ml-4' : null}`}>
+            <a className={`user-icon ${isLandingMenu ? 'lg:ml-4' : 'lg:ml-4'}`}>
               {user.firstName.slice(0, 1)}
             </a>
           )}

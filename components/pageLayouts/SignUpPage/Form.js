@@ -27,7 +27,7 @@ const SignupForm = ({ user }) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const { userError, userLoading, requestEmailLogin } = useContext(UserContext);
+  const { userError, userLoading, requestEmailSignup } = useContext(UserContext);
   const router = useRouter();
 
   useEffect(() => {
