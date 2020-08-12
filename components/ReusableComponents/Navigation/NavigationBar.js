@@ -15,21 +15,24 @@ const NavigationBar = ({ user, isLandingMenu = true }) => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
-      <nav className='relative'>
+      <header className='relative'>
         <div className='w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk bg-transparentWhite dark:bg-transparentBlack h-mobileNav lg:h-desktopNav z-tenThous'>
           <Link href='/'>
             <a aria-label='YZED Home' className='logo-link'>
               <Logo styleClass='logo-link fill-black dark:fill-white h-mobileNavLogo w-mobileNavLogo lg:h-desktopNavLogo w-full' />
             </a>
           </Link>
-          <div className='links-container w-full flex flex-row'>
-            <NavigationButtonLayout openMenu={openMenu} setOpenMenu={setOpenMenu}>
+          <nav className='links-container w-full flex flex-row'>
+            <NavigationButtonLayout
+              openMenu={openMenu}
+              setOpenMenu={setOpenMenu}
+              isLandingMenu={isLandingMenu}>
               {isLandingMenu ? <LandingLinks /> : <NavigationLinks user={user} />}
             </NavigationButtonLayout>
-          </div>
+          </nav>
         </div>
         <MobileNav openMenu={openMenu} isLandingMenu={isLandingMenu} />
-      </nav>
+      </header>
       <style jsx>{`
         .links-container {
           width: calc(50% - 0.5rem);

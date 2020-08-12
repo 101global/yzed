@@ -7,11 +7,11 @@ import InlineFormError from '../../ReusableComponents/Errors/InlineFormError';
 import Link from 'next/link';
 import LoadingBars from '../../ReusableComponents/Loading/LoadingBars';
 import LoadingButtonDots from '../../ReusableComponents/Loading/LoadingButtonDots';
+import LoadingFillIcon from '../../ReusableComponents/Loading/LoadingFillIcon';
 import { UserContext } from '../../../utilities/context/UserContext';
 import UserFormLayout from '../../ReusableComponents/Layouts/UserFormLayout';
 import theme from '../../../utilities/theme';
 import { useRouter } from 'next/router';
-import LoadingFillIcon from '../../ReusableComponents/Loading/LoadingFillIcon';
 
 const LoginLayout = ({ user }) => {
   const [email, setEmail] = useState('');
@@ -36,11 +36,11 @@ const LoginLayout = ({ user }) => {
   return (
     <>
       {user ? (
-        <UserFormLayout>
+        <UserFormLayout title="YZED - Login">
           <LoadingBars text='You are logged in.  Redirecting you home.' />
         </UserFormLayout>
       ) : (
-        <UserFormLayout>
+        <UserFormLayout title="YZED - Login">
           <div className='grid grid-cols-1 mx-auto w-full'>
             <form
               onSubmit={async (e) => {

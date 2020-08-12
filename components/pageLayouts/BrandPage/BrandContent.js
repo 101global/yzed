@@ -4,9 +4,9 @@ import DownloadIcon from '../../ReusableComponents/Icons/Download';
 import { Element } from 'react-scroll';
 import Link from 'next/link';
 import ProgressiveImage from '../../ReusableComponents/Images/ProgressiveImage';
+import SelfExpressionIcon from '../../ReusableComponents/AnimatedSVGs/SelfExpressionAnimatedSVG';
 import { imagesNames } from '../../../utilities/dataHelpers';
 import theme from '../../../utilities/theme';
-import SelfExpressionIcon from '../../ReusableComponents/AnimatedSVGs/SelfExpressionAnimatedSVG';
 
 const BrandContent = ({ model }) => {
   console.log(model);
@@ -15,16 +15,16 @@ const BrandContent = ({ model }) => {
   return (
     <>
       <Element name='introduction'>
-        <div className='pb-16 -mt-20'>
+        <section className='pb-16 -mt-20'>
           <h2 className='inline-block landing-title lg:text-4xl gradient-blue-right'>
             Where Democratic Fashion catalyzes self-discovery.
           </h2>
-          <p className='paragraph-text lg:text-xl lg:text-left'>
+          <aside className='paragraph-text lg:text-xl lg:text-left'>
             Democratic Fashion is a practice that minimizes the gap between a designers’ work and
             the mass market, while considering fair economic and social trade off. YZED is built
             upon the five most important factors of this practice, which you can read more about in
             our manifesto.
-          </p>
+          </aside>
           <a
             href='https://oneoone-resource.s3.ap-northeast-2.amazonaws.com/yzed/YZED_MANIFESTO.pdf'
             className='manifesto-link flex flex-row justify-start mt-8 text-2xl items-center hover:gradient-blue-top cursor-pointer'
@@ -33,7 +33,7 @@ const BrandContent = ({ model }) => {
             <DownloadIcon styleClass='manifesto-download-icon mr-2' />
             MANIFESTO
           </a>
-        </div>
+        </section>
         <div className='top-images py-16'>
           <ProgressiveImage
             preview={images[0].imageThumb}
@@ -58,19 +58,19 @@ const BrandContent = ({ model }) => {
         </div>
       </Element>
       <Element name='about'>
-        <div>
+        <section>
           <h2 className='inline-block landing-title lg:text-4xl gradient-blue-right'>
             “The desire to make fashion more accessible to people.”
           </h2>
-          <p className='paragraph-text lg:text-xl lg:text-left'>
+          <aside className='paragraph-text lg:text-xl lg:text-left'>
             We are an international team of five, based in Seoul, South Korea. we became united by
             the desire to make fashion more accessible to people, which has continued to be our
             team’s top priority. We strongly believe that a change of status quo is imminent in the
             fashion industry - and that it’s going to be catalyzed by none other than digital
             garments created in 3D & AR. We strive to create a community Where our users
             self-expression leads our decisions.
-          </p>
-        </div>
+          </aside>
+        </section>
         <div className='bottom-images py-16'>
           <ProgressiveImage
             preview={images[3].imageThumb}
@@ -90,16 +90,16 @@ const BrandContent = ({ model }) => {
         </div>
       </Element>
       <Element name='contact'>
-        <div className='py-16'>
+        <section className='py-16'>
           <h2 className='inline-block landing-title lg:text-4xl gradient-blue-right'>
             Let’s Work Together!
           </h2>
-          <p className='paragraph-text lg:text-xl lg:text-left'>
+          <aside className='paragraph-text lg:text-xl lg:text-left'>
             Dive into a mixed-reality world with a team of professionals in 3D & graphic design,
             UI/UX, trend forecasting, as well as front and back-end programming. YZED is turning
             your exquisite physical products into digital-dazzle, leading your brand into the
             digital era.
-          </p>
+          </aside>
           <div className='pt-6'>
             <p className='paragraph-text lg:text-xl lg:text-left'>Interested in working with us?</p>
             <p className='paragraph-text lg:text-xl lg:text-left'>
@@ -109,8 +109,8 @@ const BrandContent = ({ model }) => {
               </a>
             </p>
           </div>
-        </div>
-        <div className='py-32 lg:py-48'>
+        </section>
+        <section className='py-32 lg:py-48'>
           <h3 className='font-semibold text-2xl mb-8'>Contact</h3>
           <a
             className='block font-light text-base lg:text-xl hover:gradient-blue-top'
@@ -128,7 +128,7 @@ const BrandContent = ({ model }) => {
             <br />
             Seoul, Republic of Korea 06126
           </p>
-        </div>
+        </section>
       </Element>
       <style jsx>{`
         .landing-title {

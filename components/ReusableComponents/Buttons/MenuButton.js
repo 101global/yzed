@@ -14,11 +14,13 @@ const MenuButton = ({ openMenu, setOpenMenu, styleClass }) => {
           setOpenMenu(!openMenu);
         }}>
         <svg
+          role='img'
           width='21'
           height='17'
-          className={`menu-button-icon ${styleClass}`}
+          className={`menu-button-icon ${styleClass} ml-4`}
           viewBox='0 0 21 17'
           xmlns='http://www.w3.org/2000/svg'>
+          <title>toggle menu</title>
           <path d='M20.505 0H6.96069V2.64224H20.505V0Z' fill='url(#paint0_linear)' />
           <path d='M13.5443 13.3601H0V16.0024H13.5443V13.3601Z' fill='url(#paint1_linear)' />
           <path d='M20.5051 6.66772H0V9.33217H20.5051V6.66772Z' fill='url(#paint2_linear)' />

@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useState } from 'react';
 const PauseIcon = ({ styleClass, fill }) => {
   return (
     <svg
+      aria-hidden='true'
+      role='img'
       width='40'
       height='40'
       viewBox='0 0 40 40'
@@ -10,6 +12,7 @@ const PauseIcon = ({ styleClass, fill }) => {
       xmlns='http://www.w3.org/2000/svg'
       fill={fill ?? 'white'}
       className={styleClass}>
+      <title>pause</title>
       <path
         d='M39.3349 20.0001C39.3349 30.6783 30.6785 39.3348 20.0002 39.3348C9.32197 39.3348 0.665527 30.6783 0.665527 20.0001C0.665527 9.32179 9.32197 0.665344 20.0002 0.665344C30.6785 0.665344 39.3349 9.32179 39.3349 20.0001Z'
         stroke={fill ?? 'white'}

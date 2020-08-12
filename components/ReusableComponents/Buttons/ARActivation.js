@@ -8,6 +8,7 @@ const ARActivation = () => {
       <button slot='ar-button' aria-label='activate ar' className='ar-button'>
         <div className='flex flex-row justify-center items-center p-1'>
           <svg
+            aria-hidden='true'
             width='40'
             height='40'
             viewBox='0 0 40 40'

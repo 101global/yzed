@@ -1,10 +1,14 @@
-import React, { useEffect, useContext, useState } from 'react';
-import ToggleDarkModeButton from '../Buttons/ToggleDarkMode';
-import MenuButton from '../Buttons/MenuButton';
+import React, { useContext, useEffect, useState } from 'react';
 
-const NavigationButtonLayout = ({ openMenu, setOpenMenu, children }) => {
+import MenuButton from '../Buttons/MenuButton';
+import ToggleDarkModeButton from '../Buttons/ToggleDarkMode';
+
+const NavigationButtonLayout = ({ openMenu, setOpenMenu, children, isLandingMenu }) => {
   return (
-    <div className='w-full flex flex-row items-center justify-end'>
+    <div
+      className={`w-full flex flex-row items-center ${
+        isLandingMenu ? 'justify-end lg:justify-between' : 'justify-end'
+      }`}>
       <ToggleDarkModeButton />
       <>{children}</>
       <div className='lg:hidden flex items-center'>

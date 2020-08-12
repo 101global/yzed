@@ -8,15 +8,15 @@ const MobileNav = ({ openMenu, isLandingMenu }) => {
   return (
     <>
       {isLandingMenu ? (
-        <div className='mobile-landing-nav fixed z-thous w-full b-0 bg-transparentWhite dark:bg-transparentBlack'>
+        <nav className='mobile-landing-nav fixed z-thous w-full b-0 bg-transparentWhite dark:bg-transparentBlack'>
           <div className='w-full links grid grid-cols-3 items-center justify-around text-center lg:hidden'>
             <MobileLandingLinks />
           </div>
-        </div>
+        </nav>
       ) : (
-        <div className='mobile-navigation-nav fixed z-thous w-full b-0 bg-transparentWhite dark:bg-transparentBlack lg:hidden'>
+        <nav className='mobile-navigation-nav fixed z-thous w-full b-0 bg-transparentWhite dark:bg-transparentBlack lg:hidden'>
           <MobileNavigationLinks />
-        </div>
+        </nav>
       )}
       <style jsx>{`
         .mobile-landing-nav,

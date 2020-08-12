@@ -8,11 +8,13 @@ const LoadingFillIcon = () => {
       <div className='bg-transparentBlack min-h-screen min-w-full flex justify-center items-center fixed top-0 left-0 z-tenThous'>
         <div className='box'>
           <svg
+            role='img'
             width='250'
             height='42'
             viewBox='0 0 250 42'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'>
+            <title>loading</title>
             <defs>
               <clipPath id='myClip'>
                 <path

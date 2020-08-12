@@ -1,14 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
+
 import theme from '../../../utilities/theme';
 
 const DownloadIcon = ({ styleClass, fill }) => {
   return (
     <svg
+      role='img'
+      aria-hidden='true'
       width='23'
       height='19'
       viewBox='0 0 23 19'
       xmlns='http://www.w3.org/2000/svg'
       className={styleClass}>
+      <title>download</title>
       <path
         d='M22.4 18.26H0V13.99H2V16.26H20.4V13.99H22.4V18.26Z'
         fill='url("#download0_linear")'

@@ -1,20 +1,20 @@
 import React, { useContext, useEffect, useState } from 'react';
 
+import Accordion from '../../components/ReusableComponents/Other/Accordion';
+import ChevronRight from '../../components/ReusableComponents/Icons/ChevronRight';
 import Footer from '../../components/ReusableComponents/Footer/Footer';
 import Link from 'next/link';
 import LoadingBars from '../../components/ReusableComponents/Loading/LoadingBars';
 import LogoutButton from '../../components/ReusableComponents/Buttons/LogoutButton';
-import SquareEmptyLink from '../../components/ReusableComponents/Links/SquareEmptyLink';
-import UserFormLayout from '../../components/ReusableComponents/Layouts/UserFormLayout';
 import MainBodyLayout from '../../components/ReusableComponents/Layouts/MainBodyLayout';
+import NavigationBar from '../../components/ReusableComponents/Navigation/NavigationBar';
+import SquareEmptyLink from '../../components/ReusableComponents/Links/SquareEmptyLink';
+import UpdatePassword from '../../components/pageLayouts/ProfilePage/UpdatePassword';
+import { UserContext } from '../../utilities/context/UserContext';
+import UserFormLayout from '../../components/ReusableComponents/Layouts/UserFormLayout';
 import VerifyEmail from '../../components/ReusableComponents/Buttons/VerifyEmail';
 import theme from '../../utilities/theme';
 import { useRouter } from 'next/router';
-import { UserContext } from '../../utilities/context/UserContext';
-import ChevronRight from '../../components/ReusableComponents/Icons/ChevronRight';
-import Accordion from '../../components/ReusableComponents/Other/Accordion';
-import UpdatePassword from '../../components/pageLayouts/ProfilePage/UpdatePassword';
-import NavigationBar from '../../components/ReusableComponents/Navigation/NavigationBar';
 
 const profile = ({ user }) => {
   const [openChangePassword, setOpenChangePassword] = useState(false);
@@ -48,8 +48,8 @@ const profile = ({ user }) => {
       <MainBodyLayout>
         <div className='text-center w-screen pt-20 flex flex-col justify-between min-h-screen'>
           <NavigationBar user={user} isLandingMenu={false} />
-          <div className='profile-container'>
-            <div className='mt-8 mb-12'>
+          <main className='profile-container min-h-contentAreaMobile lg:min-h-contentArea flex flex-col justify-between'>
+            <section className='mt-8 mb-12'>
               {user.profilePicture.length > 1 ? (
                 <img
                   className='profile-image'
@@ -64,9 +64,9 @@ const profile = ({ user }) => {
               </p>
               <p className='font-light text-sm lg:text-base mb-12'>{user.email}</p>
               <SquareEmptyLink href='/profile/edit' text='EDIT PROFILE' styleClass='mb-12' />
-            </div>
+            </section>
             {!user.emailVerified ? <VerifyEmail user={user} /> : null}
-            <div className='bg-lightGrey pt-4 pb-48 lg:pb-56 dark:bg-darkGrey'>
+            <section className='bg-lightGrey pt-4 pb-48 dark:bg-darkGrey'>
               <button
                 onClick={() => {
                   setOpenChangePassword(!openChangePassword);
@@ -114,8 +114,8 @@ const profile = ({ user }) => {
                 className='text-light block py-2 w-formArea mx-auto text-left'>
                 Log Out
               </button>
-            </div>
-          </div>
+            </section>
+          </main>
           <Footer />
         </div>
       </MainBodyLayout>
@@ -131,7 +131,6 @@ const profile = ({ user }) => {
         .profile-container {
           width: 450px;
           max-width: 100%;
-          top: 86px;
           margin: 0 auto;
         }
         .profile-image,
