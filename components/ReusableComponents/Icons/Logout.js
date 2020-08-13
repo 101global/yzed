@@ -20,7 +20,7 @@ const LogoutIcon = ({ styleClass }) => {
         .light-mode .logout-key path {
           fill: ${theme.colors.black};
         }
-        .menu .logout-key path {
+        .menu-logout .logout-key path {
           fill: ${theme.colors.aqua};
         }
       `}</style>

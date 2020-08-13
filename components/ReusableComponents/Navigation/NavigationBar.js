@@ -13,7 +13,7 @@ import theme from '../../../utilities/theme';
 import { useRouter } from 'next/router';
 
 const NavigationBar = ({ user }) => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(true);
   const [isLandingMenu, setIsLandingMenu] = useState(false);
 
   const router = useRouter();
@@ -29,7 +29,7 @@ const NavigationBar = ({ user }) => {
   return (
     <>
       <header className='relative'>
-        <div className='w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk bg-transparentWhite dark:bg-transparentBlack h-mobileNav lg:h-desktopNav z-tenThous'>
+        <div className='w-full fixed flex flex-row justify-between items-center top-0 left-0 px-4 lg:px-dsk bg-white dark:bg-black h-mobileNav lg:h-desktopNav z-tenThous'>
           <Link href='/'>
             <a aria-label='YZED Home' className='logo-link'>
               <Logo styleClass='logo-link fill-black dark:fill-white h-mobileNavLogo w-mobileNavLogo lg:h-desktopNavLogo w-full' />
@@ -43,7 +43,7 @@ const NavigationBar = ({ user }) => {
               isLandingMenu={isLandingMenu}></NavigationButtonLayout>
           </nav>
         </div>
-        <MobileNav openMenu={openMenu} isLandingMenu={isLandingMenu} />
+        <MobileNav openMenu={openMenu} isLandingMenu={isLandingMenu} user={user} />
       </header>
       <style jsx>{`
         .links-container {

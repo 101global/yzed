@@ -103,30 +103,28 @@ const LoadingFillIcon = () => {
           content: '';
           position: absolute;
           width: 400px;
-          height: 200px;
+          height: 100px;
           background: ${theme.colors.transparentWhite};
           background: linear-gradient(
             transparent,
-            transparent 25%,
-            ${theme.colors.aqua} 25%,
+            transparent 50%,
+            ${theme.colors.aqua} 50%,
             ${theme.colors.aqua},
-            ${theme.colors.purple} 50%,
+            ${theme.colors.purple} 75%,
             ${theme.colors.purple} 100%
           );
           transform: translateX(-50%);
-          animation: fill 5s ease-in-out infinite;
+          animation: fill 3s ease-in-out infinite;
           z-index: -1;
         }
         @keyframes fill {
           0% {
             top: 0px;
           }
-          50% {
-            top: -150px;
-          }
           100% {
-            top: 0px;
+            top: -50px;
           }
+
         }
         .hello {
           position: absolute;
