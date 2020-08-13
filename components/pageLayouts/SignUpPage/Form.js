@@ -31,9 +31,9 @@ const SignupForm = ({ user }) => {
   const router = useRouter();
 
   useEffect(() => {
-    // if (user) {
-    //   router.push('/signup/success');
-    // }
+    if (user) {
+      router.push('/signup/success');
+    }
   }, []);
 
   return (

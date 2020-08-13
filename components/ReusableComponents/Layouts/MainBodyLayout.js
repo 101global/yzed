@@ -1,9 +1,10 @@
 import Head from 'next/head';
-import LoadingBars from '../../ReusableComponents/Loading/LoadingBars';
+
 import PropTypes from 'prop-types';
 import firebase from '../../../utilities/firebaseSetup';
 import theme from '../../../utilities/theme';
 import { useEffect } from 'react';
+import LoadingFillIcon from '../Loading/LoadingFillIcon';
 
 const BodyLayout = ({ title, children }) => {
   return (
@@ -50,11 +51,7 @@ const Layout = ({ children, title, loading }) => {
     }
   }, []);
 
-  return (
-    <BodyLayout title={title}>
-      {loading ? <LoadingBars color={theme.colors.black} /> : children}
-    </BodyLayout>
-  );
+  return <BodyLayout title={title}>{loading ? <LoadingFillIcon /> : children}</BodyLayout>;
 };
 
 export default Layout;

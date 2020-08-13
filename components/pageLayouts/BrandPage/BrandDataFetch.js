@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import BrandPageLayout from './BrandPageLayout';
-import Layout from '../../ReusableComponents/Layouts/MainBodyLayout';
+import MainBodyLayout from '../../ReusableComponents/Layouts/MainBodyLayout';
 import PropTypes from 'prop-types';
 
 const BrandDataFetch = ({ product, exposure, user }) => {
@@ -25,7 +25,7 @@ const BrandDataFetch = ({ product, exposure, user }) => {
   }, []);
 
   return (
-    <Layout
+    <MainBodyLayout
       title={`YZED${
         model === null || model.brandName === undefined || model.brandName === 'YZED'
           ? '.me'
@@ -33,7 +33,7 @@ const BrandDataFetch = ({ product, exposure, user }) => {
       }`}
       loading={!model || loading || !product}>
       <BrandPageLayout model={model} user={user} />
-    </Layout>
+    </MainBodyLayout>
   );
 };
 
