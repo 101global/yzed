@@ -81,13 +81,13 @@ const ToggleDarkModeButton = () => {
         }
         .sun {
           position: absolute;
-          top: 2px;
+          top: 3px;
           left: 4px;
           transition: all 0.3s ease;
         }
         .moon {
           position: absolute;
-          top: 2px;
+          top: 3px;
           right: 4px;
           transition: all 0.3s ease;
         }

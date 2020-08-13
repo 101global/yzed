@@ -25,7 +25,13 @@ const NavigationLinks = ({ user, isLandingMenu }) => {
             </a>
           )}
         </Link>
-      ) : null}
+      ) : (
+        <Link href='/login'>
+          <a className={`hidden lg:block text-lg font-normal ${!isLandingMenu ? 'lg:ml-4' : ''}`}>
+            Login
+          </a>
+        </Link>
+      )}
       <style jsx>{`
         .user-icon {
           display: flex;

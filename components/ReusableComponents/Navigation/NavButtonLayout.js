@@ -12,6 +12,7 @@ const NavigationButtonLayout = ({ openMenu, setOpenMenu, children, user, isLandi
         isLandingMenu ? 'justify-between' : 'justify-between lg:justify-end'
       }`}>
       <ToggleDarkModeButton />
+      {/* TODO: Add navigation links once we have them. */}
       {isLandingMenu ? <LandingLinks /> : null}
       <NavigationLinks user={user} isLandingMenu={isLandingMenu} />
       <MenuButton openMenu={openMenu} setOpenMenu={setOpenMenu} />
