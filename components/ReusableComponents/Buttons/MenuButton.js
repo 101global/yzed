@@ -7,7 +7,7 @@ const MenuButton = ({ openMenu, setOpenMenu, styleClass }) => {
     <>
       <button
         aria-label='menu open'
-        className=''
+        className='lg:hidden flex items-center'
         onClick={() => {
           setOpenMenu(!openMenu);
         }}>

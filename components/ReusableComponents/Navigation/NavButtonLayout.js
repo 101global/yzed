@@ -14,9 +14,7 @@ const NavigationButtonLayout = ({ openMenu, setOpenMenu, children, user, isLandi
       <ToggleDarkModeButton />
       {isLandingMenu ? <LandingLinks /> : null}
       <NavigationLinks user={user} isLandingMenu={isLandingMenu} />
-      <div className={`lg:hidden flex items-center`}>
-        <MenuButton openMenu={openMenu} setOpenMenu={setOpenMenu} />
-      </div>
+      <MenuButton openMenu={openMenu} setOpenMenu={setOpenMenu} />
     </div>
   );
 };

@@ -5,7 +5,7 @@ import theme from '../../../utilities/theme';
 const LoadingFillIcon = () => {
   return (
     <>
-      <div className='bg-transparentBlack min-h-screen min-w-full flex justify-center items-center fixed top-0 left-0 z-thous'>
+      <div className='bg-transparentBlack min-h-screen min-w-full flex justify-center items-center fixed top-0 left-0 z-tenThous'>
         <div className='relative'>
           <div className='box'>
             <svg

@@ -27,7 +27,7 @@ const NavigationLinks = ({ user, isLandingMenu }) => {
         </Link>
       ) : (
         <Link href='/login'>
-          <a className='text-lg font-normal'>Login</a>
+          <a className={`text-lg font-normal ${!isLandingMenu ? 'lg:ml-4' : ''}`}>Login</a>
         </Link>
       )}
       <style jsx>{`

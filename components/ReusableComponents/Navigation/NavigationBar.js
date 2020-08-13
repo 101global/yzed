@@ -15,15 +15,17 @@ import { useRouter } from 'next/router';
 const NavigationBar = ({ user }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isLandingMenu, setIsLandingMenu] = useState(false);
+
   const router = useRouter();
-  console.log(router.route);
+
+  const landingRoutes = ['/', '/kaimin', '/marineserre', '/misbhv'];
 
   useEffect(() => {
-    if (router.route === '/') {
+    if (landingRoutes.some((route) => route === router.route)) {
       setIsLandingMenu(true);
     }
   }, []);
-  
+
   return (
     <>
       <header className='relative'>
