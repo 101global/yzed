@@ -115,9 +115,9 @@ const resetpw = () => {
                 {userLoading ? 'RESETTING PASSWORD' : 'RESET PASSWORD'}
               </button>
             </form>
-            {userError && (
+            {userError.message.length ? (
               <p className='text-xs lg:text-base pt-8 text-center'>{userError.error}</p>
-            )}
+            ) : null}
             {userLoading ? <LoadingFillIcon /> : null}
           </>
         )}

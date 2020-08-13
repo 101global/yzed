@@ -80,6 +80,31 @@ const UserProvider = ({ children }) => {
       });
   };
 
+  const socialLoginCheck = (userID, email, firstName, lastName, profilePicture) => {
+    dbh
+      .collection('users')
+      .doc(userID)
+      .get()
+      .then(async (doc) => {
+        if (doc.exists) {
+          await updateUserDB(userID, email, firstName, lastName, profilePicture);
+        } else {
+          await createUserDB(
+            userID,
+            email,
+            firstName,
+            lastName,
+            profilePicture,
+            true,
+            '/signup/success'
+          );
+        }
+      })
+      .catch((err) => {
+        setError(err);
+      });
+  };
+
   const emailSignup = async (email, password, firstName, lastName, redirectPath) => {
     setUserLoading(true);
     await firebase
@@ -89,8 +114,6 @@ const UserProvider = ({ children }) => {
         if (user) {
           const userID = user.user.uid;
           const emailVerified = user.user.emailVerified;
-          const currentUser = await firebase.auth().currentUser;
-          console.log(currentUser);
           await currentUser
             .sendEmailVerification()
             .then(async (resp) => {
@@ -110,7 +133,6 @@ const UserProvider = ({ children }) => {
         }
       })
       .catch((err) => {
-        console.log(err);
         setError(err);
       });
   };
@@ -123,32 +145,9 @@ const UserProvider = ({ children }) => {
       .then(async (result) => {
         const data = await googleData(result);
         const { userID, email, firstName, lastName, profilePicture } = data;
-        dbh
-          .collection('users')
-          .doc(userID)
-          .get()
-          .then(async (doc) => {
-            if (doc.exists) {
-              await updateUserDB(userID, email, firstName, lastName, profilePicture);
-            } else {
-              await createUserDB(
-                userID,
-                email,
-                firstName,
-                lastName,
-                profilePicture,
-                true,
-                '/signup/success'
-              );
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-            setError(err);
-          });
+        socialLoginCheck(userID, email, firstName, lastName, profilePicture);
       })
       .catch((err) => {
-        console.log(err);
         setError(err);
       });
   };
@@ -161,30 +160,9 @@ const UserProvider = ({ children }) => {
       .then(async (result) => {
         const data = fbData(result);
         const { userID, email, firstName, lastName, profilePicture } = data;
-        data.url;
-        dbh
-          .collection('users')
-          .doc(userID)
-          .get()
-          .then(async (doc) => {
-            if (doc.exists) {
-              await updateUserDB(userID, email, firstName, lastName, profilePicture);
-            } else {
-              await createUserDB(
-                userID,
-                email,
-                firstName,
-                lastName,
-                profilePicture,
-                true,
-                '/signup/success'
-              );
-            }
-          })
-          .catch((err) => setError(err));
+        socialLoginCheck(userID, email, firstName, lastName, profilePicture);
       })
       .catch((err) => {
-        console.log(err);
         setError(err);
       });
   };
@@ -198,7 +176,6 @@ const UserProvider = ({ children }) => {
         refreshUserData('/');
       })
       .catch((err) => {
-        console.log(err);
         setError(err);
       });
   };
@@ -217,8 +194,6 @@ const UserProvider = ({ children }) => {
   const requestForgottenPasswordEmail = (email, callback) => {
     setUserLoading(true);
     const actionCodeSettings = {
-      // After password reset, the user will be give the ability to go back
-      // to this page.
       url: `${server}/login`,
       handleCodeInApp: true,
     };
@@ -230,7 +205,6 @@ const UserProvider = ({ children }) => {
         setUserLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setError(err);
         setUserLoading(false);
       });
@@ -252,7 +226,6 @@ const UserProvider = ({ children }) => {
             }, 1000);
           })
           .catch((err) => {
-            console.log(err.message);
             setError(error);
           });
       })
@@ -278,17 +251,13 @@ const UserProvider = ({ children }) => {
 
   const requestEmailVerification = (callback) => {
     const actionCodeSettings = {
-      // After password reset, the user will be give the ability to go back
-      // to this page.
       url: `${server}/login`,
       handleCodeInApp: true,
     };
     firebase
       .auth()
       .currentUser.sendEmailVerification(actionCodeSettings)
-      .then((resp) => {
-        console.log(resp);
-      })
+      .then((resp) => {})
       .catch((err) => {
         setError(err.message);
       });
@@ -299,18 +268,10 @@ const UserProvider = ({ children }) => {
       .auth()
       .applyActionCode(oobCode)
       .then((resp) => {
-        console.log(resp);
         callback(false);
         successCallback(true);
-        // Email address has been verified.
-        // TODO: Display a confirmation message to the user.
-        // You could also provide the user with a link back to the app.
-        // TODO: If a continue URL is available, display a button which on
-        // click redirects the user back to the app via continueUrl with
-        // additional state determined from that URL's parameters.
       })
       .catch((err) => {
-        console.log(err);
         callback(false);
         setError(err);
       });
