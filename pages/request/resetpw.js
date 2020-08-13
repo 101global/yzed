@@ -28,13 +28,13 @@ const resetpw = () => {
 
   return (
     <UserFormLayout title='YZED - Reset Password'>
-      <div className='flex flex-col justify-start items-center mx-auto'>
+      <div className='flex flex-col justify-start items-center mx-auto w-formArea'>
         {success ? (
           <LoadingBars
             text='Password has been successfully reset. Logging you in now.  You will be redirected shortly.'
             color='white'
           />
-        ) : userError ? (
+        ) : userError.message.length ? (
           <>
             <h1 className='text-xl lg:text-2x pb-8 text-center'>Oops! Something went wrong.</h1>
             <p className='text-xs lg:text-base pb-16 text-center'>{userError.message}</p>

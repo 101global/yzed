@@ -26,9 +26,9 @@ const UpdatePassword = () => {
         {success ? (
           <>
             <h3 className='text-black dark:text-white text-lg'>Success!</h3>
-            <p className='text-black dark:text-white text-sm'>Password had been updated</p>
+            <p className='text-black dark:text-white text-sm'>Password has been updated</p>
           </>
-        ) : userError ? (
+        ) : userError.message.length ? (
           <>
             <h1 className='text-xl lg:text-2x pb-8 text-center'>Oops! Something went wrong.</h1>
             <p className='text-xs lg:text-base pb-16 text-center'>{userError.message}</p>
@@ -102,7 +102,7 @@ const UpdatePassword = () => {
                 {userLoading ? 'RESETTING PASSWORD' : 'RESET PASSWORD'}
               </button>
             </form>
-            {userError && (
+            {userError.message.length && (
               <p className='text-xs lg:text-base pt-8 text-center'>{userError.error}</p>
             )}
             {userLoading ? <LoadingFillIcon /> : null}
