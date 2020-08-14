@@ -55,7 +55,7 @@ const LoadingFillIcon = () => {
               viewBox='-1 0 254 42'
               fill='none'
               xmlns='http://www.w3.org/2000/svg'
-              className='hello'>
+              className='outline-svg'>
               <title>loading</title>
 
               <path
@@ -113,24 +113,27 @@ const LoadingFillIcon = () => {
             ${theme.colors.purple} 75%,
             ${theme.colors.purple} 100%
           );
-          transform: translateX(-50%);
+          left: 0;
+          top: 0px;
+
           animation: fill 3s ease-in-out infinite;
           z-index: -1;
         }
-        @keyframes fill {
-          0% {
-            top: 0px;
-          }
-          100% {
-            top: -50px;
-          }
 
+        @keyframes fill {
+          from {
+            transform: translateY(0px);
+          }
+          to {
+            transform: translateY(-50px);
+          }
         }
-        .hello {
+        .outline-svg {
           position: absolute;
           top: 50%;
           left: 50%;
-          transform: translate(-50%, calc(-50% - 2px));
+          transform: translate(-50%, calc(-50% - 4px));
+          -webkit-transform: -webkit-translate(-50%, calc(-50% - 4px));
         }
       `}</style>
     </>

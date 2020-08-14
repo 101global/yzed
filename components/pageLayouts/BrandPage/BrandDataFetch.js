@@ -31,7 +31,7 @@ const BrandDataFetch = ({ product, exposure, user }) => {
           ? '.me'
           : ` x ${model.brandName}`
       }`}
-      loading={!model || loading || !product}>
+      loading={!model || loading || !product || true}>
       <BrandPageLayout model={model} user={user} />
     </MainBodyLayout>
   );
