@@ -5,6 +5,7 @@ import ChevronRight from '../../ReusableComponents/Icons/ChevronRight';
 import Footer from '../../ReusableComponents/Footer/Footer';
 import Link from 'next/link';
 import LoadingBars from '../../ReusableComponents/Loading/LoadingBars';
+import LoadingFillIcon from '../../ReusableComponents/Loading/LoadingFillIcon';
 import LogoutButton from '../../ReusableComponents/Buttons/LogoutButton';
 import MainBodyLayout from '../../ReusableComponents/Layouts/MainBodyLayout';
 import NavigationBar from '../../ReusableComponents/Navigation/NavigationBar';
@@ -37,9 +38,7 @@ const ProfileContent = ({ user }) => {
   if (loading || !user) {
     return (
       <UserFormLayout title='YZED - Profile'>
-        <div>
-          <LoadingBars text='Getting user information...' />
-        </div>
+        <LoadingFillIcon />
       </UserFormLayout>
     );
   }

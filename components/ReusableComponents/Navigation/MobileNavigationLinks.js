@@ -13,12 +13,6 @@ const MobileNavigationLinks = ({ user }) => {
         </div>
       ) : (
         <>
-          <Link href='/login'>
-            <a className='text-lg py-2 font-light block text-center'>Login</a>
-          </Link>
-          <Link href='/login'>
-            <a className='text-lg py-2 font-light block text-center'>Login</a>
-          </Link>
         </>
       )}
     </div>
