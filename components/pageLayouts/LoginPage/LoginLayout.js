@@ -14,6 +14,7 @@ import theme from '../../../utilities/theme';
 import { useRouter } from 'next/router';
 
 const LoginLayout = ({ user }) => {
+  const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -35,9 +36,9 @@ const LoginLayout = ({ user }) => {
 
   return (
     <>
-      {user ? (
+      {user || loading ? (
         <UserFormLayout title='YZED - Login'>
-          <LoadingBars text='You are logged in.  Redirecting you home.' />
+          <LoadingBars text='Checking user credentials' />
         </UserFormLayout>
       ) : (
         <UserFormLayout title='YZED - Login'>

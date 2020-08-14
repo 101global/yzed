@@ -109,7 +109,6 @@ const LoadingFillIcon = () => {
             transparent,
             transparent 50%,
             ${theme.colors.aqua} 50%,
-            ${theme.colors.aqua},
             ${theme.colors.purple} 75%,
             ${theme.colors.purple} 100%
           );
