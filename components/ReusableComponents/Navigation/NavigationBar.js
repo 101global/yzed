@@ -13,7 +13,7 @@ import theme from '../../../utilities/theme';
 import { useRouter } from 'next/router';
 
 const NavigationBar = ({ user }) => {
-  const [openMenu, setOpenMenu] = useState(true);
+  const [openMenu, setOpenMenu] = useState(false);
   const [isLandingMenu, setIsLandingMenu] = useState(false);
 
   const router = useRouter();
