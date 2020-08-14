@@ -2,6 +2,8 @@ import '../styles/index.css';
 import 'keen-slider/keen-slider.min.css';
 import 'react-hint/css/index.css';
 
+import { useEffect, useState } from 'react';
+
 import App from 'next/app';
 import Head from 'next/head';
 import ThemeContext from '../utilities/context/ThemeContext';
@@ -9,11 +11,14 @@ import UserContext from '../utilities/context/UserContext';
 import cookies from 'next-cookies';
 import fetch from 'isomorphic-unfetch';
 import { server } from '../config/index';
-import { useState } from 'react';
 
 function MyApp({ Component, pageProps, user }) {
   const [userData, setUserData] = useState(user);
-
+  useEffect(() => {
+    if (!user) {
+      document.cookie = `foo=; path=firebaseToken; expires=Thu, 01 Jan 1970 00:00:01 GMT`;
+    }
+  }, []);
   return (
     <>
       <Head>
@@ -74,6 +79,7 @@ function MyApp({ Component, pageProps, user }) {
 MyApp.getInitialProps = async (appContext) => {
   const { ctx } = appContext;
   // calls page's `getInitialProps` and fills `appProps.pageProps`
+  let error;
   const appProps = await App.getInitialProps(appContext);
   if (typeof window === 'undefined') {
     const { firebaseToken } = cookies(ctx);
@@ -86,11 +92,12 @@ MyApp.getInitialProps = async (appContext) => {
         const result = await fetch(`${server}/api/validate`, { headers }).then((res) => res.json());
         return { ...result, ...appProps };
       } catch (e) {
-        console.log(e);
-        cookie.remove(firebaseToken);
+        console.log('ERRRRRR', e);
+        // document.cookie = `foo=; path=firebaseToken; expires=Thu, 01 Jan 1970 00:00:01 GMT`;
       }
     }
   }
+
   return { ...appProps };
 };
 

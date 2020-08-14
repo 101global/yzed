@@ -31,6 +31,8 @@ const LoginLayout = ({ user }) => {
   useEffect(() => {
     if (user) {
       router.push('/');
+    } else {
+      setLoading(false);
     }
   }, []);
 

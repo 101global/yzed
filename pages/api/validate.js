@@ -30,7 +30,6 @@ const validate = async (token) => {
       loggedIn: true,
     },
   };
-  console.log('RESULT', result);
   return result;
 };
 
@@ -46,9 +45,8 @@ export default async (req, res) => {
     const result = await validate(token);
     return res.status(200).send(result);
   } catch (err) {
-    return res.status(err.code).send({
-      errorCode: err.code,
-      message: err.message,
-    });
+    console.log(err);
+    const result = undefined;
+    return res.status(200).send(result);
   }
 };

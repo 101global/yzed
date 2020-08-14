@@ -1,10 +1,9 @@
 import Head from 'next/head';
-
+import LoadingFillIcon from '../Loading/LoadingFillIcon';
 import PropTypes from 'prop-types';
 import firebase from '../../../utilities/firebaseSetup';
 import theme from '../../../utilities/theme';
 import { useEffect } from 'react';
-import LoadingFillIcon from '../Loading/LoadingFillIcon';
 
 const BodyLayout = ({ title, children }) => {
   return (
@@ -27,7 +26,7 @@ const BodyLayout = ({ title, children }) => {
         }
         *:focus {
           outline: 0 !important;
-          box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.35rem #069 !important;
+          box-shadow: 0 0 0 0.1rem #fff, 0 0 0 0.25rem #069 !important;
         }
 
         *:focus:not(.focus-visible) {

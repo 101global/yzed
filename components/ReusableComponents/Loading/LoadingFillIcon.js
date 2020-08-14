@@ -115,7 +115,7 @@ const LoadingFillIcon = () => {
           left: 0;
           top: 0px;
 
-          animation: fill 3s ease-in-out infinite;
+          animation: fill 3s cubic-bezier(0.11, 1.05, 0.79, 0.97) infinite;
           z-index: -1;
         }
 

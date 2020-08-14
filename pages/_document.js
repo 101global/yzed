@@ -16,6 +16,7 @@ class MyDocument extends Document {
           <NextScript />
           <script src='https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.classList'></script>
           <script src='https://unpkg.com/focus-visible'></script>
+          
         </body>
       </Html>
     );

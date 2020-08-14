@@ -27,7 +27,10 @@ const NavigationLinks = ({ user, isLandingMenu }) => {
         </Link>
       ) : (
         <Link href='/login'>
-          <a className={`hidden lg:block text-lg font-normal ${!isLandingMenu ? 'lg:ml-4' : ''}`}>
+          <a
+            className={`hidden lg:block text-base dark:text-white hover:gradient-blue-left ${
+              !isLandingMenu ? 'lg:ml-4' : ''
+            }`}>
             Login
           </a>
         </Link>
